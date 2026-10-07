@@ -14,7 +14,8 @@ body { font-size: 9.5pt; background: #fff; }
 h2 { font-size: 20pt; color: var(--deep); margin: 0 0 .1in; line-height: 1.1; }
 h3 { font-size: 12.5pt; color: var(--deep); margin: .18in 0 .05in; }
 p { margin: .06in 0; }
-.pg { page-break-before: always; }
+.pg { break-before: auto; } .pg.force { break-before: page; }
+h2, h3, .eyebrow { break-after: avoid; } tr, .tile, .box, .warn { break-inside: avoid; }
 .lede { font-size: 11.5pt; color: var(--deep); max-width: 6.6in; margin-bottom: .12in; }
 table { border-collapse: collapse; width: 100%; margin: .1in 0; font-size: 9pt; }
 th { background: var(--deep); color: var(--white); text-align: left; padding: .06in .09in; font-weight: 700; }
@@ -31,6 +32,7 @@ tr:nth-child(even) td { background: var(--pale); }
 ul { padding-left: 1.1in; } ul.plain { padding-left: .22in; } ul.plain li { margin: .02in 0; }
 .small { font-size: 8.5pt; } .ph { background: var(--linen); padding: 0 .04in; border-radius: .03in; }
 svg text { font-family: 'DM Sans', sans-serif; }
+tr:has(th) { break-after: avoid; }
 </style></head><body class="on-light">
 
 <div class="cover on-dark">
@@ -44,35 +46,63 @@ svg text { font-family: 'DM Sans', sans-serif; }
 <!-- 1 -->
 <div class="eyebrow" style="font-size:8pt;color:var(--deep)">The plan on one page</div>
 <h2>One message, one action, two paths.</h2>
-<p class="lede">The booth does three things in order: stops a person walking past, starts a real conversation, and captures a contact that can be followed up within a day. Everything printed serves one of those jobs, or it is not printed. The event is Saturday, October 24, 2026, seventeen days from the date of this document, so the timeline in the order guide is part of the plan.</p>
+<p class="lede">The booth does three things in order: stops a person walking past, starts a real conversation, and captures a contact that can be followed up within a day. Everything printed serves one of those jobs, or it is not printed. The event is Saturday, October 24, 2026.</p>
 <div class="three">
   <div class="tile"><b>Goals</b>Grow the email list and the contact list (both, with consent), and book free discovery calls from the best conversations.</div>
   <div class="tile"><b>Audience</b>Adults only. High-performing leaders, mostly men at this event, plus owners and HR or team leads. You are a regular sponsor, so some visitors already know you.</div>
-  <div class="tile"><b>Budget</b>$500 to $1,500 for printing and swag combined. Spend concentrates on what people see and scan, not on giveaways.</div>
+  <div class="tile"><b>Budget</b>$500 to $1,500 for printing and swag combined, tiered so the essentials fit and the rest is optional.</div>
 </div>
-<h3>The six rules this package follows</h3>
+<h3>The rules this package follows</h3>
 <ul class="plain">
-  <li><b>One headline, readable in three seconds.</b> A question about stress, with the outcome underneath. No service lists on the banner.</li>
-  <li><b>Four free first steps, always the same four.</b> Burnout Signal Check, the free ebook, the weekly reset, and a free discovery call. Each has its own QR on the banner, the counter sign and the card, and each is tagged so we can see which one people choose.</li>
-  <li><b>Scanning must work at standing height.</b> QR codes sit at roughly chest height on the banner, on the counter and in the hand, never on the floor-level table front or the backdrop.</li>
-  <li><b>Earn the swag.</b> Everyone who talks to us gets a card, which is cheap and useful. A premium keepable goes only to people who give a contact or book a call, so every unit of spend is tied to a lead.</li>
-  <li><b>Capture before they walk away.</b> The capture tap or scan happens during the conversation, not after, because intent fades the moment they turn the corner.</li>
-  <li><b>Track every printed piece.</b> Each QR carries its own tag (banner, sign, card, organizations sheet), so after the event we know which piece actually produced scans.</li>
+  <li><b>The big pieces tell the story; the table takes the scan.</b> The banners and backdrop carry the question, what Soma-Q does, the loop and how to interrupt it, and the outcomes. They carry no QR codes. The counter sign, the cards and the leave-behind carry the scans.</li>
+  <li><b>A stranger can say what you do after five seconds.</b> Every large piece states it in plain words, in dark type on a light field.</li>
+  <li><b>Outcomes lead.</b> Every headline is an outcome or a question about one; mechanism and proof follow.</li>
+  <li><b>Four free first steps, always the same four.</b> Burnout Signal Check, the free ebook, the weekly reset, and a free discovery call, each tagged so we can see which one people choose.</li>
+  <li><b>Light fields, deep type.</b> Large prints use Linen with Deep Teal type and a small band of Deep Teal for the logo, because large solid dark fields reproduce less reliably and read poorly under venue lighting (see the print and lighting section).</li>
+  <li><b>Earn the swag.</b> A card for everyone who talks with you; anything premium only for people who give a contact or book a call.</li>
+  <li><b>Capture during the conversation, track every piece.</b> Each QR carries its own tag so the second booth can be better than the first.</li>
 </ul>
 <h3>What is in this package</h3>
 <table><tr><th>Piece</th><th>Job</th><th>Trim size</th><th>File</th></tr>
-<tr><td>Retractable banner (two versions)</td><td>Stop people. Ask the question. Four free scans.</td><td>32 x 80 in</td><td>banner_retractable.pdf, banner_retractable_photo.pdf</td></tr>
-<tr><td>Backdrop (two versions), optional</td><td>Brand wall behind the table. Question headline, four areas pressure shows up. No QR.</td><td>120 x 90 in placeholder</td><td>backdrop.pdf, backdrop_photo.pdf</td></tr>
-<tr><td>Table front panel</td><td>Brand recognition from the aisle. Names both paths. No QR.</td><td>72 x 30 in (confirm with vendor)</td><td>table_front.pdf</td></tr>
-<tr><td>Four explainer posters</td><td>Make "nervous system alignment" understandable in plain pictures: the loop, the shift, what changes, and a dot-sticker body map.</td><td>24 x 36 in</td><td>poster_loop.pdf, poster_shift.pdf, poster_outcomes.pdf, poster_where.pdf</td></tr>
-<tr><td>Measurement posters (2)</td><td>Show what "measured progress" looks like: the weekly view, and capacity before results.</td><td>24 x 36 in</td><td>poster_progress.pdf, poster_capacity.pdf</td></tr>
-<tr><td>Measurement at a glance</td><td>An organizational leave-behind drawn from the Measurement Overview, with a QR to request the full document.</td><td>8.5 x 11 in, two sided</td><td>handout_measurement.pdf</td></tr>
-<tr><td>Counter sign</td><td>Four free first steps plus the POPL tap or scan.</td><td>8.5 x 11 in, acrylic stand</td><td>counter_sign.pdf</td></tr>
-<tr><td>Take-home card</td><td>A card people keep: the Pressure Loop on the front, four scans on the back.</td><td>4 x 6 in, two sided</td><td>card_individual.pdf</td></tr>
-<tr><td>Organizations one-sheet</td><td>A page an owner or HR lead can forward internally.</td><td>8.5 x 11 in</td><td>sheet_organizations.pdf</td></tr>
-<tr><td>Business card</td><td>New card with a QR to book a free discovery call.</td><td>3.5 x 2 in, two sided</td><td>business_card.pdf</td></tr>
+<tr><td>Banner 1: the story</td><td>The question, what Soma-Q does, the Pressure Loop and where to interrupt it. No QR.</td><td>32 x 80 in</td><td>banner_story.pdf</td></tr>
+<tr><td>Banner 2: the proof (two versions)</td><td>The outcomes, a weekly-progress example, and who is behind the work. With or without your photo. No QR.</td><td>32 x 80 in</td><td>banner_proof.pdf, banner_proof_photo.pdf</td></tr>
+<tr><td>Table cover front</td><td>"Burnout ends here." and what Soma-Q does, in dark type on Light Teal. No QR.</td><td>72 x 30 in (confirm with vendor)</td><td>table_front.pdf</td></tr>
+<tr><td>Backdrop (two versions), optional</td><td>The whole story on one wall: question, loop, outcomes, and who is behind it.</td><td>120 x 90 in placeholder</td><td>backdrop.pdf, backdrop_photo.pdf</td></tr>
+<tr><td>Six posters</td><td>Loop, the Soma-Q Shift, what changes, a dot-sticker body map, the weekly progress view, capacity before results.</td><td>24 x 36 in</td><td>poster_loop, poster_shift, poster_outcomes, poster_where, poster_progress, poster_capacity</td></tr>
+<tr><td>Counter sign</td><td>What Soma-Q does, four free first steps, and the POPL tap or scan.</td><td>8.5 x 11 in</td><td>counter_sign.pdf</td></tr>
+<tr><td>Take-home card</td><td>Front: where do you feel pressure first. Back: the loop and four scans.</td><td>4 x 6 in, two sided</td><td>card_individual.pdf</td></tr>
+<tr><td>Working with Soma-Q</td><td>Two-sided leave-behind: for you (programs, measurement, credentials) and for your team (engagements, measurement).</td><td>8.5 x 11 in, two sided</td><td>leavebehind.pdf</td></tr>
+<tr><td>Measurement at a glance</td><td>Organizational leave-behind built from the Measurement Overview.</td><td>8.5 x 11 in, two sided</td><td>handout_measurement.pdf</td></tr>
+<tr><td>Business card</td><td>Light front; deep back with a QR to book a free discovery call.</td><td>3.5 x 2 in, two sided</td><td>business_card.pdf</td></tr>
 </table>
-<p class="small">All print files include bleed and are built from <span class="ph">build/config.py</span>. The official logo, your photo and the POPL QR image are dropped into <span class="ph">assets/</span> and the files rebuild in seconds. The lead tracker is lead_tracker_template.csv. Where to buy each item, what it costs, and when to order by is in the separate Order Guide.</p>
+<p class="small">All print files include bleed and are built from <span class="ph">build/config.py</span> and the shared art in <span class="ph">build/art.py</span>. The lead tracker is lead_tracker_template.csv. Where to buy each item, what it costs and when to order by is in the Order Guide.</p>
+
+<!-- BUYER -->
+<div class="pg"></div>
+<div class="eyebrow" style="font-size:8pt;color:var(--deep)">Think like a buyer</div>
+<h2>What someone about to spend real money needs to know.</h2>
+<p class="lede">A leader or an HR buyer deciding on a premium, multi-month service does not decide at a booth; they decide whether to take the next step. Each question below has to be answerable by something they can see, scan or take away. The last column is where the package is still thin.</p>
+<table>
+<tr><th style="width:1.25in">The buyer asks</th><th>The plain answer the booth gives</th><th style="width:1.25in">Where it shows</th><th style="width:1.45in">Still thin</th></tr>
+<tr><td>What exactly do you do?</td><td>Nervous system training that teaches high-performing leaders and teams to notice pressure early and shift out of it, so energy, clarity and joy hold up.</td><td>Both banners, table cover, counter sign</td><td>None</td></tr>
+<tr><td>Is it for someone like me?</td><td>The common thread is pressure, not job title: health, wealth, relationships, career.</td><td>Leave-behind, front</td><td>No example of a person like them</td></tr>
+<tr><td>What will change?</td><td>Restored energy, focused clarity, and joy and fulfillment, held under pressure.</td><td>Banner 2, outcomes poster, leave-behind</td><td>No real client numbers yet</td></tr>
+<tr><td>How does it work? Is it soft?</td><td>The loop, then three questions: notice, locate, choose. Short daily practices. Weekly measurement.</td><td>Banner 1, loop and shift posters</td><td>The research line is not printed; see below</td></tr>
+<tr><td>How long, and how much of my time?</td><td>Four weeks, sixteen weeks (recommended) or twelve months; practices of five to twenty minutes a day.</td><td>Leave-behind, front</td><td>Price</td></tr>
+<tr><td>How will I know it is working?</td><td>A weekly check-in and a Metrics Report: your own numbers, week by week, baseline to now.</td><td>Progress poster, banner 2, leave-behind</td><td>Examples only; labeled as such</td></tr>
+<tr><td>Why should I trust you?</td><td>Thirteen years as a healthcare technology executive, RYT-500, certified and accredited through SOMA Breath, and a founder who rebuilt after burnout.</td><td>Banner 2, backdrop, leave-behind, one testimonial</td><td>Three more approved testimonials are unused</td></tr>
+<tr><td>Is this therapy? Is it safe?</td><td>Education and training, not treatment, and it complements medical and mental health care.</td><td>Every piece's small print, leave-behind</td><td>Needs a spoken answer</td></tr>
+<tr><td>What does it cost, and what if it does not work?</td><td>Not printed. Programs are scoped on a free discovery call, and weekly measurement shows early whether it is working so the plan can change.</td><td>Leave-behind note</td><td><b>The biggest gap: see below</b></td></tr>
+<tr><td>What is the first step, and is it low risk?</td><td>Four free first steps; the discovery call carries no obligation.</td><td>Counter sign, card, business card</td><td>None</td></tr>
+<tr><td>(Organizations) How do I justify it, and what will you not promise?</td><td>Baseline first, weekly measurement, a final report; no promised percentage change in burnout, turnover or cost; group versus private reporting agreed in writing.</td><td>Leave-behind back, measurement handout</td><td>No organizational case study yet</td></tr>
+</table>
+<h3>The biggest gap: price and what happens if it does not work</h3>
+<p>At a premium price point the first thing a serious buyer wants is a range, and the second is what you do if it is not working. The booth deliberately prints neither, because I do not know your pricing or your policy and should not invent them. What I recommend is deciding, before October 24, the one sentence you will say when asked, for example: "Programs are scoped to your situation; you will have a clear number on the discovery call, and the first step is free." If you would rather show a starting range or a payment option, tell me and I will add it to the leave-behind.</p>
+<h3>Two smaller gaps</h3>
+<ul class="plain">
+<li><b>Research.</b> Your rules allow "built on research-supported practices for nervous system regulation" without a printed citation, provided each kind of claim has a Verified row in the Research Citations Master. I did not check that master from here, so the sentence is not printed. If you want it on the banners or the leave-behind, I will confirm the rows first.</li>
+<li><b>Proof from real clients.</b> Everything quantitative on the booth is labeled as an example. After October 24, asking two or three clients for permission to share de-identified reports, as your website notes already allow, would give next time's booth its strongest piece.</li>
+</ul>
 
 <!-- STRANGER -->
 <div class="pg"></div>
@@ -87,7 +117,7 @@ svg text { font-family: 'DM Sans', sans-serif; }
 <tr><td>Dysregulation</td><td>A diagnosis</td><td>"Running on depletion." (Keep the quiz result labels on the quiz, not on the booth.)</td></tr>
 <tr><td>Somatic</td><td>Something to do with yoga</td><td>"Body-based."</td></tr>
 <tr><td>NeuroSoma Axis, Triad Intelligence Model</td><td>Nothing yet</td><td>Hold these back for the conversation or the follow-up. The booth shows the loop, the shift and the outcomes.</td></tr>
-<tr><td>SQ-LPMS, SQ-M, SQ-C</td><td>Nothing</td><td>Individuals: "a weekly check-in, so you see your progress in your own numbers." Organizations may see the SQ- names on the one-sheet.</td></tr></table>
+<tr><td>SQ-LPMS, SQ-M, SQ-C</td><td>Nothing</td><td>Individuals: "a weekly check-in, so you see your progress in your own numbers." Organizations may see the SQ- names on the back of the leave-behind and on the measurement handout.</td></tr></table>
 <h3>Three lengths of the same explanation</h3>
 <div class="three">
 <div class="tile"><b>Five seconds (the banner)</b>"What if you could train your response to stress?" Outcome underneath: restored energy, focused clarity, and joy under pressure.</div>
@@ -107,9 +137,9 @@ svg text { font-family: 'DM Sans', sans-serif; }
 <h2>Rebuilt in the new brand, or left behind on purpose.</h2>
 <p class="lede">I opened your Social and Marketing folder and the Marketing Images folder inside it. Every graphic I looked at is in the old copper and teal look, and several carry language the new rules retire. I rebuilt the concepts rather than recoloring the files, because the structure of each one needed to change for a stranger.</p>
 <table><tr><th style="width:1.5in">Drive file</th><th>Decision</th><th>Why</th></tr>
-<tr><td>somaq_pressure_loop_horizontal.png</td><td><span class="badge">Rebuilt</span> as Poster 1, and on the card front</td><td>Same four ideas and the same "interrupt here". Redrawn as a triangle so it echoes the Soma-Q mark, with a plain-language line under each step, and the copper removed.</td></tr>
+<tr><td>somaq_pressure_loop_horizontal.png</td><td><span class="badge">Rebuilt</span> as Poster 1, on Banner 1, the backdrop and the card back</td><td>Same four ideas and the same "interrupt here". Now it reads top to bottom: Something happens, then the three-step loop, with the interrupt point on the arrow before the loop starts. Plain-language line under each step; copper removed.</td></tr>
 <tr><td>Nervous System Shift / NS Activation to Shift</td><td><span class="badge">Rebuilt</span> as Poster 2</td><td>The original shows five stages plus a three-lens model on one page. For a stranger I kept the three questions (Notice, Locate, Choose) and your closing line. The IQ, EQ and SQ lens and the old footer ("Nervous System Performance Coaching for Leaders") are left out; "coaching" is retired.</td></tr>
-<tr><td>SomaQ_Outcomes_Circle.jpg</td><td><span class="badge">Rebuilt</span> as Poster 3</td><td>The original is a one-hour outcomes wheel for clinicians and practices (clinician retention, practice culture), so it speaks to a different audience. Rebuilt around your three outcomes for leaders.</td></tr>
+<tr><td>SomaQ_Outcomes_Circle.jpg</td><td><span class="badge">Rebuilt</span> as Poster 3, Banner 2 and the backdrop</td><td>The original is a one-hour outcomes wheel for clinicians and practices (clinician retention, practice culture), so it speaks to a different audience. Rebuilt around your three outcomes for leaders: three circles inside the Soma-Q triangle, with a Q at the center.</td></tr>
 <tr><td>Soma-Q_Breath_Retention_Graphic.png</td><td><span class="badge low">Left off the booth</span></td><td>Three reasons: your rules say never single out breathwork as the offer; it makes physiology claims (oxygen delivery, circulation, stamina) that each need a verified source before public use; and it carries its own safety caveat. It suits a workshop or the platform, where the caveat and citations can sit beside it.</td></tr>
 <tr><td>Soma-Q_Flyer_HalfSheet.png, Soma-Q_Ideal_Client.png, somaq_postcard_v4.png</td><td><span class="badge low">Do not reuse</span></td><td>They show "Founder &amp; CEO" (the title is Founder only), "INTELLECTUAL" for IQ (the term is Cognitive), the line that sustained activation "is dangerous" (an unsupported claim), and the retired copper. They are useful as a record of what worked, not as print files.</td></tr>
 <tr><td>Yerkes-Dodson curve, Window of Tolerance, Network Physiology, PNIE, Body to Brain Paradigm and the rest</td><td><span class="badge low">Not used</span></td><td>Several look like third-party or stock images, so I did not reuse them without knowing their licensing. They also assume a reader who already knows the vocabulary. I can make a plain-language version of any one you want at a later booth.</td></tr></table>
@@ -117,6 +147,36 @@ svg text { font-family: 'DM Sans', sans-serif; }
 <p>Put the body-map poster on an easel at the front corner of the table, with a sheet of 3/4 inch round stickers beside it. Anyone can place a dot without talking to you. Your opening question to anyone who does is "What do you do next when it shows up?", which leads straight into the loop. This is my recommendation, not something I found evidence for; the earlier evidence table already notes that claims about interactive booths are weakly supported, so count how many people place a dot and how many of those start a conversation, and keep it only if the numbers justify it.</p>
 <p>Before the event: buy two colors of stickers (one for "me", one for "someone on my team", which doubles as the individual versus organization signal), a tabletop easel for each of two posters, and foam board or a similar mount for the other two if you will tape them to a wall or the backdrop. I have not found poster printing prices, so ask the printer for a quote on 24 x 36 in prints and mounting.</p>
 <div class="warn"><b>Language check on the new visuals.</b> The posters use "built to restore" and "designed to build", not promises. They do not say research proves anything, do not name breathwork, and do not use clinical or coaching language. "Pressure runs in a loop" is a plain-language framing taken from your own Pressure Loop graphic; if you want a research-supported statement of the mechanism on a printed piece, tell me and I will check it against the research citations master first.</div>
+
+<!-- LOOK -->
+<div class="pg"></div>
+<div class="eyebrow" style="font-size:8pt;color:var(--deep)">Print and lighting</div>
+<h2>Why the large pieces are now light, and what to ask the printers.</h2>
+<p class="lede">You raised two concerns about solid Deep Teal on the big pieces: cost, and how it looks in an artificially lit room with a concrete floor. Here is what I can and cannot say. I could not test either in a real venue, so treat the reasoning as general print practice, not measured fact.</p>
+<table><tr><th style="width:1.5in">Concern</th><th>What I know</th><th style="width:2.1in">What I did</th></tr>
+<tr><td>Does dark ink cost more?</td><td>I could not confirm it. The vendor pages I found (FedEx, WSD, 4OVER4) price banners and throws by size, stand and fabric, not by color or ink coverage, but that is not a guarantee and some processes differ.</td><td>Moved the large pieces to light fields so the question may not matter. Ask each vendor the three questions below anyway.</td></tr>
+<tr><td>Dark teal under venue lighting</td><td>Large flat dark fields tend to show banding, scuffs and fingerprints, and glare from overhead lights can turn a glossy dark panel into a mirror. On a gray concrete floor the dark rectangle also reads as a hole in the room. This is general print experience, not something I measured.</td><td>Linen field, Deep Teal type, a short Deep Teal band for the logo, Light Teal as the accent. Ask for a matte or low-gloss finish.</td></tr>
+<tr><td>A "pop" of color</td><td>The palette has six colors and copper and gold are retired, so the brightest tone available is Light Teal.</td><td>Light Teal is used for the table cover, the interrupt callout, the circles and the triangle. If you want a brighter accent for events, that is a brand decision I would not make for you.</td></tr></table>
+<h3>Three questions for every printer</h3>
+<ol class="plain" style="padding-left:.22in"><li>Does heavy ink coverage change the price on this product?</li><li>Can the finish be matte or low-gloss, so overhead lights do not mirror on the banner or the QR codes?</li><li>Can I have a printed proof of the Deep Teal and the Light Teal before the full order?</li></ol>
+
+<!-- OUTCOME CHECK -->
+<div class="pg"></div>
+<div class="eyebrow" style="font-size:8pt;color:var(--deep)">Outcome check</div>
+<h2>Every headline, checked against your outcome-first rule.</h2>
+<p class="lede">Your rule is outcome, then stakes, then how, then proof, then the call to action, and no practice, framework or metric named without the outcome it serves. I went piece by piece and rewrote the ones that led with mechanism.</p>
+<table><tr><th style="width:1.7in">Piece</th><th>Headline now</th><th style="width:2.2in">Change</th></tr>
+<tr><td>Banner 1</td><td>What if you could train your response to stress?</td><td>Kept (your wording). Adds "what we do" naming the three outcomes.</td></tr>
+<tr><td>Banner 2</td><td>Built to restore your energy, clarity and joy under pressure.</td><td>New.</td></tr>
+<tr><td>Table cover, backdrop</td><td>Burnout ends here.&trade; plus the outcomes line</td><td>Outcomes line added.</td></tr>
+<tr><td>Loop poster</td><td>Interrupt the loop that drains your energy and clarity.</td><td>Was "Pressure runs in a loop", a mechanism headline. Now outcome plus stakes.</td></tr>
+<tr><td>Shift poster</td><td>Choose your response instead of reacting.</td><td>Was "Three questions turn a reaction into a choice". Each step now ends with the outcome it serves.</td></tr>
+<tr><td>What Changes poster</td><td>What this work is built to restore.</td><td>Kept; triangle and Q added.</td></tr>
+<tr><td>Where do you feel it poster and card</td><td>Where do you feel pressure first? Something happens. Where do you feel it first?</td><td>An interactive hook. The line under it ties it to keeping energy and clarity.</td></tr>
+<tr><td>Progress and capacity posters</td><td>Watch your progress, week by week. Capacity comes first. Results follow.</td><td>Proof pieces; outcome words already in the headline.</td></tr>
+<tr><td>Card back</td><td>Interrupt the loop. Keep your energy and clarity.</td><td>Was "Pressure runs in a loop. You can interrupt it."</td></tr>
+<tr><td>Leave-behind</td><td>Restore your energy and clarity, and build the skill to keep them. / Leaders and teams that keep their energy, clarity and connection under pressure.</td><td>Each program row names the outcome it is designed to build.</td></tr></table>
+<p class="small">Verbs used throughout: restore, build, designed to, built to. None of "guarantee", "permanent" or "you will". "Burnout ends here.&trade;" carries its trademark mark on every piece that uses it.</p>
 
 <!-- MEASUREMENT -->
 <div class="pg"></div>
@@ -169,42 +229,43 @@ svg text { font-family: 'DM Sans', sans-serif; }
   <g stroke="#9BC4BD" stroke-width="2" fill="#9BC4BD"><polygon points="133,75 143,70 143,80"/><polygon points="273,75 283,70 283,80"/><polygon points="413,75 423,70 423,80"/><polygon points="553,75 563,70 563,80"/></g>
 </svg>
 <h3>Booth anatomy: where each piece goes</h3>
-<svg viewBox="0 0 700 250" width="100%" role="img" aria-label="Booth layout">
-  <rect x="5" y="5" width="690" height="240" rx="6" fill="#EEEADD"/>
-  <rect x="40" y="20" width="110" height="205" rx="6" fill="#103C41"/><text x="95" y="75" fill="#FEFCF8" font-size="11" text-anchor="middle">Banner</text><text x="95" y="92" fill="#9BC4BD" font-size="9" text-anchor="middle">Headline at</text><text x="95" y="105" fill="#9BC4BD" font-size="9" text-anchor="middle">eye level and up</text><rect x="62" y="130" width="66" height="50" rx="4" fill="#FEFCF8"/><text x="95" y="160" fill="#103C41" font-size="9" text-anchor="middle">QR, chest height</text>
-  <rect x="200" y="150" width="400" height="70" rx="6" fill="#103C41"/><text x="400" y="190" fill="#FEFCF8" font-size="11" text-anchor="middle">Table front panel: brand only, no QR</text>
-  <rect x="300" y="105" width="90" height="42" rx="4" fill="#9BC4BD"/><text x="345" y="130" fill="#24211D" font-size="9" text-anchor="middle">Counter sign + 2 QR</text>
-  <rect x="410" y="115" width="60" height="32" rx="4" fill="#E4F2F2" stroke="#103C41"/><text x="440" y="135" fill="#103C41" font-size="9" text-anchor="middle">Cards</text>
-  <rect x="490" y="115" width="60" height="32" rx="4" fill="#E4F2F2" stroke="#103C41"/><text x="520" y="135" fill="#103C41" font-size="9" text-anchor="middle">Org sheets</text>
-  <circle cx="400" cy="60" r="22" fill="#FEFCF8" stroke="#103C41"/><text x="400" y="64" fill="#103C41" font-size="9" text-anchor="middle">You</text><text x="400" y="92" fill="#24211D" font-size="9" text-anchor="middle">Stand beside the table, not behind it</text>
-  <text x="620" y="60" fill="#24211D" font-size="9" text-anchor="middle">Aisle</text><path d="M590 70 L650 70" stroke="#103C41" stroke-width="2"/>
+<svg viewBox="0 0 700 270" width="100%" role="img" aria-label="Booth layout">
+  <rect x="5" y="5" width="690" height="260" rx="6" fill="#EEEADD"/>
+  <rect x="150" y="14" width="400" height="110" rx="4" fill="none" stroke="#103C41" stroke-dasharray="6 5"/><text x="350" y="72" fill="#103C41" font-size="10" text-anchor="middle">Backdrop (optional): the whole story</text>
+  <rect x="30" y="20" width="85" height="190" rx="6" fill="#103C41"/><text x="72" y="95" fill="#FEFCF8" font-size="10" text-anchor="middle">Banner 1</text><text x="72" y="110" fill="#9BC4BD" font-size="8" text-anchor="middle">the story</text><text x="72" y="123" fill="#9BC4BD" font-size="8" text-anchor="middle">no QR</text>
+  <rect x="585" y="20" width="85" height="190" rx="6" fill="#103C41"/><text x="627" y="95" fill="#FEFCF8" font-size="10" text-anchor="middle">Banner 2</text><text x="627" y="110" fill="#9BC4BD" font-size="8" text-anchor="middle">the proof</text><text x="627" y="123" fill="#9BC4BD" font-size="8" text-anchor="middle">no QR</text>
+  <rect x="150" y="170" width="400" height="60" rx="6" fill="#9BC4BD"/><text x="350" y="205" fill="#103C41" font-size="11" text-anchor="middle">Table cover: brand and what we do, no QR</text>
+  <rect x="290" y="130" width="95" height="38" rx="4" fill="#FEFCF8" stroke="#103C41"/><text x="337" y="153" fill="#103C41" font-size="9" text-anchor="middle">Counter sign + QR</text>
+  <rect x="400" y="140" width="60" height="28" rx="4" fill="#E4F2F2" stroke="#103C41"/><text x="430" y="158" fill="#103C41" font-size="9" text-anchor="middle">Cards</text>
+  <rect x="470" y="140" width="60" height="28" rx="4" fill="#E4F2F2" stroke="#103C41"/><text x="500" y="158" fill="#103C41" font-size="9" text-anchor="middle">Leave-behinds</text>
+  <rect x="165" y="140" width="46" height="28" rx="4" fill="#FEFCF8" stroke="#103C41"/><text x="188" y="152" fill="#103C41" font-size="8" text-anchor="middle">Easel:</text><text x="188" y="163" fill="#103C41" font-size="8" text-anchor="middle">body map</text>
+  <rect x="220" y="140" width="55" height="28" rx="4" fill="#FEFCF8" stroke="#103C41"/><text x="247" y="152" fill="#103C41" font-size="8" text-anchor="middle">Easel:</text><text x="247" y="163" fill="#103C41" font-size="8" text-anchor="middle">loop</text>
+  <circle cx="350" cy="248" r="14" fill="#FEFCF8" stroke="#103C41"/><text x="350" y="252" fill="#103C41" font-size="9" text-anchor="middle">You</text>
+  <text x="620" y="250" fill="#24211D" font-size="9" text-anchor="middle">Aisle</text>
 </svg>
-<p class="small">Stand to the side of the table. People approach an open space more readily than a barrier; this is common booth practice rather than a measured finding.</p>
+<p class="small">Everything that must be read sits above table height (30 in): the lower part of a banner or backdrop is hidden by the table and by people. Stand beside the table, not behind it; people approach open space more readily than a barrier. That is common booth practice, not a measured finding.</p>
 <h3>Written for how this audience talks</h3>
 <p>Design stays neutral so the booth reads as inviting to anyone, and the language does the work of connecting with men: direct sentences, the physical and practical signals (sleep, tension, heavy decisions, a short fuse), and the framing of pressure as something trainable. There is no self-care, glow or journey vocabulary on any piece. If the event data later shows an audience that is overwhelmingly men, a second card with one men-focused headline is a small, low-risk addition, and I would test it against the neutral card rather than replace it.</p>
 
 <!-- 4 -->
 <div class="pg"></div>
 <div class="eyebrow" style="font-size:8pt;color:var(--deep)">Materials and budget</div>
-<h2>Spend where people look and scan.</h2>
-<p class="lede">The budget is $500 to $1,500 for print and swag together. I did not look up current prices, so the shares below are planning allocations to take into quote requests, not quotes. Get at least two quotes for each line and ask each vendor for a printed proof.</p>
-<table><tr><th>Line</th><th style="width:.9in">Planning share</th><th>Notes</th></tr>
-<tr><td>Retractable banner and table front panel</td><td>30% to 35%</td><td>The largest line, because it does the stopping. Ask for the vendor template before final export, and a printed color proof of the Deep Teal.</td></tr>
-<tr><td>Cards and organizations sheets</td><td>10% to 15%</td><td>Order the cards in a quantity you will realistically hand out; leftovers are not a saving. Order the one-sheets in a short run, as they go only to organizational leads.</td></tr>
-<tr><td>Four 24 x 36 in posters, foam board, easels, dot stickers</td><td>15% to 20%</td><td>I did not find poster prices; get a quote. If the total runs over, print two (the loop and the body map) and show the other two as card-size handouts.</td></tr>
-<tr><td>Counter sign and acrylic stand</td><td>5% to 8%</td><td>Cheap and high leverage. It carries both QR codes and the POPL instruction.</td></tr>
-<tr><td>One earned keepable</td><td>15% to 20%</td><td>For qualified contacts only. Quantity equals the number of qualified conversations you expect plus a small buffer; at an unknown attendance, start with a number you can afford to run out of.</td></tr>
-<tr><td>Holdback</td><td>10%</td><td>Rush fees, a reprint after a proof error, shipping, tape and a spare QR sign.</td></tr></table>
+<h2>Three tiers, so the essentials fit and the rest is optional.</h2>
+<p class="lede">The budget is $500 to $1,500 for print and swag together. Prices I found are "starting at" figures from vendor pages, not quotes, and I found none for posters, so the tiers below are about what to buy first, not a bill.</p>
+<table><tr><th style="width:1.2in">Tier</th><th>What</th><th style="width:2.2in">What I know about cost</th></tr>
+<tr><td><b>1. Essentials</b></td><td>Banner 1 and Banner 2; table cover; counter sign (print two); take-home cards; business cards; two posters on easels (the loop and the body map) with dot stickers.</td><td>FedEx lists retractable banners from $189.99 each. A custom 6 ft table throw was listed from about $97 to $128 at WSD. Standard business cards from $21.99 for 250 at Staples; premium soft-touch costs more. Cards, signs and posters need quotes.</td></tr>
+<tr><td><b>2. Strong add</b></td><td>The Working with Soma-Q leave-behind (short run); the shift and outcomes posters; the two measurement posters; the Measurement at a glance handout for organizational leads.</td><td>Letter-size printing is the cheapest line; poster prices are unknown.</td></tr>
+<tr><td><b>3. If room allows</b></td><td>The backdrop; one earned keepable for qualified contacts.</td><td>Pop-up backdrops were listed from about $499 to $579; tumblers have minimums and a tight lead time (see Order Guide).</td></tr></table>
+<p class="small">If the quotes come in over budget, cut from the bottom: Tier 3 first, then the measurement posters, then the shift and outcomes posters. Do not cut the banners, the counter sign or the cards.</p>
 <h3>What I recommend you do not buy</h3>
-<p>These are my judgment calls from the evidence above and general booth practice, not findings: tri-fold brochures (they get recycled and cannot be tracked), generic pens and stress balls (short-lived, and a stress ball sends the wrong message for a nervous system practice), a long list of services on the banner, and any piece without a scannable next step.</p>
-<h3>The earned keepable: decision for you</h3>
-<p>The strongest evidence in the promotional products literature is for items that are used often and seen by others, such as apparel, outerwear and drinkware, which the ASI studies report are kept longest. Those cost more per unit, which is why they are reserved for people who have given a contact or booked a call. Two options fit the budget; I would choose after you have the unit prices.</p>
-<div class="two"><div class="tile"><b>Option A: drinkware</b>Daily use and visible to colleagues. Mid cost per unit. Subtle logo and the URL only.</div><div class="tile"><b>Option B: reset card set</b>A small set of practice cards from the Practice Library, chosen to be used at a desk. Lower cost per unit, and on message. Needs practices selected and verified against the citations master before printing.</div></div>
+<p>My judgment, not a finding: tri-fold brochures (they get recycled and cannot be tracked), generic pens and stress balls (short-lived, and a stress ball sends the wrong message for a nervous system practice), and any piece with no scannable next step.</p>
+<h3>The earned keepable</h3>
+<p>The strongest evidence in the promotional products literature is for items that are used often and seen by others, such as apparel, outerwear and drinkware. Those cost more per unit, so reserve them for people who give a contact or book a call. Option A is drinkware with a subtle logo and the URL only; option B is a small set of desk-friendly practice cards, which needs practices chosen from the Practice Library and checked against the research citations master first.</p>
 <h3>Brand and print rules for every piece</h3>
-<ul class="plain"><li>Six colors only: Deep Teal #103C41, Light Teal #9BC4BD, Pale Teal #E4F2F2, Linen #EEEADD, Card White #FEFCF8, Ink #24211D. No gold, no copper. I did not convert these to CMYK or Pantone because I could not verify a match; ask the printer to match Deep Teal and approve a proof.</li>
+<ul class="plain"><li>Six colors only: Deep Teal #103C41, Light Teal #9BC4BD, Pale Teal #E4F2F2, Linen #EEEADD, Card White #FEFCF8, Ink #24211D. No gold, no copper. I did not convert these to CMYK or Pantone because I could not verify a match; ask for a printed proof.</li>
 <li>DM Serif Display for headings and DM Sans for body. Outline or embed fonts when exporting for print.</li>
-<li>Official logos only, from the UPDATED SEPT 2026 LOGOS folder. Reversed logo on Deep Teal, teal logo on Linen or white.</li>
-<li>Trademark marks on first use per piece (Presence Under Pressure&trade; appears on the organizations sheet).</li>
+<li>Official logos only. Reversed logo on Deep Teal, teal logo on Linen or white.</li>
+<li>Trademark marks on first use per piece (Burnout Ends Here&trade;, Shift Happens&trade;, Presence Under Pressure&trade;).</li>
 <li>No em dashes or en dashes, no coaching or clinical language, outcome-first headlines.</li></ul>
 
 <!-- 5 -->
@@ -277,49 +338,47 @@ svg text { font-family: 'DM Sans', sans-serif; }
 <p class="small"><b>Decision rule for next time:</b> keep a printed piece only if its tag shows scans or if conversations point to it; drop or redesign any piece with neither.</p>
 
 <!-- 8 -->
-<div class="pg"></div>
+<div class="pg force"></div>
 <div class="eyebrow" style="font-size:8pt;color:var(--deep)">Production brief for designers and printers</div>
 <h2>Specifications.</h2>
 <table><tr><th>Piece</th><th>Trim and bleed</th><th>Notes for the printer</th></tr>
-<tr><td>Retractable banner</td><td>32 x 80 in trim (FedEx's listed size), file at 33 x 81 in (0.5 in bleed). Confirm against the vendor template.</td><td>Keep the lower 12 in free of critical content, as the base hides it. The headline sits at roughly 47 to 70 in from the floor. The four QR codes are about 9 in square each including their border, and sit roughly 20 to 50 in from the floor. Request a color proof of Deep Teal.</td></tr>
-<tr><td>Backdrop (optional)</td><td>120 x 90 in placeholder, file at 121 x 91 in. Confirm against the vendor template (frame, curve, panel seams).</td><td>All critical content sits in the top 45 in, above the table and the crowd. No QR on this piece.</td></tr>
-<tr><td>Explainer and measurement posters (6)</td><td>24 x 36 in trim, file at 24.25 x 36.25 in (0.125 in bleed). Portrait.</td><td>Satin or matte paper. Mount two on easels (foam board) and hang or tape the others. Each carries a small QR in the lower right.</td></tr>
-<tr><td>Table front panel</td><td>72 x 30 in trim as a placeholder, file at 73 x 31 in. Confirm against the vendor template (seams and folds).</td><td>No QR on this piece by design. Check which part of the cover is visible when the table is set up.</td></tr>
-<tr><td>Counter sign</td><td>8.5 x 11 in trim, file at 8.75 x 11.25 in (0.125 in bleed).</td><td>Matte stock or acrylic stand with matte insert, so lighting does not glare over the QR codes.</td></tr>
-<tr><td>Take-home card</td><td>4 x 6 in trim, file at 4.25 x 6.25 in. Two sides.</td><td>Heavier card stock, matte or soft-touch. Avoid gloss over the QR.</td></tr>
-<tr><td>Business card</td><td>3.5 x 2 in trim, file at 3.75 x 2.25 in. Two sides.</td><td>Soft-touch or matte, and no gloss over the QR. Keep text 0.2 in from trim.</td></tr>
-<tr><td>Measurement at a glance</td><td>8.5 x 11 in trim, file at 8.75 x 11.25 in. Two sided.</td><td>Standard heavyweight paper. Short run, for organizational leads only.</td></tr>
-<tr><td>Organizations sheet</td><td>8.5 x 11 in trim, file at 8.75 x 11.25 in. One side.</td><td>Standard heavyweight paper is sufficient.</td></tr></table>
+<tr><td>Banners 1 and 2</td><td>32 x 80 in trim (FedEx's listed size), file at 33 x 81 in (0.5 in bleed). Confirm against the vendor template.</td><td>The bottom 12 in sits in the stand base. A 30 in table hides the lower part of the banner, so everything that must be read is in the upper 54 in. Matte or low-gloss finish; printed proof of both teals.</td></tr>
+<tr><td>Backdrop (optional)</td><td>120 x 90 in placeholder, file at 121 x 91 in. Confirm against the vendor template (frame, curve, panel seams).</td><td>All critical content is in the top 45 in. No QR on this piece.</td></tr>
+<tr><td>Table cover front</td><td>72 x 30 in trim as a placeholder, file at 73 x 31 in. Confirm against the vendor template.</td><td>No QR by design. Check which part of the cover is visible once the table is set.</td></tr>
+<tr><td>Six posters</td><td>24 x 36 in trim, file at 24.25 x 36.25 in (0.125 in bleed). Portrait.</td><td>Satin or matte paper. Mount two on easels (foam board) and hang or tape the others. Each carries a small QR in the lower right.</td></tr>
+<tr><td>Counter sign</td><td>8.5 x 11 in trim, file at 8.75 x 11.25 in.</td><td>Matte stock or an acrylic stand with a matte insert, so lighting does not glare over the QR codes.</td></tr>
+<tr><td>Take-home card</td><td>4 x 6 in trim, file at 4.25 x 6.25 in. Two sides.</td><td>Heavier card stock, matte or soft-touch. Four QR codes at 0.84 in each; do not shrink them.</td></tr>
+<tr><td>Business card</td><td>3.5 x 2 in trim, file at 3.75 x 2.25 in. Two sides.</td><td>Soft-touch or matte, no gloss over the QR. Keep text 0.2 in from trim.</td></tr>
+<tr><td>Working with Soma-Q, Measurement at a glance</td><td>8.5 x 11 in trim, file at 8.75 x 11.25 in. Two sided each.</td><td>Heavyweight paper, short runs.</td></tr></table>
 <h3>QR codes</h3>
 <ul class="plain"><li>All codes are vector, Deep Teal on white, error correction level M, with a quiet zone. Do not recolor, stretch or place over imagery.</li>
-<li>Minimum print size: keep every code at or above the size supplied. The take-home card codes are 1.18 in square and the business card code is 0.88 in.</li>
-<li>URLs are generated from <span class="ph">build/config.py</span> and listed in <span class="ph">output/qr_urls.txt</span>. Change the campaign slug per event. The default mode points every code to a stable soma-q.com/go/ address; the redirect list for your designer is in output/redirects_for_designer.md.</li>
-<li>Because a printed QR cannot be edited, point it at a stable address on soma-q.com that you can redirect later. If the final routes differ from the working ones in the config, rebuild before printing.</li></ul>
+<li>Keep every code at or above the size supplied. Codes are listed with their addresses in output/qr_urls.txt.</li>
+<li>The default mode points every code to a stable soma-q.com/go/ address you can redirect later; the redirect list for your designer is in output/redirects_for_designer.md. If those routes are not live before printing, rebuild in direct mode.</li></ul>
 <h3>Proof checklist before approving any print order</h3>
-<ul class="plain"><li>Event name, dates and booth number replaced everywhere a placeholder appears. Search each PDF for the character "[".</li>
-<li>Official logo present on every piece. Colors match Deep Teal on the printed proof.</li>
+<ul class="plain"><li>Search each PDF for the character "[": no placeholder may print.</li>
+<li>Official logo, at full resolution, on every piece; colors match on the printed proof.</li>
 <li>Every QR scanned from the printed proof on two different phones.</li>
-<li>No text within 0.375 in of trim (0.25 in on the card). Fonts embedded.</li>
-<li>No em dashes, no coaching or clinical language, trademark marks present on first use.</li></ul>
+<li>No text within 0.375 in of trim (0.25 in on the cards). Fonts embedded.</li>
+<li>No em dashes, no coaching or clinical language, trademark marks present.</li></ul>
+<h3>Formatting checks already run</h3>
+<p>Every piece was rendered and checked by a script for text running outside its sheet, text overlapping other text or a QR code, text clipped by its box, content running into the call-to-action block, a piece spilling onto a second sheet, leftover placeholders, and dash characters. I also looked at every page by eye. The script caught the leave-behind running under its call-to-action and the counter sign spilling to a second page; both are fixed. It cannot judge taste, so please look at the gallery yourself.</p>
 
-<h3>The photo question</h3>
-<p>Your hesitation is reasonable and it is a choice, not a requirement. I found no study showing a founder's photo raises conversion at a booth, so this is my judgment. The new website opens with a photo, so a photo on the backdrop keeps the booth consistent with the site and helps returning contacts recognize you. A banner is read from distance in three seconds and works as well on its question alone. My recommendation: no photo on the banner, and a photo on the backdrop only if you are comfortable with a very large image of yourself. I built both versions of each so you can compare them side by side.</p>
-<h3>The new business card</h3>
-<p>Front: Deep Teal with the reversed logo and "Burnout ends here." Back: your name, title (Founder only), a one-line descriptor, email, website, an optional phone number, and a QR to book a free discovery call. The QR is the point of the card: a printed card with no scan path is the piece most likely to be forgotten.</p>
 <h2 style="margin-top:.3in">Open decisions and items to verify.</h2>
 <table><tr><th style="width:2in">Item</th><th>Status</th></tr>
-<tr><td>Booth size and any sponsor deadlines</td><td>Only needed to confirm the table and backdrop sizes with the vendors. The print pieces carry no event name, so they can be reused.</td></tr>
-<tr><td>Photo on the banner and backdrop</td><td>Your call. Both versions are built; see the photo note below.</td></tr>
-<tr><td>Phone number on the business card</td><td>Decided: it prints. I used 303-717-9995 from the website Terms page; confirm it.</td></tr>
-<tr><td>Official logo and your photo</td><td>Taken from the new website files for proofing. They are web resolution, so the banner and backdrop need the original large files from Drive before final export.</td></tr>
-<tr><td>POPL QR image</td><td>Needed in <span class="ph">assets/</span>. Export it from the POPL app.</td></tr>
-<tr><td>Final website routes for the quiz and the organizations contact path</td><td>The working URLs come from your website handoff. Confirm they are live after the Replit migration.</td></tr>
-<tr><td>POPL to Nimble sync</td><td>Verify the connection and test it with one lead.</td></tr>
-<tr><td>Vendor templates for banner and table cover</td><td>Required before final export.</td></tr>
-<tr><td>Earned keepable (drinkware or reset cards)</td><td>Your decision after unit pricing. Reset cards need practices chosen from the Practice Library and checked against the research citations master.</td></tr>
-<tr><td>Booth-only offer for organizations (for example a short team session)</td><td>Optional; not included in the printed pieces.</td></tr></table>
+<tr><td>Price and what you say when asked</td><td>The biggest open item (see Think like a buyer). Decide the sentence, and whether to print a range.</td></tr>
+<tr><td>Photo on Banner 2 and the backdrop</td><td>Your call. Both versions are built. I found no evidence a founder's photo raises booth conversion, so this is judgment; the site opens with your photo, so using it keeps the booth consistent.</td></tr>
+<tr><td>Booth size, sponsor deadlines</td><td>Needed only to confirm table and backdrop sizes with vendors.</td></tr>
+<tr><td>Full-resolution logos and photo</td><td>The logos are now the original 1378 px files from Drive. Your photo is the web-size copy, fine for the banner but too small for the backdrop. Tell me which headshot to pull.</td></tr>
+<tr><td>POPL QR image</td><td>Export it from the POPL app into assets/.</td></tr>
+<tr><td>The /go/ redirects, ebook signup and contact form</td><td>Your designer must have these live before printing; otherwise tell me and I will print direct addresses.</td></tr>
+<tr><td>Weekly reset link</td><td>Currently the Zoom meeting join link, which does not capture an email. A registration page would.</td></tr>
+<tr><td>Discovery call link</td><td>Waiting for the new Replit /book link.</td></tr>
+<tr><td>POPL to Nimble sync</td><td>Verify and test with one lead.</td></tr>
+<tr><td>Vendor templates</td><td>Banner, table cover and backdrop need the vendor's template before final export.</td></tr>
+<tr><td>Research sentence on printed pieces</td><td>Not printed until each kind of claim is confirmed Verified in the Research Citations Master.</td></tr>
+<tr><td>Earned keepable</td><td>Your decision after unit pricing.</td></tr></table>
 
-<div class="pg"></div>
+<div class="pg force"></div>
 <h2>Sources.</h2>
 <p class="small">I retrieved these through search and did not read every one in full. Several are vendor blogs; the statistics in them vary and should be checked against primary sources before being quoted.</p>
 <ul class="plain small">

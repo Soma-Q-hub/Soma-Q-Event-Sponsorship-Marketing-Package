@@ -1,29 +1,16 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Table front panel 72 x 30 in</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap">
-<link rel="stylesheet" href="brand.css">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Table cover front 72 x 30 in</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap">
 <style>
-/* Placeholder trim 72 x 30 in (front panel of a 6 ft table cover) plus 0.5 in bleed = 73 x 31 in.
-   Table cover vendors each have their own template with seams and fold lines: CONFIRM before final export. */
+/* Placeholder trim 72 x 30 in (front of a 6 ft throw), file 73 x 31 in (0.5 in bleed). Vendor templates have seams and folds: CONFIRM before export. */
 @page { size: 73in 31in; margin: 0; }
-body { width: 73in; height: 31in; background: var(--deep); color: var(--white); position: relative; overflow: hidden; }
-.logo-wrap { position: absolute; left: 4in; top: 4in; width: 15in; font-size: 2in; }
-.logo-wrap img { width: 100%; }
-.mid { position: absolute; left: 24in; right: 24in; top: 5in; text-align: left; }
-.mid h1 { font-size: 3.1in; line-height: 1.02; }
-.mid p { font-size: 1.15in; color: var(--pale); margin-top: 1.1in; line-height: 1.3; }
-.right { position: absolute; right: 4in; top: 5.5in; width: 17in; font-size: 1.35in; line-height: 1.45; }
-.right .row { border-top: .06in solid var(--light); padding: .7in 0; }
-.right b { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.9in; display: block; color: var(--light); }
-.url { position: absolute; left: 4in; bottom: 3.5in; font-size: 1in; letter-spacing: .1em; color: var(--light); }
-</style></head><body class="on-dark">
-<div class="logo-wrap">{{LOGO_DARK}}</div>
-<div class="url">SOMA-Q.COM</div>
-<div class="mid">
-  <h1>Burnout ends here.&trade;</h1>
-  <p>Nervous system alignment for high-performing leaders, built to restore energy, focused clarity, and joy under pressure.</p>
-</div>
-<div class="right">
-  <div class="row"><b>For you.</b>Weekly measurement shows your progress in your own numbers.</div>
-  <div class="row"><b>For your team.</b>Training for leaders and teams, with progress measured every week.</div>
-</div>
-</body></html>
+html, body { margin: 0; padding: 0; width: 73in; height: 31in; overflow: hidden; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+svg.page { display: block; width: 73in; height: 31in; }
+</style></head><body>
+<svg class="page" viewBox="0 0 7300 3100" xmlns="http://www.w3.org/2000/svg">
+<rect width="7300" height="3100" fill="#9BC4BD"/>
+<rect x="300" y="300" width="1900" height="2500" rx="60" fill="#EEEADD"/>
+<image href="{{LOGO_LIGHT_URI}}" x="420" y="1050" width="1660" height="617" preserveAspectRatio="xMinYMid meet"/>
+<text x="2700" y="1300" text-anchor="start" font-family="DM Serif Display" font-weight="400" font-size="480" fill="#103C41">Burnout ends here.™</text>
+<text x="2700" y="1800" text-anchor="start" font-family="DM Sans" font-weight="500" font-size="140" fill="#103C41">Nervous system training for high-performing</text><text x="2700" y="1990" text-anchor="start" font-family="DM Sans" font-weight="500" font-size="140" fill="#103C41">leaders and teams, built to restore energy,</text><text x="2700" y="2180" text-anchor="start" font-family="DM Sans" font-weight="500" font-size="140" fill="#103C41">focused clarity, and joy under pressure.</text>
+<text x="2700" y="2560" text-anchor="start" font-family="DM Sans" font-weight="700" font-size="140" fill="#103C41" letter-spacing="16">SOMA-Q.COM</text>
+</svg></body></html>

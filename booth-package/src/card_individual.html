@@ -2,42 +2,45 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap">
 <link rel="stylesheet" href="brand.css">
 <style>
-/* Trim 4 x 6 in, 0.125 in bleed = 4.25 x 6.25 in. Page 1 front, page 2 back. Safe zone: 0.25 in inside trim. */
+/* Trim 4 x 6 in, 0.125 in bleed = 4.25 x 6.25 in. Page 1 front (body map), page 2 back (the loop and four free first steps). Safe zone 0.25 in inside trim. */
 @page { size: 4.25in 6.25in; margin: 0; }
-.page { width: 4.25in; height: 6.25in; position: relative; overflow: hidden; page-break-after: always; }
-.front { background: var(--deep); color: var(--white); padding: .42in .4in; }
-.front .logo-wrap { width: 1.3in; font-size: 7pt; } .front .logo-wrap img { width: 100%; }
-.front h1 { font-size: 17pt; line-height: 1.08; margin-top: .3in; }
-.front svg.loop { display: block; width: 3.45in; margin-top: .22in; }
-.front h1 em { font-style: normal; color: var(--light); }
-.front .eyebrow { font-size: 7pt; color: var(--light); margin-top: .3in; }
-.front ul { font-size: 10pt; margin-top: .08in; color: var(--pale); }
-.front .go { position: absolute; left: .4in; right: .4in; bottom: .4in; font-size: 9pt; color: var(--light); }
-.back { background: var(--linen); color: var(--ink); padding: .4in .4in; }
-.back h2 { font-size: 16pt; line-height: 1.1; color: var(--deep); }
-.back .sub { font-size: 8.5pt; margin: .05in 0 .14in; }
-.back .grid { display: grid; grid-template-columns: 1fr 1fr; gap: .13in; }
-.back .opt { background: var(--white); border: .015in solid var(--deep); border-radius: .08in; padding: .09in; text-align: center; }
-.back .qr { width: 1.18in; border: .015in solid var(--deep); }
-.back .opt b { display: block; font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 9.5pt; color: var(--deep); line-height: 1.1; margin-top: .06in; }
-.back .who { position: absolute; left: .4in; right: .4in; bottom: .62in; font-size: 8pt; border-top: .02in solid var(--deep); padding-top: .08in; }
-.back .legal { position: absolute; left: .4in; right: .4in; bottom: .28in; font-size: 6pt; opacity: .8; }
+.page { width: 4.25in; height: 6.25in; position: relative; overflow: hidden; page-break-after: always; padding: .4in .38in .3in; }
+.front { background: var(--linen); color: var(--ink); }
+.back { background: var(--white); color: var(--ink); }
+.logo-wrap { width: 1.25in; font-size: 7pt; } .logo-wrap img { width: 100%; }
+h1 { font-size: 18pt; line-height: 1.08; color: var(--deep); margin-top: .2in; }
+h1 em { font-style: normal; color: #4F8078; }
+.sub { font-size: 8.6pt; margin-top: .08in; }
+svg.map { display: block; width: 3.5in; margin: .1in auto 0; }
+.go { position: absolute; left: .38in; right: .38in; bottom: .3in; font-size: 8.5pt; color: var(--deep); font-weight: 700; }
+h2 { font-size: 14pt; line-height: 1.1; color: var(--deep); }
+svg.loop { display: block; width: 3.4in; margin: .1in auto 0; }
+.steps { margin-top: .12in; }
+.steps .lab { font-size: 7.5pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--deep); }
+.row { display: grid; grid-template-columns: repeat(4, 1fr); gap: .08in; margin-top: .06in; }
+.opt { text-align: center; }
+.opt .qr { width: .84in; border: .012in solid var(--deep); }
+.opt b { display: block; font-size: 6.4pt; line-height: 1.15; color: var(--deep); margin-top: .03in; }
+.who { position: absolute; left: .38in; right: .38in; bottom: .5in; font-size: 7pt; border-top: .015in solid var(--deep); padding-top: .05in; }
+.legal { position: absolute; left: .38in; right: .38in; bottom: .22in; font-size: 5.6pt; opacity: .8; line-height: 1.25; }
 </style></head><body>
-<div class="page front on-dark">
-  <div class="logo-wrap">{{LOGO_DARK}}</div>
-  <h1>Pressure runs in a loop. <em>It can be interrupted.</em></h1>
-  <svg class="loop" viewBox="125 1300 2175 1900" xmlns="http://www.w3.org/2000/svg">{{LOOP_SVG_DARK_SMALL}}</svg>
-  <div class="go">Turn the card over for four free first steps.</div>
+<div class="page front on-light">
+  <div class="logo-wrap">{{LOGO_LIGHT}}</div>
+  <h1>Something happens. <em>Where do you feel it first?</em></h1>
+  <p class="sub">Pressure lands in the body before it reaches your thinking. Noticing it early is how you keep your energy and clarity.</p>
+  <svg class="map" viewBox="0 0 2075 1790" xmlns="http://www.w3.org/2000/svg">{{BODYMAP:light}}</svg>
+  <div class="go">Turn the card over to see the loop, and where to interrupt it.</div>
 </div>
 <div class="page back on-light">
-  <h2>Pick your first step. All free.</h2>
-  <p class="sub">Scan with your phone camera.</p>
-  <div class="grid">
-    <div class="opt"><div class="qr">{{QR_QUIZ}}</div><b>Burnout Signal Check</b></div>
-    <div class="opt"><div class="qr">{{QR_EBOOK}}</div><b>Free ebook</b></div>
-    <div class="opt"><div class="qr">{{QR_RESET}}</div><b>Weekly reset</b></div>
-    <div class="opt"><div class="qr">{{QR_CALL}}</div><b>Free discovery call</b></div>
-  </div>
+  <h2>Interrupt the loop. Keep your energy and clarity.</h2>
+  <svg class="loop" viewBox="0 0 2075 1480" xmlns="http://www.w3.org/2000/svg">{{LOOP:light:nogloss}}</svg>
+  <div class="steps"><div class="lab">Four free first steps. Scan with your camera.</div>
+    <div class="row">
+      <div class="opt"><div class="qr">{{QR_QUIZ}}</div><b>Burnout Signal Check</b></div>
+      <div class="opt"><div class="qr">{{QR_EBOOK}}</div><b>Free ebook</b></div>
+      <div class="opt"><div class="qr">{{QR_RESET}}</div><b>Weekly reset</b></div>
+      <div class="opt"><div class="qr">{{QR_CALL}}</div><b>Free discovery call</b></div>
+    </div></div>
   <div class="who"><b>Megan McDonald</b>, Founder of Soma-Q, a nervous system alignment practice. soma-q.com</div>
   <div class="legal">Adults 18 and older. Educational, not a diagnosis. Soma-Q does not diagnose or treat any condition.</div>
 </div>

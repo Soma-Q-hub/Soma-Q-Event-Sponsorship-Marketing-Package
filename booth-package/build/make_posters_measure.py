@@ -56,12 +56,12 @@ p += '{{FOOTER:light:call}}\n' + TAIL
 (SRC / "poster_progress.html").write_text(p)
 
 # ---------------- capacity first ----------------
-p = HEAD.format(title="Poster: Capacity comes first") + f'<rect width="2425" height="3625" fill="{DEEP}"/>\n<polygon points="2425,0 2425,900 1500,0" fill="{LIGHT}" fill-opacity=".10"/>\n' + eyebrow(175, 330, "HOW WE MEASURE", LIGHT)
+p = HEAD.format(title="Poster: Capacity comes first") + f'<rect width="2425" height="3625" fill="{LINEN}"/>\n<polygon points="2425,0 2425,900 1500,0" fill="{PALE}"/>\n' + eyebrow(175, 330, "HOW WE MEASURE", DEEP)
 for i, t in enumerate(["Capacity comes first.", "Results follow."]):
-    p += f'<text x="175" y="{570+i*205}" font-family="DM Serif Display" font-size="186" fill="{WHITE}">{t}</text>\n'
+    p += f'<text x="175" y="{570+i*205}" font-family="DM Serif Display" font-size="186" fill="{DEEP}">{t}</text>\n'
 for i, t in enumerate(["Two things are tracked separately, so a strong result", "cannot hide growing strain."]):
-    p += f'<text x="175" y="{1010+i*72}" font-family="DM Sans" font-size="58" fill="{PALE}">{t}</text>\n'
-p += f'<rect x="175" y="1170" width="1000" height="330" rx="40" fill="{WHITE}"/><rect x="1250" y="1170" width="1000" height="330" rx="40" fill="{PALE}"/>\n'
+    p += f'<text x="175" y="{1010+i*72}" font-family="DM Sans" font-size="58" fill="{INK}">{t}</text>\n'
+p += f'<rect x="175" y="1170" width="1000" height="330" rx="40" fill="{WHITE}" stroke="{DEEP}" stroke-width="8"/><rect x="1250" y="1170" width="1000" height="330" rx="40" fill="{PALE}"/>\n'
 p += f'<text x="225" y="1275" font-family="DM Sans" font-weight="700" font-size="38" letter-spacing="6" fill="{DEEP}">THE CAUSE</text><text x="225" y="1360" font-family="DM Serif Display" font-size="72" fill="{DEEP}">The method taking hold</text>\n'
 for i, t in enumerate(["Is it landing in the body and", "nervous system? Five capacity measures."]):
     p += f'<text x="225" y="{1425+i*50}" font-family="DM Sans" font-size="40" fill="{INK}">{t}</text>\n'
@@ -72,7 +72,7 @@ cx0, cx1 = 640, 2050
 wk = lambda w: cx0 + (w - 1) * (cx1 - cx0) / 11
 base, u = 2630, 80
 yv = lambda v: base - v * u
-p += f'<rect x="175" y="1580" width="2075" height="1230" rx="40" fill="{WHITE}"/>\n'
+p += f'<rect x="175" y="1580" width="2075" height="1230" rx="40" fill="{WHITE}" stroke="{DEEP}" stroke-width="8"/>\n'
 for v in (0, 2, 4, 6, 8, 10):
     p += f'<line x1="520" y1="{yv(v)}" x2="2220" y2="{yv(v)}" stroke="#D6D2C4" stroke-width="4"/><text x="480" y="{yv(v)+14}" text-anchor="end" font-family="DM Sans" font-size="40" fill="#5C5A53">{v}</text>\n'
 for w in (1, 6, 12):
@@ -90,7 +90,7 @@ p += f'<rect x="570" y="1636" width="52" height="16" rx="8" fill="{DEEP}"/><text
 p += f'<rect x="570" y="1706" width="52" height="20" rx="10" fill="{LIGHT}"/><text x="640" y="1730" font-family="DM Sans" font-size="42" fill="{INK}">How you lead (leadership competencies)</text>\n'
 p += f'<rect x="1560" y="2400" width="610" height="150" rx="75" fill="{PALE}"/><text x="1865" y="2460" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="34" letter-spacing="4" fill="{DEEP}">ILLUSTRATIVE EXAMPLE</text><text x="1865" y="2510" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="34" letter-spacing="4" fill="{DEEP}">NOT CLIENT DATA</text>\n'
 for i, t in enumerate(["In the Soma-Q method, capacity comes before outcomes, so those scores", "often begin to move first. A gain in results without capacity underneath it may be", "harder to sustain. This is a working expectation of the method, not a research", "finding, and individuals move differently."]):
-    p += f'<text x="175" y="{2905+i*54}" font-family="DM Sans" font-size="44" fill="{PALE}">{t}</text>\n'
-p += '{{FOOTER:dark:call}}\n' + TAIL
+    p += f'<text x="175" y="{2905+i*54}" font-family="DM Sans" font-size="44" fill="{INK}">{t}</text>\n'
+p += '{{FOOTER:light:call}}\n' + TAIL
 (SRC / "poster_capacity.html").write_text(p)
 print("ok")

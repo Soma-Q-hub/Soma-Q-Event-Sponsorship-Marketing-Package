@@ -8,11 +8,14 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## backdrop_photo-1
 ![backdrop_photo-1](preview/backdrop_photo-1.png)
 
-## banner_retractable-1
-![banner_retractable-1](preview/banner_retractable-1.png)
+## banner_proof-1
+![banner_proof-1](preview/banner_proof-1.png)
 
-## banner_retractable_photo-1
-![banner_retractable_photo-1](preview/banner_retractable_photo-1.png)
+## banner_proof_photo-1
+![banner_proof_photo-1](preview/banner_proof_photo-1.png)
+
+## banner_story-1
+![banner_story-1](preview/banner_story-1.png)
 
 ## business_card-1
 ![business_card-1](preview/business_card-1.png)
@@ -34,6 +37,12 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## handout_measurement-2
 ![handout_measurement-2](preview/handout_measurement-2.png)
+
+## leavebehind-1
+![leavebehind-1](preview/leavebehind-1.png)
+
+## leavebehind-2
+![leavebehind-2](preview/leavebehind-2.png)
 
 ## order_guide-1
 ![order_guide-1](preview/order_guide-1.png)
@@ -61,9 +70,6 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## poster_where-1
 ![poster_where-1](preview/poster_where-1.png)
-
-## sheet_organizations-1
-![sheet_organizations-1](preview/sheet_organizations-1.png)
 
 ## strategy_packet-01
 ![strategy_packet-01](preview/strategy_packet-01.png)

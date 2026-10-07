@@ -1,38 +1,28 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><title>Backdrop 120 x 90 in</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap">
-<link rel="stylesheet" href="brand.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap">
 <style>
-/* PLACEHOLDER trim 120 x 90 in (a 10 ft wide, 7.5 ft tall wall), file at 121 x 91 in with 0.5 in bleed.
-   Pop-up and fabric backdrops each have their own template, curve and frame lines: CONFIRM the vendor template first.
-   Floor-to-height guide: a table and people hide the lowest ~45 in, so every critical element sits in the top 45 in of the file. */
+/* PLACEHOLDER trim 120 x 90 in, file 121 x 91 in (0.5 in bleed). Pop-up and fabric backdrops each have their own template, curve and frame lines: CONFIRM first. A table and people hide the lowest ~45 in, so everything that must be read sits in the top 45 in. */
 @page { size: 121in 91in; margin: 0; }
-html, body { width: 121in; height: 91in; overflow: hidden; }
-body { background: var(--deep); color: var(--white); position: relative; overflow: hidden; }
-.tri { position: absolute; border: 0; }
-.logo-wrap { position: absolute; left: 7in; top: 6in; width: 24in; font-size: 3in; } .logo-wrap img { width: 100%; }
-.eyebrow { position: absolute; left: 7in; top: 14in; font-size: 1.5in; color: var(--light); }
-.headline { position: absolute; left: 7in; top: 18in; width: 70in; font-size: 11in; line-height: .98; letter-spacing: -.01em; }
-.headline em { font-style: normal; color: var(--light); }
-.sub { position: absolute; left: 7in; top: 61in; width: 68in; font-size: 3.6in; line-height: 1.25; color: var(--pale); }
-.right { position: absolute; right: 7in; top: 8in; width: 30in; }
-.photo { font-size: 6in; width: 30in; }
-.areas { position: absolute; right: 7in; width: 30in; font-size: 2.6in; }
-.areas { top: 12in; }
-.v-photo .areas { display: none; }
-.v-plain .right { display: none; }
-.areas h3 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1.5in; letter-spacing: .14em; text-transform: uppercase; color: var(--light); margin-bottom: 1.5in; }
-.areas .row { border-top: .22in solid var(--light); padding: 1.6in 0; font-family: 'DM Serif Display', serif; font-size: 4.4in; color: var(--white); }
-.close { position: absolute; left: 7in; top: 80in; font-size: 6in; color: var(--light); }
-.url { position: absolute; left: 7in; top: 87in; font-size: 2.2in; letter-spacing: .1em; color: var(--pale); }
-.outline { position: absolute; right: -10in; bottom: -14in; width: 70in; opacity: .1; }
-</style></head><body class="on-dark {{VARIANT_CLASS}}">
-<svg class="outline" viewBox="0 0 100 90" fill="none" stroke="#9BC4BD" stroke-width=".8"><polygon points="50,4 96,86 4,86"/></svg>
-<div class="logo-wrap">{{LOGO_DARK}}</div>
-<div class="eyebrow">Nervous system alignment for high-performing leaders</div>
-<h1 class="headline">What if you could train your response to <em>stress?</em></h1>
-<p class="sub">Restored energy, focused clarity, and joy under pressure, held when it counts and lasting after the work ends.</p>
-<div class="right">{{PHOTO}}</div>
-<div class="areas"><h3>Where pressure shows up</h3><div class="row">Health</div><div class="row">Wealth</div><div class="row">Relationships</div><div class="row">Career</div></div>
-<div class="close serif">Burnout ends here.&trade;</div>
-<div class="url">SOMA-Q.COM</div>
-</body></html>
+html, body { margin: 0; padding: 0; width: 121in; height: 91in; overflow: hidden; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+svg.page { display: block; width: 121in; height: 91in; }
+</style></head><body>
+<svg class="page" viewBox="0 0 12100 9100" xmlns="http://www.w3.org/2000/svg">
+<rect width="12100" height="9100" fill="#EEEADD"/>
+<rect width="12100" height="560" fill="#103C41"/>
+<image href="{{LOGO_DARK_URI}}" x="600" y="110" width="1500" height="557" preserveAspectRatio="xMinYMid meet"/>
+<text x="11500" y="330" text-anchor="end" font-family="DM Sans" font-weight="700" font-size="110" fill="#9BC4BD" letter-spacing="4">Nervous system alignment for high-performing leaders</text>
+<text x="600" y="1650" text-anchor="start" font-family="DM Serif Display" font-weight="400" font-size="560" fill="#103C41">What if you</text><text x="600" y="2170" text-anchor="start" font-family="DM Serif Display" font-weight="400" font-size="560" fill="#103C41">could train</text><text x="600" y="2690" text-anchor="start" font-family="DM Serif Display" font-weight="400" font-size="560" fill="#103C41">your response</text><text x="600" y="3210" text-anchor="start" font-family="DM Serif Display" font-weight="400" font-size="560" fill="#103C41">to stress?</text>
+<text x="600" y="3990" text-anchor="start" font-family="DM Sans" font-weight="400" font-size="138" fill="#24211D">Soma-Q is a nervous system alignment practice. We train</text><text x="600" y="4165" text-anchor="start" font-family="DM Sans" font-weight="400" font-size="138" fill="#24211D">high-performing leaders and their teams to restore</text><text x="600" y="4340" text-anchor="start" font-family="DM Sans" font-weight="400" font-size="138" fill="#24211D">energy, focused clarity, and joy under pressure.</text>
+<text x="4700" y="1010" text-anchor="start" font-family="DM Sans" font-weight="700" font-size="100" fill="#103C41" letter-spacing="11">PRESSURE RUNS IN A LOOP</text>
+<g transform="translate(4700,1200) scale(1.6)">{{LOOP:light:gloss}}</g>
+<text x="8450" y="1010" text-anchor="start" font-family="DM Sans" font-weight="700" font-size="100" fill="#103C41" letter-spacing="11">BUILT TO RESTORE</text>
+<g transform="translate(8450,1200) scale(1.55)">{{OUTCOMES:light}}</g>
+<rect x="0" y="5200" width="12100" height="3900" fill="#9BC4BD" fill-opacity=".45"/>
+<polygon points="7600,8331 9350,5300 11100,8331" fill="#FEFCF8" fill-opacity="0.35"/>
+<!--PHOTO--><clipPath id="ph"><circle cx="1500" cy="6600" r="900"/></clipPath><image href="{{PHOTO_URI}}" x="600" y="5700" width="1800" height="2250" preserveAspectRatio="xMidYMin slice" clip-path="url(#ph)"/><circle cx="1500" cy="6600" r="900" fill="none" stroke="#103C41" stroke-width="30"/><text x="2800" y="6450" text-anchor="start" font-family="DM Serif Display" font-weight="400" font-size="230" fill="#103C41">Megan McDonald, Founder</text>
+<text x="2800" y="6780" text-anchor="start" font-family="DM Sans" font-weight="400" font-size="130" fill="#24211D">13 years as a healthcare technology executive. RYT-500.</text>
+<!--/PHOTO--><!--NOPHOTO--><text x="600" y="6350" text-anchor="start" font-family="DM Serif Display" font-weight="400" font-size="230" fill="#103C41">Megan McDonald, Founder</text>
+<text x="600" y="6680" text-anchor="start" font-family="DM Sans" font-weight="400" font-size="130" fill="#24211D">13 years as a healthcare technology executive. RYT-500.</text>
+<!--/NOPHOTO--><text x="600" y="8300" text-anchor="start" font-family="DM Serif Display" font-weight="400" font-size="520" fill="#103C41">Burnout ends here.™</text>
+<text x="7400" y="8700" text-anchor="start" font-family="DM Sans" font-weight="700" font-size="230" fill="#103C41" letter-spacing="20">SOMA-Q.COM</text>
+</svg></body></html>

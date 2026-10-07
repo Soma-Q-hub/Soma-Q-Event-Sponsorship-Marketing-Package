@@ -9,20 +9,20 @@ PREV = ROOT / "output" / "preview"
 out_path = pathlib.Path(sys.argv[1])
 
 SECTIONS = [
-  ("banner", "Banner, backdrop and table cover", "The large pieces that stop people in the aisle. Each has a version with a photo and one without.", [
-    ("banner_retractable-1", "Retractable banner, no photo", "32 x 80 in"),
-    ("banner_retractable_photo-1", "Retractable banner, with photo", "32 x 80 in"),
+  ("banner", "Banners, backdrop and table cover", "The large pieces that stop people in the aisle: light fields, dark type, no QR codes. Banner 2 and the backdrop come with and without your photo.", [
+    ("banner_story-1", "Banner 1: the story", "32 x 80 in"),
+    ("banner_proof-1", "Banner 2: the proof, no photo", "32 x 80 in"),
+    ("banner_proof_photo-1", "Banner 2: the proof, with photo", "32 x 80 in"),
     ("backdrop-1", "Backdrop, no photo", "120 x 90 in, placeholder size"),
     ("backdrop_photo-1", "Backdrop, with photo", "120 x 90 in, placeholder size"),
     ("table_front-1", "Table cover front panel", "72 x 30 in, placeholder size"),
   ]),
-  ("table", "On the table and in the hand", "The pieces visitors read, scan and take home.", [
+  ("table", "On the table and in the hand", "The pieces visitors scan and take home.", [
     ("counter_sign-1", "Counter sign", "8.5 x 11 in"),
     ("card_individual-1", "Take-home card, front", "4 x 6 in"),
     ("card_individual-2", "Take-home card, back", "4 x 6 in"),
     ("business_card-1", "Business card, front", "3.5 x 2 in"),
     ("business_card-2", "Business card, back", "3.5 x 2 in"),
-    ("sheet_organizations-1", "Organizations one-sheet", "8.5 x 11 in"),
   ]),
   ("posters", "Explainer posters", "Four pictures that make the work understandable to someone who has never heard of it.", [
     ("poster_loop-1", "The Pressure Loop", "24 x 36 in"),
@@ -38,7 +38,7 @@ if EXTRA.exists():
     for sec in ns.get("MORE_SECTIONS", []):
         SECTIONS.insert(sec.get("at", len(SECTIONS)), sec["data"])
 SECTIONS.append(("plan", "Plan and order guide", "The strategy packet, then the order guide with vendors, prices and the timeline to October 24.", 
-    [(f"strategy_packet-{i:02d}", f"Strategy packet, page {i}", "8.5 x 11 in") for i in range(1, 14)] +
+    [(f"strategy_packet-{i:02d}", f"Strategy packet, page {i}", "8.5 x 11 in") for i in range(1, len(list(PREV.glob("strategy_packet-*.png"))) + 1)] +
     [(f"order_guide-{i}", f"Order guide, page {i}", "8.5 x 11 in") for i in range(1, 4)]))
 
 def data_uri(stem, maxside):
