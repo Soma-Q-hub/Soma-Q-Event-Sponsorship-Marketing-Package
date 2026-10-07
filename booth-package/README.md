@@ -25,3 +25,13 @@ All files include bleed. Sizes marked placeholder must be matched to the vendor'
 3. `pip install segno`, then `python3 build/build.py` from this folder. Needs Chromium and poppler-utils.
 
 Brand rules applied: six-color palette, no gold or copper, DM Serif Display and DM Sans, no em or en dashes, outcome-first copy.
+
+## Explainer posters (added 7 October 2026)
+| File | Piece |
+| --- | --- |
+| poster_loop.pdf | The Pressure Loop, rebuilt from Drive in the new brand |
+| poster_shift.pdf | The Soma-Q Shift: Notice, Locate, Choose |
+| poster_outcomes.pdf | What Changes: restored energy, focused clarity, joy and fulfillment |
+| poster_where.pdf | Where do you feel pressure first? A dot-sticker body map |
+
+24 x 36 in trim, 0.125 in bleed. The loop is also on the front of the take-home card. `assets/` now holds the original-resolution logos from Drive.

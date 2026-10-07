@@ -7,7 +7,8 @@
 .page { width: 4.25in; height: 6.25in; position: relative; overflow: hidden; page-break-after: always; }
 .front { background: var(--deep); color: var(--white); padding: .42in .4in; }
 .front .logo-wrap { width: 1.3in; font-size: 7pt; } .front .logo-wrap img { width: 100%; }
-.front h1 { font-size: 22pt; line-height: 1.06; margin-top: .38in; }
+.front h1 { font-size: 17pt; line-height: 1.08; margin-top: .3in; }
+.front svg.loop { display: block; width: 3.45in; margin-top: .22in; }
 .front h1 em { font-style: normal; color: var(--light); }
 .front .eyebrow { font-size: 7pt; color: var(--light); margin-top: .3in; }
 .front ul { font-size: 10pt; margin-top: .08in; color: var(--pale); }
@@ -24,15 +25,9 @@
 </style></head><body>
 <div class="page front on-dark">
   <div class="logo-wrap">{{LOGO_DARK}}</div>
-  <h1>Running on depletion is a signal, <em>not a personality.</em></h1>
-  <div class="eyebrow">Signals worth noticing</div>
-  <ul class="tri">
-    <li>Exhaustion that sleep does not fix</li>
-    <li>Tension in your jaw, shoulders or chest</li>
-    <li>Simple decisions that feel heavy</li>
-    <li>Irritation that surfaces too fast</li>
-  </ul>
-  <div class="go">Two or more? Turn the card over for a free first step.</div>
+  <h1>Pressure runs in a loop. <em>It can be interrupted.</em></h1>
+  <svg class="loop" viewBox="125 1300 2175 1900" xmlns="http://www.w3.org/2000/svg">{{LOOP_SVG_DARK_SMALL}}</svg>
+  <div class="go">Turn the card over for four free first steps.</div>
 </div>
 <div class="page back on-light">
   <h2>Pick your first step. All free.</h2>

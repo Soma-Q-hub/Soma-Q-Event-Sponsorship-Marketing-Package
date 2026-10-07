@@ -4,7 +4,7 @@
 Usage (from booth-package/):   python3 build/build.py [piece ...]
 Needs: pip install segno ; Chromium (Playwright's copy is auto-detected) ; poppler-utils for previews.
 """
-import base64, glob, os, pathlib, shutil, subprocess, sys
+import base64, glob, math, os, pathlib, re, shutil, subprocess, sys
 import segno
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -14,10 +14,68 @@ import config as C
 SRC, OUT = ROOT / "src", ROOT / "output"
 OUT.mkdir(exist_ok=True)
 
-PIECE_TAG = {"banner_retractable": "banner", "backdrop": "backdrop", "counter_sign": "sign", "card_individual": "card",
+PIECE_TAG = {"poster_loop": "poster-loop", "poster_shift": "poster-shift", "poster_outcomes": "poster-outcomes", "poster_where": "poster-where",
+             "banner_retractable": "banner", "backdrop": "backdrop", "counter_sign": "sign", "card_individual": "card",
              "sheet_organizations": "orgsheet", "business_card": "bizcard", "strategy_packet": "packet",
              "order_guide": "guide", "table_front": "table"}
 URL_LOG = []
+
+
+# ---------- shared SVG pieces for the explainer posters and cards ----------
+DEEP, LIGHT, PALE, LINEN, WHITE, INK = "#103C41", "#9BC4BD", "#E4F2F2", "#EEEADD", "#FEFCF8", "#24211D"
+
+def arrow(x1, y1, x2, y2, color, width=14, head=62):
+    ang = math.atan2(y2 - y1, x2 - x1)
+    bx, by = x2 - head * math.cos(ang), y2 - head * math.sin(ang)
+    lx, ly = bx + head * 0.55 * math.sin(ang), by - head * 0.55 * math.cos(ang)
+    rx, ry = bx - head * 0.55 * math.sin(ang), by + head * 0.55 * math.cos(ang)
+    return (f'<line x1="{x1}" y1="{y1}" x2="{bx:.0f}" y2="{by:.0f}" stroke="{color}" stroke-width="{width}" stroke-linecap="round"/>'
+            f'<polygon points="{x2},{y2} {lx:.0f},{ly:.0f} {rx:.0f},{ry:.0f}" fill="{color}"/>')
+
+def loop_svg(scheme="light", gloss=True):
+    """The Pressure Loop, rebuilt: three nodes at the corners of the Soma-Q triangle, one entry point, one interrupt."""
+    dark = scheme == "dark"
+    node_fill, node_txt, node_sub = (WHITE, DEEP, INK) if dark else (DEEP, WHITE, PALE)
+    arr = LIGHT if dark else DEEP
+    pill_fill, pill_stroke, pill_txt = ("none", LIGHT, WHITE) if dark else (WHITE, DEEP, DEEP)
+    badge_fill, badge_txt = LIGHT, DEEP
+    mid_txt = PALE if dark else DEEP
+    def node(x, y, title, l1, l2):
+        g = f'<rect x="{x}" y="{y}" width="825" height="{400 if gloss else 300}" rx="40" fill="{node_fill}"/>'
+        g += f'<text x="{x+412}" y="{y+(150 if gloss else 175)}" text-anchor="middle" font-family="DM Serif Display" font-size="88" fill="{node_txt}">{title}</text>'
+        if gloss:
+            g += f'<text x="{x+412}" y="{y+250}" text-anchor="middle" font-family="DM Sans" font-size="48" fill="{node_sub}">{l1}</text>'
+            g += f'<text x="{x+412}" y="{y+316}" text-anchor="middle" font-family="DM Sans" font-size="48" fill="{node_sub}">{l2}</text>'
+        return g
+    o = ""
+    o += node(800, 1350, "Mind speeds up", "Replaying, rehearsing,", "analyzing")
+    o += node(1425, 2250, "You react", "Words, tone,", "body language")
+    o += node(175, 2250, "Body tightens", "Jaw, shoulders, breath.", "Bracing without noticing")
+    o += arrow(640, 2225, 905, 1790, arr) + arrow(1500, 1785, 1745, 2225, arr)
+    o += arrow(1400, 2450, 1020, 2450, arr) if gloss else arrow(1400, 2400, 1020, 2400, arr)
+    o += f'<rect x="175" y="2930" width="700" height="190" rx="95" fill="{pill_fill}" stroke="{pill_stroke}" stroke-width="10"/>'
+    o += f'<text x="525" y="3047" text-anchor="middle" font-family="DM Serif Display" font-size="62" fill="{pill_txt}">Something happens</text>'
+    o += arrow(525, 2925, 525, 2700 if gloss else 2600, arr)
+    o += f'<line x1="1100" y1="2960" x2="590" y2="2800" stroke="{LIGHT if dark else DEEP}" stroke-width="10" stroke-dasharray="26 22"/>'
+    o += f'<rect x="1100" y="2900" width="1150" height="300" rx="40" fill="{badge_fill}"/>'
+    o += f'<text x="1675" y="3030" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="64" letter-spacing="6" fill="{badge_txt}">INTERRUPT HERE</text>'
+    o += f'<text x="1675" y="3117" text-anchor="middle" font-family="DM Sans" font-size="52" fill="{badge_txt}">Notice the tension, then choose</text>'
+    for i, t in enumerate(["Reaction feeds", "the tension that", "produced it."]):
+        o += f'<text x="1212" y="{1960+i*68}" text-anchor="middle" font-family="DM Serif Display" font-style="italic" font-size="56" fill="{mid_txt}">{t}</text>'
+    return o
+
+def footer(scheme, qr_svg, caption="Scan for the free|Burnout Signal Check"):
+    dark = scheme == "dark"
+    logo = b64img(C.LOGO_ON_DARK if dark else C.LOGO_ON_LIGHT) or ""
+    txt, sub = (WHITE, PALE) if dark else (DEEP, INK)
+    c1, c2 = caption.split("|")
+    o = f'<image href="{logo}" x="175" y="3200" width="560" height="208" preserveAspectRatio="xMinYMid meet"/>'
+    o += f'<text x="190" y="3466" font-family="DM Sans" font-weight="500" font-size="48" letter-spacing="7" fill="{sub}">SOMA-Q.COM</text>'
+    o += f'<text x="1700" y="3300" text-anchor="end" font-family="DM Sans" font-weight="700" font-size="48" fill="{txt}">{c1}</text>'
+    o += f'<text x="1700" y="3362" text-anchor="end" font-family="DM Sans" font-weight="700" font-size="48" fill="{txt}">{c2}</text>'
+    o += f'<rect x="1770" y="3110" width="380" height="380" rx="26" fill="#FFFFFF"/>'
+    o += f'<svg x="1795" y="3135" width="330" height="330">{qr_svg}</svg>'
+    return o
 
 def chrome():
     for p in [shutil.which("chromium"), shutil.which("google-chrome"), *glob.glob("/opt/pw-browsers/chromium-*/chrome-linux/chrome")]:
@@ -77,7 +135,16 @@ def render(name, variant=None):
             u = target(kind, tag)
             subs[key] = qr_svg(u)
             URL_LOG.append(f"{name}{'/' + variant if variant else ''} [{kind}]: {u}")
+    subs["{{LOOP_SVG_LIGHT}}"] = loop_svg("light", True)
+    subs["{{LOOP_SVG_DARK}}"] = loop_svg("dark", True)
+    subs["{{LOOP_SVG_DARK_SMALL}}"] = loop_svg("dark", False)
+    subs["{{LOGO_DARK_URI}}"] = b64img(C.LOGO_ON_DARK) or ""
+    subs["{{LOGO_LIGHT_URI}}"] = b64img(C.LOGO_ON_LIGHT) or ""
     html = src
+    for m in re.finditer(r"\{\{FOOTER:(light|dark)\}\}", src):
+        qr_u = target("quiz", tag)
+        URL_LOG.append(f"{name} [quiz]: {qr_u}")
+        html = html.replace(m.group(0), footer(m.group(1), qr_svg(qr_u)))
     for k, v in subs.items():
         html = html.replace(k, v)
     out_name = f"{name}_{variant}" if variant else name
@@ -88,8 +155,8 @@ def render(name, variant=None):
                     "--virtual-time-budget=15000", "--no-pdf-header-footer", f"--print-to-pdf={pdf}", tmp.as_uri()],
                    check=True, capture_output=True)
     tmp.unlink()
-    big = name in ("banner_retractable", "table_front", "backdrop")
-    subprocess.run(["pdftoppm", "-png", "-r", "30" if name == "backdrop" else ("50" if big else "80"), "-f", "1", "-l", "3",
+    big = name in ("banner_retractable", "table_front", "backdrop") or name.startswith("poster")
+    subprocess.run(["pdftoppm", "-png", "-r", "30" if name == "backdrop" else ("40" if name.startswith("poster") else ("50" if big else "80")), "-f", "1", "-l", "3",
                     str(pdf), str(OUT / f"preview_{out_name}")], check=False)
     print("built", pdf.name)
 
@@ -116,7 +183,8 @@ Current campaign: {C.CAMPAIGN}. Destinations in [BRACKETS] still need to be supp
 if __name__ == "__main__":
     plan = [("banner_retractable", None), ("banner_retractable", "photo"), ("backdrop", None), ("backdrop", "photo"),
             ("table_front", None), ("counter_sign", None), ("card_individual", None), ("business_card", None),
-            ("sheet_organizations", None), ("strategy_packet", None), ("order_guide", None)]
+            ("sheet_organizations", None), ("poster_loop", None), ("poster_shift", None), ("poster_outcomes", None),
+            ("poster_where", None), ("strategy_packet", None), ("order_guide", None)]
     wanted = sys.argv[1:]
     for name, variant in plan:
         if wanted and name not in wanted:
