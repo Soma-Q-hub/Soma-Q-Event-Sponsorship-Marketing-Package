@@ -16,5 +16,6 @@ Each request arrives as /go/<name>?c=<campaign>&p=<piece>. Please:
 | /go/reset | https://us06web.zoom.us/j/87654266823 |
 | /go/call | [NEW REPLIT /book LINK, when ready] |
 | /go/org | https://www.soma-q.com/contact?topic=organization |
+| /go/overview | https://www.soma-q.com/contact?topic=measurement-overview |
 
 Current campaign: oct24. Destinations in [BRACKETS] still need to be supplied by Megan.

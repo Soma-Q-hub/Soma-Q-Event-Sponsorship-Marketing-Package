@@ -26,6 +26,7 @@ DIRECT = {
     "reset": "https://us06web.zoom.us/j/87654266823",   # Shift Happens weekly reset, Wednesdays 12:00 PM Mountain, 30 minutes
     "call": "https://somaqcoaching.as.me/schedule/34334163/appointment/84765700/calendar/12916710",  # CURRENT Acuity link, used only if you must print before the Replit /book page exists
     "org": f"{SITE}/contact?topic=organization",
+    "overview": f"{SITE}/contact?topic=measurement-overview",   # the contact page pre-selects this topic per the website handoff
 }
 
 # Final destinations for the /go/ redirects (what the designer should redirect to).
@@ -35,6 +36,7 @@ GO_TARGETS = {
     "reset": "https://us06web.zoom.us/j/87654266823",
     "call": "[NEW REPLIT /book LINK, when ready]",
     "org": f"{SITE}/contact?topic=organization",
+    "overview": f"{SITE}/contact?topic=measurement-overview",
 }
 
 # --- Photo (optional) ------------------------------------------------------------------------------------------

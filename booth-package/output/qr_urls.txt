@@ -22,3 +22,6 @@ poster_loop [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=poster-loop
 poster_shift [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=poster-shift
 poster_outcomes [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=poster-outcomes
 poster_where [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=poster-where
+poster_progress [call]: https://www.soma-q.com/go/call?c=oct24&p=poster-progress
+poster_capacity [call]: https://www.soma-q.com/go/call?c=oct24&p=poster-capacity
+handout_measurement [overview]: https://www.soma-q.com/go/overview?c=oct24&p=handout-measure

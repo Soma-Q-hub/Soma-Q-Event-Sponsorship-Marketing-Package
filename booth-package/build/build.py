@@ -14,7 +14,8 @@ import config as C
 SRC, OUT = ROOT / "src", ROOT / "output"
 OUT.mkdir(exist_ok=True)
 
-PIECE_TAG = {"poster_loop": "poster-loop", "poster_shift": "poster-shift", "poster_outcomes": "poster-outcomes", "poster_where": "poster-where",
+PIECE_TAG = {"poster_progress": "poster-progress", "poster_capacity": "poster-capacity", "handout_measurement": "handout-measure",
+             "poster_loop": "poster-loop", "poster_shift": "poster-shift", "poster_outcomes": "poster-outcomes", "poster_where": "poster-where",
              "banner_retractable": "banner", "backdrop": "backdrop", "counter_sign": "sign", "card_individual": "card",
              "sheet_organizations": "orgsheet", "business_card": "bizcard", "strategy_packet": "packet",
              "order_guide": "guide", "table_front": "table"}
@@ -129,7 +130,7 @@ def render(name, variant=None):
         "{{CARD_NAME}}": C.CARD_NAME, "{{CARD_TITLE}}": C.CARD_TITLE, "{{CARD_EMAIL}}": C.CARD_EMAIL,
         "{{CARD_WEB}}": C.CARD_WEB, "{{CARD_PHONE}}": C.CARD_PHONE,
     }
-    for kind in ("quiz", "ebook", "reset", "call", "org"):
+    for kind in ("quiz", "ebook", "reset", "call", "org", "overview"):
         key = "{{QR_%s}}" % kind.upper()
         if key in src:
             u = target(kind, tag)
@@ -141,10 +142,13 @@ def render(name, variant=None):
     subs["{{LOGO_DARK_URI}}"] = b64img(C.LOGO_ON_DARK) or ""
     subs["{{LOGO_LIGHT_URI}}"] = b64img(C.LOGO_ON_LIGHT) or ""
     html = src
-    for m in re.finditer(r"\{\{FOOTER:(light|dark)\}\}", src):
-        qr_u = target("quiz", tag)
-        URL_LOG.append(f"{name} [quiz]: {qr_u}")
-        html = html.replace(m.group(0), footer(m.group(1), qr_svg(qr_u)))
+    CAPS = {"quiz": "Scan for the free|Burnout Signal Check", "call": "Scan to book a|free discovery call",
+            "overview": "Scan to request the|full Measurement Overview"}
+    for m in re.finditer(r"\{\{FOOTER:(light|dark)(?::(\w+))?\}\}", src):
+        kind = m.group(2) or "quiz"
+        qr_u = target(kind, tag)
+        URL_LOG.append(f"{name} [{kind}]: {qr_u}")
+        html = html.replace(m.group(0), footer(m.group(1), qr_svg(qr_u), CAPS[kind]))
     for k, v in subs.items():
         html = html.replace(k, v)
     out_name = f"{name}_{variant}" if variant else name
@@ -205,7 +209,7 @@ if __name__ == "__main__":
     plan = [("banner_retractable", None), ("banner_retractable", "photo"), ("backdrop", None), ("backdrop", "photo"),
             ("table_front", None), ("counter_sign", None), ("card_individual", None), ("business_card", None),
             ("sheet_organizations", None), ("poster_loop", None), ("poster_shift", None), ("poster_outcomes", None),
-            ("poster_where", None), ("strategy_packet", None), ("order_guide", None)]
+            ("poster_where", None), ("poster_progress", None), ("poster_capacity", None), ("handout_measurement", None), ("strategy_packet", None), ("order_guide", None)]
     wanted = sys.argv[1:]
     for name, variant in plan:
         if wanted and name not in wanted:

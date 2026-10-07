@@ -37,3 +37,12 @@ Brand rules applied: six-color palette, no gold or copper, DM Serif Display and 
 | poster_where.pdf | Where do you feel pressure first? A dot-sticker body map |
 
 24 x 36 in trim, 0.125 in bleed. The loop is also on the front of the take-home card. `assets/` now holds the original-resolution logos from Drive.
+
+## Measurement materials (added 7 October 2026)
+| File | Piece |
+| --- | --- |
+| poster_progress.pdf | "Watch your progress, week by week": the Measurement Overview's weekly view, plain-language names, example data |
+| poster_capacity.pdf | "Capacity comes first. Results follow.": cause and effect with the Week 1, 6, 12 example |
+| handout_measurement.pdf | "Measurement at a glance": two-sided organizational leave-behind, SQ- names, QR to request the full Overview |
+
+`build/make_posters_measure.py` generates the two posters. All example figures come from SomaQ_Measurement_Overview_Oct2026.pdf and are labeled as examples, not client data.

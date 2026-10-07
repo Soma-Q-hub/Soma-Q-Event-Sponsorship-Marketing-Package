@@ -29,6 +29,12 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## counter_sign-1
 ![counter_sign-1](preview/counter_sign-1.png)
 
+## handout_measurement-1
+![handout_measurement-1](preview/handout_measurement-1.png)
+
+## handout_measurement-2
+![handout_measurement-2](preview/handout_measurement-2.png)
+
 ## order_guide-1
 ![order_guide-1](preview/order_guide-1.png)
 
@@ -38,11 +44,17 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## order_guide-3
 ![order_guide-3](preview/order_guide-3.png)
 
+## poster_capacity-1
+![poster_capacity-1](preview/poster_capacity-1.png)
+
 ## poster_loop-1
 ![poster_loop-1](preview/poster_loop-1.png)
 
 ## poster_outcomes-1
 ![poster_outcomes-1](preview/poster_outcomes-1.png)
+
+## poster_progress-1
+![poster_progress-1](preview/poster_progress-1.png)
 
 ## poster_shift-1
 ![poster_shift-1](preview/poster_shift-1.png)
@@ -91,6 +103,12 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## strategy_packet-13
 ![strategy_packet-13](preview/strategy_packet-13.png)
+
+## strategy_packet-14
+![strategy_packet-14](preview/strategy_packet-14.png)
+
+## strategy_packet-15
+![strategy_packet-15](preview/strategy_packet-15.png)
 
 ## table_front-1
 ![table_front-1](preview/table_front-1.png)
