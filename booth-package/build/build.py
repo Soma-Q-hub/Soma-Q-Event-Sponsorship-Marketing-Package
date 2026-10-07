@@ -159,7 +159,7 @@ def render(name, variant=None):
     print("built", pdf.name)
 
 def make_previews(pdf, out_name):
-    """One PNG per page in output/preview/, long side about 2000 px, so every piece can be viewed inline."""
+    """One PNG per page in output/preview/, long side about 3000 px, so every piece can be viewed inline."""
     PREV = OUT / "preview"
     PREV.mkdir(exist_ok=True)
     for old in PREV.glob(f"{out_name}-*.png"):
@@ -167,7 +167,7 @@ def make_previews(pdf, out_name):
     info = subprocess.run(["pdfinfo", str(pdf)], capture_output=True, text=True).stdout
     m = re.search(r"Page size:\s+([\d.]+) x ([\d.]+) pts", info)
     long_pts = max(float(m.group(1)), float(m.group(2))) if m else 792
-    dpi = max(20, min(150, round(2000 / (long_pts / 72))))
+    dpi = max(20, min(300, round(3000 / (long_pts / 72))))
     subprocess.run(["pdftoppm", "-png", "-r", str(dpi), str(pdf), str(PREV / out_name)], check=False)
 
 def write_gallery():
