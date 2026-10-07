@@ -29,7 +29,7 @@ def target(kind, tag):
     if C.QR_MODE == "go":
         return f"{C.SITE}/go/{kind}?c={C.CAMPAIGN}&p={tag}"
     base = C.DIRECT[kind]
-    if base.startswith("[") or "as.me" in base:
+    if base.startswith("[") or "as.me" in base or "zoom.us" in base:
         return base                       # external or unset links take no tracking parameters
     sep = "&" if "?" in base else "?"
     return f"{base}{sep}utm_source=event&utm_medium=print&utm_campaign={C.CAMPAIGN}&utm_content={tag}"

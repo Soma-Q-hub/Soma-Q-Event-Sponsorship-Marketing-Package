@@ -1,11 +1,11 @@
 """Edit this file, then run: python3 build/build.py   (from booth-package/)
 Anything in [BRACKETS] is a placeholder that prints visibly, so it cannot slip through a proof unnoticed."""
 
-EVENT_NAME = "[EVENT NAME]"
+EVENT_NAME = ""   # intentionally blank: the print pieces are event-neutral so they can be reused
 EVENT_DATES = "Saturday, October 24, 2026"
-EVENT_VENUE = "[VENUE, CITY]"
-BOOTH_NUMBER = "[BOOTH #]"
-BOOTH_SIZE = "[BOOTH SIZE, e.g. 10 x 10 ft]"
+EVENT_VENUE = ""
+BOOTH_NUMBER = ""      # only used on the organizations sheet; leave blank to omit
+BOOTH_SIZE = "[BOOTH SIZE, e.g. 10 x 10 ft]"   # only used in the planning documents
 
 # Short campaign slug carried on every QR so scans can be attributed to this event.
 CAMPAIGN = "oct24"
@@ -23,8 +23,8 @@ QR_MODE = "go"
 DIRECT = {
     "quiz": f"{SITE}/assessment",
     "ebook": f"{SITE}/free-resources",          # the ebook signup lives on the Free Resources page
-    "reset": f"{SITE}/free-resources",          # Shift Happens weekly reset is described there; swap for a Zoom registration link if you have one
-    "call": "https://somaqcoaching.as.me/schedule/34334163/appointment/84765700/calendar/12916710",  # Acuity link from the website handoff
+    "reset": "https://us06web.zoom.us/j/87654266823",   # Shift Happens weekly reset, Wednesdays 12:00 PM Mountain, 30 minutes
+    "call": "https://somaqcoaching.as.me/schedule/34334163/appointment/84765700/calendar/12916710",  # CURRENT Acuity link, used only if you must print before the Replit /book page exists
     "org": f"{SITE}/contact?topic=organization",
 }
 
@@ -32,8 +32,8 @@ DIRECT = {
 GO_TARGETS = {
     "quiz": f"{SITE}/assessment",
     "ebook": f"{SITE}/free-resources",
-    "reset": "[ZOOM REGISTRATION OR FREE-RESOURCES RESET SECTION]",
-    "call": "[ACUITY LINK OR /book PAGE]",
+    "reset": "https://us06web.zoom.us/j/87654266823",
+    "call": "[NEW REPLIT /book LINK, when ready]",
     "org": f"{SITE}/contact?topic=organization",
 }
 
@@ -48,7 +48,7 @@ CARD_NAME = "Megan McDonald"
 CARD_TITLE = "Founder"
 CARD_EMAIL = "Megan@Soma-Q.com"
 CARD_WEB = "soma-q.com"
-CARD_PHONE = "[PHONE]"   # optional; decide whether it stays public (open item on the website handoff)
+CARD_PHONE = "303-717-9995"   # the number printed on the website Terms page; confirm this is the one you want on the card
 
 # --- Image assets (official files from Drive: Marketing & Socials > Branding > 2026 Logos > UPDATED SEPT 2026 LOGOS) ---
 LOGO_ON_DARK = "assets/soma-q-logo-teal-reversed.png"

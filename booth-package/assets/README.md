@@ -1,10 +1,7 @@
-Drop these files here, then run `python3 build/build.py` from booth-package/ to rebuild every print file.
+Files here are used by `python3 build/build.py` (run from booth-package/).
 
-| File | Source |
+| File | Status |
 | --- | --- |
-| soma-q-logo-teal-reversed.png | Drive: Marketing & Socials > Branding > 2026 Logos > UPDATED SEPT 2026 LOGOS (ID 1uBOdh9RVqYVMVrB6nv2YZUuFKkBFx2YI) |
-| soma-q-logo-teal.png | Same folder (ID 1JAYGNN6bktm5Kue1HqNrnQb_zYyPf8KM) |
-| megan-headshot.jpg | Optional. Only the "_photo" versions use it. The website's About photo is casual-headshot-about.jpg |
-| popl-qr.png | Export the QR image from the POPL app |
-
-Until the logo files are present, every piece prints a dashed [LOGO] placeholder on purpose, so nothing can be sent to a printer without the real logo.
+| soma-q-logo-teal-reversed.png, soma-q-logo-teal.png | Copied from the new website (560 px wide). Fine for cards and signs; too low-resolution for the banner and backdrop. Use the originals in Drive (Marketing & Socials > Branding > 2026 Logos > UPDATED SEPT 2026 LOGOS) for large-format export. |
+| megan-headshot.jpg | The website hero photo (760 x 915 px). Fine for the banner proof; the backdrop needs the full-size original. |
+| popl-qr.png | Not yet added. Export the QR image from the POPL app. |

@@ -1,3 +1,20 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-
+banner_retractable [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=banner
+banner_retractable [ebook]: https://www.soma-q.com/go/ebook?c=oct24&p=banner
+banner_retractable [reset]: https://www.soma-q.com/go/reset?c=oct24&p=banner
+banner_retractable [call]: https://www.soma-q.com/go/call?c=oct24&p=banner
+banner_retractable/photo [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=banner
+banner_retractable/photo [ebook]: https://www.soma-q.com/go/ebook?c=oct24&p=banner
+banner_retractable/photo [reset]: https://www.soma-q.com/go/reset?c=oct24&p=banner
+banner_retractable/photo [call]: https://www.soma-q.com/go/call?c=oct24&p=banner
+counter_sign [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=sign
+counter_sign [ebook]: https://www.soma-q.com/go/ebook?c=oct24&p=sign
+counter_sign [reset]: https://www.soma-q.com/go/reset?c=oct24&p=sign
+counter_sign [call]: https://www.soma-q.com/go/call?c=oct24&p=sign
+card_individual [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=card
+card_individual [ebook]: https://www.soma-q.com/go/ebook?c=oct24&p=card
+card_individual [reset]: https://www.soma-q.com/go/reset?c=oct24&p=card
+card_individual [call]: https://www.soma-q.com/go/call?c=oct24&p=card
+business_card [call]: https://www.soma-q.com/go/call?c=oct24&p=bizcard
+sheet_organizations [org]: https://www.soma-q.com/go/org?c=oct24&p=orgsheet

@@ -13,8 +13,8 @@ Each request arrives as /go/<name>?c=<campaign>&p=<piece>. Please:
 | --- | --- |
 | /go/quiz | https://www.soma-q.com/assessment |
 | /go/ebook | https://www.soma-q.com/free-resources |
-| /go/reset | [ZOOM REGISTRATION OR FREE-RESOURCES RESET SECTION] |
-| /go/call | [ACUITY LINK OR /book PAGE] |
+| /go/reset | https://us06web.zoom.us/j/87654266823 |
+| /go/call | [NEW REPLIT /book LINK, when ready] |
 | /go/org | https://www.soma-q.com/contact?topic=organization |
 
 Current campaign: oct24. Destinations in [BRACKETS] still need to be supplied by Megan.
