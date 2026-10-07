@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Backdrop 120 x 90 in</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="brand.css">
+<style>
+/* PLACEHOLDER trim 120 x 90 in (a 10 ft wide, 7.5 ft tall wall), file at 121 x 91 in with 0.5 in bleed.
+   Pop-up and fabric backdrops each have their own template, curve and frame lines: CONFIRM the vendor template first.
+   Floor-to-height guide: a table and people hide the lowest ~45 in, so every critical element sits in the top 45 in of the file. */
+@page { size: 121in 91in; margin: 0; }
+html, body { width: 121in; height: 91in; overflow: hidden; }
+body { background: var(--deep); color: var(--white); position: relative; overflow: hidden; }
+.tri { position: absolute; border: 0; }
+.logo-wrap { position: absolute; left: 7in; top: 6in; width: 24in; font-size: 3in; } .logo-wrap img { width: 100%; }
+.eyebrow { position: absolute; left: 7in; top: 14in; font-size: 1.5in; color: var(--light); }
+.headline { position: absolute; left: 7in; top: 18in; width: 70in; font-size: 11in; line-height: .98; letter-spacing: -.01em; }
+.headline em { font-style: normal; color: var(--light); }
+.sub { position: absolute; left: 7in; top: 61in; width: 68in; font-size: 3.6in; line-height: 1.25; color: var(--pale); }
+.right { position: absolute; right: 7in; top: 8in; width: 30in; }
+.photo { font-size: 6in; width: 30in; }
+.areas { position: absolute; right: 7in; width: 30in; font-size: 2.6in; }
+.areas { top: 12in; }
+.v-photo .areas { display: none; }
+.v-plain .right { display: none; }
+.areas h3 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1.5in; letter-spacing: .14em; text-transform: uppercase; color: var(--light); margin-bottom: 1.5in; }
+.areas .row { border-top: .22in solid var(--light); padding: 1.6in 0; font-family: 'DM Serif Display', serif; font-size: 4.4in; color: var(--white); }
+.close { position: absolute; left: 7in; top: 80in; font-size: 6in; color: var(--light); }
+.url { position: absolute; left: 7in; top: 87in; font-size: 2.2in; letter-spacing: .1em; color: var(--pale); }
+.outline { position: absolute; right: -10in; bottom: -14in; width: 70in; opacity: .1; }
+</style></head><body class="on-dark {{VARIANT_CLASS}}">
+<svg class="outline" viewBox="0 0 100 90" fill="none" stroke="#9BC4BD" stroke-width=".8"><polygon points="50,4 96,86 4,86"/></svg>
+<div class="logo-wrap">{{LOGO_DARK}}</div>
+<div class="eyebrow">Nervous system alignment for high-performing leaders</div>
+<h1 class="headline">What if you could train your response to <em>stress?</em></h1>
+<p class="sub">Restored energy, focused clarity, and joy under pressure, held when it counts and lasting after the work ends.</p>
+<div class="right">{{PHOTO}}</div>
+<div class="areas"><h3>Where pressure shows up</h3><div class="row">Health</div><div class="row">Wealth</div><div class="row">Relationships</div><div class="row">Career</div></div>
+<div class="close serif">Burnout ends here.</div>
+<div class="url">SOMA-Q.COM</div>
+</body></html>

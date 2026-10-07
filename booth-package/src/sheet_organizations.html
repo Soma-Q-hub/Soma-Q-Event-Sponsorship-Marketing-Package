@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Organizations one-sheet, 8.5 x 11 in</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="brand.css">
+<style>
+/* Trim 8.5 x 11 in, 0.125 in bleed = 8.75 x 11.25 in. Single sided. Safe zone 0.375 in. */
+@page { size: 8.75in 11.25in; margin: 0; }
+body { width: 8.75in; height: 11.25in; background: var(--white); position: relative; overflow: hidden; }
+.head { background: var(--deep); color: var(--white); padding: .45in .6in .35in; }
+.head .row { display: flex; justify-content: space-between; align-items: center; }
+.head .logo-wrap { width: 1.7in; font-size: 8pt; } .head .logo-wrap img { width: 100%; }
+.head .eyebrow { font-size: 8pt; color: var(--light); }
+.head h1 { font-size: 25pt; line-height: 1.06; margin-top: .22in; max-width: 7in; }
+.head p { color: var(--pale); font-size: 11pt; margin-top: .1in; max-width: 6.8in; }
+.body { padding: .35in .6in 0; display: grid; grid-template-columns: 1fr 1fr; gap: .32in .4in; }
+h2 { font-size: 14.5pt; color: var(--deep); margin-bottom: .05in; }
+.col p, .col li { font-size: 10.2pt; }
+.steps { grid-column: 1 / -1; background: var(--pale); border-radius: .12in; padding: .2in .28in; }
+.steps .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: .25in; margin-top: .1in; }
+.steps b { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 12pt; color: var(--deep); display: block; }
+.steps span { font-size: 9.6pt; display: block; }
+.proof { grid-column: 1 / -1; font-size: 10.2pt; }
+.cta { position: absolute; left: .6in; right: .6in; bottom: .5in; background: var(--deep); color: var(--white); border-radius: .14in; padding: .22in .3in; display: flex; gap: .3in; align-items: center; }
+.cta .qr { width: 1.15in; flex: none; }
+.cta h3 { font-size: 14pt; color: var(--light); }
+.cta p { font-size: 9pt; margin-top: .05in; }
+.legal { position: absolute; left: .6in; right: .6in; bottom: .22in; font-size: 6.8pt; opacity: .75; }
+</style></head><body class="on-light">
+<div class="head on-dark">
+  <div class="row"><div class="logo-wrap">{{LOGO_DARK}}</div><div class="eyebrow">Nervous system training for leaders and teams</div></div>
+  <h1>Leaders and teams that hold their energy, clarity and connection under pressure.</h1>
+  <p>Soma-Q is a workplace well-being partner delivering nervous system training for performance and productivity, with progress measured every week.</p>
+</div>
+<div class="body">
+  <div class="col">
+    <h2>The problem we address</h2>
+    <p>Under sustained pressure, the body treats a missed deadline like a physical threat. Left unaddressed, that activation quietly costs energy, clarity, sleep and judgment until burnout becomes the baseline for the people your organization depends on.</p>
+  </div>
+  <div class="col">
+    <h2>What changes</h2>
+    <ul class="tri">
+      <li>Leaders recognize what their nervous system is doing and shift it</li>
+      <li>Teams recover faster and stay present in hard conversations</li>
+      <li>Progress is visible every week, not assumed</li>
+    </ul>
+  </div>
+  <div class="steps">
+    <h2>How an engagement works</h2>
+    <div class="tiers">
+      <div><b>Leadership and team engagements</b><span>Structured, multi-week training for leaders and teams. The right fit for most organizations.</span></div>
+      <div><b>Presence Under Pressure&trade; workshops</b><span>A half-day session that gives a group a shared language and working practices.</span></div>
+      <div><b>Organizational partnership</b><span>Ongoing support that builds capacity across the organization over time.</span></div>
+    </div>
+  </div>
+  <div class="proof"><h2>How progress is measured</h2>Every engagement includes weekly measurement through the Soma-Q Leadership Progress Measurement System (SQ-LPMS). The SQ-M shows how the method is taking hold in each person, and the SQ-C shows the resulting shift in leadership competencies. Organizational outcomes such as focus, capacity and retention are designed to be supported by this work.</div>
+</div>
+<div class="cta on-dark">
+  <div class="qr">{{QR_ORG}}</div>
+  <div><h3>Request the overview.</h3><p>Scan to ask for the Soma-Q for Organizations Measurement Overview, or talk with Megan McDonald, Founder, at {{BOOTH_NUMBER}}. soma-q.com</p></div>
+</div>
+<div class="legal">Soma-Q is an education and training practice. It does not diagnose, treat or manage any condition, and it does not replace care from a licensed provider.</div>
+</body></html>

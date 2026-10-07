@@ -1,0 +1,3 @@
+Scan-test every URL on a phone, on cell data, from the printed proof.
+
+

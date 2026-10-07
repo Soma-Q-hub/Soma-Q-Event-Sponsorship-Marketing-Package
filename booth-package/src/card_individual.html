@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Take-home card, 4 x 6 in</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="brand.css">
+<style>
+/* Trim 4 x 6 in, 0.125 in bleed = 4.25 x 6.25 in. Page 1 front, page 2 back. Safe zone: 0.25 in inside trim. */
+@page { size: 4.25in 6.25in; margin: 0; }
+.page { width: 4.25in; height: 6.25in; position: relative; overflow: hidden; page-break-after: always; }
+.front { background: var(--deep); color: var(--white); padding: .42in .4in; }
+.front .logo-wrap { width: 1.3in; font-size: 7pt; } .front .logo-wrap img { width: 100%; }
+.front h1 { font-size: 22pt; line-height: 1.06; margin-top: .38in; }
+.front h1 em { font-style: normal; color: var(--light); }
+.front .eyebrow { font-size: 7pt; color: var(--light); margin-top: .3in; }
+.front ul { font-size: 10pt; margin-top: .08in; color: var(--pale); }
+.front .go { position: absolute; left: .4in; right: .4in; bottom: .4in; font-size: 9pt; color: var(--light); }
+.back { background: var(--linen); color: var(--ink); padding: .4in .4in; }
+.back h2 { font-size: 16pt; line-height: 1.1; color: var(--deep); }
+.back .sub { font-size: 8.5pt; margin: .05in 0 .14in; }
+.back .grid { display: grid; grid-template-columns: 1fr 1fr; gap: .13in; }
+.back .opt { background: var(--white); border: .015in solid var(--deep); border-radius: .08in; padding: .09in; text-align: center; }
+.back .qr { width: 1.18in; border: .015in solid var(--deep); }
+.back .opt b { display: block; font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 9.5pt; color: var(--deep); line-height: 1.1; margin-top: .06in; }
+.back .who { position: absolute; left: .4in; right: .4in; bottom: .62in; font-size: 8pt; border-top: .02in solid var(--deep); padding-top: .08in; }
+.back .legal { position: absolute; left: .4in; right: .4in; bottom: .28in; font-size: 6pt; opacity: .8; }
+</style></head><body>
+<div class="page front on-dark">
+  <div class="logo-wrap">{{LOGO_DARK}}</div>
+  <h1>Running on depletion is a signal, <em>not a personality.</em></h1>
+  <div class="eyebrow">Signals worth noticing</div>
+  <ul class="tri">
+    <li>Exhaustion that sleep does not fix</li>
+    <li>Tension in your jaw, shoulders or chest</li>
+    <li>Simple decisions that feel heavy</li>
+    <li>Irritation that surfaces too fast</li>
+  </ul>
+  <div class="go">Two or more? Turn the card over for a free first step.</div>
+</div>
+<div class="page back on-light">
+  <h2>Pick your first step. All free.</h2>
+  <p class="sub">Scan with your phone camera.</p>
+  <div class="grid">
+    <div class="opt"><div class="qr">{{QR_QUIZ}}</div><b>Burnout Signal Check</b></div>
+    <div class="opt"><div class="qr">{{QR_EBOOK}}</div><b>Free ebook</b></div>
+    <div class="opt"><div class="qr">{{QR_RESET}}</div><b>Weekly reset</b></div>
+    <div class="opt"><div class="qr">{{QR_CALL}}</div><b>Free discovery call</b></div>
+  </div>
+  <div class="who"><b>Megan McDonald</b>, Founder of Soma-Q, a nervous system alignment practice. soma-q.com</div>
+  <div class="legal">Adults 18 and older. Educational, not a diagnosis. Soma-Q does not diagnose or treat any condition.</div>
+</div>
+</body></html>

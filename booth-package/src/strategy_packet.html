@@ -1,0 +1,267 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Soma-Q Event Booth Package</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="brand.css">
+<style>
+@page { size: 8.5in 11in; margin: .65in .7in .7in; }
+body { font-size: 9.5pt; background: #fff; }
+.cover { height: 9.5in; background: var(--deep); color: var(--white); margin: -.65in -.7in 0; padding: .9in .8in; position: relative; page-break-after: always; height: 11in; }
+.cover .logo-wrap { width: 2in; font-size: 9pt; } .cover .logo-wrap img { width: 100%; }
+.cover h1 { font-size: 40pt; line-height: 1.05; margin-top: 2.6in; max-width: 6.4in; }
+.cover h1 em { font-style: normal; color: var(--light); }
+.cover p { color: var(--pale); font-size: 13pt; margin-top: .3in; max-width: 6in; }
+.cover .meta { position: absolute; left: .8in; bottom: .9in; font-size: 10pt; color: var(--light); line-height: 1.7; }
+.cover .tri { position: absolute; right: -.6in; bottom: -.4in; width: 5.5in; opacity: .12; }
+h2 { font-size: 20pt; color: var(--deep); margin: 0 0 .1in; line-height: 1.1; }
+h3 { font-size: 12.5pt; color: var(--deep); margin: .18in 0 .05in; }
+p { margin: .06in 0; }
+.pg { page-break-before: always; }
+.lede { font-size: 11.5pt; color: var(--deep); max-width: 6.6in; margin-bottom: .12in; }
+table { border-collapse: collapse; width: 100%; margin: .1in 0; font-size: 9pt; }
+th { background: var(--deep); color: var(--white); text-align: left; padding: .06in .09in; font-weight: 700; }
+td { padding: .06in .09in; border-bottom: .01in solid var(--light); vertical-align: top; }
+tr:nth-child(even) td { background: var(--pale); }
+.box { background: var(--pale); border-left: .06in solid var(--deep); padding: .1in .16in; margin: .12in 0; }
+.warn { background: var(--linen); border-left: .06in solid var(--ink); padding: .1in .16in; margin: .12in 0; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: .25in; }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: .18in; }
+.tile { border: .015in solid var(--deep); border-radius: .08in; padding: .1in .13in; }
+.tile b { color: var(--deep); font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 11.5pt; display: block; }
+.badge { display: inline-block; font-size: 7.5pt; font-weight: 700; padding: .01in .07in; border-radius: .2in; background: var(--deep); color: var(--white); letter-spacing: .04em; text-transform: uppercase; }
+.badge.mid { background: var(--light); color: var(--ink); } .badge.low { background: var(--linen); color: var(--ink); border: .01in solid var(--ink); }
+ul { padding-left: 1.1in; } ul.plain { padding-left: .22in; } ul.plain li { margin: .02in 0; }
+.small { font-size: 8.5pt; } .ph { background: var(--linen); padding: 0 .04in; border-radius: .03in; }
+svg text { font-family: 'DM Sans', sans-serif; }
+</style></head><body class="on-light">
+
+<div class="cover on-dark">
+  <div class="logo-wrap">{{LOGO_DARK}}</div>
+  <svg class="tri" viewBox="0 0 100 90" fill="none" stroke="#9BC4BD" stroke-width="1.2"><polygon points="50,4 96,86 4,86"/></svg>
+  <h1>The booth that turns a <em>conversation</em> into a client.</h1>
+  <p>Event booth strategy, lead capture system and print production brief. Internal planning document for Soma-Q and its designers and printers.</p>
+  <div class="meta">Version 0.1 &nbsp;|&nbsp; 7 October 2026<br>{{EVENT_NAME}} &nbsp;|&nbsp; {{EVENT_DATES}} &nbsp;|&nbsp; {{EVENT_VENUE}}<br>Booth {{BOOTH_NUMBER}} &nbsp;|&nbsp; {{BOOTH_SIZE}}<br>Prepared for Megan McDonald, Founder</div>
+</div>
+
+<!-- 1 -->
+<div class="eyebrow" style="font-size:8pt;color:var(--deep)">The plan on one page</div>
+<h2>One message, one action, two paths.</h2>
+<p class="lede">The booth does three things in order: stops a person walking past, starts a real conversation, and captures a contact that can be followed up within a day. Everything printed serves one of those jobs, or it is not printed. The event is Saturday, October 24, 2026, seventeen days from the date of this document, so the timeline in the order guide is part of the plan.</p>
+<div class="three">
+  <div class="tile"><b>Goals</b>Grow the email list and the contact list (both, with consent), and book free discovery calls from the best conversations.</div>
+  <div class="tile"><b>Audience</b>Adults only. High-performing leaders, mostly men at this event, plus owners and HR or team leads. You are a regular sponsor, so some visitors already know you.</div>
+  <div class="tile"><b>Budget</b>$500 to $1,500 for printing and swag combined. Spend concentrates on what people see and scan, not on giveaways.</div>
+</div>
+<h3>The six rules this package follows</h3>
+<ul class="plain">
+  <li><b>One headline, readable in three seconds.</b> A question about stress, with the outcome underneath. No service lists on the banner.</li>
+  <li><b>Four free first steps, always the same four.</b> Burnout Signal Check, the free ebook, the weekly reset, and a free discovery call. Each has its own QR on the banner, the counter sign and the card, and each is tagged so we can see which one people choose.</li>
+  <li><b>Scanning must work at standing height.</b> QR codes sit at roughly chest height on the banner, on the counter and in the hand, never on the floor-level table front or the backdrop.</li>
+  <li><b>Earn the swag.</b> Everyone who talks to us gets a card, which is cheap and useful. A premium keepable goes only to people who give a contact or book a call, so every unit of spend is tied to a lead.</li>
+  <li><b>Capture before they walk away.</b> The capture tap or scan happens during the conversation, not after, because intent fades the moment they turn the corner.</li>
+  <li><b>Track every printed piece.</b> Each QR carries its own tag (banner, sign, card, organizations sheet), so after the event we know which piece actually produced scans.</li>
+</ul>
+<h3>What is in this package</h3>
+<table><tr><th>Piece</th><th>Job</th><th>Trim size</th><th>File</th></tr>
+<tr><td>Retractable banner (two versions)</td><td>Stop people. Ask the question. Four free scans.</td><td>32 x 80 in</td><td>banner_retractable.pdf, banner_retractable_photo.pdf</td></tr>
+<tr><td>Backdrop (two versions), optional</td><td>Brand wall behind the table. Question headline, four areas pressure shows up. No QR.</td><td>120 x 90 in placeholder</td><td>backdrop.pdf, backdrop_photo.pdf</td></tr>
+<tr><td>Backdrop (optional)</td><td>120 x 90 in placeholder, file at 121 x 91 in. Confirm against the vendor template (frame, curve, panel seams).</td><td>All critical content sits in the top 45 in, above the table and the crowd. No QR on this piece.</td></tr>
+<tr><td>Table front panel</td><td>Brand recognition from the aisle. Names both paths. No QR.</td><td>72 x 30 in (confirm with vendor)</td><td>table_front.pdf</td></tr>
+<tr><td>Counter sign</td><td>Four free first steps plus the POPL tap or scan.</td><td>8.5 x 11 in, acrylic stand</td><td>counter_sign.pdf</td></tr>
+<tr><td>Take-home card</td><td>A card people keep: signals on the front, four scans on the back.</td><td>4 x 6 in, two sided</td><td>card_individual.pdf</td></tr>
+<tr><td>Organizations one-sheet</td><td>A page an owner or HR lead can forward internally.</td><td>8.5 x 11 in</td><td>sheet_organizations.pdf</td></tr>
+<tr><td>Business card</td><td>New card with a QR to book a free discovery call.</td><td>3.5 x 2 in, two sided</td><td>business_card.pdf</td></tr>
+</table>
+<p class="small">All print files include bleed and are built from <span class="ph">build/config.py</span>. The official logo, your photo and the POPL QR image are dropped into <span class="ph">assets/</span> and the files rebuild in seconds. The lead tracker is lead_tracker_template.csv. Where to buy each item, what it costs, and when to order by is in the separate Order Guide.</p>
+
+<!-- 2 -->
+<div class="pg"></div>
+<div class="eyebrow" style="font-size:8pt;color:var(--deep)">What the evidence says</div>
+<h2>Researched, with the confidence level stated.</h2>
+<p class="lede">I searched for evidence behind each major booth decision. Much of what circulates is vendor marketing repeated without a primary source, so each finding is rated by how well it is actually supported. Please verify anything you plan to quote externally.</p>
+<table>
+<tr><th style="width:1.6in">Question</th><th>What I found</th><th style="width:.75in">Support</th><th style="width:1.6in">How we use it</th></tr>
+<tr><td>Does fast follow-up matter?</td><td>The most cited speed finding is a 2011 Harvard Business Review study with MIT and InsideSales.com, reported through secondary sources, finding firms that contacted web leads within an hour were nearly seven times as likely to qualify them. It studied online leads, not event leads. Event-specific multipliers (3x, 6x, 9x) appear widely without sources.</td><td><span class="badge mid">Moderate</span></td><td>Follow up the same day, and no later than 24 hours. Treat the exact multiplier as unproven.</td></tr>
+<tr><td>Do most event leads go unfollowed?</td><td>A figure of roughly 80% never followed up is attributed to CEIR across many blogs, but I could not find the original report, and other sources give 70% or 20%. A 2013 CMO Council and E2MA survey reported only 6% of respondents said they converted tradeshow leads extremely well.</td><td><span class="badge low">Weak</span></td><td>Internal caution only. Do not quote the 80% figure publicly. The practical lesson, a written follow-up plan, stands either way.</td></tr>
+<tr><td>Do promotional products work?</td><td>ASI's own studies (an industry trade body, so not independent) report about 85% recall of the advertiser, and that apparel and outerwear are kept longest. Item rankings differ between ASI editions (for example calendars rank last in one and longest in another). Pens and similar items are kept for months, not years.</td><td><span class="badge mid">Moderate</span></td><td>Skip generic giveaways. Spend on one useful, visible keepable, and only for qualified contacts.</td></tr>
+<tr><td>Does the three-second headline rule hold?</td><td>It is a design heuristic repeated by booth builders, not a measured finding. The advice is consistent: one headline stating the outcome, at eye level, with the primary message above crowd height.</td><td><span class="badge low">Heuristic</span></td><td>One large question headline in the upper third of the banner.</td></tr>
+<tr><td>Does interaction raise dwell time?</td><td>Directionally plausible and widely claimed. Multipliers such as 3 to 5 times and 50% more traffic cite no methodology. Baseline dwell at static booths is reported as roughly 10 to 60 seconds, also unsourced.</td><td><span class="badge low">Weak</span></td><td>The quiz on the visitor's own phone is the interaction. Measure our own dwell and conversion instead of relying on these numbers.</td></tr>
+<tr><td>Can POPL and Nimble capture leads?</td><td>Popl states that it supports NFC and QR sharing, custom lead forms with consent boxes and qualifying questions, offline capture, card scanning, and sync to Salesforce, HubSpot, Zoho, Outlook and Zapier. Nimble documents an AI business card scanner in its mobile app and lists tags, smart lists and email sequences, though I could not confirm tags or sequences can be managed from the phone.</td><td><span class="badge mid">Vendor claims</span></td><td>Popl is the primary capture tool. Nimble is the contact system of record. See the capture section for the verification list.</td></tr>
+</table>
+<div class="box"><b>Plain conclusion.</b> No source I found proves a specific booth design wins. The defensible strategy is the one that is cheap to test: put a different tag on each printed piece, capture every conversation the same way, and keep only what produced leads at the next event.</div>
+
+<!-- 3 -->
+<div class="pg"></div>
+<div class="eyebrow" style="font-size:8pt;color:var(--deep)">Strategy</div>
+<h2>The conversion path.</h2>
+<p class="lede">Five steps, each with one job and one owner. The diagram shows where each printed piece and each tool sits.</p>
+<svg viewBox="0 0 700 170" width="100%" role="img" aria-label="Conversion path from attract to follow-up">
+  <g font-size="11">
+  <rect x="5" y="20" width="125" height="110" rx="10" fill="#103C41"/><text x="67" y="45" fill="#9BC4BD" text-anchor="middle" font-weight="700">1. ATTRACT</text><text x="67" y="68" fill="#FEFCF8" text-anchor="middle">Banner question</text><text x="67" y="84" fill="#FEFCF8" text-anchor="middle">Table front</text><text x="67" y="100" fill="#FEFCF8" text-anchor="middle">Eye contact, smile</text>
+  <rect x="145" y="20" width="125" height="110" rx="10" fill="#103C41"/><text x="207" y="45" fill="#9BC4BD" text-anchor="middle" font-weight="700">2. ENGAGE</text><text x="207" y="68" fill="#FEFCF8" text-anchor="middle">One open question</text><text x="207" y="84" fill="#FEFCF8" text-anchor="middle">"For you or your team?"</text>
+  <rect x="285" y="20" width="125" height="110" rx="10" fill="#103C41"/><text x="347" y="45" fill="#9BC4BD" text-anchor="middle" font-weight="700">3. CAPTURE</text><text x="347" y="68" fill="#FEFCF8" text-anchor="middle">POPL tap or scan</text><text x="347" y="84" fill="#FEFCF8" text-anchor="middle">or quiz on their phone</text><text x="347" y="100" fill="#FEFCF8" text-anchor="middle">Tag: you or team</text>
+  <rect x="425" y="20" width="125" height="110" rx="10" fill="#103C41"/><text x="487" y="45" fill="#9BC4BD" text-anchor="middle" font-weight="700">4. REWARD</text><text x="487" y="68" fill="#FEFCF8" text-anchor="middle">Card for everyone</text><text x="487" y="84" fill="#FEFCF8" text-anchor="middle">Keepable for qualified</text>
+  <rect x="565" y="20" width="130" height="110" rx="10" fill="#103C41"/><text x="630" y="45" fill="#9BC4BD" text-anchor="middle" font-weight="700">5. FOLLOW UP</text><text x="630" y="68" fill="#FEFCF8" text-anchor="middle">Same day message</text><text x="630" y="84" fill="#FEFCF8" text-anchor="middle">Book the call</text>
+  </g>
+  <g stroke="#9BC4BD" stroke-width="2" fill="#9BC4BD"><polygon points="133,75 143,70 143,80"/><polygon points="273,75 283,70 283,80"/><polygon points="413,75 423,70 423,80"/><polygon points="553,75 563,70 563,80"/></g>
+</svg>
+<h3>Booth anatomy: where each piece goes</h3>
+<svg viewBox="0 0 700 250" width="100%" role="img" aria-label="Booth layout">
+  <rect x="5" y="5" width="690" height="240" rx="6" fill="#EEEADD"/>
+  <rect x="40" y="20" width="110" height="205" rx="6" fill="#103C41"/><text x="95" y="75" fill="#FEFCF8" font-size="11" text-anchor="middle">Banner</text><text x="95" y="92" fill="#9BC4BD" font-size="9" text-anchor="middle">Headline at</text><text x="95" y="105" fill="#9BC4BD" font-size="9" text-anchor="middle">eye level and up</text><rect x="62" y="130" width="66" height="50" rx="4" fill="#FEFCF8"/><text x="95" y="160" fill="#103C41" font-size="9" text-anchor="middle">QR, chest height</text>
+  <rect x="200" y="150" width="400" height="70" rx="6" fill="#103C41"/><text x="400" y="190" fill="#FEFCF8" font-size="11" text-anchor="middle">Table front panel: brand only, no QR</text>
+  <rect x="300" y="105" width="90" height="42" rx="4" fill="#9BC4BD"/><text x="345" y="130" fill="#24211D" font-size="9" text-anchor="middle">Counter sign + 2 QR</text>
+  <rect x="410" y="115" width="60" height="32" rx="4" fill="#E4F2F2" stroke="#103C41"/><text x="440" y="135" fill="#103C41" font-size="9" text-anchor="middle">Cards</text>
+  <rect x="490" y="115" width="60" height="32" rx="4" fill="#E4F2F2" stroke="#103C41"/><text x="520" y="135" fill="#103C41" font-size="9" text-anchor="middle">Org sheets</text>
+  <circle cx="400" cy="60" r="22" fill="#FEFCF8" stroke="#103C41"/><text x="400" y="64" fill="#103C41" font-size="9" text-anchor="middle">You</text><text x="400" y="92" fill="#24211D" font-size="9" text-anchor="middle">Stand beside the table, not behind it</text>
+  <text x="620" y="60" fill="#24211D" font-size="9" text-anchor="middle">Aisle</text><path d="M590 70 L650 70" stroke="#103C41" stroke-width="2"/>
+</svg>
+<p class="small">Stand to the side of the table. People approach an open space more readily than a barrier; this is common booth practice rather than a measured finding.</p>
+<h3>Written for how this audience talks</h3>
+<p>Design stays neutral so the booth reads as inviting to anyone, and the language does the work of connecting with men: direct sentences, the physical and practical signals (sleep, tension, heavy decisions, a short fuse), and the framing of pressure as something trainable. There is no self-care, glow or journey vocabulary on any piece. If the event data later shows an audience that is overwhelmingly men, a second card with one men-focused headline is a small, low-risk addition, and I would test it against the neutral card rather than replace it.</p>
+
+<!-- 4 -->
+<div class="pg"></div>
+<div class="eyebrow" style="font-size:8pt;color:var(--deep)">Materials and budget</div>
+<h2>Spend where people look and scan.</h2>
+<p class="lede">The budget is $500 to $1,500 for print and swag together. I did not look up current prices, so the shares below are planning allocations to take into quote requests, not quotes. Get at least two quotes for each line and ask each vendor for a printed proof.</p>
+<table><tr><th>Line</th><th style="width:.9in">Planning share</th><th>Notes</th></tr>
+<tr><td>Retractable banner and table front panel</td><td>35% to 40%</td><td>The largest line, because it does the stopping. Ask for the vendor template before final export, and a printed color proof of the Deep Teal.</td></tr>
+<tr><td>Cards and organizations sheets</td><td>15% to 20%</td><td>Order the cards in a quantity you will realistically hand out; leftovers are not a saving. Order the one-sheets in a short run, as they go only to organizational leads.</td></tr>
+<tr><td>Counter sign and acrylic stand</td><td>5% to 8%</td><td>Cheap and high leverage. It carries both QR codes and the POPL instruction.</td></tr>
+<tr><td>One earned keepable</td><td>20% to 25%</td><td>For qualified contacts only. Quantity equals the number of qualified conversations you expect plus a small buffer; at an unknown attendance, start with a number you can afford to run out of.</td></tr>
+<tr><td>Holdback</td><td>10% to 15%</td><td>Rush fees, a reprint after a proof error, shipping, tape and a spare QR sign.</td></tr></table>
+<h3>What I recommend you do not buy</h3>
+<p>These are my judgment calls from the evidence above and general booth practice, not findings: tri-fold brochures (they get recycled and cannot be tracked), generic pens and stress balls (short-lived, and a stress ball sends the wrong message for a nervous system practice), a long list of services on the banner, and any piece without a scannable next step.</p>
+<h3>The earned keepable: decision for you</h3>
+<p>The strongest evidence in the promotional products literature is for items that are used often and seen by others, such as apparel, outerwear and drinkware, which the ASI studies report are kept longest. Those cost more per unit, which is why they are reserved for people who have given a contact or booked a call. Two options fit the budget; I would choose after you have the unit prices.</p>
+<div class="two"><div class="tile"><b>Option A: drinkware</b>Daily use and visible to colleagues. Mid cost per unit. Subtle logo and the URL only.</div><div class="tile"><b>Option B: reset card set</b>A small set of practice cards from the Practice Library, chosen to be used at a desk. Lower cost per unit, and on message. Needs practices selected and verified against the citations master before printing.</div></div>
+<h3>Brand and print rules for every piece</h3>
+<ul class="plain"><li>Six colors only: Deep Teal #103C41, Light Teal #9BC4BD, Pale Teal #E4F2F2, Linen #EEEADD, Card White #FEFCF8, Ink #24211D. No gold, no copper. I did not convert these to CMYK or Pantone because I could not verify a match; ask the printer to match Deep Teal and approve a proof.</li>
+<li>DM Serif Display for headings and DM Sans for body. Outline or embed fonts when exporting for print.</li>
+<li>Official logos only, from the UPDATED SEPT 2026 LOGOS folder. Reversed logo on Deep Teal, teal logo on Linen or white.</li>
+<li>Trademark marks on first use per piece (Presence Under Pressure&trade; appears on the organizations sheet).</li>
+<li>No em dashes or en dashes, no coaching or clinical language, outcome-first headlines.</li></ul>
+
+<!-- 5 -->
+<div class="pg"></div>
+<div class="eyebrow" style="font-size:8pt;color:var(--deep)">Capture system</div>
+<h2>How POPL, Nimble and the quiz fit together.</h2>
+<p class="lede">Three capture routes feed one list. The aim is that every contact lands in Nimble with the same two tags, regardless of how it was captured.</p>
+<table><tr><th>Route</th><th>What is captured</th><th>Where it lands</th></tr>
+<tr><td><b>1. Burnout Signal Check QR</b></td><td>First name, email, result tier, answers</td><td>The quiz's current capture (a Google Form per the website handoff). Needs a path into Nimble.</td></tr>
+<tr><td><b>2. Free ebook QR</b></td><td>First name, email</td><td>The ebook signup (/api/ebook-signup, which the designer still has to build), then the PDF opens.</td></tr>
+<tr><td><b>3. Weekly reset QR</b></td><td>Registration details, depending on where the QR points</td><td>Zoom registration or the Free Resources page. Decide which; registration is better because it captures an email.</td></tr>
+<tr><td><b>4. Free discovery call QR</b></td><td>Name, email, time slot</td><td>Acuity booking, then Nimble. Highest intent: follow up first.</td></tr>
+<tr><td><b>5. POPL tap or scan</b></td><td>Name, email, optional phone, for me or my team, consent</td><td>POPL, then a sync to Nimble (see checks below).</td></tr>
+<tr><td><b>6. Paper cards and badges</b></td><td>Name, title, company, email, phone, address</td><td>Nimble directly, using the mobile business card scanner.</td></tr></table>
+<div class="warn"><b>Launch dependencies.</b> Four of these routes depend on the new site being live on soma-q.com by about October 19, so that every printed code can be scan-tested from a real proof: the /go/ redirects, the Burnout Signal Check, the ebook signup, and the contact form. The website handoff lists the ebook signup and contact form as items the designer still has to build. If any of them will not be ready, tell me and I will change that QR to a fallback destination before you print.</div>
+<h3>Tags to apply to every lead</h3>
+<div class="two"><div class="tile"><b>Source tag</b>oct24 plus the route: quiz, ebook, reset, call, popl, card. (Matches the campaign slug in the QR links.)</div><div class="tile"><b>Segment tag</b>individual or organization. The POPL qualifier and your own note after a conversation set this tag.</div></div>
+<h3>Setup checklist, do all of it before the event</h3>
+<ul class="plain">
+<li><b>POPL lead form.</b> Fields: name, email, "I am here for: myself / my team / just learning", an optional phone number, and a consent checkbox for email follow-up. Add a separate, unchecked consent for text messages if you intend to text.</li>
+<li><b>POPL to Nimble.</b> POPL lists Salesforce, HubSpot, Zoho, Outlook and Zapier as sync options and does not list Nimble by name in the sources I found. <b>Verify</b> whether a Zapier connection to Nimble exists on your plans, and test one lead end to end. If it does not, plan to export the POPL leads to a spreadsheet the same evening and import them into Nimble.</li>
+<li><b>Quiz to Nimble.</b> The quiz posts to a Google Form. Decide whether Nimble imports from that sheet, or whether your platform build replaces the quiz capture with a direct lead capture. Until then, plan a manual import on the same evening.</li>
+<li><b>Nimble tags and sequences.</b> Create the tags and the five-message follow-up sequence on the desktop site ahead of time. I could not confirm they can be managed from the phone app, so do not plan to build them at the booth.</li>
+<li><b>Test on the real devices.</b> Reviewers report NFC tap problems on some older phones, so the counter sign always carries the QR as well as the tap instruction. Bring a charger and a battery pack, and confirm offline capture works without venue wi-fi.</li>
+<li><b>Test every QR</b> on a phone on cell data, from the printed proof, before the final print order. The quiz and contact routes must be live on the final site.</li>
+</ul>
+<div class="warn"><b>Consent.</b> Collect email only with an explicit opt-in, and get a separate opt-in before sending marketing texts (ask your attorney to confirm the wording and your obligations). The quiz is for adults 18 and older, and the event is adults only, so no minors-specific handling is built into the booth.</div>
+
+<!-- 6 -->
+<div class="pg"></div>
+<div class="eyebrow" style="font-size:8pt;color:var(--deep)">At the booth</div>
+<h2>Conversation script and follow-up.</h2>
+<div class="two">
+<div>
+<h3>Open with a question, not a pitch</h3>
+<ul class="plain"><li>"What part of your week runs you down the most?"</li>
+<li>"When the pressure spikes, what do you notice first: your body, your head, or your temper?"</li>
+<li>"Is this something you are dealing with yourself, or for a team you lead?"</li></ul>
+<h3>Then, in this order</h3>
+<ol class="plain" style="padding-left:.22in"><li>Listen for one specific cost (sleep, decisions, a short fuse, energy by mid-afternoon).</li>
+<li>Name it back in one plain sentence, tied to the outcome: restored energy, focused clarity, joy under pressure.</li>
+<li>Offer the next step that fits: the quiz for an individual, the overview for an organization.</li>
+<li>Capture it right there: "Tap my phone and I will send it to you now."</li>
+<li>Give the card. If it is a real conversation, offer the keepable and book the call on the spot.</li></ol>
+</div>
+<div>
+<h3>Stay inside the scope</h3>
+<p>Soma-Q is an education and training practice. In conversation: do not diagnose, do not promise results ("clients report" and "designed to" are the verbs), and do not describe the work as therapy or treatment. If someone describes a medical or mental health crisis, listen, say this is outside what you do, and point them to a licensed provider.</p>
+<h3>Credibility in one line</h3>
+<p>"I am the Founder of Soma-Q, a nervous system alignment practice. Before that I spent thirteen years as a healthcare technology executive."</p>
+<h3>Follow-up cadence</h3>
+<table><tr><th style="width:.7in">When</th><th>What</th></tr>
+<tr><td>Same day</td><td>Short email or text: nice to meet you, the thing we talked about, the link they asked for.</td></tr>
+<tr><td>Day 1 to 2</td><td>The Burnout Signal Check link if they have not taken it, or the organizations overview.</td></tr>
+<tr><td>Day 4</td><td>One useful idea, not an ask.</td></tr>
+<tr><td>Day 8</td><td>Invite to the weekly Shift Happens reset (Wednesdays, 12:00 PM Mountain).</td></tr>
+<tr><td>Day 14</td><td>Direct invitation to book a discovery call.</td></tr></table>
+</div></div>
+<p class="small">The speed target of a same-day first touch rests on moderate evidence (see the evidence table). The remaining timing is my recommended starting cadence and is meant to be adjusted after the first event.</p>
+
+<!-- 7 -->
+<h2 style="margin-top:.35in">How we will know it worked.</h2>
+<p class="lede">I am not setting numeric targets, because I could not find a trustworthy benchmark for a first-time booth in this category and an invented one would mislead you. Record these, then set targets for the second event from your own results.</p>
+<table><tr><th>Measure</th><th>How to get it</th></tr>
+<tr><td>Conversations held, leads captured, capture rate</td><td>Tally sheet at the booth; leads from the tracker</td></tr>
+<tr><td>Leads with a valid email and consent</td><td>Tracker columns</td></tr>
+<tr><td>Scans per printed piece</td><td>The quiz and contact links carry <span class="ph">utm_content</span> per piece (banner, sign, card, orgsheet)</td></tr>
+<tr><td>Calls booked, calls held, clients signed</td><td>Acuity and Nimble, at 7, 30 and 90 days</td></tr>
+<tr><td>Cost per lead and cost per booked call</td><td>Total print and swag spend divided by each count</td></tr></table>
+<p class="small"><b>Decision rule for next time:</b> keep a printed piece only if its tag shows scans or if conversations point to it; drop or redesign any piece with neither.</p>
+
+<!-- 8 -->
+<div class="pg"></div>
+<div class="eyebrow" style="font-size:8pt;color:var(--deep)">Production brief for designers and printers</div>
+<h2>Specifications.</h2>
+<table><tr><th>Piece</th><th>Trim and bleed</th><th>Notes for the printer</th></tr>
+<tr><td>Retractable banner</td><td>32 x 80 in trim (FedEx's listed size), file at 33 x 81 in (0.5 in bleed). Confirm against the vendor template.</td><td>Keep the lower 12 in free of critical content, as the base hides it. The headline sits at roughly 47 to 70 in from the floor. The four QR codes are about 9 in square each including their border, and sit roughly 20 to 50 in from the floor. Request a color proof of Deep Teal.</td></tr>
+<tr><td>Backdrop (optional)</td><td>120 x 90 in placeholder, file at 121 x 91 in. Confirm against the vendor template (frame, curve, panel seams).</td><td>All critical content sits in the top 45 in, above the table and the crowd. No QR on this piece.</td></tr>
+<tr><td>Table front panel</td><td>72 x 30 in trim as a placeholder, file at 73 x 31 in. Confirm against the vendor template (seams and folds).</td><td>No QR on this piece by design. Check which part of the cover is visible when the table is set up.</td></tr>
+<tr><td>Counter sign</td><td>8.5 x 11 in trim, file at 8.75 x 11.25 in (0.125 in bleed).</td><td>Matte stock or acrylic stand with matte insert, so lighting does not glare over the QR codes.</td></tr>
+<tr><td>Take-home card</td><td>4 x 6 in trim, file at 4.25 x 6.25 in. Two sides.</td><td>Heavier card stock, matte or soft-touch. Avoid gloss over the QR.</td></tr>
+<tr><td>Business card</td><td>3.5 x 2 in trim, file at 3.75 x 2.25 in. Two sides.</td><td>Soft-touch or matte, and no gloss over the QR. Keep text 0.2 in from trim.</td></tr>
+<tr><td>Organizations sheet</td><td>8.5 x 11 in trim, file at 8.75 x 11.25 in. One side.</td><td>Standard heavyweight paper is sufficient.</td></tr></table>
+<h3>QR codes</h3>
+<ul class="plain"><li>All codes are vector, Deep Teal on white, error correction level M, with a quiet zone. Do not recolor, stretch or place over imagery.</li>
+<li>Minimum print size: keep every code at or above the size supplied. The take-home card codes are 1.18 in square and the business card code is 0.88 in.</li>
+<li>URLs are generated from <span class="ph">build/config.py</span> and listed in <span class="ph">output/qr_urls.txt</span>. Change the campaign slug per event. The default mode points every code to a stable soma-q.com/go/ address; the redirect list for your designer is in output/redirects_for_designer.md.</li>
+<li>Because a printed QR cannot be edited, point it at a stable address on soma-q.com that you can redirect later. If the final routes differ from the working ones in the config, rebuild before printing.</li></ul>
+<h3>Proof checklist before approving any print order</h3>
+<ul class="plain"><li>Event name, dates and booth number replaced everywhere a placeholder appears. Search each PDF for the character "[".</li>
+<li>Official logo present on every piece. Colors match Deep Teal on the printed proof.</li>
+<li>Every QR scanned from the printed proof on two different phones.</li>
+<li>No text within 0.375 in of trim (0.25 in on the card). Fonts embedded.</li>
+<li>No em dashes, no coaching or clinical language, trademark marks present on first use.</li></ul>
+
+<h3>The photo question</h3>
+<p>Your hesitation is reasonable and it is a choice, not a requirement. I found no study showing a founder's photo raises conversion at a booth, so this is my judgment. The new website opens with a photo, so a photo on the backdrop keeps the booth consistent with the site and helps returning contacts recognize you. A banner is read from distance in three seconds and works as well on its question alone. My recommendation: no photo on the banner, and a photo on the backdrop only if you are comfortable with a very large image of yourself. I built both versions of each so you can compare them side by side.</p>
+<h3>The new business card</h3>
+<p>Front: Deep Teal with the reversed logo and "Burnout ends here." Back: your name, title (Founder only), a one-line descriptor, email, website, an optional phone number, and a QR to book a free discovery call. The QR is the point of the card: a printed card with no scan path is the piece most likely to be forgotten.</p>
+<h2 style="margin-top:.3in">Open decisions and items to verify.</h2>
+<table><tr><th style="width:2in">Item</th><th>Status</th></tr>
+<tr><td>Event name, venue, booth size, tier, deadlines</td><td>Date is October 24, 2026. I could not open the event website from my environment, so the rest stays a placeholder. Please supply.</td></tr>
+<tr><td>Photo on the banner and backdrop</td><td>Your call. Both versions are built; see the photo note below.</td></tr>
+<tr><td>Phone number on the business card</td><td>The website handoff lists this as an open decision.</td></tr>
+<tr><td>Official logo and POPL QR images</td><td>Needed in <span class="ph">assets/</span>. I could not transfer image files from Drive into the build environment.</td></tr>
+<tr><td>Final website routes for the quiz and the organizations contact path</td><td>The working URLs come from your website handoff. Confirm they are live after the Replit migration.</td></tr>
+<tr><td>POPL to Nimble sync</td><td>Verify the connection and test it with one lead.</td></tr>
+<tr><td>Vendor templates for banner and table cover</td><td>Required before final export.</td></tr>
+<tr><td>Earned keepable (drinkware or reset cards)</td><td>Your decision after unit pricing. Reset cards need practices chosen from the Practice Library and checked against the research citations master.</td></tr>
+<tr><td>Booth-only offer for organizations (for example a short team session)</td><td>Optional; not included in the printed pieces.</td></tr></table>
+
+<div class="pg"></div>
+<h2>Sources.</h2>
+<p class="small">I retrieved these through search and did not read every one in full. Several are vendor blogs; the statistics in them vary and should be checked against primary sources before being quoted.</p>
+<ul class="plain small">
+<li>ASI Ad Impressions Study, 2019: members.asicentral.com/news/web-exclusive/january-2019/2019-ad-impressions-study/</li>
+<li>ASI 2022 Ad Impressions Study press release: asicentral.com/press-releases/asi-s-2022-ad-impressions-study-definitively-proves-promo-s-influence-nationwide/</li>
+<li>ASI 2016 cost analysis of promotional products: media.asicentral.com/resources/impressions-study-2016.pdf</li>
+<li>Trade Show Labs, trade show statistics roundup (cites the CMO Council and E2MA study): tradeshowlabs.com/blog/trade-show-stats</li>
+<li>Tendro, "Speed to Lead for Trade Shows: The 42-Hour Problem" (discusses the 2011 HBR study): tendro.com/blog/speed-to-lead-trade-show</li>
+<li>BoothVision, "The 3-Second Rule": boothvision.com/blogs/exhibition-booth-design-psychology/</li>
+<li>Popl, digital business card and lead capture pages: popl.co/pages/digital-business-card</li>
+<li>Nimble, "The business card scanner is back smarter than ever with AI": nimble.com/blog/the-business-card-scanner-is-back-smarter-than-ever-with-ai/</li>
+<li>Soma-Q internal: Website Handoff (7 October 2026), Website Rebuild Brief v2, Designer Handoff Summary, brand and credentials standards.</li>
+</ul>
+</body></html>

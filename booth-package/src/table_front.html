@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Table front panel 72 x 30 in</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="brand.css">
+<style>
+/* Placeholder trim 72 x 30 in (front panel of a 6 ft table cover) plus 0.5 in bleed = 73 x 31 in.
+   Table cover vendors each have their own template with seams and fold lines: CONFIRM before final export. */
+@page { size: 73in 31in; margin: 0; }
+body { width: 73in; height: 31in; background: var(--deep); color: var(--white); position: relative; overflow: hidden; }
+.logo-wrap { position: absolute; left: 4in; top: 4in; width: 15in; font-size: 2in; }
+.logo-wrap img { width: 100%; }
+.mid { position: absolute; left: 24in; right: 24in; top: 5in; text-align: left; }
+.mid h1 { font-size: 3.1in; line-height: 1.02; }
+.mid p { font-size: 1.15in; color: var(--pale); margin-top: 1.1in; line-height: 1.3; }
+.right { position: absolute; right: 4in; top: 5.5in; width: 17in; font-size: 1.35in; line-height: 1.45; }
+.right .row { border-top: .06in solid var(--light); padding: .7in 0; }
+.right b { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.9in; display: block; color: var(--light); }
+.url { position: absolute; left: 4in; bottom: 3.5in; font-size: 1in; letter-spacing: .1em; color: var(--light); }
+</style></head><body class="on-dark">
+<div class="logo-wrap">{{LOGO_DARK}}</div>
+<div class="url">SOMA-Q.COM</div>
+<div class="mid">
+  <h1>Burnout ends here.</h1>
+  <p>Nervous system alignment for high-performing leaders, built to restore energy, focused clarity, and joy under pressure.</p>
+</div>
+<div class="right">
+  <div class="row"><b>For you.</b>Weekly measurement shows your progress in your own numbers.</div>
+  <div class="row"><b>For your team.</b>Training for leaders and teams, with progress measured every week.</div>
+</div>
+</body></html>

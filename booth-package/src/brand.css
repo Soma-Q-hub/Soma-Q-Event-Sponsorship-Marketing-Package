@@ -1,0 +1,38 @@
+/* Soma-Q v2 palette: six colors, no gold, no copper. Fonts: DM Serif Display (headings), DM Sans (body). */
+:root {
+  --deep: #103C41;
+  --light: #9BC4BD;
+  --pale: #E4F2F2;
+  --linen: #EEEADD;
+  --white: #FEFCF8;
+  --ink: #24211D;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: 'DM Sans', Calibri, sans-serif; color: var(--ink); background: var(--white); line-height: 1.4; }
+h1, h2, h3, .serif { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+
+/* Eyebrow with the brand triangle (not used in opening-section labels on the web; on print it anchors the label) */
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-weight: 700; display: flex; align-items: baseline; gap: .5em; }
+.eyebrow::before { content: ""; display: inline-block; width: .7em; height: .62em; background: var(--light); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.on-light .eyebrow::before { background: var(--deep); }
+
+/* Logo slot: real logo is placed from assets/. If missing, a dashed placeholder prints so nobody sends a proof without it. */
+.logo { display: block; }
+.logo-missing { border: .02em dashed currentColor; padding: .3em .6em; font-weight: 700; font-size: .55em; letter-spacing: .04em; text-align: center; opacity: .8; line-height: 1.2; }
+
+/* QR holder */
+.qr { background: #fff; padding: 4%; border-radius: .08in; display: inline-block; line-height: 0; }
+.qr svg { width: 100%; height: auto; display: block; }
+
+/* Triangle bullets */
+ul.tri { list-style: none; }
+ul.tri li { position: relative; padding-left: 1.2em; margin: .35em 0; }
+ul.tri li::before { content: ""; position: absolute; left: 0; top: .5em; width: .62em; height: .55em; background: var(--light); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.on-light ul.tri li::before { background: var(--deep); }
+
+/* Photo frame: mirrors the website hero photo (rounded corners, Light Teal L-bracket at lower left) */
+.photo { position: relative; aspect-ratio: 4 / 5; border-radius: .6em; overflow: visible; }
+.photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; border-radius: .6em; display: block; }
+.photo::after { content: ""; position: absolute; left: -.6em; bottom: -.6em; width: 46%; height: 46%; border-left: .22em solid var(--light); border-bottom: .22em solid var(--light); border-radius: 0 0 0 .6em; pointer-events: none; }
+.photo-missing { width: 100%; height: 100%; border: .06em dashed var(--light); border-radius: .6em; display: flex; align-items: center; justify-content: center; text-align: center; padding: .6em; font-size: .5em; color: var(--light); }

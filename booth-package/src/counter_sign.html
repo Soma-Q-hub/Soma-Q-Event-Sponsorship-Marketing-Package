@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Counter sign 8.5 x 11 in</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap">
+<link rel="stylesheet" href="brand.css">
+<style>
+/* Trim 8.5 x 11 in for an acrylic stand, plus 0.125 in bleed = 8.75 x 11.25 in. Safe zone: keep text 0.375 in from trim. */
+@page { size: 8.75in 11.25in; margin: 0; }
+body { width: 8.75in; height: 11.25in; background: var(--linen); color: var(--ink); padding: .55in .6in .45in; position: relative; overflow: hidden; }
+.top { display: flex; justify-content: space-between; align-items: center; }
+.top .logo-wrap { width: 1.9in; font-size: 9pt; } .top .logo-wrap img { width: 100%; }
+.top .eyebrow { font-size: 8.5pt; color: var(--deep); }
+h1 { font-size: 27pt; line-height: 1.05; color: var(--deep); margin: .22in 0 .08in; }
+.sub { font-size: 11.5pt; max-width: 6.8in; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: .2in; margin-top: .22in; }
+.card { background: var(--white); border: .03in solid var(--deep); border-radius: .12in; padding: .16in .18in; text-align: center; }
+.card .qr { width: 1.85in; border: .03in solid var(--deep); }
+.card h2 { font-size: 14.5pt; color: var(--deep); line-height: 1.1; margin-top: .1in; }
+.card p { font-size: 9.5pt; margin-top: .03in; }
+.tap { margin-top: .2in; background: var(--deep); color: var(--white); border-radius: .12in; padding: .17in .25in; display: flex; align-items: center; gap: .25in; }
+.tap .popl { width: 1.15in; height: 1.15in; flex: none; background: var(--white); border-radius: .08in; display: flex; align-items: center; justify-content: center; color: var(--ink); font-size: 7.5pt; text-align: center; padding: .05in; }
+.tap .popl img { width: 100%; }
+.tap h3 { font-size: 15pt; color: var(--light); }
+.tap p { font-size: 10pt; margin-top: .04in; }
+.foot { position: absolute; left: .6in; right: .6in; bottom: .3in; font-size: 6.8pt; opacity: .8; }
+</style></head><body class="on-light">
+<div class="top"><div class="logo-wrap">{{LOGO_LIGHT}}</div><div class="eyebrow">{{EVENT_NAME}}</div></div>
+<h1>Pick a first step. Each one is free and takes a few minutes.</h1>
+<p class="sub">Scan with your phone camera, or talk with me first and I will point you to the right one.</p>
+<div class="grid">
+  <div class="card"><div class="qr">{{QR_QUIZ}}</div><h2>Burnout Signal Check</h2><p>Five questions to see where your energy, clarity and joy stand today.</p></div>
+  <div class="card"><div class="qr">{{QR_EBOOK}}</div><h2>The free ebook</h2><p>The Missing Intelligence, sent straight to your inbox.</p></div>
+  <div class="card"><div class="qr">{{QR_RESET}}</div><h2>The weekly reset</h2><p>Shift Happens&trade;, live on Zoom, Wednesdays at 12:00 PM Mountain.</p></div>
+  <div class="card"><div class="qr">{{QR_CALL}}</div><h2>A free discovery call</h2><p>A conversation with Megan McDonald to find the right next step.</p></div>
+</div>
+<div class="tap">
+  <div class="popl">{{POPL_QR}}</div>
+  <div><h3>Rather talk first? Tap or scan to connect.</h3><p>Tap your phone to mine or scan this code, leave your name and email, and tell me whether you are here for yourself or your team. I will follow up within a day.</p></div>
+</div>
+<div class="foot">The Burnout Signal Check is for adults 18 and older and is educational, not a diagnosis. Soma-Q is an education and training practice and does not diagnose or treat any condition.</div>
+</body></html>
