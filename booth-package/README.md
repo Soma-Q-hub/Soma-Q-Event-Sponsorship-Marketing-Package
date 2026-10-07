@@ -2,6 +2,8 @@
 
 Print-ready booth art, an internal strategy packet and an order guide, built for the October 24, 2026 event and reusable for later ones.
 
+**Inline previews:** every page of every piece is a PNG in `output/preview/`, with a gallery in `output/PREVIEW.md` and `output/preview.html`. The PDFs are the print files.
+
 Start with `output/strategy_packet.pdf` (the plan) and `output/order_guide.pdf` (what to buy, where, and when).
 
 ## Print files (`output/`)

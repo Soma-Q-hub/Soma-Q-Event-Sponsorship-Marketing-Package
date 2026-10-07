@@ -155,10 +155,31 @@ def render(name, variant=None):
                     "--virtual-time-budget=15000", "--no-pdf-header-footer", f"--print-to-pdf={pdf}", tmp.as_uri()],
                    check=True, capture_output=True)
     tmp.unlink()
-    big = name in ("banner_retractable", "table_front", "backdrop") or name.startswith("poster")
-    subprocess.run(["pdftoppm", "-png", "-r", "30" if name == "backdrop" else ("40" if name.startswith("poster") else ("50" if big else "80")), "-f", "1", "-l", "3",
-                    str(pdf), str(OUT / f"preview_{out_name}")], check=False)
+    make_previews(pdf, out_name)
     print("built", pdf.name)
+
+def make_previews(pdf, out_name):
+    """One PNG per page in output/preview/, long side about 2000 px, so every piece can be viewed inline."""
+    PREV = OUT / "preview"
+    PREV.mkdir(exist_ok=True)
+    for old in PREV.glob(f"{out_name}-*.png"):
+        old.unlink()
+    info = subprocess.run(["pdfinfo", str(pdf)], capture_output=True, text=True).stdout
+    m = re.search(r"Page size:\s+([\d.]+) x ([\d.]+) pts", info)
+    long_pts = max(float(m.group(1)), float(m.group(2))) if m else 792
+    dpi = max(20, min(150, round(2000 / (long_pts / 72))))
+    subprocess.run(["pdftoppm", "-png", "-r", str(dpi), str(pdf), str(PREV / out_name)], check=False)
+
+def write_gallery():
+    PREV = OUT / "preview"
+    items = sorted(PREV.glob("*.png"))
+    md = ["# Preview gallery", "", "Every page of every piece as an image. Rebuild with `python3 build/build.py`.", ""]
+    html = ["<!doctype html><meta charset=utf-8><title>Soma-Q booth package: preview</title><style>body{font-family:sans-serif;margin:24px;background:#EEEADD;color:#24211D}h1{color:#103C41}figure{margin:0 0 32px}img{max-width:100%;height:auto;border:1px solid #9BC4BD;background:#fff}figcaption{font-weight:700;margin:6px 0}</style><h1>Soma-Q booth package: preview</h1>"]
+    for f in items:
+        md += [f"## {f.stem}", f"![{f.stem}](preview/{f.name})", ""]
+        html.append(f'<figure><figcaption>{f.stem}</figcaption><img src="preview/{f.name}" loading="lazy"></figure>')
+    (OUT / "PREVIEW.md").write_text("\n".join(md))
+    (OUT / "preview.html").write_text("\n".join(html))
 
 def write_redirects():
     rows = "\n".join(f"| /go/{k} | {v} |" for k, v in C.GO_TARGETS.items())
@@ -195,3 +216,4 @@ if __name__ == "__main__":
             print("skip (no source yet):", name)
     (OUT / "qr_urls.txt").write_text("Scan-test every URL on a phone, on cell data, from the printed proof.\n\n" + "\n".join(URL_LOG) + "\n")
     write_redirects()
+    write_gallery()
