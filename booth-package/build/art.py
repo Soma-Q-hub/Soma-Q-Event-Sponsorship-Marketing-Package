@@ -109,45 +109,57 @@ def _mirror_path(right, cx):
     return d + " Z"
 
 def bodymap(scheme="light", labels=True, zones=True):
-    """Front-view human figure (neutral silhouette, about 7.5 heads tall) with the places pressure shows up first.
-    Smooth anatomical contour, fine inner lines, soft zone markers sized for a 3/4 in sticker. Local box 2075 x 1790."""
+    """Front-view neutral human figure with the nervous system drawn through it (brain, spinal cord, nerves to the arms
+    and legs), plus the places pressure shows up first. Original drawing in the Soma-Q palette; sized for a 3/4 in
+    sticker. Local box 2075 x 1790."""
     cx = 1212
-    k = 1.0   # shoulders at about 2.8 head widths: neutral, not slight
-    def s(p): return (round(p[0] * (k if p[1] >= 1595 else 1), 1), p[1])
     R = [(0, 1280),
          ((52, 1280), (96, 1322), (96, 1385)), ((96, 1432), (82, 1458), (66, 1478)), ((56, 1490), (48, 1500), (46, 1515)),
          ((46, 1560), (48, 1588), (62, 1600)), ((110, 1612), (170, 1618), (205, 1640)), ((232, 1655), (250, 1690), (252, 1735)),
-         ((258, 1800), (270, 1900), (285, 2000)), ((292, 2040), (300, 2080), (310, 2130)), ((320, 2185), (335, 2230), (345, 2262)),
-         ((352, 2290), (348, 2330), (335, 2350)), ((322, 2362), (305, 2352), (298, 2330)), ((292, 2300), (282, 2260), (268, 2215)),
-         ((250, 2160), (232, 2090), (205, 1960)), ((190, 1890), (176, 1840), (168, 1790)),
-         ((160, 1850), (148, 1930), (140, 2000)), ((138, 2050), (150, 2100), (168, 2150)),
-         ((182, 2200), (186, 2250), (180, 2300)), ((176, 2400), (166, 2480), (148, 2560)), ((136, 2630), (128, 2680), (126, 2720)),
+         ((262, 1800), (290, 1900), (330, 2010)), ((345, 2050), (365, 2100), (385, 2160)), ((398, 2200), (412, 2250), (425, 2290)),
+         ((432, 2310), (440, 2335), (436, 2352)), ((428, 2372), (410, 2368), (404, 2350)),
+         ((392, 2310), (372, 2260), (348, 2210)), ((330, 2170), (306, 2120), (286, 2070)), ((262, 2010), (220, 1920), (190, 1840)),
+         ((178, 1815), (172, 1800), (168, 1790)),
+         ((160, 1850), (150, 1930), (146, 2000)), ((146, 2050), (156, 2100), (166, 2150)),
+         ((176, 2200), (180, 2250), (176, 2300)), ((172, 2400), (164, 2480), (148, 2560)), ((136, 2630), (128, 2680), (126, 2720)),
          ((130, 2790), (134, 2850), (120, 2920)), ((110, 2960), (100, 2985), (94, 3005)), ((96, 3030), (130, 3040), (150, 3054)),
          ((152, 3068), (44, 3068), (36, 3050)), ((30, 3020), (34, 2990), (38, 2960)), ((44, 2900), (40, 2840), (34, 2780)),
          ((30, 2730), (34, 2680), (36, 2640)), ((36, 2520), (20, 2380), (8, 2260)), ((4, 2230), (2, 2210), (0, 2200))]
-    right = [s(R[0])] + [tuple(s(p) for p in seg) for seg in R[1:]]
-    body = _mirror_path(right, cx)
+    body = _mirror_path(R, cx)
+    glow = f'fill="none" stroke="{LIGHT}" stroke-opacity=".55" stroke-linecap="round" stroke-linejoin="round"'
+    nerve = f'fill="none" stroke="{DEEP}" stroke-opacity=".85" stroke-linecap="round" stroke-linejoin="round"'
+    # one side of the peripheral nerves (drawn at +dx, mirrored for the other side)
+    arm = f"M{cx+30},1650 C{cx+120},1655 {cx+200},1690 {cx+250},1790 C{cx+275},1880 {cx+290},1950 {cx+305},2010 C{cx+330},2090 {cx+370},2200 {cx+408},2310"
+    arm_b = [f"M{cx+408},2310 L{cx+428},2346", f"M{cx+408},2310 L{cx+414},2350", f"M{cx+395},2290 L{cx+396},2335"]
+    leg = f"M{cx+8},2100 C{cx+50},2150 {cx+82},2230 {cx+92},2400 C{cx+100},2540 {cx+96},2700 {cx+94},2860 C{cx+92},2940 {cx+86},2990 {cx+78},3030"
+    leg_b = [f"M{cx+84},3000 L{cx+120},3046", f"M{cx+84},3000 L{cx+96},3052", f"M{cx+84},3000 L{cx+62},3050"]
+    side = "".join(f'<path d="{d}" {glow} stroke-width="16"/>' for d in [arm, leg]) + "".join(f'<path d="{d}" {nerve} stroke-width="5"/>' for d in [arm, leg]) + "".join(f'<path d="{d}" {nerve} stroke-width="3.5" stroke-opacity=".6"/>' for d in arm_b + leg_b)
+    for y in range(1680, 2100, 46):      # intercostal branches following the ribs
+        wd = 128 - (y - 1680) * 0.045
+        side += f'<path d="M{cx+14},{y} C{cx+66},{y-4} {cx+104},{y+10} {cx+wd:.0f},{y+44}" {nerve} stroke-width="3.5" stroke-opacity=".38"/>'
     o = f'<defs><radialGradient id="zg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="{LIGHT}" stop-opacity=".95"/><stop offset="1" stop-color="{LIGHT}" stop-opacity=".30"/></radialGradient></defs>'
     o += '<g transform="translate(-170,-1280)">'
-    o += f'<path d="{body}" fill="{WHITE}" stroke="{DEEP}" stroke-width="7" stroke-linejoin="round"/>'
-    fine = f'fill="none" stroke="{DEEP}" stroke-opacity=".35" stroke-width="5" stroke-linecap="round"'
-    for sg in (1, -1):
-        o += f'<path d="M{cx+sg*66},1472 C{cx+sg*54},1500 {cx+sg*26},1522 {cx},1524" {fine}/>'                      # jawline
-        o += f'<path d="M{cx+sg*22},1612 C{cx+sg*70},1618 {cx+sg*110},1630 {cx+sg*150},1660" {fine}/>'            # collarbone
-        o += f'<path d="M{cx+sg*60},1860 C{cx+sg*110},1900 {cx+sg*116},1960 {cx+sg*100},2010" {fine}/>'            # lower rib
-    o += f'<path d="M{cx},1635 L{cx},1870" {fine}/>'                                                              # sternum
+    o += f'<path d="{body}" fill="{WHITE}" fill-opacity=".72" stroke="{DEEP}" stroke-width="7" stroke-linejoin="round"/>'
+    o += f'<path d="M{cx+66},1472 C{cx+54},1500 {cx+26},1522 {cx},1524 C{cx-26},1522 {cx-54},1500 {cx-66},1472" fill="none" stroke="{DEEP}" stroke-opacity=".3" stroke-width="5" stroke-linecap="round"/>'
+    # brain
+    o += f'<path d="M{cx},1300 C{cx+58},1296 {cx+86},1334 {cx+80},1376 C{cx+74},1414 {cx+34},1428 {cx},1426 C{cx-34},1428 {cx-74},1414 {cx-80},1376 C{cx-86},1334 {cx-58},1296 {cx},1300 Z" fill="{LIGHT}" fill-opacity=".6" stroke="{DEEP}" stroke-width="5"/>'
+    o += f'<path d="M{cx},1304 L{cx},1424 M{cx-56},1340 C{cx-36},1352 {cx-30},1372 {cx-48},1392 M{cx+56},1340 C{cx+36},1352 {cx+30},1372 {cx+48},1392 M{cx-70},1372 C{cx-50},1378 {cx-40},1396 {cx-44},1416 M{cx+70},1372 C{cx+50},1378 {cx+40},1396 {cx+44},1416" {nerve} stroke-width="3.5" stroke-opacity=".55"/>'
+    # spinal cord with vertebral segments
+    o += f'<path d="M{cx},1424 L{cx},2110" {glow} stroke-width="22"/><path d="M{cx},1424 L{cx},2110" {nerve} stroke-width="7"/>'
+    for y in range(1560, 2100, 36):
+        o += f'<rect x="{cx-17}" y="{y}" width="34" height="13" rx="6" fill="{WHITE}" stroke="{DEEP}" stroke-opacity=".8" stroke-width="3"/>'
+    o += f'<g>{side}</g><g transform="translate({2*cx},0) scale(-1,1)">{side}</g>'
     if zones:
-        zs = [(cx, 1465, 55), (cx, 1582, 55), (cx - 135, 1690, 68), (cx + 135, 1690, 68), (cx, 1800, 70), (cx, 2050, 70), (cx - 82, 2420, 70), (cx + 82, 2420, 70)]
+        zs = [(cx, 1482, 50), (cx, 1592, 50), (cx - 135, 1700, 66), (cx + 135, 1700, 66), (cx, 1820, 68), (cx, 2050, 70), (cx - 82, 2420, 70), (cx + 82, 2420, 70)]
         for x, y, r in zs:
             o += f'<circle cx="{x}" cy="{y}" r="{r}" fill="url(#zg)" stroke="{DEEP}" stroke-width="5"/><circle cx="{x}" cy="{y}" r="9" fill="{DEEP}"/>'
     if labels:
-        # (side, zone x, zone y, zone r, label)
-        L = [("l", cx, 1465, 55, "Jaw"), ("l", cx - 135, 1690, 68, "Shoulders"), ("l", cx, 2050, 70, "Belly"),
-             ("r", cx, 1582, 55, "Throat"), ("r", cx, 1800, 70, "Chest"), ("r", cx + 82, 2420, 70, "Legs")]
-        for side, zx, zy, zr, name in L:
-            lx = cx - 345 if side == "l" else cx + 345
-            ex = zx - zr if side == "l" else zx + zr
-            o += f'<line x1="{lx + (12 if side == "l" else -12)}" y1="{zy}" x2="{ex}" y2="{zy}" stroke="{DEEP}" stroke-width="5"/>'
-            o += f'<text x="{lx}" y="{zy+30}" text-anchor="{"end" if side == "l" else "start"}" font-family="DM Serif Display" font-size="88" fill="{DEEP}">{name}</text>'
+        L = [("l", cx, 1482, 50, "Jaw"), ("l", cx - 135, 1700, 66, "Shoulders"), ("l", cx, 2050, 70, "Belly"),
+             ("r", cx, 1592, 50, "Throat"), ("r", cx, 1820, 68, "Chest"), ("r", cx + 82, 2420, 70, "Legs")]
+        for side_, zx, zy, zr, name in L:
+            lx = cx - 480 if side_ == "l" else cx + 480
+            ex = zx - zr if side_ == "l" else zx + zr
+            o += f'<line x1="{lx + (12 if side_ == "l" else -12)}" y1="{zy}" x2="{ex}" y2="{zy}" stroke="{DEEP}" stroke-width="5"/>'
+            o += f'<text x="{lx}" y="{zy+30}" text-anchor="{"end" if side_ == "l" else "start"}" font-family="DM Serif Display" font-size="88" fill="{DEEP}">{name}</text>'
     o += '</g>'
     return o, 2075, 1790
