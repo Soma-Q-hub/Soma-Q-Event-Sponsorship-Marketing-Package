@@ -7,6 +7,7 @@ from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PREV = ROOT / "output" / "preview"
 out_path = pathlib.Path(sys.argv[1])
+MODE = sys.argv[2] if len(sys.argv) > 2 else "all"   # all | main (everything but the men's track) | men (men's track only)
 
 SECTIONS = [
   ("banner", "Banners, backdrop and table cover", "The large pieces that stop people in the aisle: light fields, dark type, no QR codes. Banner 2 and the backdrop come with and without your photo.", [
@@ -41,6 +42,14 @@ SECTIONS.append(("plan", "Plan and order guide", "The strategy packet, then the 
     [(f"strategy_packet-{i:02d}", f"Strategy packet, page {i}", "8.5 x 11 in") for i in range(1, len(list(PREV.glob("strategy_packet-*.png"))) + 1)] +
     [(f"order_guide-{i}", f"Order guide, page {i}", "8.5 x 11 in") for i in range(1, 4)]))
 
+if MODE == "main":
+    SECTIONS = [x for x in SECTIONS if x[0] != "men"]
+elif MODE == "men":
+    SECTIONS = [x for x in SECTIONS if x[0] == "men"]
+TITLE = "Soma-Q Booth Package: Men's Track (draft)" if MODE == "men" else "Soma-Q Booth Package"
+LEDE = ("A second front door for a men-skewing room: same brand, loop, outcomes and measurement, different headline and wording, one graphic per piece. Draft for review. Click any image to enlarge it."
+        if MODE == "men" else None)
+
 def data_uri(stem, maxside):
     p = PREV / f"{stem}.png"
     if not p.exists():
@@ -49,7 +58,7 @@ def data_uri(stem, maxside):
     r = maxside / max(im.size)
     if r < 1:
         im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
-    b = io.BytesIO(); im.save(b, "JPEG", quality=80, optimize=True)
+    b = io.BytesIO(); im.save(b, "JPEG", quality=74, optimize=True)
     return "data:image/jpeg;base64," + base64.b64encode(b.getvalue()).decode(), im.size
 
 figs = []; nav = []
@@ -57,7 +66,7 @@ for sid, title, blurb, items in SECTIONS:
     nav.append(f'<a href="#{sid}">{html.escape(title.split(",")[0])}</a>')
     cards = []
     for stem, label, size in items:
-        maxside = 1500 if stem.startswith(("strategy", "order")) else 1700
+        maxside = 1000 if stem.startswith(("strategy", "order")) else 1150
         uri, dim = data_uri(stem, maxside)
         if not uri:
             continue
@@ -66,7 +75,7 @@ for sid, title, blurb, items in SECTIONS:
     cls = "docs" if sid == "plan" else ""
     figs.append(f'<section id="{sid}"><header><h2>{html.escape(title)}</h2><p>{html.escape(blurb)}</p></header><div class="grid {cls}">{"".join(cards)}</div></section>')
 
-page = f'''<title>Soma-Q Booth Package</title>
+page = f'''<title>{TITLE}</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap">
 <style>
 /* Layout: sticky section index, then one band per piece family; click any image to enlarge. Brand palette from the Soma-Q v2 teal system. */
@@ -113,8 +122,8 @@ dialog::backdrop {{ background:rgba(8,20,22,.88); }}
 <div class="wrap">
   <div class="top">
     <span class="eyebrow">Event booth, October 24, 2026</span>
-    <h1>Soma-Q Booth Package</h1>
-    <p class="lede">Every piece as it will print, one picture per page. Click any image to enlarge it. The PDFs are the print files and live in the project's output folder; these are for review only.</p>
+    <h1>{TITLE}</h1>
+    <p class="lede">{LEDE or "Every piece as it will print, one picture per page. Click any image to enlarge it. The PDFs are the print files and live in the project's output folder; these are for review only."}</p>
   </div>
   <nav aria-label="Sections">{"".join(nav)}</nav>
   {"".join(figs)}
