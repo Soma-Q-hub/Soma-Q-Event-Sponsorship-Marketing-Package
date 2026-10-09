@@ -16,7 +16,7 @@ import config as C
 SRC, OUT = ROOT / "src", ROOT / "output"
 OUT.mkdir(exist_ok=True)
 
-PIECE_TAG = {"banner_story": "banner-story", "banner_proof": "banner-proof", "leavebehind": "leavebehind",
+PIECE_TAG = {"banner_men_story": "men-banner-story", "banner_men_proof": "men-banner-proof", "backdrop_men": "men-backdrop", "banner_story": "banner-story", "banner_proof": "banner-proof", "leavebehind": "leavebehind",
              "poster_progress": "poster-progress", "poster_capacity": "poster-capacity", "handout_measurement": "handout-measure",
              "poster_loop": "poster-loop", "poster_shift": "poster-shift", "poster_outcomes": "poster-outcomes", "poster_where": "poster-where",
              "banner_retractable": "banner", "backdrop": "backdrop", "counter_sign": "sign", "card_individual": "card",
@@ -116,13 +116,13 @@ def render(name, variant=None):
     html = re.sub(r"<!--NOPHOTO-->(.*?)<!--/NOPHOTO-->", "" if keep_photo else (lambda m: m.group(1)), html, flags=re.S)
     subs["{{PHOTO_URI}}"] = b64img(C.PHOTO_PATH) or ""
     def _sub_art(m):
-        kind, scheme, opt = m.group(1), m.group(2), m.group(3) or ""
+        kind, scheme, opt, var = m.group(1), m.group(2), m.group(3) or "", m.group(4) or ""
         if kind == "LOOP":
-            return art.loop(scheme, opt != "nogloss")[0]
+            return art.loop(scheme, opt != "nogloss", art.MEN_LOOP if var == "men" else None)[0]
         if kind == "OUTCOMES":
-            return art.outcomes(scheme)[0]
+            return art.outcomes(scheme, art.MEN_OUTCOMES if opt == "men" else None)[0]
         return art.bodymap(scheme)[0]
-    html = re.sub(r"\{\{(LOOP|OUTCOMES|BODYMAP):(light|dark)(?::(\w+))?\}\}", _sub_art, html)
+    html = re.sub(r"\{\{(LOOP|OUTCOMES|BODYMAP):(light|dark)(?::(\w+))?(?::(\w+))?\}\}", _sub_art, html)
     CAPS = {"quiz": "Scan for the free|Burnout Signal Check", "call": "Scan to book a|free discovery call",
             "overview": "Scan to request the|full Measurement Overview"}
     for m in re.finditer(r"\{\{FOOTER:(light|dark)(?::(\w+))?\}\}", src):
@@ -191,6 +191,7 @@ Current campaign: {C.CAMPAIGN}. Destinations in [BRACKETS] still need to be supp
 
 if __name__ == "__main__":
     plan = [("banner_story", None), ("banner_proof", None), ("banner_proof", "photo"), ("backdrop", None), ("backdrop", "photo"),
+            ("banner_men_story", None), ("banner_men_proof", None), ("banner_men_proof", "photo"), ("backdrop_men", None), ("backdrop_men", "photo"),
             ("table_front", None), ("counter_sign", None), ("card_individual", None), ("business_card", None),
             ("leavebehind", None), ("poster_loop", None), ("poster_shift", None), ("poster_outcomes", None),
             ("poster_where", None), ("poster_progress", None), ("poster_capacity", None), ("handout_measurement", None), ("strategy_packet", None), ("order_guide", None)]

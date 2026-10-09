@@ -14,9 +14,29 @@ def _arrow(x1, y1, x2, y2, color, width=14, head=62):
     return (f'<line x1="{x1}" y1="{y1}" x2="{bx:.0f}" y2="{by:.0f}" stroke="{color}" stroke-width="{width}" stroke-linecap="round"/>'
             f'<polygon points="{x2},{y2} {lx:.0f},{ly:.0f} {rx:.0f},{ry:.0f}" fill="{color}"/>')
 
-def loop(scheme="light", gloss=True):
+MEN_LOOP = {
+    "top": "Something happens",
+    "badge": ("INTERRUPT HERE", "Locate it in your body,", "then choose"),
+    "n1": ("Body tightens", "Jaw, chest, gut.", "Bracing without noticing"),
+    "n2": ("Mind goes to work", "Analyzing, fixing,", "comparing"),
+    "n3": ("React or go quiet", "Short fuse,", "or silence"),
+    "center": ["Trying to fix it", "feeds the loop", "that produced it."],
+}
+DEFAULT_LOOP = {
+    "top": "Something happens",
+    "badge": ("INTERRUPT HERE", "Notice the tension,", "then choose"),
+    "n1": ("Body tightens", "Jaw, shoulders, breath.", "Bracing without noticing"),
+    "n2": ("Mind speeds up", "Replaying, rehearsing,", "analyzing"),
+    "n3": ("You react", "Words, tone,", "body language"),
+    "center": ["Reaction feeds", "the tension that", "produced it."],
+}
+DEFAULT_OUTCOMES = [("Restored", "energy", 82), ("Focused", "clarity", 76), ("Joy and", "fulfillment", 76)]
+MEN_OUTCOMES = [("Steady under", "pressure", 82), ("Clear when", "it counts", 76), ("Present at home", "and at work", 62)]
+
+def loop(scheme="light", gloss=True, words=None):
     """The Pressure Loop, reading top to bottom: Something happens, then the three-step loop, with the interrupt point
     on the arrow between the trigger and the loop. Local box 2075 wide."""
+    W = words or DEFAULT_LOOP
     dark = scheme == "dark"
     nfill, ntxt, nsub = (WHITE, DEEP, INK) if dark else (DEEP, WHITE, PALE)
     arr = LIGHT if dark else DEEP
@@ -35,26 +55,26 @@ def loop(scheme="light", gloss=True):
     o = ""
     # 1 Something happens (start), arrow, interrupt badge
     o += f'<rect x="562" y="0" width="900" height="190" rx="95" fill="{pfill}" stroke="{pstroke}" stroke-width="10"/>'
-    o += f'<text x="1012" y="127" text-anchor="middle" font-family="DM Serif Display" font-size="72" fill="{ptxt}">Something happens</text>'
+    o += f'<text x="1012" y="127" text-anchor="middle" font-family="DM Serif Display" font-size="72" fill="{ptxt}">{W["top"]}</text>'
     o += _arrow(1012, 200, 1012, T - 12, arr)
     o += f'<line x1="1075" y1="{(190+T)//2}" x2="1250" y2="{(190+T)//2}" stroke="{LIGHT if dark else DEEP}" stroke-width="10" stroke-dasharray="26 20"/>'
     o += f'<rect x="1250" y="215" width="825" height="290" rx="40" fill="{LIGHT}"/>'
-    o += f'<text x="1662" y="335" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="60" letter-spacing="5" fill="{DEEP}">INTERRUPT HERE</text>'
-    o += f'<text x="1662" y="410" text-anchor="middle" font-family="DM Sans" font-size="46" fill="{DEEP}">Notice the tension,</text>'
-    o += f'<text x="1662" y="465" text-anchor="middle" font-family="DM Sans" font-size="46" fill="{DEEP}">then choose</text>'
+    o += f'<text x="1662" y="335" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="60" letter-spacing="5" fill="{DEEP}">{W["badge"][0]}</text>'
+    o += f'<text x="1662" y="410" text-anchor="middle" font-family="DM Sans" font-size="46" fill="{DEEP}">{W["badge"][1]}</text>'
+    o += f'<text x="1662" y="465" text-anchor="middle" font-family="DM Sans" font-size="46" fill="{DEEP}">{W["badge"][2]}</text>'
     # 2 the loop: Body tightens -> Mind speeds up -> You react -> back to Body tightens
-    o += node(600, T, "Body tightens", "Jaw, shoulders, breath.", "Bracing without noticing")
-    o += node(1250, B, "Mind speeds up", "Replaying, rehearsing,", "analyzing")
-    o += node(0, B, "You react", "Words, tone,", "body language")
+    o += node(600, T, *W["n1"])
+    o += node(1250, B, *W["n2"])
+    o += node(0, B, *W["n3"])
     o += _arrow(1370, T + h + 12, 1650, B - 14, arr)
     o += _arrow(1240, B + h // 2, 850, B + h // 2, arr)
     o += _arrow(380, B - 14, 650, T + h + 14, arr)
     cy = (T + h + B) // 2
-    for i, t in enumerate(["Reaction feeds", "the tension that", "produced it."]):
+    for i, t in enumerate(W["center"]):
         o += f'<text x="1012" y="{cy-40+i*64}" text-anchor="middle" font-family="DM Serif Display" font-style="italic" font-size="54" fill="{mid}">{t}</text>'
     return o, 2075, B + h
 
-def outcomes(scheme="light"):
+def outcomes(scheme="light", labels=None):
     """Three outcome circles inside the Soma-Q triangle, with a Q emblem at the center."""
     tri_stroke = LIGHT if scheme == "dark" else DEEP
     o = f'<polygon points="1000,0 2000,1732 0,1732" fill="none" stroke="{tri_stroke}" stroke-width="14" stroke-linejoin="round"/>'
@@ -62,12 +82,15 @@ def outcomes(scheme="light"):
     o += f'<circle cx="{cx["t"][0]}" cy="{cx["t"][1]}" r="330" fill="{DEEP}" fill-opacity=".95"/>'
     o += f'<circle cx="{cx["l"][0]}" cy="{cx["l"][1]}" r="330" fill="{LIGHT}" fill-opacity=".93"/>'
     o += f'<circle cx="{cx["r"][0]}" cy="{cx["r"][1]}" r="330" fill="{WHITE}" fill-opacity=".95" stroke="{DEEP}" stroke-width="8"/>'
-    o += f'<text x="1000" y="735" text-anchor="middle" font-family="DM Serif Display" font-size="82" fill="{WHITE}">Restored</text><text x="1000" y="820" text-anchor="middle" font-family="DM Serif Display" font-size="82" fill="{WHITE}">energy</text>'
-    o += f'<text x="715" y="1440" text-anchor="middle" font-family="DM Serif Display" font-size="76" fill="{DEEP}">Focused</text><text x="715" y="1520" text-anchor="middle" font-family="DM Serif Display" font-size="76" fill="{DEEP}">clarity</text>'
-    o += f'<text x="1285" y="1440" text-anchor="middle" font-family="DM Serif Display" font-size="76" fill="{DEEP}">Joy and</text><text x="1285" y="1520" text-anchor="middle" font-family="DM Serif Display" font-size="76" fill="{DEEP}">fulfillment</text>'
-    # center emblem: the Soma-Q triangle with a Q
-    o += f'<polygon points="1000,985 1135,1215 865,1215" fill="{DEEP}" stroke="{WHITE}" stroke-width="10" stroke-linejoin="round"/>'
-    o += f'<text x="1000" y="1190" text-anchor="middle" font-family="DM Serif Display" font-size="120" fill="{WHITE}">Q</text>'
+    L = labels or DEFAULT_OUTCOMES
+    def lab(x, y, pair, fill, size):
+        return "".join(f'<text x="{x}" y="{y+k*(size+6)}" text-anchor="middle" font-family="DM Serif Display" font-size="{size}" fill="{fill}">{t}</text>' for k, t in enumerate(pair))
+    o += lab(1000, 735, L[0][:2], WHITE, L[0][2])
+    o += lab(715, 1440, L[1][:2], DEEP, L[1][2])
+    o += lab(1285, 1440, L[2][:2], DEEP, L[2][2])
+    # center emblem: the solid Soma-Q triangle from the logo, no letter (the Q is already in the logo; a letter did not
+    # scale inside a triangle this small)
+    o += f'<polygon points="1000,990 1150,1240 850,1240" fill="{DEEP}" stroke="{WHITE}" stroke-width="12" stroke-linejoin="round"/>\n'
     return o, 2000, 1732
 
 def bodymap(scheme="light", labels=True, zones=True):

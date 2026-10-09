@@ -5,8 +5,23 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## backdrop-1
 ![backdrop-1](preview/backdrop-1.png)
 
+## backdrop_men-1
+![backdrop_men-1](preview/backdrop_men-1.png)
+
+## backdrop_men_photo-1
+![backdrop_men_photo-1](preview/backdrop_men_photo-1.png)
+
 ## backdrop_photo-1
 ![backdrop_photo-1](preview/backdrop_photo-1.png)
+
+## banner_men_proof-1
+![banner_men_proof-1](preview/banner_men_proof-1.png)
+
+## banner_men_proof_photo-1
+![banner_men_proof_photo-1](preview/banner_men_proof_photo-1.png)
+
+## banner_men_story-1
+![banner_men_story-1](preview/banner_men_story-1.png)
 
 ## banner_proof-1
 ![banner_proof-1](preview/banner_proof-1.png)
