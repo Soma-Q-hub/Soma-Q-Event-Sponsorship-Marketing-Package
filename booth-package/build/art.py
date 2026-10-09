@@ -93,24 +93,61 @@ def outcomes(scheme="light", labels=None):
     o += f'<polygon points="1000,990 1150,1240 850,1240" fill="{DEEP}" stroke="{WHITE}" stroke-width="12" stroke-linejoin="round"/>\n'
     return o, 2000, 1732
 
+def _mirror_path(right, cx):
+    """right = [start, (c1, c2, p), ...] describing the right-hand outer contour from the crown down to the crotch
+    (dx offsets from the centerline). Returns one closed SVG path: right side down, mirrored left side back up."""
+    def X(dx, s=1): return cx + s * dx
+    start, segs = right[0], right[1:]
+    d = f"M{X(start[0])},{start[1]}"
+    for c1, c2, p in segs:
+        d += f" C{X(c1[0])},{c1[1]} {X(c2[0])},{c2[1]} {X(p[0])},{p[1]}"
+    anchors = [start] + [s[2] for s in segs]
+    for k in range(len(segs) - 1, -1, -1):
+        c1, c2, _ = segs[k]
+        prev = anchors[k]
+        d += f" C{X(c2[0], -1)},{c2[1]} {X(c1[0], -1)},{c1[1]} {X(prev[0], -1)},{prev[1]}"
+    return d + " Z"
+
 def bodymap(scheme="light", labels=True, zones=True):
-    """Front-view body outline with the six places pressure shows up first. Local box 2075 x 1850."""
-    fill = WHITE
-    o = f'<g fill="{fill}" stroke="{DEEP}" stroke-width="10" stroke-linejoin="round" transform="translate(-170,-1280)">'
-    o += '<circle cx="1212" cy="1420" r="140"/><rect x="1152" y="1540" width="120" height="180" rx="40"/>'
-    o += '<path d="M1010 1690 C890 1705 800 1740 800 1860 L800 2330 Q800 2410 880 2410 L1544 2410 Q1624 2410 1624 2330 L1624 1860 C1624 1740 1534 1705 1414 1690 Z"/>'
-    o += '<rect x="670" y="1790" width="115" height="640" rx="57"/><rect x="1640" y="1790" width="115" height="640" rx="57"/>'
-    o += '<rect x="895" y="2400" width="285" height="660" rx="60"/><rect x="1244" y="2400" width="285" height="660" rx="60"/></g>'
+    """Front-view human figure (neutral silhouette, about 7.5 heads tall) with the places pressure shows up first.
+    Smooth anatomical contour, fine inner lines, soft zone markers sized for a 3/4 in sticker. Local box 2075 x 1790."""
+    cx = 1212
+    k = 1.0   # shoulders at about 2.8 head widths: neutral, not slight
+    def s(p): return (round(p[0] * (k if p[1] >= 1595 else 1), 1), p[1])
+    R = [(0, 1280),
+         ((52, 1280), (96, 1322), (96, 1385)), ((96, 1432), (82, 1458), (66, 1478)), ((56, 1490), (48, 1500), (46, 1515)),
+         ((46, 1560), (48, 1588), (62, 1600)), ((110, 1612), (170, 1618), (205, 1640)), ((232, 1655), (250, 1690), (252, 1735)),
+         ((258, 1800), (270, 1900), (285, 2000)), ((292, 2040), (300, 2080), (310, 2130)), ((320, 2185), (335, 2230), (345, 2262)),
+         ((352, 2290), (348, 2330), (335, 2350)), ((322, 2362), (305, 2352), (298, 2330)), ((292, 2300), (282, 2260), (268, 2215)),
+         ((250, 2160), (232, 2090), (205, 1960)), ((190, 1890), (176, 1840), (168, 1790)),
+         ((160, 1850), (148, 1930), (140, 2000)), ((138, 2050), (150, 2100), (168, 2150)),
+         ((182, 2200), (186, 2250), (180, 2300)), ((176, 2400), (166, 2480), (148, 2560)), ((136, 2630), (128, 2680), (126, 2720)),
+         ((130, 2790), (134, 2850), (120, 2920)), ((110, 2960), (100, 2985), (94, 3005)), ((96, 3030), (130, 3040), (150, 3054)),
+         ((152, 3068), (44, 3068), (36, 3050)), ((30, 3020), (34, 2990), (38, 2960)), ((44, 2900), (40, 2840), (34, 2780)),
+         ((30, 2730), (34, 2680), (36, 2640)), ((36, 2520), (20, 2380), (8, 2260)), ((4, 2230), (2, 2210), (0, 2200))]
+    right = [s(R[0])] + [tuple(s(p) for p in seg) for seg in R[1:]]
+    body = _mirror_path(right, cx)
+    o = f'<defs><radialGradient id="zg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="{LIGHT}" stop-opacity=".95"/><stop offset="1" stop-color="{LIGHT}" stop-opacity=".30"/></radialGradient></defs>'
+    o += '<g transform="translate(-170,-1280)">'
+    o += f'<path d="{body}" fill="{WHITE}" stroke="{DEEP}" stroke-width="7" stroke-linejoin="round"/>'
+    fine = f'fill="none" stroke="{DEEP}" stroke-opacity=".35" stroke-width="5" stroke-linecap="round"'
+    for sg in (1, -1):
+        o += f'<path d="M{cx+sg*66},1472 C{cx+sg*54},1500 {cx+sg*26},1522 {cx},1524" {fine}/>'                      # jawline
+        o += f'<path d="M{cx+sg*22},1612 C{cx+sg*70},1618 {cx+sg*110},1630 {cx+sg*150},1660" {fine}/>'            # collarbone
+        o += f'<path d="M{cx+sg*60},1860 C{cx+sg*110},1900 {cx+sg*116},1960 {cx+sg*100},2010" {fine}/>'            # lower rib
+    o += f'<path d="M{cx},1635 L{cx},1870" {fine}/>'                                                              # sternum
     if zones:
-        zs = [(1212, 1475), (1212, 1670), (935, 1815), (1489, 1815), (1212, 2000), (1212, 2250), (1040, 2760), (1384, 2760)]
-        for x, y in zs:
-            o += f'<circle cx="{x-170}" cy="{y-1280}" r="76" fill="{LIGHT}" fill-opacity=".35" stroke="{DEEP}" stroke-width="7" stroke-dasharray="20 14"/>'
+        zs = [(cx, 1465, 55), (cx, 1582, 55), (cx - 135, 1690, 68), (cx + 135, 1690, 68), (cx, 1800, 70), (cx, 2050, 70), (cx - 82, 2420, 70), (cx + 82, 2420, 70)]
+        for x, y, r in zs:
+            o += f'<circle cx="{x}" cy="{y}" r="{r}" fill="url(#zg)" stroke="{DEEP}" stroke-width="5"/><circle cx="{x}" cy="{y}" r="9" fill="{DEEP}"/>'
     if labels:
-        L = [("left", 5, 1475, "Jaw", 1140, 1475), ("right", 2080, 1670, "Throat", 1290, 1670), ("left", 5, 1815, "Shoulders", 859, 1815),
-             ("left", 5, 2000, "Chest", 1136, 2000), ("right", 2080, 2250, "Belly", 1288, 2250), ("right", 2080, 2760, "Legs", 1460, 2760)]
-        for side, lx, ly, name, zx, zy in L:
-            w = len(name) * 50 + 40
-            x1 = lx + w if side == "left" else lx - w
-            o += f'<line x1="{x1}" y1="{ly-1280-24}" x2="{zx-170}" y2="{zy-1280}" stroke="{DEEP}" stroke-width="5"/>'
-            o += f'<text x="{lx}" y="{ly-1280}" text-anchor="{"start" if side == "left" else "end"}" font-family="DM Serif Display" font-size="88" fill="{DEEP}">{name}</text>'
+        # (side, zone x, zone y, zone r, label)
+        L = [("l", cx, 1465, 55, "Jaw"), ("l", cx - 135, 1690, 68, "Shoulders"), ("l", cx, 2050, 70, "Belly"),
+             ("r", cx, 1582, 55, "Throat"), ("r", cx, 1800, 70, "Chest"), ("r", cx + 82, 2420, 70, "Legs")]
+        for side, zx, zy, zr, name in L:
+            lx = cx - 345 if side == "l" else cx + 345
+            ex = zx - zr if side == "l" else zx + zr
+            o += f'<line x1="{lx + (12 if side == "l" else -12)}" y1="{zy}" x2="{ex}" y2="{zy}" stroke="{DEEP}" stroke-width="5"/>'
+            o += f'<text x="{lx}" y="{zy+30}" text-anchor="{"end" if side == "l" else "start"}" font-family="DM Serif Display" font-size="88" fill="{DEEP}">{name}</text>'
+    o += '</g>'
     return o, 2075, 1790

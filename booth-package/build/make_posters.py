@@ -62,7 +62,7 @@ write("poster_outcomes", "Poster: What changes", b)
 b = f'<rect width="2425" height="3625" fill="{LINEN}"/>\n' + eyebrow(175, 330, "TRY IT HERE")
 b += lines(175, 560, ["Where do you feel", "pressure first?"], 176, 178, DEEP, family="DM Serif Display")
 b += lines(175, 960, ["Place a dot where it shows up for you. Noticing it early is how you", "interrupt the loop and keep your energy and clarity."], 56, 70, INK)
-b += '<g transform="translate(247,1230) scale(.93)">{{BODYMAP:light}}</g>\n'
+b += '<g transform="translate(162,1130) scale(1.0)">{{BODYMAP:light}}</g>\n'
 b += lines(1212, 3040, ["Then ask: what do I usually do next?"], 60, 0, DEEP, family="DM Serif Display", style="italic", anchor="middle")
 b += "{{FOOTER:light}}\n"
 write("poster_where", "Poster: Where do you feel pressure first", b)
