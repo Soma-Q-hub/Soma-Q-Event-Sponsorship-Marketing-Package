@@ -38,6 +38,12 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## business_card-2
 ![business_card-2](preview/business_card-2.png)
 
+## business_card_men-1
+![business_card_men-1](preview/business_card_men-1.png)
+
+## business_card_men-2
+![business_card_men-2](preview/business_card_men-2.png)
+
 ## card_individual-1
 ![card_individual-1](preview/card_individual-1.png)
 
@@ -73,6 +79,12 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## poster_loop-1
 ![poster_loop-1](preview/poster_loop-1.png)
+
+## poster_men_fixer-1
+![poster_men_fixer-1](preview/poster_men_fixer-1.png)
+
+## poster_men_holder-1
+![poster_men_holder-1](preview/poster_men_holder-1.png)
 
 ## poster_outcomes-1
 ![poster_outcomes-1](preview/poster_outcomes-1.png)

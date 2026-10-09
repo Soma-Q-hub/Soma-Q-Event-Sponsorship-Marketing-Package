@@ -15,5 +15,9 @@ MORE_SECTIONS = [
     ("banner_men_proof_photo-1", "Men's Banner 2: the proof, with photo", "32 x 80 in"),
     ("backdrop_men-1", "Men's backdrop, no photo", "120 x 90 in, placeholder size"),
     ("backdrop_men_photo-1", "Men's backdrop, with photo", "120 x 90 in, placeholder size"),
+    ("poster_men_fixer-1", "Men's poster: Stay steady when there is nothing to solve", "24 x 36 in"),
+    ("poster_men_holder-1", "Men's poster: Hold space for others without losing touch with yourself", "24 x 36 in"),
+    ("business_card_men-1", "Men's business card, front", "3.5 x 2 in"),
+    ("business_card_men-2", "Men's business card, back", "3.5 x 2 in"),
  ])},
 ]

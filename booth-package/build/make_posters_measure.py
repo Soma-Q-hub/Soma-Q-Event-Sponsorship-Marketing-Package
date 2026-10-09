@@ -56,7 +56,7 @@ p += '{{FOOTER:light:call}}\n' + TAIL
 (SRC / "poster_progress.html").write_text(p)
 
 # ---------------- capacity first ----------------
-p = HEAD.format(title="Poster: Capacity comes first") + f'<rect width="2425" height="3625" fill="{LINEN}"/>\n<polygon points="2425,0 2425,900 1500,0" fill="{PALE}"/>\n' + eyebrow(175, 330, "HOW WE MEASURE", DEEP)
+p = HEAD.format(title="Poster: Capacity comes first") + f'<rect width="2425" height="3625" fill="{LINEN}"/>\n' + eyebrow(175, 330, "HOW WE MEASURE", DEEP)
 for i, t in enumerate(["Capacity comes first.", "Results follow."]):
     p += f'<text x="175" y="{570+i*205}" font-family="DM Serif Display" font-size="186" fill="{DEEP}">{t}</text>\n'
 for i, t in enumerate(["Two things are tracked separately, so a strong result", "cannot hide growing strain."]):

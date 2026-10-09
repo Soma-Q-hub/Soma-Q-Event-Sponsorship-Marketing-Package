@@ -79,6 +79,41 @@ Imagine the most senior, time-poor person in a room: a CEO, or an investor. This
 
 Nobody can say in advance which wording wins with this room. Print both counter signs and both take-home cards, tag each by piece (the build already tags pieces), and compare scans per piece afterward. Treat a small sample as a signal, not proof.
 
+## Two lenses (added after Megan's direction)
+
+Megan asked for nervous system literacy from two perspectives that she sees in men's sessions: the pressure to solve everything, and the habit of holding space for everyone else's emotions while their own go unfelt. Both are built as posters, and they share one structure: a plain picture of what is happening, then a small move.
+
+| Lens | Poster | The picture | The move |
+| --- | --- | --- | --- |
+| The one who solves everything | "Stay steady when there is nothing to solve." | The mind keeps working while the body keeps running its alarm | Locate it, describe it, settle it. Then solve the problem from steady |
+| The one who holds space for everyone | "Hold space for others without losing touch with yourself." | Everything others bring flows in; your own signal goes quiet | A 30-second check-in: feel your feet, find one sensation, name it plainly |
+
+Design rule from Megan's feedback: one graphic per piece. The loop carries the story banner and the backdrop; the measurement example carries the proof banner; the posters carry one diagram each. Everything else is plain type.
+
+## What the science lines can and cannot say
+
+Checked against Research_Citations_Master on 9 Oct 2026. The master has nothing on men, masculinity norms or emotional expression, so those parts are unsourced.
+
+| Line or idea | Source status | How to word it |
+| --- | --- | --- |
+| Noticing and naming a sensation or feeling in plain words | Torre and Lieberman 2018 (#205, Verified); Lieberman et al. 2007 (#204, Verified, limited support: participants labeled others' faces, not their own state) | "Research suggests that putting a feeling into words is associated with a calmer response to it." Do not say it fixes anything |
+| The body carries signals the mind may miss | Craig 2009 (#1), Khalsa et al. 2018 (#2), Garfinkel et al. 2015 (#3), all Verified | Interoception is a documented sense of the body's internal state. Do not claim a training effect |
+| Absorbing others' distress versus caring about them | Singer and Klimecki 2014 (#243, Verified, limited support) | Supports the distinction only; it is not a study of men or of this poster's check-in |
+| Stress and thinking | Arnsten 2009 (#231, Verified; mostly animal data) | Not used in print. Keep any use hedged and general |
+| "More thinking rarely settles what the body is still running" | Soma-Q interpretation, not a finding | Keep as framing in Megan's voice; never present as research |
+| "Many men were never taught to listen for their own signals" | Not in the master. A 2025 systematic review on masculinity norms and help-seeking surfaced in a web search but could not be opened here, so it is unverified | Keep the softened wording ("many"); verify the review before adding any citation |
+| Polyvagal ideas (#41, #42, #66) | Contested; the brand rules exclude polyvagal framing | Do not use |
+
+Proposed next step: open the masculinity-norms review and the Seidler et al. 2016 review directly, then add them to the master with an honest Evidence_Status.
+
+## On the word "patriarchy" in print
+
+Megan's aim is to loosen the rules that keep men from expressing themselves. My recommendation is to carry that aim through the content and keep the word itself off the booth pieces, for three reasons. It is an ideological term in a room of adults who came for other reasons, and the one source I could reach on framing (practitioner testimony, not controlled evidence) suggests men engage more when messaging builds on traits they value, such as responsibility and strength, than when it indicts them. The brand voice is grounded and mechanism-based. And the posters already name the rule without the label: "You were taught to be the one who figures it out" and "many men were never taught to listen for them." The word can live in talks, Substack and longer conversations, where there is room to explain it. This is Megan's decision to make; nothing here prevents her from using it.
+
+## Business cards
+
+Men's option: the front carries "Show up the way you mean to." with the standard descriptor; the back carries the same contact details and the booking QR, with the practice line rewritten in the men's wording. The faint corner triangle was removed from both card versions.
+
 ## Guardrails (from the brand rules)
 
 - No em or en dashes; flowing sentences; American English.
@@ -90,7 +125,7 @@ Nobody can say in advance which wording wins with this room. Print both counter 
 
 ## Open decisions for Megan
 
-1. Approve the men's track as a documented exception to the three-outcome headline rule?
+1. Megan said yes to the men's track. Still to do: record it in the brand rules as an approved audience variant (the rules live outside this repo).
 2. Which table pieces get a men's version first (counter sign and take-home card are the obvious next two)?
 3. A pricing sentence, yes or no?
 4. A confidentiality line, yes or no?

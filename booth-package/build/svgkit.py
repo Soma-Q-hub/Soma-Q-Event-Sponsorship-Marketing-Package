@@ -52,5 +52,6 @@ def photo_circle(cx, cy, r, cid="ph", ring=LIGHT):
             f'<circle cx="{cx}" cy="{cy}" r="{r+r*0.07:.0f}" fill="none" stroke="{ring}" stroke-width="{max(10, r*0.045):.0f}"/>\n')
 
 def label(x, y, n, text, size, anchor="start"):
-    return lines(x, y, [f"{n}&#160;&#160;{text}"], size, 0, DEEP, weight="700", anchor=anchor, ls=str(round(size*.11)))
+    t = f"{n}&#160;&#160;{text}" if n else text
+    return lines(x, y, [t], size, 0, DEEP, weight="700", anchor=anchor, ls=str(round(size*.11)))
 
