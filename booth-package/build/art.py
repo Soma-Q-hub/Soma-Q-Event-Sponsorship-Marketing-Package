@@ -286,7 +286,7 @@ def bodymap(scheme="light", labels=True, zones=True):
     return o, 2075, 1790
 
 
-COPPER = "#C9763F"
+COPPER = "#C9763F"   # approved pressure accent only; see .claude/skills/soma-q-booth-brand
 
 def nervous_figure(scheme="dark"):
     """The original neutral silhouette with the nervous system lit from inside (white glow, no ribs) and copper stress glows
