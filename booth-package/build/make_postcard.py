@@ -7,28 +7,28 @@ WHAT = ["Soma-Q is a nervous system alignment practice. We train", "high-perform
 
 # ---------------- FRONT ----------------
 p = head("Postcard front, 6 x 4 in", 6.25, 4.25, "Postcard 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed). Keep type 0.25 in inside trim. CONFIRM printer template and stock.")
-p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n' + logo(40, 34, 150, True)
-p += lines(585, 52, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 11, 16, LIGHT, weight="700", anchor="end", ls="1")
-p += f'<rect y="86" width="{W}" height="44" fill="{LIGHT}"/>\n'
-p += lines(40, 117, ["BURNOUT ENDS HERE.™"], 25, 0, DEEP, weight="700", ls="3")
-tiles = [(40, "Stress lives in the body", "{{FIGURE:dark}}", "fig"), (225, "Interrupt the loop", "{{LOOP:light:nogloss:men}}", "loop"), (410, "See it in your numbers", "", "met")]
-for x, cap, tok, kind in tiles:
+p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n' + logo(40, 28, 140, True)
+p += lines(585, 44, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 10.5, 15, LIGHT, weight="700", anchor="end", ls="1")
+p += f'<rect y="100" width="{W}" height="40" fill="{LIGHT}"/>\n'
+p += lines(40, 127, ["NOTICE THE SIGNAL. LOCATE IT. CHOOSE YOUR RESPONSE."], 17, 0, DEEP, weight="700", ls="1.2")
+tiles = [(40, 130, "1  Notice the signal", "fig"), (185, 215, "2  Locate it, interrupt the loop", "loop"), (415, 170, "3  Choose, and measure it", "met")]
+for x, w_, cap, kind in tiles:
     fill = "#16494F" if kind == "fig" else WHITE
-    p += f'<rect x="{x}" y="150" width="175" height="200" rx="10" fill="{fill}"/>\n'
+    p += f'<rect x="{x}" y="158" width="{w_}" height="190" rx="10" fill="{fill}"/>\n'
     if kind == "fig":
-        p += placed(tok, x + 175/2 - 880*0.1/2, 160, 0.1)
+        p += placed("{{FIGURE:dark}}", x + w_/2 - 880*0.1/2, 166, 0.1)
     elif kind == "loop":
-        p += placed(tok, x + 6, 185, 0.0795)
+        p += placed("{{LOOP:light:nogloss:men}}", x + 4, 158 + (190 - 1480*0.1)/2, 0.1)
     else:
         for i, (nm, v, b0) in enumerate([("Stress recovery", 7.4, 3.8), ("Steadiness", 7.1, 3.5), ("Clear thinking", 7.8, 4.1)]):
-            y = 188 + i * 48
-            p += f'<text x="{x+14}" y="{y}" font-family="DM Sans" font-size="12" fill="{INK}">{nm}</text>'
-            p += f'<rect x="{x+14}" y="{y+8}" width="147" height="9" rx="4" fill="{PALE}"/><rect x="{x+14}" y="{y+8}" width="{v*14.7:.0f}" height="9" rx="4" fill="{DEEP}"/>'
-            p += f'<circle cx="{x+14+b0*14.7:.0f}" cy="{y+12.5}" r="5" fill="{WHITE}" stroke="{LIGHT}" stroke-width="2"/>'
-        p += lines(x + 14, 335, ["Example format, not client data."], 9, 0, "#5C5A53")
-    p += lines(x, 372, [cap], 14, 0, WHITE, family="DM Serif Display")
-p += lines(585, 400, ["SOMA-Q.COM"], 11, 0, LIGHT, weight="700", anchor="end", ls="2")
-p += lines(40, 400, ["Everyone around you can feel your stress. Can you?"], 11, 0, PALE, weight="500")
+            y = 192 + i * 46
+            p += f'<text x="{x+12}" y="{y}" font-family="DM Sans" font-size="12" fill="{INK}">{nm}</text>'
+            p += f'<rect x="{x+12}" y="{y+8}" width="146" height="9" rx="4" fill="{PALE}"/><rect x="{x+12}" y="{y+8}" width="{v*14.6:.0f}" height="9" rx="4" fill="{DEEP}"/>'
+            p += f'<circle cx="{x+12+b0*14.6:.0f}" cy="{y+12.5}" r="5" fill="{WHITE}" stroke="{LIGHT}" stroke-width="2"/>'
+        p += lines(x + 12, 336, ["Example format, not client data."], 8.5, 0, "#5C5A53")
+    p += lines(x, 368, [cap], 11.5, 0, WHITE, weight="700")
+p += lines(40, 399, ["Knowing you need to slow down has never been the hard part."], 11, 0, PALE, weight="500")
+p += lines(585, 399, ["SOMA-Q.COM"], 11, 0, LIGHT, weight="700", anchor="end", ls="2")
 p += TAIL
 (SRC / "postcard_front.html").write_text(p)
 

@@ -6,7 +6,7 @@ from svgkit import *
 from svgkit import head as head_
 
 W, H = 3300, 8100
-HEADLINE = ["Everyone", "around you", "can feel", "your stress.", "Can you?"]
+HEADLINE = ["Everyone", "around you", "can feel", "your stress."]
 TURN = ["It isn’t a character flaw.", "It’s a stress response,", "and you can learn to", "work with it."]
 WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-performing", "leaders to notice stress sooner, shift", "in the moment and recover faster."]
 
@@ -25,7 +25,8 @@ def hero(name, title, scheme):
     p += placed(f"{{{{FIGURE:{scheme}}}}}", 200, 2800, 1.4)
     fg, tx, pr = (WHITE, PALE, LIGHT) if dark else (DEEP, INK, DEEP)
     p += lines(1750, 2900, HEADLINE, 200, 225, fg, family="DM Serif Display")
-    p += lines(1750, 4120, TURN, 100, 136, tx, weight="500")
+    p += lines(1750, 3870, ["What do you", "do next?"], 150, 170, pr, family="DM Serif Display")
+    p += lines(1750, 4330, TURN, 100, 136, tx, weight="500")
     p += lines(1750, 5020, ["Show up the way", "you mean to."], 150, 170, pr, family="DM Serif Display")
     p += lines(250, 5900, ["The free first steps are on the table. Scan one to start."], 88, 0, INK, weight="500")
     p += lines(250, 6170, ["SOMA-Q.COM"], 80, 0, DEEP, weight="700", ls="10")

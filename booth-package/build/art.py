@@ -108,7 +108,7 @@ def _mirror_path(right, cx):
         d += f" C{X(c2[0], -1)},{c2[1]} {X(c1[0], -1)},{c1[1]} {X(prev[0], -1)},{prev[1]}"
     return d + " Z"
 
-def bodymap(scheme="light", labels=True, zones=True):
+def bodymap_old(scheme="light", labels=True, zones=True):
     """Front-view neutral human figure with the nervous system drawn through it (brain, spinal cord, nerves to the arms
     and legs), plus the places pressure shows up first. Original drawing in the Soma-Q palette; sized for a 3/4 in
     sticker. Local box 2075 x 1790."""
@@ -259,3 +259,26 @@ def nervous_figure(scheme="dark"):
     for px, py, r in [(cx, 360, 16), (cx, 760, 18), (cx, 990, 16), (cx - 96, 440, 9), (cx + 96, 440, 9)]:
         o += f'<circle cx="{px}" cy="{py}" r="{r*2.2:.0f}" fill="{halo}" fill-opacity=".30"/><circle cx="{px}" cy="{py}" r="{r}" fill="{node}"/>'
     return f'<g>{o}</g>', 880, 1790
+
+
+def bodymap(scheme="light", labels=True, zones=True):
+    """Where pressure shows up first, on the same soft neutral figure and lit nervous system used everywhere else.
+    Zones sized for a 3/4 in sticker. Local box 2075 x 1790."""
+    fig = nervous_figure("light")[0]
+    C = 1037                      # horizontal centre of the 2075 box
+    dx = C - 440                  # figure centre is at x = 440 in its own box
+    o = f'<defs><radialGradient id="zg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="{LIGHT}" stop-opacity=".95"/><stop offset="1" stop-color="{LIGHT}" stop-opacity=".30"/></radialGradient></defs>'
+    o += f'<g transform="translate({dx},0)">{fig}</g>'
+    zs = [(C, 190, 50), (C, 275, 46), (C - 175, 385, 62), (C + 175, 385, 62), (C, 520, 66), (C, 800, 70), (C - 100, 1160, 70), (C + 100, 1160, 70)]
+    if zones:
+        for x, y, r in zs:
+            o += f'<circle cx="{x}" cy="{y}" r="{r}" fill="url(#zg)" stroke="{DEEP}" stroke-width="5"/><circle cx="{x}" cy="{y}" r="9" fill="{DEEP}"/>'
+    if labels:
+        L = [("l", C, 190, 50, "Jaw"), ("l", C - 175, 385, 62, "Shoulders"), ("l", C, 800, 70, "Belly"),
+             ("r", C, 275, 46, "Throat"), ("r", C, 520, 66, "Chest"), ("r", C + 100, 1160, 70, "Legs")]
+        for side_, zx, zy, zr, name in L:
+            lx = C - 480 if side_ == "l" else C + 480
+            ex = zx - zr if side_ == "l" else zx + zr
+            o += f'<line x1="{lx + (12 if side_ == "l" else -12)}" y1="{zy}" x2="{ex}" y2="{zy}" stroke="{DEEP}" stroke-width="5"/>'
+            o += f'<text x="{lx}" y="{zy+30}" text-anchor="{"end" if side_ == "l" else "start"}" font-family="DM Serif Display" font-size="88" fill="{DEEP}">{name}</text>'
+    return o, 2075, 1790

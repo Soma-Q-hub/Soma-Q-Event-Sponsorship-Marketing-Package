@@ -39,7 +39,8 @@ p = chrome("System v3, banner 1: the tension", "Retractable banner 32 x 80 in tr
 p = header(p)
 p += f'<rect y="1030" width="{W}" height="2300" fill="{DEEP}"/>\n'
 p += label(250, 1260, "1", "THE TENSION", 70).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
-p += lines(250, 1640, ["Everyone", "around you", "can feel", "your stress.", "Can you?"], 225, 245, WHITE, family="DM Serif Display")
+p += lines(250, 1640, ["Everyone", "around you", "can feel", "your stress."], 225, 245, WHITE, family="DM Serif Display")
+p += lines(250, 2640, ["What do you do next?"], 150, 0, LIGHT, family="DM Serif Display")
 p += lines(250, 2960, ["It isn’t a character flaw.", "It’s a stress response, and", "you can learn to work with it."], 88, 120, PALE, weight="500")
 p += placed("{{FIGURE:dark}}", 2130, 1170, 1.12)
 for i, (tag, line) in enumerate(PROBLEMS):
