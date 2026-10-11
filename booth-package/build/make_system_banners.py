@@ -23,11 +23,9 @@ def header(p):
     p += f'<rect width="{W}" height="700" fill="{DEEP}"/>\n' + logo(250, 170, 1050, True)
     p += lines(3050, 320, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 90, 140, WHITE, weight="700", anchor="end", ls="3")
     p += f'<rect y="700" width="{W}" height="330" fill="{LIGHT}"/>\n'
-    if V == "shift":
-        p += lines(250, 905, ["SHIFT HAPPENS™"], 150, 0, DEEP, weight="700", ls="16")
-        p += lines(3050, 850, ["BECOME YOUR", "OWN ADVISOR."], 72, 90, DEEP, weight="700", anchor="end", ls="6")
-    else:
-        p += lines(250, 905, ["BURNOUT ENDS HERE.™"], 150, 0, DEEP, weight="700", ls="16")
+    first, second = ("SHIFT HAPPENS™", "BURNOUT ENDS HERE.™") if V == "shift" else ("BURNOUT ENDS HERE.™", "SHIFT HAPPENS™")
+    p += lines(250, 888, [first], 112, 0, DEEP, weight="700", ls="8")
+    p += lines(3050, 888, [second], 112, 0, DEEP, weight="700", anchor="end", ls="8")
     return p
 
 def footer(p, y=5700):
@@ -38,7 +36,6 @@ def footer(p, y=5700):
     p += lines(250, y + 1210, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
     p += f'<rect x="2330" y="{y + 640}" width="720" height="720" rx="40" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="2400" y="{y + 710}" width="580" height="580">{{{{QR_CALL}}}}</svg>'
     p += lines(250, y + 1480, ["SOMA-Q.COM"], 90, 0, DEEP, weight="700", ls="12")
-    p += lines(3050, y + 1480, ["BURNOUT ENDS HERE.™" if V == "shift" else "SHIFT HAPPENS™"], 70, 0, DEEP, weight="700", anchor="end", ls="8")
     return p
 
 for V, SUF in (("burnout", ""), ("shift", "_shift")):

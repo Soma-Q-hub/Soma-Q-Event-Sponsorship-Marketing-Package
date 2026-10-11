@@ -14,20 +14,21 @@ def hero(name, title, scheme):
     dark = scheme == "dark"
     p = head_(f"{title}, 32 x 80 in", 33, 81, "Retractable banner 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). Men's hero banner built for distance: logo, Burnout ends here, the figure and the headline all sit above the 54 in line; the lower Linen area is close-range only. CONFIRM the vendor template.")
     p += f'<rect width="{W}" height="{H}" fill="{LINEN}"/>\n'
-    top = 5500 if dark else 2650
+    top = 5500 if dark else 2800
     p += f'<rect width="{W}" height="{top}" fill="{DEEP}"/>\n'
     if not dark:
         p += f'<rect y="{top}" width="{W}" height="{5500-top}" fill="{LIGHT}"/>\n'
     p += logo(250, 200, 1150, True)
     p += lines(250, 1290, ["Burnout ends", "here.™"], 430, 400, WHITE, family="DM Serif Display")
-    p += label(250, 1900, "", "WHAT WE DO", 64).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
-    p += lines(250, 2070, WHAT_WE_DO, 128, 160, LIGHT if dark else WHITE, weight="500")
-    p += placed(f"{{{{FIGURE:{scheme}}}}}", 200, 2800, 1.4)
+    p += lines(250, 1850, ["SHIFT HAPPENS™"], 130, 0, LIGHT if dark else WHITE, weight="700", ls="10")
+    p += label(250, 2060, "", "WHAT WE DO", 64).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
+    p += lines(250, 2220, WHAT_WE_DO, 128, 160, LIGHT if dark else WHITE, weight="500")
+    p += placed(f"{{{{FIGURE:{scheme}}}}}", 200, 2920, 1.4)
     fg, tx, pr = (WHITE, PALE, LIGHT) if dark else (DEEP, INK, DEEP)
-    p += lines(1750, 2900, HEADLINE, 200, 225, fg, family="DM Serif Display")
-    p += lines(1750, 3870, ["What do you", "do next?"], 150, 170, pr, family="DM Serif Display")
-    p += lines(1750, 4330, TURN, 100, 136, tx, weight="500")
-    p += lines(1750, 5020, ["Show up the way", "you mean to."], 150, 170, pr, family="DM Serif Display")
+    p += lines(1750, 3040, HEADLINE, 200, 225, fg, family="DM Serif Display")
+    p += lines(1750, 4010, ["What do you", "do next?"], 150, 170, pr, family="DM Serif Display")
+    p += lines(1750, 4470, TURN, 100, 136, tx, weight="500")
+    p += lines(1750, 5130, ["Show up the way", "you mean to."], 150, 170, pr, family="DM Serif Display")
     p += lines(250, 5800, ["Book a free", "discovery call."], 150, 170, DEEP, family="DM Serif Display")
     p += lines(250, 6200, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
     p += f'<rect x="2330" y="5640" width="720" height="720" rx="40" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="2400" y="5710" width="580" height="580">{{{{QR_CALL}}}}</svg>'
