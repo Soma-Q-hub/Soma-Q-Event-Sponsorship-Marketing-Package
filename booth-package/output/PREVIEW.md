@@ -47,8 +47,14 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## banner_sys_capacity-1
 ![banner_sys_capacity-1](preview/banner_sys_capacity-1.png)
 
+## banner_sys_capacity_shift-1
+![banner_sys_capacity_shift-1](preview/banner_sys_capacity_shift-1.png)
+
 ## banner_sys_tension-1
 ![banner_sys_tension-1](preview/banner_sys_tension-1.png)
+
+## banner_sys_tension_shift-1
+![banner_sys_tension_shift-1](preview/banner_sys_tension_shift-1.png)
 
 ## business_card-1
 ![business_card-1](preview/business_card-1.png)
@@ -103,6 +109,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## postcard_front_b-1
 ![postcard_front_b-1](preview/postcard_front_b-1.png)
+
+## postcard_front_c-1
+![postcard_front_c-1](preview/postcard_front_c-1.png)
 
 ## poster_capacity-1
 ![poster_capacity-1](preview/poster_capacity-1.png)
