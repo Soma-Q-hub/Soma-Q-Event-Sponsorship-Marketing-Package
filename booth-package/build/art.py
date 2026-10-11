@@ -178,7 +178,7 @@ _FIG_R = [(0, 1280),
           ((152, 3068), (44, 3068), (36, 3050)), ((30, 3020), (34, 2990), (38, 2960)), ((44, 2900), (40, 2840), (34, 2780)),
           ((30, 2730), (34, 2680), (36, 2640)), ((36, 2520), (20, 2380), (8, 2260)), ((4, 2230), (2, 2210), (0, 2200))]
 
-def nervous_figure(scheme="dark"):
+def nervous_figure_old(scheme="dark"):
     """The neutral figure with the nervous system drawn through it, no zone markers or labels: a hero image.
     scheme 'dark' = Light Teal lines for a Deep Teal field; 'light' = Deep Teal lines for a light field. Local box 880 x 1790."""
     cx = 440 + 0
@@ -208,3 +208,77 @@ def nervous_figure(scheme="dark"):
         o += f'<rect x="{cxr-17}" y="{y}" width="34" height="13" rx="6" fill="{vert_fill}" stroke="{nerve}" stroke-width="4"/>'
     o += f'<g>{side}</g><g transform="translate({2*cxr},0) scale(-1,1)">{side}</g></g>'
     return o, 880, 1790
+
+
+def nervous_figure(scheme="dark"):
+    """Neutral, androgynous figure (near-straight torso, same shoulder and hip width) with the nervous system lit from inside:
+    brain, spinal cord, vagus, brachial and lumbar plexus, branching peripheral nerves, soft white glow. Local box 880 x 1790."""
+    dark = scheme == "dark"
+    if dark:
+        edge, body, core, halo, halo2, node = LIGHT, "#17474D", WHITE, PALE, LIGHT, WHITE
+    else:
+        edge, body, core, halo, halo2, node = DEEP, "#FBFAF6", DEEP, LIGHT, LIGHT, DEEP
+    cx = 440
+    def mir(d_fn):
+        return d_fn(1) + d_fn(-1)
+    # ---- silhouette: all outlines first, then all fills, so limbs merge into one shape ----
+    parts = []   # (kind, attrs)
+    limbs = []
+    limbs.append(f'<path d="M{cx-232},390 C{cx-232},325 {cx-140},296 {cx-44},292 L{cx+44},292 C{cx+140},296 {cx+232},325 {cx+232},390 C{cx+222},560 {cx+206},640 {cx+200},720 C{cx+198},850 {cx+206},930 {cx+206},1010 L{cx-206},1010 C{cx-206},930 {cx-198},850 {cx-200},720 C{cx-206},640 {cx-222},560 {cx-232},390 Z"')
+    limbs.append(f'<rect x="{cx-44}" y="190" width="88" height="130"')
+    limbs.append(f'<ellipse cx="{cx}" cy="112" rx="82" ry="106"')
+    for sg in (1, -1):
+        limbs.append(f'<path d="M{cx+sg*215},355 L{cx+sg*300},1050" fill="none" stroke-width="96" stroke-linecap="round"')
+        limbs.append(f'<ellipse cx="{cx+sg*316}" cy="1130" rx="42" ry="74"')
+        limbs.append(f'<path d="M{cx+sg*105},980 L{cx+sg*105},1700" fill="none" stroke-width="164" stroke-linecap="round"')
+        limbs.append(f'<ellipse cx="{cx+sg*112}" cy="1738" rx="96" ry="44"')
+    o = ""
+    for l in limbs:   # outline pass
+        w = "" if "stroke-width" in l else ' fill="none"'
+        if "stroke-width" in l:
+            import re as _re
+            wd = int(_re.search(r'stroke-width="(\d+)"', l).group(1)) + 20
+            o += _re.sub(r'stroke-width="\d+"', f'stroke-width="{wd}"', l) + f' stroke="{edge}" stroke-linejoin="round"/>'
+        else:
+            o += l + f' fill="{edge}" stroke="{edge}" stroke-width="20" stroke-linejoin="round"/>'
+    for l in limbs:   # fill pass
+        if "stroke-width" in l:
+            o += l + f' stroke="{body}" stroke-linejoin="round"/>'
+        else:
+            o += l + f' fill="{body}" stroke="{body}" stroke-width="2"/>'
+    def glow(d, w, op=1):
+        return (f'<path d="{d}" fill="none" stroke="{halo2}" stroke-opacity=".16" stroke-width="{w*4.2:.0f}" stroke-linecap="round" stroke-linejoin="round"/>'
+                f'<path d="{d}" fill="none" stroke="{halo}" stroke-opacity=".34" stroke-width="{w*2.2:.0f}" stroke-linecap="round" stroke-linejoin="round"/>'
+                f'<path d="{d}" fill="none" stroke="{core}" stroke-opacity="{op}" stroke-width="{w}" stroke-linecap="round" stroke-linejoin="round"/>')
+    # soft light pools (the light inside the body)
+    o += (f'<defs><radialGradient id="fgl"><stop offset="0" stop-color="{core}" stop-opacity=".55"/><stop offset=".5" stop-color="{halo}" stop-opacity=".22"/>'
+          f'<stop offset="1" stop-color="{halo}" stop-opacity="0"/></radialGradient></defs>')
+    for (px, py, r) in [(cx, 120, 190), (cx, 520, 250), (cx, 820, 240), (cx - 215, 700, 120), (cx + 215, 700, 120), (cx - 105, 1350, 130), (cx + 105, 1350, 130)]:
+        o += f'<circle cx="{px}" cy="{py}" r="{r}" fill="url(#fgl)"/>'
+    # spinal cord
+    o += glow(f"M{cx},212 L{cx},1000", 12)
+    # brain
+    o += (f'<ellipse cx="{cx}" cy="112" rx="58" ry="66" fill="{halo}" fill-opacity=".30" stroke="{core}" stroke-width="7"/>'
+          f'<path d="M{cx},50 L{cx},172 M{cx-44},80 C{cx-20},96 {cx-18},128 {cx-40},148 M{cx+44},80 C{cx+20},96 {cx+18},128 {cx+40},148" fill="none" stroke="{core}" stroke-width="5" stroke-opacity=".8"/>')
+    # vagus nerves: brain stem, down the neck, to heart and gut
+    for sg in (1, -1):
+        o += glow(f"M{cx+sg*16},196 C{cx+sg*60},250 {cx+sg*96},330 {cx+sg*96},440 C{cx+sg*96},560 {cx+sg*70},640 {cx+sg*18},760", 6, .95)
+    # brachial plexus into the arms, then the fingers
+    for sg in (1, -1):
+        o += glow(f"M{cx},360 C{cx+sg*90},340 {cx+sg*190},360 {cx+sg*230},430 C{cx+sg*262},560 {cx+sg*290},800 {cx+sg*302},1050", 7, .95)
+        for dx in (-26, 0, 26):
+            o += glow(f"M{cx+sg*302},1050 C{cx+sg*308},1090 {cx+sg*(316+dx)},1130 {cx+sg*(318+dx*1.5):.0f},1180", 4, .85)
+    # peripheral branches: irregular forks off the cord, not evenly spaced
+    for y, ln, sg in [(430, 120, 1), (470, 90, -1), (560, 150, 1), (600, 110, -1), (680, 170, -1), (720, 120, 1), (800, 150, 1), (850, 120, -1), (910, 100, 1)]:
+        ex, ey = cx + sg * ln, y + 60
+        o += glow(f"M{cx},{y} C{cx+sg*ln*.4:.0f},{y-8} {cx+sg*ln*.8:.0f},{y+14} {ex},{ey}", 4, .8)
+        o += f'<path d="M{cx+sg*ln*.7:.0f},{y+22} L{ex+sg*34},{ey+8} M{cx+sg*ln*.7:.0f},{y+22} L{ex+sg*14},{ey+44}" fill="none" stroke="{core}" stroke-width="3" stroke-opacity=".75" stroke-linecap="round"/>'
+    # lumbar and sacral plexus into the legs
+    for sg in (1, -1):
+        o += glow(f"M{cx},990 C{cx+sg*40},1030 {cx+sg*100},1070 {cx+sg*106},1180 C{cx+sg*110},1360 {cx+sg*108},1540 {cx+sg*106},1690", 8, .95)
+        for dx in (-30, 0, 30):
+            o += glow(f"M{cx+sg*106},1690 C{cx+sg*(108+dx*.4):.0f},1712 {cx+sg*(110+dx):.0f},1730 {cx+sg*(112+dx*1.4):.0f},1752", 4, .8)
+    # plexus nodes (ganglia) that glow
+    for px, py, r in [(cx, 360, 16), (cx, 760, 18), (cx, 990, 16), (cx - 96, 440, 9), (cx + 96, 440, 9)]:
+        o += f'<circle cx="{px}" cy="{py}" r="{r*2.2:.0f}" fill="{halo}" fill-opacity=".30"/><circle cx="{px}" cy="{py}" r="{r}" fill="{node}"/>'
+    return f'<g transform="translate(0,0)">{o}</g>', 880, 1790
