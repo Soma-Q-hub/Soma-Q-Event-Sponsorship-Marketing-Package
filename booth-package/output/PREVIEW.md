@@ -17,8 +17,14 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## banner_men_hero_dark-1
 ![banner_men_hero_dark-1](preview/banner_men_hero_dark-1.png)
 
+## banner_men_hero_dark_shift-1
+![banner_men_hero_dark_shift-1](preview/banner_men_hero_dark_shift-1.png)
+
 ## banner_men_hero_light-1
 ![banner_men_hero_light-1](preview/banner_men_hero_light-1.png)
+
+## banner_men_hero_light_shift-1
+![banner_men_hero_light_shift-1](preview/banner_men_hero_light_shift-1.png)
 
 ## banner_men_pain_a-1
 ![banner_men_pain_a-1](preview/banner_men_pain_a-1.png)

@@ -23,9 +23,11 @@ def header(p):
     p += f'<rect width="{W}" height="700" fill="{DEEP}"/>\n' + logo(250, 170, 1050, True)
     p += lines(3050, 320, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 90, 140, WHITE, weight="700", anchor="end", ls="3")
     p += f'<rect y="700" width="{W}" height="330" fill="{LIGHT}"/>\n'
-    first, second = ("SHIFT HAPPENS™", "BURNOUT ENDS HERE.™") if V == "shift" else ("BURNOUT ENDS HERE.™", "SHIFT HAPPENS™")
-    p += lines(250, 888, [first], 112, 0, DEEP, weight="700", ls="8")
-    p += lines(3050, 888, [second], 112, 0, DEEP, weight="700", anchor="end", ls="8")
+    if V == "shift":
+        p += lines(250, 905, ["SHIFT HAPPENS™"], 150, 0, DEEP, weight="700", ls="16")
+        p += lines(3050, 850, ["BECOME YOUR", "OWN ADVISOR."], 72, 90, DEEP, weight="700", anchor="end", ls="6")
+    else:
+        p += lines(250, 905, ["BURNOUT ENDS HERE.™"], 150, 0, DEEP, weight="700", ls="16")
     return p
 
 def footer(p, y=5700):
