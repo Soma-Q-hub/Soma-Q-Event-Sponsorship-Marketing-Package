@@ -58,23 +58,14 @@ for V, SUF in (("burnout", ""), ("shift", "_shift")):
     (SRC / f"banner_sys_tension{SUF}.html").write_text(p)
 
     # ============================ 2 THE CAPACITY ============================
-    p = chrome("System v3, banner 2: the capacity", "Retractable banner 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). Banner 2 of 2: the resolution. Practices are the tools, steadiness is the product; the loop and where to interrupt it; metrics example. CONFIRM the vendor template.")
+    p = chrome("System v3, banner 2: the capacity", "Retractable banner 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). Banner 2 of 2: the resolution. Practices are the tools, steadiness is the product; the loop and where to interrupt it, large. CONFIRM the vendor template.")
     p = header(p)
     p += f'<rect y="1030" width="{W}" height="2260" fill="{DEEP}"/>\n'
     p += lines(250, 1560, ["Practices are", "the tools.", "Steadiness is", "the product."], 380, 368, WHITE, family="DM Serif Display")
     p += lines(250, 2900, ["Regulation is a skill.", "Recovery is a skill.", "Choice under pressure is a skill."], 92, 124, WHITE, weight="500")
     p += label(250, 3440, "", "THE STRESS LOOP, AND WHERE TO INTERRUPT IT", 58)
-    p += placed("{{LOOP:light:nogloss:men}}", 700, 3550, 0.9)
-    p += f'<rect x="250" y="4950" width="2800" height="620" rx="36" fill="{WHITE}"/><rect x="250" y="4950" width="2800" height="16" rx="8" fill="{DEEP}"/>\n'
-    p += lines(340, 5070, ["SOMA-Q METRICS REPORT: WEEK 1 TO WEEK 16"], 50, 0, DEEP, weight="700", ls="5")
-    for i, (nm, v, b0) in enumerate(METRICS):
-        y = 5170 + i * 100
-        p += f'<text x="340" y="{y+38}" font-family="DM Sans" font-size="58" fill="{INK}">{nm}</text>'
-        p += f'<rect x="1250" y="{y}" width="1300" height="46" rx="10" fill="{PALE}"/><rect x="1250" y="{y}" width="{v*130:.0f}" height="46" rx="10" fill="{DEEP}"/>'
-        p += f'<circle cx="{1250+b0*130:.0f}" cy="{y+23}" r="21" fill="{WHITE}" stroke="{LIGHT}" stroke-width="8"/>'
-        p += f'<text x="{1250+v*130+30:.0f}" y="{y+38}" font-family="DM Sans" font-weight="700" font-size="52" fill="{DEEP}">{v}</text>'
-    p += lines(340, 5510, ["Example of the report format, not client data. Scored 0 to 10."], 40, 0, "#5C5A53")
-    p = footer(p, 5930)
+    p += placed("{{LOOP:light:nogloss:men}}", 250, 3540, 1.35)
+    p = footer(p, 5800)
     p += TAIL
     (SRC / f"banner_sys_capacity{SUF}.html").write_text(p)
 
