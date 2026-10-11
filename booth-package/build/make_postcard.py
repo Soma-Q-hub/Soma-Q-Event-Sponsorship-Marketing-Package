@@ -37,12 +37,14 @@ p = head("Postcard front B, 6 x 4 in", 6.25, 4.25, "Postcard front, option B: on
 p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n' + logo(40, 28, 140, True)
 p += lines(585, 44, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 10.5, 15, LIGHT, weight="700", anchor="end", ls="1")
 p += f'<rect y="100" width="{W}" height="40" fill="{LIGHT}"/>\n'
-p += lines(40, 127, ["BECOME YOUR OWN ADVISOR."], 20, 0, DEEP, weight="700", ls="2.5")
+p += lines(40, 126, ["BECOME YOUR OWN ADVISOR. ENERGY, CLARITY, JOY."], 17, 0, DEEP, weight="700", ls="1.4")
 p += f'<rect x="40" y="158" width="150" height="232" rx="12" fill="#16494F"/>\n'
 p += placed("{{FIGURE:dark}}", 115 - 880*0.118/2, 166, 0.118)
-p += lines(222, 205, ["Learn to read", "your nervous", "system’s signals."], 33, 38, WHITE, family="DM Serif Display")
-p += lines(222, 322, ["You know what to do.", "Pressure decides whether you", "react or respond."], 13.5, 18, PALE, weight="500")
-p += lines(222, 394, ["SOMA-Q.COM"], 12, 0, LIGHT, weight="700", ls="2")
+p += lines(222, 198, ["Learn to read", "your nervous", "system’s signals."], 33, 38, WHITE, family="DM Serif Display")
+p += lines(222, 306, ["You know what to do.", "Pressure decides whether you", "react or respond."], 13.5, 18, PALE, weight="500")
+p += hair(222, 585, 350, op=.45, w=1)
+p += lines(222, 372, ["HEALTH &#160;·&#160; WEALTH &#160;·&#160; RELATIONSHIPS &#160;·&#160; CAREER"], 9.5, 0, LIGHT, weight="700", ls="1")
+p += lines(222, 390, ["SOMA-Q.COM"], 11, 0, PALE, weight="700", ls="2")
 p += TAIL
 (SRC / "postcard_front_b.html").write_text(p)
 
