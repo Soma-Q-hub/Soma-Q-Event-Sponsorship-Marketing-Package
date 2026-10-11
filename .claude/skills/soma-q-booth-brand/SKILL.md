@@ -21,12 +21,18 @@ Source of truth for this repo. It extends the Soma-Q brand for print and event p
 - Legacy brand copper was `#C85A3C` (Master Brand Standards, June 2026, old teal `#096C6C`). Do not use the old teal. If the pressure accent must change, change `COPPER` in `booth-package/build/art.py`.
 
 ## Frame for every piece
-Keep people in the tension to name the pain, then show the outcome. Practices are the tools; capacity is the product. The stress loop shows where to interrupt it.
+Keep people in the tension to name the pain, then show the outcome. Practices are the tools; steadiness is the product ("capacity" is a nervous-system term that does not translate to the public). The stress loop shows where to interrupt it.
 - Header: logo, descriptor "Nervous system alignment for high-performing leaders" (large, Light Teal), Light Teal ribbon with "BURNOUT ENDS HERE.™" or another ribbon line from the website.
 - "WHAT WE DO" appears on everything, with the same sentence (draft awaiting Megan's approval): "Soma-Q is a nervous system alignment practice. We train high-performing leaders to notice stress sooner, shift in the moment and recover faster."
 - Problem cards (consumer wording): Depletion "Running on empty, and calling it normal." Decisions "Choices made from pressure, not clarity." Communication "Short with the people you love." Resources "You know what to do. You can't reach it." The organization version uses the website's For Organizations copy verbatim.
 - Metrics: show the report format (week 1 marker vs current bar, scored 0 to 10) and always label it "Example of the report format, not client data."
 - Seven areas of focus come from the website's The Work page; use its wording exactly.
+
+## Approved lines from the website (use verbatim)
+- "Leadership does not happen from the neck up." / "Steadiness doesn't happen from the neck up."
+- "Regulation is a skill. Recovery is a skill. Choice under pressure is a skill."
+- "Your people know what to do. Pressure decides whether they react or respond." (second sentence completed with Megan's ending, Oct 2026)
+- Taglines: "Burnout ends here.™", "Shift happens™" (trademarked; written SHIFT HAPPENS™), "Become your own advisor."
 
 ## Nervous-system figure
 - One figure everywhere: the neutral silhouette with the nervous system lit from inside (white glow like the logo) and copper stress glows at head, heart and gut. Code: `nervous_figure()` in `booth-package/build/art.py`; the body map uses it too. Do not use stock or watermarked figures.
