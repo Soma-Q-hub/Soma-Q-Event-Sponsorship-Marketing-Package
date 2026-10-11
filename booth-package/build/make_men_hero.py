@@ -28,8 +28,10 @@ def hero(name, title, scheme):
     p += lines(1750, 3870, ["What do you", "do next?"], 150, 170, pr, family="DM Serif Display")
     p += lines(1750, 4330, TURN, 100, 136, tx, weight="500")
     p += lines(1750, 5020, ["Show up the way", "you mean to."], 150, 170, pr, family="DM Serif Display")
-    p += lines(250, 5900, ["The free first steps are on the table. Scan one to start."], 88, 0, INK, weight="500")
-    p += lines(250, 6170, ["SOMA-Q.COM"], 80, 0, DEEP, weight="700", ls="10")
+    p += lines(250, 5800, ["Book a free", "discovery call."], 150, 170, DEEP, family="DM Serif Display")
+    p += lines(250, 6200, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
+    p += f'<rect x="2330" y="5640" width="720" height="720" rx="40" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="2400" y="5710" width="580" height="580">{{{{QR_CALL}}}}</svg>'
+    p += lines(250, 6500, ["SOMA-Q.COM"], 80, 0, DEEP, weight="700", ls="10")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 

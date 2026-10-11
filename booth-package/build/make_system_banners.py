@@ -34,9 +34,11 @@ def footer(p, y=5700):
     p += hair(250, 3050, y)
     p += label(250, y + 200, "", "WHAT WE DO", 64)
     p += lines(250, y + 360, WHAT_WE_DO, 100, 130, INK)
-    p += lines(250, y + 840, ["The free first steps are on the table. Scan one to start."], 88, 0, INK, weight="500")
-    p += lines(250, y + 1100, ["SOMA-Q.COM"], 90, 0, DEEP, weight="700", ls="12")
-    p += lines(3050, y + 1100, ["BURNOUT ENDS HERE.™" if V == "shift" else "SHIFT HAPPENS™"], 70, 0, DEEP, weight="700", anchor="end", ls="8")
+    p += lines(250, y + 860, ["Book a free", "discovery call."], 130, 150, DEEP, family="DM Serif Display")
+    p += lines(250, y + 1210, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
+    p += f'<rect x="2330" y="{y + 640}" width="720" height="720" rx="40" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="2400" y="{y + 710}" width="580" height="580">{{{{QR_CALL}}}}</svg>'
+    p += lines(250, y + 1480, ["SOMA-Q.COM"], 90, 0, DEEP, weight="700", ls="12")
+    p += lines(3050, y + 1480, ["BURNOUT ENDS HERE.™" if V == "shift" else "SHIFT HAPPENS™"], 70, 0, DEEP, weight="700", anchor="end", ls="8")
     return p
 
 for V, SUF in (("burnout", ""), ("shift", "_shift")):
