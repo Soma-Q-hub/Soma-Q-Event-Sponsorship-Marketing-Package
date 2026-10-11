@@ -24,9 +24,9 @@ def hero(name, title, scheme):
     p += lines(250, 2070, WHAT_WE_DO, 128, 160, LIGHT if dark else WHITE, weight="500")
     p += placed(f"{{{{FIGURE:{scheme}}}}}", 200, 2800, 1.4)
     fg, tx, pr = (WHITE, PALE, LIGHT) if dark else (DEEP, INK, DEEP)
-    p += lines(1750, 2800, HEADLINE, 200, 225, fg, family="DM Serif Display")
-    p += lines(1750, 4020, TURN, 100, 136, tx, weight="500")
-    p += lines(1750, 4960, ["Show up the way", "you mean to."], 150, 170, pr, family="DM Serif Display")
+    p += lines(1750, 2900, HEADLINE, 200, 225, fg, family="DM Serif Display")
+    p += lines(1750, 4120, TURN, 100, 136, tx, weight="500")
+    p += lines(1750, 5020, ["Show up the way", "you mean to."], 150, 170, pr, family="DM Serif Display")
     p += lines(250, 5900, ["The free first steps are on the table. Scan one to start."], 88, 0, INK, weight="500")
     p += lines(250, 6170, ["SOMA-Q.COM"], 80, 0, DEEP, weight="700", ls="10")
     p += TAIL
