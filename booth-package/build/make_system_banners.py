@@ -21,7 +21,7 @@ def chrome(title, note):
 
 def header(p):
     p += f'<rect width="{W}" height="700" fill="{DEEP}"/>\n' + logo(250, 170, 1050, True)
-    p += lines(3050, 320, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 90, 140, LIGHT, weight="700", anchor="end", ls="3")
+    p += lines(3050, 320, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 90, 140, WHITE, weight="700", anchor="end", ls="3")
     p += f'<rect y="700" width="{W}" height="330" fill="{LIGHT}"/>\n'
     p += lines(250, 905, ["BURNOUT ENDS HERE.™"], 150, 0, DEEP, weight="700", ls="16")
     return p
@@ -37,40 +37,38 @@ def footer(p, y=5700):
 # ============================ 1 THE TENSION ============================
 p = chrome("System v3, banner 1: the tension", "Retractable banner 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). Banner 1 of 2: name the pain. Everything key sits above the 54 in line; the footer is close-range. CONFIRM the vendor template.")
 p = header(p)
-p += f'<rect y="1030" width="{W}" height="2300" fill="{DEEP}"/>\n'
-p += label(250, 1260, "1", "THE TENSION", 70).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
-p += lines(250, 1640, ["Everyone", "around you", "can feel", "your stress."], 225, 245, WHITE, family="DM Serif Display")
-p += lines(250, 2640, ["What do you do next?"], 150, 0, LIGHT, family="DM Serif Display")
-p += lines(250, 2960, ["It isn’t a character flaw.", "It’s a stress response, and", "you can learn to work with it."], 88, 120, PALE, weight="500")
-p += placed("{{FIGURE:dark}}", 2130, 1170, 1.12)
+p += f'<rect y="1030" width="{W}" height="2200" fill="{DEEP}"/>\n'
+p += lines(250, 1540, ["Everyone", "around you", "can feel", "your stress."], 225, 245, WHITE, family="DM Serif Display")
+p += lines(250, 2540, ["What do you do next?"], 150, 0, LIGHT, family="DM Serif Display")
+p += lines(250, 2860, ["It isn’t a character flaw.", "It’s a stress response, and", "you can learn to work with it."], 88, 120, WHITE, weight="500")
+p += placed("{{FIGURE:dark}}", 2130, 1100, 1.12)
 for i, (tag, line) in enumerate(PROBLEMS):
-    y = 3480 + i * 480
+    y = 3380 + i * 480
     p += f'<rect x="250" y="{y}" width="2800" height="440" rx="36" fill="{WHITE}"/><rect x="250" y="{y}" width="2800" height="16" rx="8" fill="{DEEP}"/>\n'
     p += lines(340, y + 130, [tag], 60, 0, DEEP, weight="700", ls="8")
     p += lines(340, y + 305, [line], 122, 0, INK, family="DM Serif Display")
-p = footer(p)
+p = footer(p, 5600)
 p += TAIL
 (SRC / "banner_sys_tension.html").write_text(p)
 
 # ============================ 2 THE CAPACITY ============================
 p = chrome("System v3, banner 2: the capacity", "Retractable banner 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). Banner 2 of 2: the resolution. Practices are the tools, capacity is the product; the loop and where to interrupt it; metrics example. CONFIRM the vendor template.")
 p = header(p)
-p += f'<rect y="1030" width="{W}" height="2170" fill="{DEEP}"/>\n'
-p += label(250, 1260, "2", "THE CAPACITY", 70).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
-p += lines(250, 1660, ["Practices are", "the tools.", "Capacity is", "the product."], 380, 368, WHITE, family="DM Serif Display")
-p += lines(250, 3010, ["Learn to catch the stress loop early,", "and interrupt it."], 92, 124, PALE, weight="500")
-p += label(250, 3390, "", "THE STRESS LOOP, AND WHERE TO INTERRUPT IT", 58)
-p += placed("{{LOOP:light:nogloss:men}}", 700, 3500, 0.9)
-p += f'<rect x="250" y="4900" width="2800" height="620" rx="36" fill="{WHITE}"/><rect x="250" y="4900" width="2800" height="16" rx="8" fill="{DEEP}"/>\n'
-p += lines(340, 5020, ["SOMA-Q METRICS REPORT: WEEK 1 TO WEEK 16"], 50, 0, DEEP, weight="700", ls="5")
+p += f'<rect y="1030" width="{W}" height="2070" fill="{DEEP}"/>\n'
+p += lines(250, 1560, ["Practices are", "the tools.", "Capacity is", "the product."], 380, 368, WHITE, family="DM Serif Display")
+p += lines(250, 2910, ["Learn to catch the stress loop early,", "and interrupt it."], 92, 124, WHITE, weight="500")
+p += label(250, 3290, "", "THE STRESS LOOP, AND WHERE TO INTERRUPT IT", 58)
+p += placed("{{LOOP:light:nogloss:men}}", 700, 3400, 0.9)
+p += f'<rect x="250" y="4800" width="2800" height="620" rx="36" fill="{WHITE}"/><rect x="250" y="4800" width="2800" height="16" rx="8" fill="{DEEP}"/>\n'
+p += lines(340, 4920, ["SOMA-Q METRICS REPORT: WEEK 1 TO WEEK 16"], 50, 0, DEEP, weight="700", ls="5")
 for i, (nm, v, b0) in enumerate(METRICS):
-    y = 5120 + i * 100
+    y = 5020 + i * 100
     p += f'<text x="340" y="{y+38}" font-family="DM Sans" font-size="58" fill="{INK}">{nm}</text>'
     p += f'<rect x="1250" y="{y}" width="1300" height="46" rx="10" fill="{PALE}"/><rect x="1250" y="{y}" width="{v*130:.0f}" height="46" rx="10" fill="{DEEP}"/>'
     p += f'<circle cx="{1250+b0*130:.0f}" cy="{y+23}" r="21" fill="{WHITE}" stroke="{LIGHT}" stroke-width="8"/>'
     p += f'<text x="{1250+v*130+30:.0f}" y="{y+38}" font-family="DM Sans" font-weight="700" font-size="52" fill="{DEEP}">{v}</text>'
-p += lines(340, 5460, ["Example of the report format, not client data. Scored 0 to 10."], 40, 0, "#5C5A53")
-p = footer(p, 5880)
+p += lines(340, 5360, ["Example of the report format, not client data. Scored 0 to 10."], 40, 0, "#5C5A53")
+p = footer(p, 5780)
 p += TAIL
 (SRC / "banner_sys_capacity.html").write_text(p)
 print("ok system")
