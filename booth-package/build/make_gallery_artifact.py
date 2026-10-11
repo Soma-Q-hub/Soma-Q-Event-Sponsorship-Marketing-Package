@@ -45,7 +45,7 @@ SECTIONS.append(("plan", "Plan and order guide", "The strategy packet, then the 
 if MODE == "main":
     SECTIONS = [x for x in SECTIONS if x[0] != "men"]
 elif MODE == "men":
-    SECTIONS = [x for x in SECTIONS if x[0] == "men"]
+    SECTIONS = [x for x in SECTIONS if x[0] in ("men", "sys")]
 TITLE = "Soma-Q Booth Package: Men's Track (draft)" if MODE == "men" else "Soma-Q Booth Package"
 LEDE = ("A second front door for a men-skewing room: same brand, loop, outcomes and measurement, different headline and wording, one graphic per piece. Draft for review. Click any image to enlarge it."
         if MODE == "men" else None)

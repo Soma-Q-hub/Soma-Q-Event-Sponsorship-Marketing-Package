@@ -1,4 +1,12 @@
 MORE_SECTIONS = [
+ {"at": 0, "data": ("sys", "NEW: the consistent system", "One story across the set: name the tension, then show the capacity. Same header, same What we do sentence, the new neutral figure with the nervous system lit from inside. Draft for review.", [
+    ("banner_sys_tension-1", "System banner 1: the tension", "32 x 80 in"),
+    ("banner_sys_capacity-1", "System banner 2: the capacity", "32 x 80 in"),
+    ("banner_men_hero_dark-1", "Hero banner, dark", "32 x 80 in"),
+    ("banner_men_hero_light-1", "Hero banner, light band", "32 x 80 in"),
+    ("postcard_front-1", "Postcard, front", "6 x 4 in"),
+    ("postcard_back_photo-1", "Postcard, back: How I work", "6 x 4 in"),
+ ])},
  {"at": 3, "data": ("measure", "Measurement materials", "Built from the Measurement Overview. The posters use plain-language names for everyone; the handout uses the SQ- names for organizations.", [
     ("poster_progress-1", "Watch your progress, week by week", "24 x 36 in"),
     ("poster_capacity-1", "Capacity comes first. Results follow.", "24 x 36 in"),
