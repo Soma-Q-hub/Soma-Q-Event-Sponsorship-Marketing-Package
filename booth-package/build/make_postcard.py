@@ -51,9 +51,9 @@ p += TAIL
 # ---------------- FRONT C: Shift happens + Burnout ends here ----------------
 p = head("Postcard front C, 6 x 4 in", 6.25, 4.25, "Postcard front, option C: one image, one idea. 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed).")
 p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n' + logo(40, 28, 140, True)
-p += lines(585, 44, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 10.5, 15, LIGHT, weight="700", anchor="end", ls="1")
+p += lines(585, 44, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 10.5, 15, WHITE, weight="700", anchor="end", ls="1")
 p += f'<rect y="100" width="{W}" height="40" fill="{LIGHT}"/>\n'
-p += lines(40, 126, ["SHIFT HAPPENS™ &#160;·&#160; BECOME YOUR OWN ADVISOR."], 17, 0, DEEP, weight="700", ls="1.2")
+p += lines(40, 126, ["BECOME YOUR OWN ADVISOR. SHIFT HAPPENS™"], 17, 0, DEEP, weight="700", ls="1.2")
 p += f'<rect x="40" y="158" width="150" height="232" rx="12" fill="#16494F"/>\n'
 p += placed("{{FIGURE:dark}}", 115 - 880*0.118/2, 166, 0.118)
 p += lines(222, 198, ["Learn to read", "your nervous", "system’s signals."], 33, 38, WHITE, family="DM Serif Display")
@@ -61,7 +61,6 @@ p += lines(222, 306, ["You know what to do.", "Pressure decides whether you", "r
 p += hair(222, 585, 350, op=.45, w=1)
 p += lines(222, 372, ["HEALTH &#160;·&#160; WEALTH &#160;·&#160; RELATIONSHIPS &#160;·&#160; CAREER"], 9.5, 0, LIGHT, weight="700", ls="1")
 p += lines(222, 390, ["SOMA-Q.COM"], 11, 0, PALE, weight="700", ls="2")
-p += lines(585, 390, ["BURNOUT ENDS HERE.™"], 11, 0, LIGHT, weight="700", anchor="end", ls="2")
 p += TAIL
 (SRC / "postcard_front_c.html").write_text(p)
 
@@ -99,4 +98,5 @@ p += '<rect x="505" y="328" width="82" height="82" rx="8" fill="#FFFFFF"/><svg x
 p += lines(490, 352, ["Scan to book a", "free discovery", "call"], 10.5, 13, PALE, weight="700", anchor="end")
 p += TAIL
 (SRC / "postcard_back.html").write_text(p)
+(SRC / "postcard_back_w.html").write_text(p.replace(f'fill="{LINEN}"', 'fill="#FFFFFF"').replace("Postcard back, 6 x 4 in", "Postcard back B (white), 6 x 4 in"))
 print("ok postcard")

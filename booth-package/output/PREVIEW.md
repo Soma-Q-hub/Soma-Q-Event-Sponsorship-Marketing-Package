@@ -104,6 +104,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## postcard_back_photo-1
 ![postcard_back_photo-1](preview/postcard_back_photo-1.png)
 
+## postcard_back_w_photo-1
+![postcard_back_w_photo-1](preview/postcard_back_w_photo-1.png)
+
 ## postcard_front-1
 ![postcard_front-1](preview/postcard_front-1.png)
 
