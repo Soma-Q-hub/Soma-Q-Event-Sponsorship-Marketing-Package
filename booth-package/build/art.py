@@ -217,7 +217,7 @@ _FIG_HALF = ("M440,186 L478,186 C480,240 484,275 500,296 C540,312 600,318 650,34
              "C656,1782 630,1786 596,1786 L500,1786 C480,1784 470,1768 472,1745 C474,1700 476,1640 478,1560 "
              "C482,1420 470,1260 456,1150 L440,1100")
 
-def nervous_figure(scheme="dark"):
+def nervous_figure_soft(scheme="dark"):
     """Soft, gender-neutral figure (rounded shoulders, torso and hips the same width, no waist, no hair, no ribs) with the nervous
     system lit from inside: brain, cord, vagus, brachial and lumbar plexus, peripheral branches, white glow. Local box 880 x 1790."""
     dark = scheme == "dark"
@@ -284,3 +284,53 @@ def bodymap(scheme="light", labels=True, zones=True):
             o += f'<line x1="{lx + (12 if side_ == "l" else -12)}" y1="{zy}" x2="{ex}" y2="{zy}" stroke="{DEEP}" stroke-width="5"/>'
             o += f'<text x="{lx}" y="{zy+30}" text-anchor="{"end" if side_ == "l" else "start"}" font-family="DM Serif Display" font-size="88" fill="{DEEP}">{name}</text>'
     return o, 2075, 1790
+
+
+COPPER = "#C9763F"
+
+def nervous_figure(scheme="dark"):
+    """The original neutral silhouette with the nervous system lit from inside (white glow, no ribs) and copper stress glows
+    at the head, heart and gut. Local box 880 x 1790."""
+    dark = scheme == "dark"
+    if dark:
+        fill, fill_op, edge, core, halo, halo2, node = WHITE, ".07", LIGHT, WHITE, PALE, LIGHT, WHITE
+    else:
+        fill, fill_op, edge, core, halo, halo2, node = WHITE, ".78", DEEP, DEEP, LIGHT, LIGHT, DEEP
+    cx = 1212
+    body = _mirror_path(_FIG_R, cx)
+    def glow(d, w, op=1):
+        return (f'<path d="{d}" fill="none" stroke="{halo2}" stroke-opacity=".16" stroke-width="{w*4.2:.0f}" stroke-linecap="round" stroke-linejoin="round"/>'
+                f'<path d="{d}" fill="none" stroke="{halo}" stroke-opacity=".34" stroke-width="{w*2.2:.0f}" stroke-linecap="round" stroke-linejoin="round"/>'
+                f'<path d="{d}" fill="none" stroke="{core}" stroke-opacity="{op}" stroke-width="{w}" stroke-linecap="round" stroke-linejoin="round"/>')
+    arm = f"M{cx+30},1650 C{cx+120},1655 {cx+200},1690 {cx+250},1790 C{cx+275},1880 {cx+290},1950 {cx+305},2010 C{cx+330},2090 {cx+370},2200 {cx+408},2310"
+    arm_b = [f"M{cx+408},2310 L{cx+428},2346", f"M{cx+408},2310 L{cx+414},2350", f"M{cx+395},2290 L{cx+396},2335"]
+    leg = f"M{cx+8},2100 C{cx+50},2150 {cx+82},2230 {cx+92},2400 C{cx+100},2540 {cx+96},2700 {cx+94},2860 C{cx+92},2940 {cx+86},2990 {cx+78},3030"
+    leg_b = [f"M{cx+84},3000 L{cx+120},3046", f"M{cx+84},3000 L{cx+96},3052", f"M{cx+84},3000 L{cx+62},3050"]
+    o = f'<defs><radialGradient id="fgl"><stop offset="0" stop-color="{core}" stop-opacity=".5"/><stop offset=".5" stop-color="{halo}" stop-opacity=".2"/><stop offset="1" stop-color="{halo}" stop-opacity="0"/></radialGradient>'
+    o += f'<radialGradient id="fgc"><stop offset="0" stop-color="{COPPER}" stop-opacity=".95"/><stop offset=".45" stop-color="{COPPER}" stop-opacity=".45"/><stop offset="1" stop-color="{COPPER}" stop-opacity="0"/></radialGradient></defs>'
+    o += '<g transform="translate(-772,-1280)">'
+    o += f'<path d="{body}" fill="{fill}" fill-opacity="{fill_op}" stroke="{edge}" stroke-width="9" stroke-linejoin="round"/>'
+    for (px, py, r) in [(cx, 1620, 230), (cx - 190, 1900, 120), (cx + 190, 1900, 120), (cx - 90, 2300, 130), (cx + 90, 2300, 130)]:
+        o += f'<circle cx="{px}" cy="{py}" r="{r}" fill="url(#fgl)"/>'
+    # copper stress glows: head, heart (slightly left of centre), gut
+    for (px, py, r) in [(cx, 1365, 170), (cx - 40, 1790, 190), (cx, 2030, 190)]:
+        o += f'<circle cx="{px}" cy="{py}" r="{r}" fill="url(#fgc)"/>'
+    o += glow(f"M{cx},1424 L{cx},2110", 12)
+    o += (f'<path d="M{cx},1300 C{cx+58},1296 {cx+86},1334 {cx+80},1376 C{cx+74},1414 {cx+34},1428 {cx},1426 C{cx-34},1428 {cx-74},1414 {cx-80},1376 '
+          f'C{cx-86},1334 {cx-58},1296 {cx},1300 Z" fill="{COPPER}" fill-opacity=".38" stroke="{core}" stroke-width="7"/>'
+          f'<path d="M{cx},1304 L{cx},1424 M{cx-56},1340 C{cx-36},1352 {cx-30},1372 {cx-48},1392 M{cx+56},1340 C{cx+36},1352 {cx+30},1372 {cx+48},1392" fill="none" stroke="{core}" stroke-width="5" stroke-opacity=".7"/>')
+    for sg in (1, -1):
+        o += glow(f"M{cx+sg*16},1440 C{cx+sg*60},1500 {cx+sg*92},1600 {cx+sg*92},1720 C{cx+sg*92},1840 {cx+sg*66},1920 {cx+sg*18},2030", 6, .95)
+        o += glow("M" + arm[1:].replace(str(cx+30), str(cx+sg*30), 1) if False else arm if sg == 1 else f"M{cx-30},1650 C{cx-120},1655 {cx-200},1690 {cx-250},1790 C{cx-275},1880 {cx-290},1950 {cx-305},2010 C{cx-330},2090 {cx-370},2200 {cx-408},2310", 7, .95)
+        o += glow(leg if sg == 1 else f"M{cx-8},2100 C{cx-50},2150 {cx-82},2230 {cx-92},2400 C{cx-100},2540 {cx-96},2700 {cx-94},2860 C{cx-92},2940 {cx-86},2990 {cx-78},3030", 8, .95)
+        for d in (arm_b + leg_b):
+            if sg == -1:
+                d = "".join(c for c in d)
+            o += f'<path d="{d}" transform="{"" if sg == 1 else f"translate({2*cx},0) scale(-1,1)"}" fill="none" stroke="{core}" stroke-width="5" stroke-opacity=".75" stroke-linecap="round"/>'
+    for y, ln, sg in [(1700, 100, 1), (1740, 80, -1), (1810, 120, 1), (1850, 100, -1), (1930, 130, -1), (1970, 110, 1), (2040, 120, 1), (2070, 100, -1)]:
+        ex, ey = cx + sg * ln, y + 50
+        o += glow(f"M{cx},{y} C{cx+sg*ln*.4:.0f},{y-8} {cx+sg*ln*.8:.0f},{y+14} {ex},{ey}", 4, .8)
+    for px, py, r, c in [(cx, 1640, 16, node), (cx, 2030, 18, node), (cx, 2110, 16, node)]:
+        o += f'<circle cx="{px}" cy="{py}" r="{r*2.2:.0f}" fill="{halo}" fill-opacity=".30"/><circle cx="{px}" cy="{py}" r="{r}" fill="{c}"/>'
+    o += '</g>'
+    return o, 880, 1790
