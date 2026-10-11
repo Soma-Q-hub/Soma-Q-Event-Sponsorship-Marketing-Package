@@ -1,7 +1,3 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-card_individual [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=card
-card_individual [ebook]: https://www.soma-q.com/go/ebook?c=oct24&p=card
-card_individual [reset]: https://www.soma-q.com/go/reset?c=oct24&p=card
-card_individual [call]: https://www.soma-q.com/go/call?c=oct24&p=card
-poster_where [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=poster-where
+
