@@ -22,7 +22,9 @@ MEN = [("banner_men_story-1", "Banner 1: the story", "32 x 80 in"), ("banner_men
        ("poster_men_holder-1", "Poster: Hold space for others without losing touch with yourself", "24 x 36 in"),
        ("business_card_men-1", "Business card, front", "3.5 x 2 in"), ("business_card_men-2", "Business card, back", "3.5 x 2 in"),
        ("banner_men_pain_a-1", "Banner headline test A: Everyone around you can feel your stress", "32 x 80 in"),
-       ("banner_men_pain_b-1", "Banner headline test B: Who you become under stress", "32 x 80 in")]
+       ("banner_men_pain_b-1", "Banner headline test B: Who you become under stress", "32 x 80 in"),
+       ("banner_men_hero_dark-1", "Hero banner, dark: built for distance", "32 x 80 in"),
+       ("banner_men_hero_light-1", "Hero banner, light band: built for distance", "32 x 80 in")]
 MAIN = [("banner_story-1", "Banner 1: the story", "32 x 80 in"), ("banner_proof-1", "Banner 2: the proof, no photo", "32 x 80 in"),
         ("banner_proof_photo-1", "Banner 2: the proof, with photo", "32 x 80 in"), ("backdrop-1", "Backdrop, no photo", "120 x 90 in placeholder"),
         ("backdrop_photo-1", "Backdrop, with photo", "120 x 90 in placeholder"), ("table_front-1", "Table cover front", "72 x 30 in placeholder"),

@@ -16,7 +16,7 @@ import config as C
 SRC, OUT = ROOT / "src", ROOT / "output"
 OUT.mkdir(exist_ok=True)
 
-PIECE_TAG = {"banner_men_pain_a": "men-banner-pain-a", "banner_men_pain_b": "men-banner-pain-b", "business_card_men": "men-card", "poster_men_fixer": "men-poster-fixer", "poster_men_holder": "men-poster-holder", "banner_men_story": "men-banner-story", "banner_men_proof": "men-banner-proof", "backdrop_men": "men-backdrop", "banner_story": "banner-story", "banner_proof": "banner-proof", "leavebehind": "leavebehind",
+PIECE_TAG = {"banner_men_hero_dark": "men-banner-hero-dark", "banner_men_hero_light": "men-banner-hero-light", "banner_men_pain_a": "men-banner-pain-a", "banner_men_pain_b": "men-banner-pain-b", "business_card_men": "men-card", "poster_men_fixer": "men-poster-fixer", "poster_men_holder": "men-poster-holder", "banner_men_story": "men-banner-story", "banner_men_proof": "men-banner-proof", "backdrop_men": "men-backdrop", "banner_story": "banner-story", "banner_proof": "banner-proof", "leavebehind": "leavebehind",
              "poster_progress": "poster-progress", "poster_capacity": "poster-capacity", "handout_measurement": "handout-measure",
              "poster_loop": "poster-loop", "poster_shift": "poster-shift", "poster_outcomes": "poster-outcomes", "poster_where": "poster-where",
              "banner_retractable": "banner", "backdrop": "backdrop", "counter_sign": "sign", "card_individual": "card",
@@ -119,10 +119,12 @@ def render(name, variant=None):
         kind, scheme, opt, var = m.group(1), m.group(2), m.group(3) or "", m.group(4) or ""
         if kind == "LOOP":
             return art.loop(scheme, opt != "nogloss", art.MEN_LOOP if var == "men" else None)[0]
+        if kind == "FIGURE":
+            return art.nervous_figure(scheme)[0]
         if kind == "OUTCOMES":
             return art.outcomes(scheme, art.MEN_OUTCOMES if opt == "men" else None)[0]
         return art.bodymap(scheme)[0]
-    html = re.sub(r"\{\{(LOOP|OUTCOMES|BODYMAP):(light|dark)(?::(\w+))?(?::(\w+))?\}\}", _sub_art, html)
+    html = re.sub(r"\{\{(LOOP|OUTCOMES|BODYMAP|FIGURE):(light|dark)(?::(\w+))?(?::(\w+))?\}\}", _sub_art, html)
     CAPS = {"quiz": "Scan for the free|Burnout Signal Check", "call": "Scan to book a|free discovery call",
             "overview": "Scan to request the|full Measurement Overview"}
     for m in re.finditer(r"\{\{FOOTER:(light|dark)(?::(\w+))?\}\}", src):
@@ -191,7 +193,7 @@ Current campaign: {C.CAMPAIGN}. Destinations in [BRACKETS] still need to be supp
 
 if __name__ == "__main__":
     plan = [("banner_story", None), ("banner_proof", None), ("banner_proof", "photo"), ("backdrop", None), ("backdrop", "photo"),
-            ("banner_men_story", None), ("banner_men_proof", None), ("banner_men_proof", "photo"), ("backdrop_men", None), ("backdrop_men", "photo"), ("poster_men_fixer", None), ("poster_men_holder", None), ("business_card_men", None), ("banner_men_pain_a", None), ("banner_men_pain_b", None),
+            ("banner_men_story", None), ("banner_men_proof", None), ("banner_men_proof", "photo"), ("backdrop_men", None), ("backdrop_men", "photo"), ("poster_men_fixer", None), ("poster_men_holder", None), ("business_card_men", None), ("banner_men_pain_a", None), ("banner_men_pain_b", None), ("banner_men_hero_dark", None), ("banner_men_hero_light", None),
             ("table_front", None), ("counter_sign", None), ("card_individual", None), ("business_card", None),
             ("leavebehind", None), ("poster_loop", None), ("poster_shift", None), ("poster_outcomes", None),
             ("poster_where", None), ("poster_progress", None), ("poster_capacity", None), ("handout_measurement", None), ("strategy_packet", None), ("order_guide", None)]

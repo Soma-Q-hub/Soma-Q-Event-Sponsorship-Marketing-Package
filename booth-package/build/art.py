@@ -163,3 +163,48 @@ def bodymap(scheme="light", labels=True, zones=True):
             o += f'<text x="{lx}" y="{zy+30}" text-anchor="{"end" if side_ == "l" else "start"}" font-family="DM Serif Display" font-size="88" fill="{DEEP}">{name}</text>'
     o += '</g>'
     return o, 2075, 1790
+
+
+_FIG_R = [(0, 1280),
+          ((52, 1280), (96, 1322), (96, 1385)), ((96, 1432), (82, 1458), (66, 1478)), ((56, 1490), (48, 1500), (46, 1515)),
+          ((46, 1560), (48, 1588), (62, 1600)), ((110, 1612), (170, 1618), (205, 1640)), ((232, 1655), (250, 1690), (252, 1735)),
+          ((262, 1800), (290, 1900), (330, 2010)), ((345, 2050), (365, 2100), (385, 2160)), ((398, 2200), (412, 2250), (425, 2290)),
+          ((432, 2310), (440, 2335), (436, 2352)), ((428, 2372), (410, 2368), (404, 2350)),
+          ((392, 2310), (372, 2260), (348, 2210)), ((330, 2170), (306, 2120), (286, 2070)), ((262, 2010), (220, 1920), (190, 1840)),
+          ((178, 1815), (172, 1800), (168, 1790)),
+          ((160, 1850), (150, 1930), (146, 2000)), ((146, 2050), (156, 2100), (166, 2150)),
+          ((176, 2200), (180, 2250), (176, 2300)), ((172, 2400), (164, 2480), (148, 2560)), ((136, 2630), (128, 2680), (126, 2720)),
+          ((130, 2790), (134, 2850), (120, 2920)), ((110, 2960), (100, 2985), (94, 3005)), ((96, 3030), (130, 3040), (150, 3054)),
+          ((152, 3068), (44, 3068), (36, 3050)), ((30, 3020), (34, 2990), (38, 2960)), ((44, 2900), (40, 2840), (34, 2780)),
+          ((30, 2730), (34, 2680), (36, 2640)), ((36, 2520), (20, 2380), (8, 2260)), ((4, 2230), (2, 2210), (0, 2200))]
+
+def nervous_figure(scheme="dark"):
+    """The neutral figure with the nervous system drawn through it, no zone markers or labels: a hero image.
+    scheme 'dark' = Light Teal lines for a Deep Teal field; 'light' = Deep Teal lines for a light field. Local box 880 x 1790."""
+    cx = 440 + 0
+    if scheme == "dark":
+        fill, fill_op, stroke, nerve, glow, glow_op, brain, vert_fill = WHITE, ".07", LIGHT, LIGHT, PALE, ".28", LIGHT, DEEP
+    else:
+        fill, fill_op, stroke, nerve, glow, glow_op, brain, vert_fill = WHITE, ".72", DEEP, DEEP, LIGHT, ".55", LIGHT, WHITE
+    cxr = 1212   # figure is drawn around x = 1212 in its source coordinates
+    body = _mirror_path(_FIG_R, cxr)
+    g = f'fill="none" stroke="{glow}" stroke-opacity="{glow_op}" stroke-linecap="round" stroke-linejoin="round"'
+    n = f'fill="none" stroke="{nerve}" stroke-opacity=".95" stroke-linecap="round" stroke-linejoin="round"'
+    arm = f"M{cxr+30},1650 C{cxr+120},1655 {cxr+200},1690 {cxr+250},1790 C{cxr+275},1880 {cxr+290},1950 {cxr+305},2010 C{cxr+330},2090 {cxr+370},2200 {cxr+408},2310"
+    arm_b = [f"M{cxr+408},2310 L{cxr+428},2346", f"M{cxr+408},2310 L{cxr+414},2350", f"M{cxr+395},2290 L{cxr+396},2335"]
+    leg = f"M{cxr+8},2100 C{cxr+50},2150 {cxr+82},2230 {cxr+92},2400 C{cxr+100},2540 {cxr+96},2700 {cxr+94},2860 C{cxr+92},2940 {cxr+86},2990 {cxr+78},3030"
+    leg_b = [f"M{cxr+84},3000 L{cxr+120},3046", f"M{cxr+84},3000 L{cxr+96},3052", f"M{cxr+84},3000 L{cxr+62},3050"]
+    side = "".join(f'<path d="{d}" {g} stroke-width="20"/>' for d in [arm, leg]) + "".join(f'<path d="{d}" {n} stroke-width="7"/>' for d in [arm, leg]) + "".join(f'<path d="{d}" {n} stroke-width="5" stroke-opacity=".7"/>' for d in arm_b + leg_b)
+    for y in range(1680, 2100, 46):
+        wd = 128 - (y - 1680) * 0.045
+        side += f'<path d="M{cxr+14},{y} C{cxr+66},{y-4} {cxr+104},{y+10} {cxr+wd:.0f},{y+44}" {n} stroke-width="5" stroke-opacity=".5"/>'
+    o = '<g transform="translate(-772,-1280)">'
+    o += f'<path d="{body}" fill="{fill}" fill-opacity="{fill_op}" stroke="{stroke}" stroke-width="9" stroke-linejoin="round"/>'
+    o += (f'<path d="M{cxr},1300 C{cxr+58},1296 {cxr+86},1334 {cxr+80},1376 C{cxr+74},1414 {cxr+34},1428 {cxr},1426 C{cxr-34},1428 {cxr-74},1414 {cxr-80},1376 '
+          f'C{cxr-86},1334 {cxr-58},1296 {cxr},1300 Z" fill="{brain}" fill-opacity=".45" stroke="{nerve}" stroke-width="7"/>')
+    o += f'<path d="M{cxr},1304 L{cxr},1424 M{cxr-56},1340 C{cxr-36},1352 {cxr-30},1372 {cxr-48},1392 M{cxr+56},1340 C{cxr+36},1352 {cxr+30},1372 {cxr+48},1392" {n} stroke-width="5" stroke-opacity=".6"/>'
+    o += f'<path d="M{cxr},1424 L{cxr},2110" {g} stroke-width="30"/><path d="M{cxr},1424 L{cxr},2110" {n} stroke-width="10"/>'
+    for y in range(1560, 2100, 36):
+        o += f'<rect x="{cxr-17}" y="{y}" width="34" height="13" rx="6" fill="{vert_fill}" stroke="{nerve}" stroke-width="4"/>'
+    o += f'<g>{side}</g><g transform="translate({2*cxr},0) scale(-1,1)">{side}</g></g>'
+    return o, 880, 1790
