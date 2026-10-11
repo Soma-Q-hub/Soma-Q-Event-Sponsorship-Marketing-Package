@@ -1,25 +1,3 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-poster_men_fixer [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=men-poster-fixer
-poster_men_holder [call]: https://www.soma-q.com/go/call?c=oct24&p=men-poster-holder
-business_card_men [call]: https://www.soma-q.com/go/call?c=oct24&p=men-card
-counter_sign [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=sign
-counter_sign [ebook]: https://www.soma-q.com/go/ebook?c=oct24&p=sign
-counter_sign [reset]: https://www.soma-q.com/go/reset?c=oct24&p=sign
-counter_sign [call]: https://www.soma-q.com/go/call?c=oct24&p=sign
-card_individual [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=card
-card_individual [ebook]: https://www.soma-q.com/go/ebook?c=oct24&p=card
-card_individual [reset]: https://www.soma-q.com/go/reset?c=oct24&p=card
-card_individual [call]: https://www.soma-q.com/go/call?c=oct24&p=card
-business_card [call]: https://www.soma-q.com/go/call?c=oct24&p=bizcard
-leavebehind [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=leavebehind
-leavebehind [call]: https://www.soma-q.com/go/call?c=oct24&p=leavebehind
-leavebehind [org]: https://www.soma-q.com/go/org?c=oct24&p=leavebehind
-leavebehind [overview]: https://www.soma-q.com/go/overview?c=oct24&p=leavebehind
-poster_loop [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=poster-loop
-poster_shift [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=poster-shift
-poster_outcomes [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=poster-outcomes
-poster_where [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=poster-where
-poster_progress [call]: https://www.soma-q.com/go/call?c=oct24&p=poster-progress
-poster_capacity [call]: https://www.soma-q.com/go/call?c=oct24&p=poster-capacity
-handout_measurement [overview]: https://www.soma-q.com/go/overview?c=oct24&p=handout-measure
+

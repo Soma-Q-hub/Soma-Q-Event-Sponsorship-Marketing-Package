@@ -3,6 +3,7 @@
 One graphic per piece: the loop on the story banner and the backdrop, the measurement example on the proof banner.
 Copy rules: soma-q-brand-docs (outcome first, no hype, no em dashes, no client data). Run: python3 build/make_men_pieces.py"""
 from svgkit import *
+from svgkit import head as head_
 
 W, H = 3300, 8100
 SUB = ["Stay steady under pressure, think clearly when it counts,", "and be fully present with the people who matter."]
@@ -75,3 +76,32 @@ p += lines(11500, 8250, ["SOMA-Q.COM"], 300, 0, DEEP, weight="700", anchor="end"
 p += TAIL
 (SRC / "backdrop_men.html").write_text(p)
 print("ok")
+
+# ============================ PAIN-LED HEADLINE TESTS (text only, so the words carry it) ============================
+PLAIN = ["Soma-Q teaches you to notice and settle your", "body\u2019s stress response, so you can think clearly", "and be present with the people who matter."]
+def pain_banner(name, title, head, turn):
+    p = head_("{}, 32 x 80 in".format(title), 33, 81, "Retractable banner 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). Men's track headline test, text only. All key copy sits in the upper 54 in; the sign-off below it may sit behind a table. CONFIRM the vendor template.")
+    p += f'<rect width="{W}" height="{H}" fill="{LINEN}"/>\n'
+    p += f'<rect width="{W}" height="900" fill="{DEEP}"/>\n' + logo(250, 235, 1200, True)
+    p += lines(3050, 530, ["Nervous system alignment", "for high-performing leaders"], 76, 100, LIGHT, weight="700", anchor="end", ls="3")
+    p += lines(250, 1380, head, 340, 350, DEEP, family="DM Serif Display")
+    y = 1380 + (len(head) - 1) * 350 + 470
+    p += lines(250, y, turn, 92, 124, INK, weight="500")
+    y += 124 + 280
+    p += hair(250, 3050, y)
+    y += 400
+    p += lines(250, y, ["Show up the way", "you mean to."], 250, 270, DEEP, family="DM Serif Display")
+    y += 270 + 480
+    p += label(250, y, "", "WHAT WE DO", 60)
+    p += lines(250, y + 140, PLAIN, 98, 124, INK)
+    p += lines(250, 6350, ["Burnout ends here.\u2122"], 200, 0, DEEP, family="DM Serif Display")
+    p += lines(250, 6540, ["The free first steps are on the table. Scan one to start."], 88, 0, INK, weight="500")
+    p += lines(250, 6810, ["SOMA-Q.COM"], 80, 0, DEEP, weight="700", ls="10")
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
+
+pain_banner("banner_men_pain_a", "Men's headline test A", ["Everyone around", "you can feel", "your stress.", "Can you?"],
+            ["It isn\u2019t a character flaw. It\u2019s a stress response,", "and you can learn to work with it."])
+pain_banner("banner_men_pain_b", "Men's headline test B", ["Who you become", "under stress", "isn\u2019t who", "you are."],
+            ["Under pressure, your body takes over. You can learn", "to notice it and choose your response."])
+print("ok pain")
