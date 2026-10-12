@@ -93,12 +93,12 @@ p += lines(40, 62, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", ls="2.2")
 p += f'<rect x="40" y="80" width="160" height="272" rx="12" fill="#16494F"/>\n'
 p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 90, 0.14)
 p += lines(222, 120, ["Reading your", "nervous system’s", "signals is critical", "to your well-being."], 23.5, 30, WHITE, family="DM Serif Display")
-p += lines(222, 252, ["Pressure decides whether", "you react or respond."], 13.5, 18, LIGHT, weight="700")
-p += f'<line x1="222" y1="282" x2="262" y2="282" stroke="{LIGHT}" stroke-width="2"/>'
-p += lines(222, 308, ["The wellness playbook we’ve", "been taught needs a rewrite."], 12.5, 17, WHITE, weight="700")
+p += lines(222, 254, ["Pressure decides whether", "you react or respond."], 16, 21, LIGHT, weight="700")
+p += f'<line x1="222" y1="292" x2="262" y2="292" stroke="{LIGHT}" stroke-width="2"/>'
+p += lines(222, 318, ["Shift outcomes in the four", "places pressure shows up."], 12.5, 17, LIGHT, weight="700")
 # white strip, centred
 p += logo(CXS - 63, 40, 126, False)
-p += lines(CXS, 116, ["Become your own", "advisor to shift", "outcomes:"], 11.5, 15, INK, weight="500", anchor="middle")
+p += lines(CXS, 122, ["Become your own", "advisor:"], 13.5, 18, DEEP, weight="700", anchor="middle")
 for k, word in enumerate(["Health", "Wealth", "Relationships", "Career"]):
     y = 188 + k * 42
     if k:
