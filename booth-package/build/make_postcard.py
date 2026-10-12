@@ -114,7 +114,7 @@ p += lines(40, 200, ["Megan McDonald"], 19, 0, DEEP, family="DM Serif Display") 
 p += lines(40, 237, ["I led healthcare tech teams", "until burnout left me depleted,", "in pain and unable to sleep."], 10, 13, INK)
 p += lines(40, 280, ["I rebuilt how I lead and live.", "Now I help leaders do the same."], 10, 13.5, DEEP, weight="700")
 p += vhair(212, 36, 300)
-p += label(231, 52, "", "HOW I WORK", 12)
+p += label(231, 56, "", "HOW I WORK", 12)
 items = [("Tools that fit your day", "Five to twenty minute practices that stack into your schedule."),
          ("Structure you can measure", "Assessment, targeted practices and weekly measurement."),
          ("Body and mind together", "Where physiology, emotion and thinking meet."),
@@ -123,7 +123,7 @@ items = [("Tools that fit your day", "Five to twenty minute practices that stack
          ("Direct and compassionate", "Clear about what the work asks, kind about how hard change is.")]
 for i, (t, d) in enumerate(items):
     col, row = i % 2, i // 2
-    x, y = 228 + col * 184, 82 + row * 76
+    x, y = 228 + col * 184, 88 + row * 80
     p += f'<rect x="{x}" y="{y-14}" width="3" height="52" fill="{LIGHT}"/>'
     p += lines(x + 10, y, [t], 11.5, 0, DEEP, weight="700")
     words, ln, rows = d.split(), "", []
