@@ -35,12 +35,20 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     p += bold(1750, 4050 if st else 3800, ["What do you", "do next?"])
     p += lines(1750, 4580 if st else 4230, TURN, 104, 142, WHITE if dark else DEEP, weight="700")
     p += bold(1750, 5420 if st else 4970, ["Show up the way", "you want to."])
-    p += lines(250, 5800 + dy, ["Book a free", "discovery call."], 150, 170, DEEP, family="DM Serif Display")
-    p += lines(250, 6200 + dy, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
-    p += f'<rect x="2330" y="{5640 + dy}" width="720" height="720" rx="40" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="2400" y="{5710 + dy}" width="580" height="580">{{{{QR_CALL}}}}</svg>'
-    p += lines(250, 6500 + dy, ["SOMA-Q.COM"], 80, 0, DEEP, weight="700", ls="10")
     if mode == "base":
-        p += f'<rect y="6700" width="{W}" height="{H-6700}" fill="{DEEP}"/>\n'
+        # centered stack: one vertical axis from the call to action, down through the QR, to the web address
+        p += lines(W / 2, 5740, ["Book a free discovery call."], 150, 0, DEEP, family="DM Serif Display", anchor="middle")
+        p += f'<rect x="{W/2-400}" y="5830" width="800" height="800" rx="44" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-400+62}" y="{5830+62}" width="676" height="676">{{{{QR_CALL}}}}</svg>'
+        p += lines(W / 2, 6790, ["An honest conversation about what pressure is costing you. No obligation."], 58, 0, INK, weight="500", anchor="middle")
+        p += lines(W / 2, 6920, ["SOMA-Q.COM"], 84, 0, DEEP, weight="700", anchor="middle", ls="12")
+        p += f'<rect y="7060" width="{W}" height="{H-7060}" fill="{DEEP}"/>\n'
+        p += lines(W / 2, 7390, ["PRESSURE SHOWS UP IN FOUR PLACES"], 56, 0, LIGHT, weight="700", anchor="middle", ls="9")
+        p += lines(W / 2, 7600, ["Health  ·  Wealth  ·  Relationships  ·  Career"], 108, 0, WHITE, family="DM Serif Display", anchor="middle")
+    else:
+        p += lines(250, 5800 + dy, ["Book a free", "discovery call."], 150, 170, DEEP, family="DM Serif Display")
+        p += lines(250, 6200 + dy, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
+        p += f'<rect x="2330" y="{5640 + dy}" width="720" height="720" rx="40" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="2400" y="{5710 + dy}" width="580" height="580">{{{{QR_CALL}}}}</svg>'
+        p += lines(250, 6500 + dy, ["SOMA-Q.COM"], 80, 0, DEEP, weight="700", ls="10")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
