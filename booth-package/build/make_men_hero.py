@@ -19,7 +19,10 @@ def hero(name, title, scheme, tag="burnout"):
     if not dark:
         p += f'<rect y="{top}" width="{W}" height="{5500-top}" fill="{LIGHT}"/>\n'
     p += logo(250, 200, 1150, True)
-    p += lines(250, 1290, ["Burnout ends", "here.™"] if tag == "burnout" else ["Shift", "happens™"], 430, 400, WHITE, family="DM Serif Display")
+    l1, l2 = ("Burnout ends", "here.") if tag == "burnout" else ("Shift", "Happens")
+    tm = '<tspan font-size="170" dy="-170" dx="14">™</tspan>'
+    p += (f'<text x="250" y="1290" font-family="DM Serif Display" font-size="430" fill="{WHITE}">{l1}</text>'
+          f'<text x="250" y="1690" font-family="DM Serif Display" font-size="430" fill="{WHITE}">{l2}{tm}</text>\n')
     p += label(250, 1900, "", "WHAT WE DO", 64).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
     p += lines(250, 2070, WHAT_WE_DO, 128, 160, LIGHT if dark else WHITE, weight="500")
     p += placed(f"{{{{FIGURE:{scheme}}}}}", 200, 2800, 1.4)
