@@ -13,3 +13,5 @@ Pieces still being reviewed. When one is approved, copy its PDF and preview into
 
 Retired: the 4 x 6 take-home card is in `../archive/take-home-card/`.
 Sources: `../build/make_round2.py`.
+
+| banner_men_hero_dark_shift_stretch, _base | Banner D1 experiments for the bottom white space: teal section pulled down, or a Deep Teal base band | 32 x 80 in |
