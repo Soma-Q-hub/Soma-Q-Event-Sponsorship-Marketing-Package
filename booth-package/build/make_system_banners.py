@@ -98,8 +98,12 @@ for V, SUF in (("burnout", ""), ("shift", "_shift")):
     p += f'<rect y="1030" width="{W}" height="2260" fill="{DEEP}"/>\n'
     p += lines(250, 1560, ["Practices are", "the tools.", "Steadiness is", "the product."], 380, 368, WHITE, family="DM Serif Display")
     p += lines(250, 2900, ["Regulation is a skill.", "Recovery is a skill.", "Choice under pressure is a skill."], 92, 124, WHITE, weight="500")
-    p += label(250, 3440, "", "WHAT HAPPENS WHEN PRESSURE HITS", 58)
-    p += f'<g transform="translate(250,3540)">{decision_flow()}</g>\n'
+    if V == "shift":
+        p += label(250, 3440, "", "WHAT HAPPENS WHEN PRESSURE HITS", 58)
+        p += f'<g transform="translate(250,3540)">{decision_flow()}</g>\n'
+    else:
+        p += label(250, 3440, "", "THE STRESS LOOP, AND WHERE TO INTERRUPT IT", 58)
+        p += placed("{{LOOP:light:nogloss:men}}", 250, 3540, 1.35)
     p = footer(p, 5800)
     p += TAIL
     (SRC / f"banner_sys_capacity{SUF}.html").write_text(p)
