@@ -92,7 +92,7 @@ p += lines(SX / 2, 397, ["NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"]
 p += lines(40, 62, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", ls="2.2")
 p += f'<rect x="40" y="80" width="160" height="272" rx="12" fill="#16494F"/>\n'
 p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 90, 0.14)
-p += lines(222, 120, ["Reading your", "nervous system’s", "signals is critical", "to your well-being."], 23.5, 30, WHITE, family="DM Serif Display")
+p += lines(222, 120, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 23.5, 30, WHITE, family="DM Serif Display")
 p += lines(222, 268, ["Pressure decides whether", "you react or respond."], 16, 22, LIGHT, weight="700")
 # white strip, centred
 p += logo(CXS - 63, 40, 126, False)
