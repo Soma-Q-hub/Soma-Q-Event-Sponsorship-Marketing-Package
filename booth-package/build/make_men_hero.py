@@ -6,7 +6,7 @@ from svgkit import *
 from svgkit import head as head_
 
 W, H = 3300, 8100
-HEADLINE = ["Everyone", "around you", "can feel", "your stress."]
+HEADLINE = ["Who feels it", "when you’re", "stressed?"]
 TURN = ["It isn’t a character flaw.", "It’s a stress response,", "and you can learn to", "work with it."]
 WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-performing", "leaders to notice stress sooner, shift", "in the moment and recover faster."]
 
@@ -27,12 +27,12 @@ def hero(name, title, scheme, tag="burnout"):
     p += lines(250, 2070, WHAT_WE_DO, 128, 160, LIGHT if dark else WHITE, weight="500")
     p += placed(f"{{{{FIGURE:{scheme}}}}}", 200, 2800, 1.4)
     fg, tx, pr = (WHITE, PALE, LIGHT) if dark else (DEEP, INK, DEEP)
-    p += lines(1750, 2900, HEADLINE, 200, 225, fg, family="DM Serif Display")
+    p += lines(1750, 3010, HEADLINE, 200, 225, fg, family="DM Serif Display")
     hc = LIGHT if dark else DEEP
     bold = lambda x, y, rows: "".join(f'<text x="{x}" y="{y+i*170}" font-family="DM Serif Display" font-size="150" fill="{hc}" stroke="{hc}" stroke-width="7" stroke-linejoin="round">{t}</text>' for i, t in enumerate(rows)) + "\n"
-    p += bold(1750, 3870, ["What do you", "do next?"])
-    p += lines(1750, 4300, TURN, 104, 142, WHITE if dark else DEEP, weight="700")
-    p += bold(1750, 5040, ["Show up the way", "you want to."])
+    p += bold(1750, 3800, ["What do you", "do next?"])
+    p += lines(1750, 4230, TURN, 104, 142, WHITE if dark else DEEP, weight="700")
+    p += bold(1750, 4970, ["Show up the way", "you want to."])
     p += lines(250, 5800, ["Book a free", "discovery call."], 150, 170, DEEP, family="DM Serif Display")
     p += lines(250, 6200, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
     p += f'<rect x="2330" y="5640" width="720" height="720" rx="40" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="2400" y="5710" width="580" height="580">{{{{QR_CALL}}}}</svg>'

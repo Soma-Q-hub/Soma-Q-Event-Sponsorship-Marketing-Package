@@ -46,7 +46,7 @@ for V, SUF, FLOW in (("burnout", "", False), ("shift", "_shift", False), ("shift
     p = chrome("System v3, banner 1: the tension", "Retractable banner 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). Banner 1 of 2: name the pain. Everything key sits above the 54 in line; the footer is close-range. CONFIRM the vendor template.")
     p = header(p)
     p += f'<rect y="1030" width="{W}" height="2200" fill="{DEEP}"/>\n'
-    p += lines(250, 1540, ["Everyone", "around you", "can feel", "your stress."], 225, 245, WHITE, family="DM Serif Display")
+    p += lines(250, 1640, ["Who feels it", "when you’re", "stressed?"], 225, 245, WHITE, family="DM Serif Display")
     p += lines(250, 2540, ["What do you do next?"], 150, 0, LIGHT, family="DM Serif Display")
     p += lines(250, 2860, ["It isn’t a character flaw.", "It’s a stress response, and", "you can learn to work with it."], 88, 120, WHITE, weight="500")
     p += placed("{{FIGURE:dark}}", 2130, 1100, 1.12)

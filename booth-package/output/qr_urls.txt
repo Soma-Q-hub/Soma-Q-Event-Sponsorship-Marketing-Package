@@ -1,5 +1,8 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-insert_areas [call]: https://www.soma-q.com/go/call?c=oct24&p=insert-areas
-booklet [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=booklet
-booklet [call]: https://www.soma-q.com/go/call?c=oct24&p=booklet
+banner_men_hero_dark [call]: https://www.soma-q.com/go/call?c=oct24&p=men-banner-hero-dark
+banner_men_hero_light [call]: https://www.soma-q.com/go/call?c=oct24&p=men-banner-hero-light
+banner_men_hero_dark_shift [call]: https://www.soma-q.com/go/call?c=oct24&p=men-banner-hero-dark-shift
+banner_men_hero_light_shift [call]: https://www.soma-q.com/go/call?c=oct24&p=men-banner-hero-light-shift
+banner_sys_tension [call]: https://www.soma-q.com/go/call?c=oct24&p=sys-banner-tension
+banner_sys_tension_shift [call]: https://www.soma-q.com/go/call?c=oct24&p=sys-banner-tension-shift
