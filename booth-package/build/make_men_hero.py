@@ -28,12 +28,11 @@ def hero(name, title, scheme, tag="burnout"):
     p += placed(f"{{{{FIGURE:{scheme}}}}}", 200, 2800, 1.4)
     fg, tx, pr = (WHITE, PALE, LIGHT) if dark else (DEEP, INK, DEEP)
     p += lines(1750, 2900, HEADLINE, 200, 225, fg, family="DM Serif Display")
-    hl_fill, hl_text = (LIGHT, DEEP) if dark else (DEEP, WHITE)
-    p += f'<rect x="1700" y="3730" width="1350" height="360" rx="40" fill="{hl_fill}"/>\n'
-    p += lines(1750, 3870, ["What do you", "do next?"], 150, 170, hl_text, family="DM Serif Display")
+    hc = LIGHT if dark else DEEP
+    bold = lambda x, y, rows: "".join(f'<text x="{x}" y="{y+i*170}" font-family="DM Serif Display" font-size="150" fill="{hc}" stroke="{hc}" stroke-width="7" stroke-linejoin="round">{t}</text>' for i, t in enumerate(rows)) + "\n"
+    p += bold(1750, 3870, ["What do you", "do next?"])
     p += lines(1750, 4300, TURN, 104, 142, WHITE if dark else DEEP, weight="700")
-    p += f'<rect x="1700" y="4900" width="1350" height="360" rx="40" fill="{hl_fill}"/>\n'
-    p += lines(1750, 5040, ["Show up the way", "you want to."], 150, 170, hl_text, family="DM Serif Display")
+    p += bold(1750, 5040, ["Show up the way", "you want to."])
     p += lines(250, 5800, ["Book a free", "discovery call."], 150, 170, DEEP, family="DM Serif Display")
     p += lines(250, 6200, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
     p += f'<rect x="2330" y="5640" width="720" height="720" rx="40" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="2400" y="5710" width="580" height="580">{{{{QR_CALL}}}}</svg>'

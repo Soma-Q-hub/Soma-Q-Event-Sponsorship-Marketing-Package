@@ -53,6 +53,6 @@ CARD_WEB = "soma-q.com"
 CARD_PHONE = "303-717-9995"   # the number printed on the website Terms page; confirm this is the one you want on the card
 
 # --- Image assets (official files from Drive: Marketing & Socials > Branding > 2026 Logos > UPDATED SEPT 2026 LOGOS) ---
-LOGO_ON_DARK = "assets/soma-q-logo-teal-reversed.png"
+LOGO_ON_DARK = "assets/soma-q-logo-teal-reversed-depth.png"   # rebuilt from the Drive teal logo shading (Sept 2026 logos) so the depth survives on Deep Teal
 LOGO_ON_LIGHT = "assets/soma-q-logo-teal.png"
 POPL_QR_IMAGE = "assets/popl-qr.png"   # export the QR image from the POPL app
