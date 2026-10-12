@@ -16,7 +16,7 @@ p = head("Men's track, Banner 1: the story, 32 x 80 in", 33, 81, "Retractable ba
 p += f'<rect width="{W}" height="{H}" fill="{LINEN}"/>\n'
 p += f'<rect width="{W}" height="900" fill="{DEEP}"/>\n' + logo(250, 235, 1200, True)
 p += lines(3050, 530, ["Nervous system alignment", "for high-performing leaders"], 76, 100, LIGHT, weight="700", anchor="end", ls="3")
-p += lines(250, 1330, ["Show up the", "way you", "mean to."], 380, 360, DEEP, family="DM Serif Display")
+p += lines(250, 1330, ["Show up the", "way you", "want to."], 380, 360, DEEP, family="DM Serif Display")
 p += lines(250, 2330, SUB, 90, 120, INK, weight="500")
 p += label(250, 2760, "", "WHAT WE DO", 60)
 p += lines(250, 2900, CARD, 98, 124, INK)
@@ -58,7 +58,7 @@ p = head("Men's track backdrop 120 x 90 in", 121, 91, "PLACEHOLDER trim 120 x 90
 p += f'<rect width="{BW}" height="{BH}" fill="{LINEN}"/>\n'
 p += f'<rect width="{BW}" height="560" fill="{DEEP}"/>\n' + logo(600, 66, 1150, True)
 p += lines(11500, 340, ["Nervous system alignment for high-performing leaders"], 105, 0, LIGHT, weight="700", anchor="end", ls="4")
-p += lines(600, 1780, ["Show up the", "way you", "mean to."], 780, 740, DEEP, family="DM Serif Display")
+p += lines(600, 1780, ["Show up the", "way you", "want to."], 780, 740, DEEP, family="DM Serif Display")
 p += hair(600, 4700, 4080)
 p += lines(600, 4330, ["WHAT WE DO"], 90, 0, DEEP, weight="700", ls="10")
 p += lines(600, 4590, CARD, 150, 200, INK)
@@ -90,7 +90,7 @@ def pain_banner(name, title, head, turn):
     y += 124 + 280
     p += hair(250, 3050, y)
     y += 400
-    p += lines(250, y, ["Show up the way", "you mean to."], 250, 270, DEEP, family="DM Serif Display")
+    p += lines(250, y, ["Show up the way", "you want to."], 250, 270, DEEP, family="DM Serif Display")
     y += 270 + 480
     p += label(250, y, "", "WHAT WE DO", 60)
     p += lines(250, y + 140, PLAIN, 98, 124, INK)

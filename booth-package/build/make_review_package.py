@@ -110,7 +110,7 @@ def folder(items, d):
 
 if OUT.exists(): shutil.rmtree(OUT)
 OUT.mkdir()
-overview(MEN, "Men's track (draft)", "Show up the way you mean to. One graphic per piece. Photo and no-photo versions where shown.", OUT / "1_START_HERE_Mens_Track_Overview.png")
+overview(MEN, "Men's track (draft)", "Show up the way you want to. One graphic per piece. Photo and no-photo versions where shown.", OUT / "1_START_HERE_Mens_Track_Overview.png")
 overview(MAIN, "Main package", "The original booth set: banners, backdrop, table cover, cards, leave-behind, posters, measurement.", OUT / "2_Main_Package_Overview.png", row_h=1150)
 pdf(MEN, OUT / "3_Mens_Track_all_pieces.pdf", "Men's track (draft)")
 pdf(MAIN + PLAN, OUT / "4_Main_Package_and_Plan_all_pieces.pdf", "Main package and plan")

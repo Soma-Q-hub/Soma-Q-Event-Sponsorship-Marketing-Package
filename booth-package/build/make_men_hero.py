@@ -27,7 +27,7 @@ def hero(name, title, scheme, tag="burnout"):
     p += lines(1750, 2900, HEADLINE, 200, 225, fg, family="DM Serif Display")
     p += lines(1750, 3870, ["What do you", "do next?"], 150, 170, pr, family="DM Serif Display")
     p += lines(1750, 4330, TURN, 100, 136, tx, weight="500")
-    p += lines(1750, 5020, ["Show up the way", "you mean to."], 150, 170, pr, family="DM Serif Display")
+    p += lines(1750, 5020, ["Show up the way", "you want to."], 150, 170, pr, family="DM Serif Display")
     p += lines(250, 5800, ["Book a free", "discovery call."], 150, 170, DEEP, family="DM Serif Display")
     p += lines(250, 6200, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
     p += f'<rect x="2330" y="5640" width="720" height="720" rx="40" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="2400" y="5710" width="580" height="580">{{{{QR_CALL}}}}</svg>'

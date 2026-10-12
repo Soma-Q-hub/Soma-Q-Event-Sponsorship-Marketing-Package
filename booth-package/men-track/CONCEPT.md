@@ -9,7 +9,7 @@ A second front door to the same booth, for a men-skewing room. Same brand, palet
 
 | Connected (do not change) | Distinct (the men's track) |
 | --- | --- |
-| Logo, palette, fonts, header band, descriptor | Headline: "Show up the way you mean to." |
+| Logo, palette, fonts, header band, descriptor | Headline: "Show up the way you want to." |
 | Pressure Loop and the interrupt point | Words inside the loop: fixing, analyzing, short fuse or silence |
 | Three outcomes, held under pressure | Outcomes in plain words: steady, clear, present at home and at work |
 | Weekly measurement, the Soma-Q Metrics Report | Framing: "Track it like you track everything else." |
@@ -34,7 +34,7 @@ The three outcomes stay. Only the words change, and only in this track. Note: th
 | Restored energy | Steady under pressure |
 | Focused clarity | Clear when it counts |
 | Joy and fulfillment | Present at home and at work |
-| What if you could train your response to stress? | Show up the way you mean to. |
+| What if you could train your response to stress? | Show up the way you want to. |
 | Reaction feeds the tension that produced it. | Trying to fix it feeds the loop that produced it. |
 | Mind speeds up: replaying, rehearsing, analyzing | Mind goes to work: analyzing, fixing, comparing |
 | You react: words, tone, body language | React or go quiet: short fuse, or silence |
@@ -43,7 +43,7 @@ The three outcomes stay. Only the words change, and only in this track. Note: th
 
 ## Headline options (outcome first; test, do not assume)
 
-1. Show up the way you mean to. (used on the proofs)
+1. Show up the way you want to. (used on the proofs)
 2. Stay steady at work and present at home, even when pressure is high.
 3. Your mind is built to solve problems. Your nervous system shapes how you respond when there is nothing to solve.
 4. What if the pressure is not a problem to fix?
@@ -112,7 +112,7 @@ Megan's aim is to loosen the rules that keep men from expressing themselves. My 
 
 ## Business cards
 
-Men's option: the front carries "Show up the way you mean to." with the standard descriptor; the back carries the same contact details and the booking QR, with the practice line rewritten in the men's wording. The faint corner triangle was removed from both card versions.
+Men's option: the front carries "Show up the way you want to." with the standard descriptor; the back carries the same contact details and the booking QR, with the practice line rewritten in the men's wording. The faint corner triangle was removed from both card versions.
 
 ## Guardrails (from the brand rules)
 
