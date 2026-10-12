@@ -65,6 +65,36 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## banner_sys_tension_shift-1
 ![banner_sys_tension_shift-1](preview/banner_sys_tension_shift-1.png)
 
+## bizcard2_back-1
+![bizcard2_back-1](preview/bizcard2_back-1.png)
+
+## bizcard2_front-1
+![bizcard2_front-1](preview/bizcard2_front-1.png)
+
+## booklet-1
+![booklet-1](preview/booklet-1.png)
+
+## booklet-2
+![booklet-2](preview/booklet-2.png)
+
+## booklet-3
+![booklet-3](preview/booklet-3.png)
+
+## booklet-4
+![booklet-4](preview/booklet-4.png)
+
+## booklet-5
+![booklet-5](preview/booklet-5.png)
+
+## booklet-6
+![booklet-6](preview/booklet-6.png)
+
+## booklet-7
+![booklet-7](preview/booklet-7.png)
+
+## booklet-8
+![booklet-8](preview/booklet-8.png)
+
 ## business_card-1
 ![business_card-1](preview/business_card-1.png)
 
@@ -77,20 +107,35 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## business_card_men-2
 ![business_card_men-2](preview/business_card_men-2.png)
 
-## card_individual-1
-![card_individual-1](preview/card_individual-1.png)
-
-## card_individual-2
-![card_individual-2](preview/card_individual-2.png)
-
 ## counter_sign-1
 ![counter_sign-1](preview/counter_sign-1.png)
+
+## giveaway_tag_back-1
+![giveaway_tag_back-1](preview/giveaway_tag_back-1.png)
+
+## giveaway_tag_front-1
+![giveaway_tag_front-1](preview/giveaway_tag_front-1.png)
 
 ## handout_measurement-1
 ![handout_measurement-1](preview/handout_measurement-1.png)
 
 ## handout_measurement-2
 ![handout_measurement-2](preview/handout_measurement-2.png)
+
+## insert_areas-1
+![insert_areas-1](preview/insert_areas-1.png)
+
+## insert_call-1
+![insert_call-1](preview/insert_call-1.png)
+
+## insert_flow-1
+![insert_flow-1](preview/insert_flow-1.png)
+
+## insert_metrics-1
+![insert_metrics-1](preview/insert_metrics-1.png)
+
+## insert_system-1
+![insert_system-1](preview/insert_system-1.png)
 
 ## leavebehind-1
 ![leavebehind-1](preview/leavebehind-1.png)
@@ -133,6 +178,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## poster_capacity-1
 ![poster_capacity-1](preview/poster_capacity-1.png)
+
+## poster_flow-1
+![poster_flow-1](preview/poster_flow-1.png)
 
 ## poster_loop-1
 ![poster_loop-1](preview/poster_loop-1.png)
@@ -199,6 +247,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## strategy_packet-15
 ![strategy_packet-15](preview/strategy_packet-15.png)
+
+## table_cover_v2-1
+![table_cover_v2-1](preview/table_cover_v2-1.png)
 
 ## table_front-1
 ![table_front-1](preview/table_front-1.png)

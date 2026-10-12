@@ -15,39 +15,6 @@ PROBLEMS = [("DEPLETION", "Running on empty, and calling it normal."),
 METRICS = [("Stress recovery", 7.4, 3.8), ("Emotional steadiness", 7.1, 3.5), ("Clear thinking", 7.8, 4.1)]
 
 
-def decision_flow():
-    """Pressure happens -> Interrupt here -> No = reaction (loop runs) / Yes = response. Local box 2800 x 2000."""
-    o = f'<circle cx="1400" cy="100" r="235" fill="#C9763F" fill-opacity=".20"/><circle cx="1400" cy="100" r="150" fill="#C9763F" fill-opacity=".22"/>'
-    o += f'<rect x="900" y="0" width="1000" height="200" rx="100" fill="{WHITE}" stroke="{DEEP}" stroke-width="10"/>'
-    o += f'<text x="1400" y="132" text-anchor="middle" font-family="DM Serif Display" font-size="104" fill="{DEEP}">Pressure happens</text>'
-    arrow = lambda d: f'<path d="{d}" fill="none" stroke="{DEEP}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>'
-    head = lambda x, y, dx=0: f'<polygon points="{x-34},{y-50} {x+34},{y-50} {x},{y}" fill="{DEEP}"/>'
-    o += arrow("M1400,200 L1400,330") + head(1400, 340)
-    o += f'<rect x="650" y="340" width="1500" height="400" rx="56" fill="{LIGHT}"/>'
-    o += lines(1400, 462, ["INTERRUPT HERE"], 92, 0, DEEP, weight="700", anchor="middle", ls="8")
-    o += lines(1400, 560, ["Notice the signal. Locate it in your body."], 66, 0, DEEP, anchor="middle")
-    o += lines(1400, 680, ["Do you catch it?"], 84, 0, DEEP, family="DM Serif Display", anchor="middle", style="italic")
-    # branches
-    o += arrow("M1000,740 L1000,820 L650,820 L650,930") + head(650, 940)
-    o += arrow("M1800,740 L1800,820 L2150,820 L2150,930") + head(2150, 940)
-    for cx, t in ((650, "NO"), (2150, "YES")):
-        o += f'<rect x="{cx-110}" y="776" width="220" height="108" rx="54" fill="{WHITE}" stroke="{DEEP}" stroke-width="10"/><text x="{cx}" y="852" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="76" letter-spacing="6" fill="{DEEP}">{t}</text>'
-    # reaction
-    o += f'<rect x="0" y="950" width="1300" height="1050" rx="60" fill="{DEEP}"/>'
-    o += lines(80, 1090, ["REACTION"], 124, 0, WHITE, family="DM Serif Display")
-    o += lines(80, 1170, ["The loop runs again."], 70, 0, LIGHT, weight="500")
-    for i, t in enumerate(["Body tightens, mind races.", "Short with your people.", "Choices made from pressure.", "Running on empty."]):
-        y = 1350 + i * 170
-        o += f'<circle cx="112" cy="{y-26}" r="16" fill="#C9763F"/>' + lines(160, y, [t], 79, 0, WHITE)
-    # response
-    o += f'<rect x="1500" y="950" width="1300" height="1050" rx="60" fill="{WHITE}" stroke="{DEEP}" stroke-width="12"/>'
-    o += lines(1580, 1090, ["RESPONSE"], 124, 0, DEEP, family="DM Serif Display")
-    o += lines(1580, 1170, ["You choose what happens next."], 66, 0, DEEP, weight="500")
-    for i, t in enumerate(["Body settles, mind clears.", "Present with your people.", "Choices made from clarity.", "Energy left at day’s end."]):
-        y = 1350 + i * 170
-        o += f'<circle cx="1612" cy="{y-26}" r="16" fill="{LIGHT}" stroke="{DEEP}" stroke-width="5"/>' + lines(1660, y, [t], 79, 0, DEEP)
-    return o
-
 def chrome(title, note):
     p = head_(f"{title}, 32 x 80 in", 33, 81, note)
     p += f'<rect width="{W}" height="{H}" fill="{LINEN}"/>\n'

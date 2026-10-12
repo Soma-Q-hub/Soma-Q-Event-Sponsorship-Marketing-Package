@@ -16,7 +16,6 @@ Start with `output/strategy_packet.pdf` (the plan, including the buyer's-eye vie
 | poster_loop, poster_shift, poster_outcomes, poster_where | Explainer posters | 24 x 36 in |
 | poster_progress, poster_capacity | Measurement posters from the Measurement Overview | 24 x 36 in |
 | counter_sign.pdf | What Soma-Q does, four free first steps, POPL | 8.5 x 11 in |
-| card_individual.pdf | Take-home card: body map front, loop and four scans back | 4 x 6 in |
 | leavebehind.pdf | Working with Soma-Q: for you (front), for your team (back) | 8.5 x 11 in |
 | handout_measurement.pdf | Measurement at a glance, for organizations | 8.5 x 11 in |
 | business_card.pdf | Business card | 3.5 x 2 in |
@@ -32,3 +31,9 @@ All files include bleed. Sizes marked placeholder must be matched to the vendor'
 5. Generators for the SVG-based pieces: `build/make_large_pieces.py` (banners, backdrop, table cover), `build/make_posters.py`, `build/make_posters_measure.py`. Shared art (loop, outcomes triangle, body map) is in `build/art.py`.
 
 Brand rules applied: six-color palette, no gold or copper, DM Serif Display and DM Sans, no em or en dashes, outcome-first copy. Large pieces use light fields with Deep Teal type.
+
+
+## Folders
+- `final/`: pieces decided and filed.
+- `review/`: round 2 pieces still in review (see its README).
+- `archive/`: retired pieces (take-home card).
