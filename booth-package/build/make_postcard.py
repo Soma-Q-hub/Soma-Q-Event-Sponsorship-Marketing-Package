@@ -111,8 +111,8 @@ p = head("Postcard back, 6 x 4 in", 6.25, 4.25, "Postcard back, 6 x 4 in trim, f
 p += f'<rect width="{W}" height="{H}" fill="{LINEN}"/>\n'
 p += "<!--PHOTO-->" + photo_circle(112, 112, 56, cid="pcp") + "<!--/PHOTO-->"
 p += lines(40, 200, ["Megan McDonald"], 19, 0, DEEP, family="DM Serif Display") + lines(40, 215, ["Founder, Soma-Q"], 11, 0, DEEP, weight="700", ls="1")
-p += lines(40, 237, ["I led healthcare tech teams", "until burnout and a health crisis", "left me depleted, in pain and", "unable to sleep."], 10, 13, INK)
-p += lines(40, 292, ["I rebuilt how I lead and live.", "Now I help leaders do the same."], 10, 13.5, DEEP, weight="700")
+p += lines(40, 237, ["I led healthcare tech teams", "until burnout left me depleted,", "in pain and unable to sleep."], 10, 13, INK)
+p += lines(40, 280, ["I rebuilt how I lead and live.", "Now I help leaders do the same."], 10, 13.5, DEEP, weight="700")
 p += vhair(212, 36, 300)
 p += label(231, 52, "", "HOW I WORK", 12)
 items = [("Tools that fit your day", "Five to twenty minute practices that stack into your schedule."),
