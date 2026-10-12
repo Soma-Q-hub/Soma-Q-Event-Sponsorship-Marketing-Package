@@ -1,3 +1,5 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-
+postcard_back [call]: https://www.soma-q.com/go/call?c=oct24&p=postcard-back
+postcard_back/photo [call]: https://www.soma-q.com/go/call?c=oct24&p=postcard-back
+postcard_back_w/photo [call]: https://www.soma-q.com/go/call?c=oct24&p=postcard-back-w
