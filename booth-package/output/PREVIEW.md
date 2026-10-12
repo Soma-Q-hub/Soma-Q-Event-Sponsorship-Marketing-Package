@@ -125,6 +125,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## postcard_front_c-1
 ![postcard_front_c-1](preview/postcard_front_c-1.png)
 
+## postcard_front_d-1
+![postcard_front_d-1](preview/postcard_front_d-1.png)
+
 ## poster_capacity-1
 ![poster_capacity-1](preview/poster_capacity-1.png)
 

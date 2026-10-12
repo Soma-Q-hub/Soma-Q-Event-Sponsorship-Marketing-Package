@@ -64,6 +64,22 @@ p += lines(222, 390, ["SOMA-Q.COM"], 11, 0, PALE, weight="700", ls="2")
 p += TAIL
 (SRC / "postcard_front_c.html").write_text(p)
 
+# ---------------- FRONT D: Everyone around you can feel your stress ----------------
+p = head("Postcard front D, 6 x 4 in", 6.25, 4.25, "Postcard front, option D: one image, one idea. 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed).")
+p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n' + logo(40, 28, 140, True)
+p += lines(585, 44, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 10.5, 15, WHITE, weight="700", anchor="end", ls="1")
+p += f'<rect y="100" width="{W}" height="40" fill="{LIGHT}"/>\n'
+p += lines(40, 126, ["BECOME YOUR OWN ADVISOR. SHIFT HAPPENS™"], 17, 0, DEEP, weight="700", ls="1.2")
+p += f'<rect x="40" y="158" width="150" height="232" rx="12" fill="#16494F"/>\n'
+p += placed("{{FIGURE:dark}}", 115 - 880*0.118/2, 166, 0.118)
+p += lines(222, 196, ["Everyone around", "you can feel", "your stress."], 31, 36, WHITE, family="DM Serif Display")
+p += lines(222, 292, ["What do you do next?"], 19, 0, LIGHT, family="DM Serif Display")
+p += lines(222, 316, ["It isn’t a character flaw.", "It’s a stress response, and", "you can learn to work with it."], 12.5, 15.5, PALE, weight="500")
+p += lines(222, 372, ["HEALTH &#160;·&#160; WEALTH &#160;·&#160; RELATIONSHIPS &#160;·&#160; CAREER"], 9.5, 0, LIGHT, weight="700", ls="1")
+p += lines(222, 390, ["SOMA-Q.COM"], 11, 0, PALE, weight="700", ls="2")
+p += TAIL
+(SRC / "postcard_front_d.html").write_text(p)
+
 # ---------------- BACK ----------------
 p = head("Postcard back, 6 x 4 in", 6.25, 4.25, "Postcard back, 6 x 4 in trim, file 6.25 x 4.25 in. Address area intentionally not reserved (hand-out card, not mailed). If mailing is wanted, reserve the right half for postage and address.")
 p += f'<rect width="{W}" height="{H}" fill="{LINEN}"/>\n'
