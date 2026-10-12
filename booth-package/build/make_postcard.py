@@ -87,14 +87,15 @@ CXS = (SX + 612.5) / 2          # centre of the visible white strip (trim edge a
 p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n<rect x="{SX}" width="{W-SX}" height="{H}" fill="#FFFFFF"/>\n'
 # bottom margin banner on the teal side
 p += f'<rect x="0" y="372" width="{SX}" height="{H-372}" fill="#16494F"/>\n'
-p += lines(40, 397, ["NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"], 9.2, 0, WHITE, weight="700", ls="1")
+p += lines(SX / 2, 397, ["NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
 # teal side
 p += lines(40, 62, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", ls="2.2")
 p += f'<rect x="40" y="80" width="160" height="272" rx="12" fill="#16494F"/>\n'
 p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 90, 0.14)
-p += lines(222, 112, ["Reading your", "nervous system’s", "signals is critical", "to your well-being."], 22.5, 28, WHITE, family="DM Serif Display")
-p += lines(222, 244, ["Pressure decides whether", "you react or respond."], 13.5, 18, LIGHT, weight="700")
-p += lines(222, 300, ["The wellness playbook we’ve", "been taught needs a rewrite."], 12.5, 17, WHITE, weight="700")
+p += lines(222, 120, ["Reading your", "nervous system’s", "signals is critical", "to your well-being."], 23.5, 30, WHITE, family="DM Serif Display")
+p += lines(222, 252, ["Pressure decides whether", "you react or respond."], 13.5, 18, LIGHT, weight="700")
+p += f'<line x1="222" y1="282" x2="262" y2="282" stroke="{LIGHT}" stroke-width="2"/>'
+p += lines(222, 308, ["The wellness playbook we’ve", "been taught needs a rewrite."], 12.5, 17, WHITE, weight="700")
 # white strip, centred
 p += logo(CXS - 63, 40, 126, False)
 p += lines(CXS, 116, ["Become your own", "advisor to shift", "outcomes:"], 11.5, 15, INK, weight="500", anchor="middle")
