@@ -85,24 +85,25 @@ p = head("Postcard front E, 6 x 4 in", 6.25, 4.25, "Postcard front, option 1 red
 SX = 450
 CXS = (SX + 612.5) / 2          # centre of the visible white strip (trim edge at 612.5)
 p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n<rect x="{SX}" width="{W-SX}" height="{H}" fill="#FFFFFF"/>\n'
+# bottom margin banner on the teal side
+p += f'<rect x="0" y="372" width="{SX}" height="{H-372}" fill="#16494F"/>\n'
+p += lines(40, 397, ["NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"], 9.2, 0, WHITE, weight="700", ls="1")
 # teal side
 p += lines(40, 62, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", ls="2.2")
-p += f'<rect x="40" y="80" width="160" height="300" rx="12" fill="#16494F"/>\n'
-p += placed("{{FIGURE:dark}}", 120 - 880*0.155/2, 90, 0.155)
+p += f'<rect x="40" y="80" width="160" height="272" rx="12" fill="#16494F"/>\n'
+p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 90, 0.14)
 p += lines(222, 112, ["Reading your", "nervous system’s", "signals is critical", "to your well-being."], 22.5, 28, WHITE, family="DM Serif Display")
-p += lines(222, 228, ["Pressure decides whether", "you react or respond."], 13.5, 18, LIGHT, weight="700")
-p += lines(222, 274, ["The wellness playbook we’ve", "been taught needs a rewrite."], 12.5, 17, WHITE, weight="700")
-p += lines(222, 322, ["Insight alone doesn’t stop burnout."], 11, 0, PALE, weight="500")
-p += lines(222, 358, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 9.5, 14, WHITE, weight="700", ls="1")
+p += lines(222, 244, ["Pressure decides whether", "you react or respond."], 13.5, 18, LIGHT, weight="700")
+p += lines(222, 300, ["The wellness playbook we’ve", "been taught needs a rewrite."], 12.5, 17, WHITE, weight="700")
 # white strip, centred
-p += logo(CXS - 63, 38, 126, False)
-p += lines(CXS, 132, ["Become your own", "advisor to shift", "outcomes:"], 11.5, 15, INK, weight="500", anchor="middle")
+p += logo(CXS - 63, 40, 126, False)
+p += lines(CXS, 116, ["Become your own", "advisor to shift", "outcomes:"], 11.5, 15, INK, weight="500", anchor="middle")
 for k, word in enumerate(["Health", "Wealth", "Relationships", "Career"]):
-    y = 196 + k * 41
+    y = 188 + k * 42
     if k:
         p += f'<line x1="{CXS-22}" y1="{y-26}" x2="{CXS+22}" y2="{y-26}" stroke="{LIGHT}" stroke-width="1.5"/>'
     p += lines(CXS, y, [word], 17 if len(word) < 9 else 15.5, 0, DEEP, family="DM Serif Display", anchor="middle")
-p += lines(CXS, 378, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", anchor="middle", ls="1.6")
+p += lines(CXS, 397, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", anchor="middle", ls="1.6")
 p += TAIL
 (SRC / "postcard_front_e.html").write_text(p)
 
