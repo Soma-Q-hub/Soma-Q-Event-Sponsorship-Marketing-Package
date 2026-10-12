@@ -83,22 +83,25 @@ p += TAIL
 # ---------------- FRONT E: three-quarters dark teal, one-quarter white strip ----------------
 p = head("Postcard front E, 6 x 4 in", 6.25, 4.25, "Postcard front, option 1 redesign: 3/4 Deep Teal, 1/4 white strip. 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed).")
 SX = 450
+CXS = (SX + 612.5) / 2          # centre of the visible white strip (trim edge at 612.5)
 p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n<rect x="{SX}" width="{W-SX}" height="{H}" fill="#FFFFFF"/>\n'
 # teal side
 p += lines(40, 62, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", ls="2.2")
 p += f'<rect x="40" y="80" width="160" height="300" rx="12" fill="#16494F"/>\n'
 p += placed("{{FIGURE:dark}}", 120 - 880*0.155/2, 90, 0.155)
 p += lines(222, 112, ["Reading your", "nervous system’s", "signals is critical", "to your well-being."], 22.5, 28, WHITE, family="DM Serif Display")
-p += lines(222, 238, ["You know what to do.", "Pressure decides whether", "you react or respond."], 12.5, 17, PALE, weight="500")
+p += lines(222, 232, ["Pressure decides whether", "you react or respond."], 13.5, 18, WHITE, weight="700")
+p += lines(222, 282, ["Without the right tools,", "pressure turns into burnout."], 12.5, 17, LIGHT, weight="700")
 p += lines(222, 358, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 9.5, 14, WHITE, weight="700", ls="1")
-# white strip
-p += logo(SX + 14, 38, 126, False)
-p += lines(SX + 14, 132, ["Become your own", "advisor to shift", "outcomes in your"], 11.5, 15, INK, weight="500")
+# white strip, centred
+p += logo(CXS - 63, 38, 126, False)
+p += lines(CXS, 132, ["Become your own", "advisor to shift", "outcomes:"], 11.5, 15, INK, weight="500", anchor="middle")
 for k, word in enumerate(["Health", "Wealth", "Relationships", "Career"]):
-    y = 198 + k * 43
-    p += f'<rect x="{SX+14}" y="{y-21}" width="3" height="28" fill="{LIGHT}"/>'
-    p += lines(SX + 26, y, [word], 17 if len(word) < 9 else 15.5, 0, DEEP, family="DM Serif Display")
-p += lines(SX + 14, 378, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", ls="1.6")
+    y = 196 + k * 41
+    if k:
+        p += f'<line x1="{CXS-22}" y1="{y-26}" x2="{CXS+22}" y2="{y-26}" stroke="{LIGHT}" stroke-width="1.5"/>'
+    p += lines(CXS, y, [word], 17 if len(word) < 9 else 15.5, 0, DEEP, family="DM Serif Display", anchor="middle")
+p += lines(CXS, 378, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", anchor="middle", ls="1.6")
 p += TAIL
 (SRC / "postcard_front_e.html").write_text(p)
 
