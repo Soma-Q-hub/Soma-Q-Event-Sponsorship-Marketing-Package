@@ -243,22 +243,28 @@ p += TAIL
 
 # ========================================================= BUSINESS CARD, 3.5 x 2 =========================================================
 p = head_("Business card front, 3.5 x 2 in", 3.75, 2.25, "Business card 3.5 x 2 in trim, file 3.75 x 2.25 in (0.125 in bleed). Keep type 0.2 in inside trim. CONFIRM printer template.")
-p += f'<rect width="375" height="225" fill="{DEEP}"/>\n' + logo(97, 52, 181, True)
-p += lines(187.5, 152, ["SHIFT HAPPENS™"], 12, 0, LIGHT, weight="700", anchor="middle", ls="3")
-p += lines(187.5, 184, ["NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"], 6.2, 0, PALE, weight="700", anchor="middle", ls=".8")
+p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
+p += logo(34, 38, 150, True)
+p += lines(34, 118, ["Shift", "Happens™"], 27, 29, WHITE, family="DM Serif Display")
+p += lines(34, 176, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 6.4, 9.5, LIGHT, weight="700", ls=".9")
+p += f'<rect x="224" y="22" width="130" height="182" rx="12" fill="#16494F"/>\n'
+p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
 p += TAIL
 (SRC / "bizcard2_front.html").write_text(p)
 
-p = head_("Business card back, 3.5 x 2 in", 3.75, 2.25, "Business card back. Phone is left off on purpose (the website brief asks whether the phone stays public); add it if you decide to.")
+p = head_("Business card back, 3.5 x 2 in", 3.75, 2.25, "Business card back. Two QR codes: book a call, and the free Burnout Signal Check. Phone left off on purpose (the website brief asks whether the phone stays public).")
 p += f'<rect width="375" height="225" fill="{LINEN}"/>\n'
-p += lines(36, 74, ["Megan McDonald"], 23, 0, DEEP, family="DM Serif Display")
-p += lines(36, 94, ["Founder of Soma-Q"], 10.5, 0, INK, weight="700")
-p += hair(36, 214, 108, op=.35, w=.8)
-p += lines(36, 128, ["A nervous system alignment practice."], 8.4, 0, INK)
-p += lines(36, 158, ["Megan@Soma-Q.com"], 10.5, 0, DEEP, weight="700")
-p += lines(36, 175, ["soma-q.com"], 10.5, 0, DEEP, weight="700")
-p += qr(244, 38, 94)
-p += lines(291, 150, ["Book a free", "discovery call"], 9, 12, DEEP, weight="700", anchor="middle")
+p += lines(34, 66, ["Megan", "McDonald"], 22, 24, DEEP, family="DM Serif Display")
+p += lines(34, 108, ["Founder of Soma-Q"], 9.2, 0, INK, weight="700")
+p += hair(34, 150, 120, op=.35, w=.8)
+p += lines(34, 138, ["A nervous system", "alignment practice."], 8, 11, INK)
+p += lines(34, 176, ["Megan@Soma-Q.com"], 9, 0, DEEP, weight="700")
+p += lines(34, 190, ["soma-q.com"], 9, 0, DEEP, weight="700")
+for x, kind, cap in ((172, "CALL", ["Book a free", "discovery call"]), (264, "QUIZ", ["Take the free", "Burnout Signal Check"])):
+    p += qr(x, 34, 82, kind)
+    p += lines(x + 41, 138, cap, 7.4, 10, DEEP, weight="700", anchor="middle")
+p += f'<rect x="172" y="162" width="174" height="30" rx="8" fill="{DEEP}"/>\n'
+p += lines(259, 181, ["Two ways to start. Both free."], 8.2, 0, WHITE, weight="700", anchor="middle")
 p += TAIL
 (SRC / "bizcard2_back.html").write_text(p)
 

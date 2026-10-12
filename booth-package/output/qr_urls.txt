@@ -1,4 +1,4 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-banner_men_hero_dark_shift [call]: https://www.soma-q.com/go/call?c=oct24&p=men-banner-hero-dark-shift
-banner_men_hero_dark_shift_base [call]: https://www.soma-q.com/go/call?c=oct24&p=banner-men-hero-dark-shift-base
+bizcard2_back [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=bizcard2-back
+bizcard2_back [call]: https://www.soma-q.com/go/call?c=oct24&p=bizcard2-back
