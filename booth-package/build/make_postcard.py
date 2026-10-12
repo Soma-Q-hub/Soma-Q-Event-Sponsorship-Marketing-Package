@@ -90,8 +90,9 @@ p += lines(40, 62, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", ls="2.2")
 p += f'<rect x="40" y="80" width="160" height="300" rx="12" fill="#16494F"/>\n'
 p += placed("{{FIGURE:dark}}", 120 - 880*0.155/2, 90, 0.155)
 p += lines(222, 112, ["Reading your", "nervous system’s", "signals is critical", "to your well-being."], 22.5, 28, WHITE, family="DM Serif Display")
-p += lines(222, 232, ["Pressure decides whether", "you react or respond."], 13.5, 18, WHITE, weight="700")
-p += lines(222, 282, ["Without the right tools,", "pressure turns into burnout."], 12.5, 17, LIGHT, weight="700")
+p += lines(222, 228, ["Pressure decides whether", "you react or respond."], 13.5, 18, LIGHT, weight="700")
+p += lines(222, 274, ["The wellness playbook we’ve", "been taught needs a rewrite."], 12.5, 17, WHITE, weight="700")
+p += lines(222, 322, ["Insight alone doesn’t stop burnout."], 11, 0, PALE, weight="500")
 p += lines(222, 358, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 9.5, 14, WHITE, weight="700", ls="1")
 # white strip, centred
 p += logo(CXS - 63, 38, 126, False)
