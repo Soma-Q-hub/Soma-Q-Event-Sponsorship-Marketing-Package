@@ -13,7 +13,7 @@ WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-p
 def hero(name, title, scheme, tag="burnout"):
     dark = scheme == "dark"
     p = head_(f"{title}, 32 x 80 in", 33, 81, "Retractable banner 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). Men's hero banner built for distance: logo, Burnout ends here, the figure and the headline all sit above the 54 in line; the lower Linen area is close-range only. CONFIRM the vendor template.")
-    p += f'<rect width="{W}" height="{H}" fill="{LINEN}"/>\n'
+    p += f'<rect width="{W}" height="{H}" fill="{'#FFFFFF' if dark and tag == 'shift' else LINEN}"/>\n'
     top = 5500 if dark else 2720
     p += f'<rect width="{W}" height="{top}" fill="{DEEP}"/>\n'
     if not dark:
