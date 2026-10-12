@@ -1,4 +1,4 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-banner_sys_capacity [call]: https://www.soma-q.com/go/call?c=oct24&p=sys-banner-capacity
 banner_sys_capacity_shift [call]: https://www.soma-q.com/go/call?c=oct24&p=sys-banner-capacity-shift
+banner_sys_capacity_flow [call]: https://www.soma-q.com/go/call?c=oct24&p=sys-banner-capacity-flow

@@ -74,7 +74,7 @@ def footer(p, y=5700):
     p += lines(250, y + 1480, ["SOMA-Q.COM"], 90, 0, DEEP, weight="700", ls="12")
     return p
 
-for V, SUF in (("burnout", ""), ("shift", "_shift")):
+for V, SUF, FLOW in (("burnout", "", False), ("shift", "_shift", False), ("shift", "_flow", True)):
     # ============================ 1 THE TENSION ============================
     p = chrome("System v3, banner 1: the tension", "Retractable banner 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). Banner 1 of 2: name the pain. Everything key sits above the 54 in line; the footer is close-range. CONFIRM the vendor template.")
     p = header(p)
@@ -98,7 +98,7 @@ for V, SUF in (("burnout", ""), ("shift", "_shift")):
     p += f'<rect y="1030" width="{W}" height="2260" fill="{DEEP}"/>\n'
     p += lines(250, 1560, ["Practices are", "the tools.", "Steadiness is", "the product."], 380, 368, WHITE, family="DM Serif Display")
     p += lines(250, 2900, ["Regulation is a skill.", "Recovery is a skill.", "Choice under pressure is a skill."], 92, 124, WHITE, weight="500")
-    if V == "shift":
+    if FLOW:
         p += label(250, 3440, "", "WHAT HAPPENS WHEN PRESSURE HITS", 58)
         p += f'<g transform="translate(250,3540)">{decision_flow()}</g>\n'
     else:

@@ -53,6 +53,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## banner_sys_capacity-1
 ![banner_sys_capacity-1](preview/banner_sys_capacity-1.png)
 
+## banner_sys_capacity_flow-1
+![banner_sys_capacity_flow-1](preview/banner_sys_capacity_flow-1.png)
+
 ## banner_sys_capacity_shift-1
 ![banner_sys_capacity_shift-1](preview/banner_sys_capacity_shift-1.png)
 
