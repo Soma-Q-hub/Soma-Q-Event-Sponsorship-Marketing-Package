@@ -15,3 +15,7 @@ Retired: the 4 x 6 take-home card is in `../archive/take-home-card/`.
 Sources: `../build/make_round2.py`.
 
 | banner_men_hero_dark_shift_stretch, _base | Banner D1 experiments for the bottom white space: teal section pulled down, or a Deep Teal base band | 32 x 80 in |
+
+| bizcard2_front_plain | Business card front, type only (no figure); same back as the figure version | 3.5 x 2 in |
+| card_set | Card set around "Pressure decides whether you react or respond" and the four places (Health, Wealth, Relationships, Career): 5 cards, 10 sides. Questions on the backs are drafts | 3.5 x 2 in |
+| quiz_card | Paper Burnout Signal Check: questions on one side, result steps on the other. The result steps use the scoring rules, checked against all 13 examples in the Scoring Map sheet | 5.5 x 8.5 in |

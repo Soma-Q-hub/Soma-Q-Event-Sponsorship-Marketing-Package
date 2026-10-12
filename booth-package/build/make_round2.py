@@ -252,6 +252,14 @@ p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
 p += TAIL
 (SRC / "bizcard2_front.html").write_text(p)
 
+p = head_("Business card front, no image, 3.5 x 2 in", 3.75, 2.25, "Business card front, type only (no figure). Pairs with the same back.")
+p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
+p += logo(34, 34, 130, True)
+p += lines(34, 108, ["Pressure decides", "whether you react", "or respond."], 22.5, 27, WHITE, family="DM Serif Display")
+p += lines(34, 188, ["SHIFT HAPPENS™  ·  NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"], 5.6, 0, LIGHT, weight="700", ls=".8")
+p += TAIL
+(SRC / "bizcard2_front_plain.html").write_text(p)
+
 p = head_("Business card back, 3.5 x 2 in", 3.75, 2.25, "Business card back. Two QR codes: book a call, and the free Burnout Signal Check. Phone left off on purpose (the website brief asks whether the phone stays public).")
 p += f'<rect width="375" height="225" fill="{LINEN}"/>\n'
 p += lines(34, 66, ["Megan", "McDonald"], 22, 24, DEEP, family="DM Serif Display")
@@ -451,3 +459,124 @@ b += lines(46, 806, ["Soma-Q is an education and training practice. It does not 
 page(LINEN, b)
 (SRC / "booklet.html").write_text(HEAD + "".join(pages) + "</body></html>\n")
 print("ok round2")
+
+
+# ========================================================= CARD SET (business-card size), 5 cards, 10 sides =========================================================
+CW, CH = 375, 225
+CHEAD = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Card set: pressure decides, four places</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap">
+<style>
+/* Card set 3.5 x 2 in trim, file 3.75 x 2.25 in (0.125 in bleed). 10 pages: front and back of 5 cards. Same stock as the business card. Draft questions need approval. */
+@page {{ size: 3.75in 2.25in; margin: 0; }}
+html, body {{ margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
+.pg {{ width: 3.75in; height: 2.25in; overflow: hidden; page-break-after: always; break-after: page; }}
+.pg:last-child {{ page-break-after: auto; break-after: auto; }}
+svg.cd {{ display: block; width: 3.75in; height: 2.25in; }}
+</style></head><body>
+"""
+cpages = []
+
+
+def cpage(bg, body):
+    cpages.append(f'<div class="pg"><svg class="cd" viewBox="0 0 {CW} {CH}" xmlns="http://www.w3.org/2000/svg"><rect width="{CW}" height="{CH}" fill="{bg}"/>{body}</svg></div>\n')
+
+
+# card 0: the idea
+b = logo(34, 30, 104, True)
+b += lines(34, 96, ["Pressure decides", "whether you react", "or respond."], 21, 26, WHITE, family="DM Serif Display")
+b += lines(34, 192, ["SHIFT HAPPENS™"], 8, 0, LIGHT, weight="700", ls="2.4")
+cpage(DEEP, b)
+b = lines(34, 62, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 18, DEEP, family="DM Serif Display")
+b += qr(34, 128, 58, "CALL")
+b += lines(100, 150, ["Book a free", "discovery call"], 8.4, 11.5, DEEP, weight="700")
+for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
+    y = 70 + i * 30
+    b += f'<circle cx="212" cy="{y-5}" r="4" fill="{LIGHT}"/>' + lines(226, y, [nm], 17, 0, DEEP, family="DM Serif Display")
+cpage(LINEN, b)
+
+# cards 1 to 4: the four places
+PLACE_Q = {"Health": ["Where in your body", "does it land first?"],
+           "Wealth": ["What decision are you", "making from pressure", "right now?"],
+           "Relationships": ["Who is feeling it", "with you?"],
+           "Career": ["Where are you leading", "well and running", "on empty?"]}
+for i, (nm, d) in enumerate(FOUR):
+    b = f'<circle cx="327" cy="48" r="13" fill="{LIGHT}"/><text x="327" y="53" text-anchor="middle" font-family="DM Serif Display" font-size="14" fill="{DEEP}">{i+1}</text>'
+    b += lines(34, 56, ["PRESSURE SHOWS UP IN"], 7.2, 0, LIGHT, weight="700", ls="2.2")
+    b += lines(34, 104, [nm], 33, 0, WHITE, family="DM Serif Display")
+    rows, cur = [], ""
+    for wd in d.split():
+        if len(cur) + len(wd) > 40:
+            rows.append(cur); cur = wd
+        else:
+            cur = (cur + " " + wd).strip()
+    rows.append(cur)
+    b += lines(34, 132, rows, 10.2, 14.5, PALE)
+    b += lines(34, 192, ["SOMA-Q.COM"], 7.6, 0, LIGHT, weight="700", ls="2")
+    cpage(DEEP, b)
+    b = lines(34, 54, ["NOTICE THE SIGNAL. LOCATE IT.", "CHOOSE YOUR NEXT RESPONSE."], 6.8, 10, DEEP, weight="700", ls="1.4")
+    b += lines(34, 102, PLACE_Q[nm], 19, 23, DEEP, family="DM Serif Display")
+    b += lines(34, 190, ["Pressure decides whether you", "react or respond."], 8.2, 11, "#5C5A53", style="italic")
+    b += qr(284, 128, 56, "CALL")
+    b += lines(312, 196, ["Book a call"], 7, 0, DEEP, weight="700", anchor="middle")
+    cpage(LINEN, b)
+(SRC / "card_set.html").write_text(CHEAD + "".join(cpages) + "</body></html>\n")
+
+
+# ========================================================= PAPER QUIZ CARD (Burnout Signal Check), 5.5 x 8.5 =========================================================
+QW, QH = 575, 875
+QHEAD = CHEAD.replace("3.75in", "5.75in").replace("2.25in", "8.75in").replace("svg.cd", "svg.qz").replace("Card set: pressure decides, four places", "Burnout Signal Check, paper card")
+QHEAD = QHEAD.replace("Card set 3.5 x 2 in trim, file 3.75 x 2.25 in (0.125 in bleed). 10 pages: front and back of 5 cards. Same stock as the business card. Draft questions need approval.", "Paper Burnout Signal Check 5.5 x 8.5 in trim, file 5.75 x 8.75 in (0.125 in bleed). Page 1 questions, page 2 result. Wording is the live quiz wording.")
+qpages = []
+
+
+def qpage(bg, body):
+    qpages.append(f'<div class="pg"><svg class="qz" viewBox="0 0 {QW} {QH}" xmlns="http://www.w3.org/2000/svg"><rect width="{QW}" height="{QH}" fill="{bg}"/>{body}</svg></div>\n')
+
+
+QUIZ = [("1", "How long have you been feeling this way?", "Tick one.", [("Less than 6 months", ""), ("6 to 12 months", ""), ("1 to 2 years", ""), ("Several years or more", "")]),
+        ("2", "What is your body telling you?", "Tick all that apply.", [("Tension I cannot release in my jaw, shoulders, or chest", ""), ("Exhaustion that sleep does not fix", "▲"), ("Wired and restless. I cannot power down", ""), ("Numb. I do not feel much of anything anymore", "▲"), ("None of these", "")]),
+        ("3", "What is happening in your thinking mind?", "Tick all that apply.", [("Brain fog. Thoughts feel slow and scattered", ""), ("Racing thoughts I cannot quiet", ""), ("Simple decisions feel heavy", ""), ("I am in the room, but I am not present", ""), ("None of these", "")]),
+        ("4", "What is happening underneath?", "Tick all that apply.", [("Emotionally flat. Things that used to matter do not land", ""), ("Reactive. Irritation surfaces faster than it should", ""), ("Going through the motions", ""), ("I have lost the thread of who I am outside of performing", "★"), ("None of these", "")]),
+        ("5", "How much access do you have to your full energy, clarity, and joy?", "Tick one.", [("Most days, I can still get there", ""), ("It comes and goes", ""), ("It is mostly offline", "◆"), ("I cannot remember the last time I had full access", "★ ◆")])]
+b = f'<rect width="{QW}" height="150" fill="{DEEP}"/>' + logo(40, 30, 150, True)
+b += lines(535, 62, ["FREE · 2 MINUTES"], 8, 0, LIGHT, weight="700", anchor="end", ls="2.4")
+b += lines(40, 124, ["Burnout Signal Check"], 31, 0, WHITE, family="DM Serif Display")
+y = 182
+for n, q, hint, opts in QUIZ:
+    b += f'<circle cx="52" cy="{y-4}" r="11" fill="{DEEP}"/><text x="52" y="{y}" text-anchor="middle" font-family="DM Serif Display" font-size="14" fill="{WHITE}">{n}</text>'
+    b += lines(72, y, [q], 11.6, 0, DEEP, weight="700")
+    b += lines(535, y, [hint], 8.2, 0, "#5C5A53", anchor="end")
+    y += 17
+    for txt, mk in opts:
+        b += f'<rect x="58" y="{y-8.5}" width="9" height="9" rx="2" fill="none" stroke="{DEEP}" stroke-width="1.1"/>'
+        b += lines(76, y, [txt], 9.6, 0, INK)
+        if mk:
+            b += lines(535, y, [mk], 9.6, 0, LIGHT, weight="700", anchor="end")
+        y += 19.8
+    y += 11
+b += lines(BW / 2 if False else 287.5, 846, ["Turn over for your result.   Not a diagnosis: a conversation starter."], 8.6, 0, DEEP, weight="700", anchor="middle")
+qpage("#FFFFFF", b)
+
+TIERS = [("1", "Long-term Dysregulation", ["Did you tick “Several years or more” in question 1,", "AND any answer marked ★?"], "Years of chronic dysregulation. The pattern has started to feel like who you are.", "Energy: running low   ·   Clarity: often clouded   ·   Joy: hard to reach", DEEP, WHITE, LIGHT),
+         ("2", "Chronic Dysregulation", ["Not step 1, but: did you tick “1 to 2 years” or “Several years or more”?", "OR a ▲ answer in question 2 together with a ◆ answer in question 5?"], "Your system has been in survival mode for months to years, and it has become the baseline.", "Energy: depleted   ·   Clarity: fragmented   ·   Joy: offline", PALE, DEEP, DEEP),
+         ("3", "Early Dysregulation", ["None of the above?"], "Early signals are present and your system still has capacity. A good time to act, before patterns deepen.", "Energy: strained   ·   Clarity: interrupted   ·   Joy: dimming", WHITE, DEEP, DEEP)]
+b = lines(40, 70, ["YOUR RESULT"], 8.8, 0, DEEP, weight="700", ls="2.6")
+b += lines(40, 116, ["Follow the steps in order.", "Stop at your first yes."], 27, 32, DEEP, family="DM Serif Display")
+y = 180
+for n, nm, cond, mean, st, fill, fg, sub in TIERS:
+    h = 142
+    b += f'<rect x="40" y="{y}" width="495" height="{h}" rx="16" fill="{fill}"/>'
+    b += f'<circle cx="68" cy="{y+30}" r="14" fill="{fg}"/><text x="68" y="{y+36}" text-anchor="middle" font-family="DM Serif Display" font-size="17" fill="{fill}">{n}</text>'
+    b += lines(92, y + 36, [nm], 19, 0, fg, family="DM Serif Display")
+    b += lines(58, y + 66, cond, 9.8, 14, fg, weight="700")
+    b += lines(58, y + 104 + (0 if len(cond) == 2 else -14), [mean], 9.6, 0, fg)
+    b += lines(58, y + 126 + (0 if len(cond) == 2 else -14), [st], 8.8, 0, sub, weight="700")
+    y += h + 12
+b += f'<rect x="40" y="{y}" width="495" height="160" rx="16" fill="{DEEP}"/>'
+b += qr(60, y + 25, 110, "CALL")
+b += lines(190, y + 56, ["Book a free", "discovery call."], 24, 28, WHITE, family="DM Serif Display")
+b += lines(190, y + 112, ["Whatever your result, a conversation is the", "next step. We look at what pressure is costing", "you and match you to the right level of support."], 9.4, 13.5, PALE)
+b += lines(40, 846, ["Soma-Q is an education and training practice. It does not diagnose, treat or manage any condition. This check is not a medical or psychological measure."], 6.9, 0, "#5C5A53")
+qpage(LINEN, b)
+(SRC / "quiz_card.html").write_text(QHEAD + "".join(qpages) + "</body></html>\n")
+print("ok cards+quiz")

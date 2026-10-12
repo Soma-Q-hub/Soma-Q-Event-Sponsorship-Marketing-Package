@@ -1,4 +1,4 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-bizcard2_back [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=bizcard2-back
-bizcard2_back [call]: https://www.soma-q.com/go/call?c=oct24&p=bizcard2-back
+card_set [call]: https://www.soma-q.com/go/call?c=oct24&p=card-set
+quiz_card [call]: https://www.soma-q.com/go/call?c=oct24&p=quiz-card

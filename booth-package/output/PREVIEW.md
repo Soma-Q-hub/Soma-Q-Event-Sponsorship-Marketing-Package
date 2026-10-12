@@ -77,6 +77,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## bizcard2_front-1
 ![bizcard2_front-1](preview/bizcard2_front-1.png)
 
+## bizcard2_front_plain-1
+![bizcard2_front_plain-1](preview/bizcard2_front_plain-1.png)
+
 ## booklet-1
 ![booklet-1](preview/booklet-1.png)
 
@@ -112,6 +115,36 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## business_card_men-2
 ![business_card_men-2](preview/business_card_men-2.png)
+
+## card_set-01
+![card_set-01](preview/card_set-01.png)
+
+## card_set-02
+![card_set-02](preview/card_set-02.png)
+
+## card_set-03
+![card_set-03](preview/card_set-03.png)
+
+## card_set-04
+![card_set-04](preview/card_set-04.png)
+
+## card_set-05
+![card_set-05](preview/card_set-05.png)
+
+## card_set-06
+![card_set-06](preview/card_set-06.png)
+
+## card_set-07
+![card_set-07](preview/card_set-07.png)
+
+## card_set-08
+![card_set-08](preview/card_set-08.png)
+
+## card_set-09
+![card_set-09](preview/card_set-09.png)
+
+## card_set-10
+![card_set-10](preview/card_set-10.png)
 
 ## counter_sign-1
 ![counter_sign-1](preview/counter_sign-1.png)
@@ -208,6 +241,12 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## poster_where-1
 ![poster_where-1](preview/poster_where-1.png)
+
+## quiz_card-1
+![quiz_card-1](preview/quiz_card-1.png)
+
+## quiz_card-2
+![quiz_card-2](preview/quiz_card-2.png)
 
 ## strategy_packet-01
 ![strategy_packet-01](preview/strategy_packet-01.png)
