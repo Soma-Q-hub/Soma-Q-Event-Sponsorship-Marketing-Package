@@ -23,7 +23,7 @@ def banner(name, band, cta_bg, tag, scheme, dark=False):
         if i:
             p += f'<rect x="250" y="{t}" width="1800" height="6" fill="{LIGHT if dark else DEEP}" fill-opacity="{.5 if dark else .25}"/>\n'
         p += lines(250, t + 290, [nm], 230, 0, WHITE if dark else DEEP, family="DM Serif Display")
-        p += lines(250, t + 430, d, 74, 92, PALE if dark else INK, weight="500")
+        p += lines(250, t + 430, d, 82 if dark else 74, 98 if dark else 92, PALE if dark else INK, weight="500")
     p += placed("{{FIGURE:%s}}" % scheme, 2180, 3130, 1.0)
     if dark:
         cta(p_list := [p], cta_bg)
@@ -49,9 +49,8 @@ def cta(pl, cta_bg):
     p += lines(W / 2, 6665, ["Take the free Burnout Signal Check."], 100, 0, "#3E807A", family="DM Serif Display", anchor="middle")
     p += f'<rect y="6740" width="{W}" height="{H-6740}" fill="{DEEP}"/>\n'
     p += (f'<text x="{W/2}" y="7090" text-anchor="middle" font-family="DM Serif Display" font-size="130"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="36" dy="-54">™</tspan></text>\n')
-    p += lines(W / 2, 7255, ["NERVOUS SYSTEM ALIGNMENT EDUCATION AND TRAINING", "TO CHANGE YOUR RESPONSE TO STRESS"], 54, 78, LIGHT, weight="700", anchor="middle", ls="5")
-    p += lines(W / 2, 7480, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment, and recover faster."], 72, 104, PALE, weight="500", anchor="middle")
-    p += lines(W / 2, 7880, ["SOMA-Q.COM"], 84, 0, WHITE, weight="700", anchor="middle", ls="12")
+    p += lines(W / 2, 7330, ["SOMA-Q IS A NERVOUS SYSTEM ALIGNMENT PRACTICE.", "WE TRAIN HIGH-PERFORMING LEADERS TO NOTICE STRESS", "SOONER, SHIFT IN THE MOMENT, AND RECOVER FASTER."], 68, 100, WHITE, weight="500", anchor="middle", ls="3")
+    p += lines(W / 2, 7900, ["SOMA-Q.COM"], 84, 0, WHITE, weight="700", anchor="middle", ls="12")
     p += TAIL
     (SRC / "banner_four_places_dark.html").write_text(p)
 
