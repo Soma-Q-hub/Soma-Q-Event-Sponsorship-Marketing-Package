@@ -85,7 +85,7 @@ def cta(pl, cta_bg, flip=False, fname=None):
         B3 = B1 + 360
         C = B3 + G + 59
         p += (f'<text x="{W/2}" y="{S}" text-anchor="middle" font-family="DM Serif Display" font-size="150"><tspan fill="{DEEP}">Shift Happens</tspan><tspan fill="{DEEP}" font-size="42" dy="-62">™</tspan></text>\n')
-        p += lines(W / 2, B1, ["SOMA-Q IS A NERVOUS SYSTEM ALIGNMENT PRACTICE.", "WE TRAIN HIGH-PERFORMING LEADERS TO NOTICE", "STRESS SOONER, SHIFT IN THE MOMENT,", "AND LEAD FROM AUTHENTICITY."], 84, 120, "#3E807A", weight="700", anchor="middle", ls="3")
+        p += lines(W / 2, B1, ["SOMA-Q IS A NERVOUS SYSTEM ALIGNMENT PRACTICE.", "WE TRAIN HIGH-PERFORMING LEADERS TO NOTICE", "STRESS SOONER, SHIFT IN THE MOMENT,", "AND LEAD WITH POWERFUL PRESENCE."], 84, 120, "#3E807A", weight="700", anchor="middle", ls="3")
         p += lines(W / 2, C, ["SOMA-Q.COM"], 84, 0, DEEP, weight="700", anchor="middle", ls="12")
         name = fname
     p += TAIL
