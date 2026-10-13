@@ -54,7 +54,7 @@ def hero(name, title, scheme, tag="burnout", mode=None):
 
 hero("banner_men_hero_dark", "Men's hero banner, dark", "dark")
 hero("banner_men_hero_light", "Men's hero banner, light band", "light")
-hero("banner_men_hero_dark_shift", "Hero banner, dark, Shift happens", "dark", "shift")
+hero("banner_men_hero_dark_shift", "Hero banner, dark, Shift happens", "dark", "shift", "base")   # D1 final: Deep Teal base band + centered footer
 hero("banner_men_hero_light_shift", "Hero banner, light band, Shift happens", "light", "shift")
 hero("banner_men_hero_dark_shift_stretch", "Hero banner D1 experiment: teal pulled down", "dark", "shift", "stretch")
 hero("banner_men_hero_dark_shift_base", "Hero banner D1 experiment: deep teal base", "dark", "shift", "base")
