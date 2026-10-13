@@ -875,7 +875,7 @@ def shift_front(name, fig, title, swap=False):
         p += (f'<text x="34" y="98" font-family="DM Serif Display" font-size="46"><tspan fill="{"#FFFFFF" if swap else LIGHT}">Shift </tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}">Happens</tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}" font-size="13" dy="-19">™</tspan></text>\n')
         p += lines(34, 120, SH_OFFER, 9.6, 13, "#FFFFFF", weight="500")
         p += f'<rect x="34" y="160" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-        p += lines(34, 178, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 8.4, 11.8, "#FFFFFF", weight="700")
+        p += lines(34, 182, ["We train high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 10.2, 14.5, "#FFFFFF", weight="700")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
@@ -883,7 +883,7 @@ shift_front("bizcard2_front_shift", False, "Business card front: Shift Happens, 
 shift_front("bizcard2_front_shift_fig", True, "Business card front: Shift Happens, with figure, 3.5 x 2 in")
 shift_front("bizcard2_front_shift_swap", False, "Business card front: Shift white, Happens light teal, 3.5 x 2 in", swap=True)
 
-def front_white(name, title, wm=False, hap=LIGHT):
+def front_white(name, title, wm=False, hap=LIGHT, center=False):
     """Business card front on white: logo top left, Shift Happens in Deep Teal and mid teal, the offer line, and a Deep Teal bottom strip with the practice paragraph in white
     (ties to the back). Optional light teal Q watermark top right."""
     p = head_(title, 3.75, 2.25, "Business card front option on White: executive, clean. Deep Teal and mid teal type, Deep Teal bottom strip with the practice paragraph, light teal Q watermark.")
@@ -894,8 +894,9 @@ def front_white(name, title, wm=False, hap=LIGHT):
     p += logo(34, 25, 88, False)
     p += (f'<text x="34" y="95" font-family="DM Serif Display" font-size="43"><tspan fill="{DEEP}">Shift </tspan><tspan fill="{hap}">Happens</tspan><tspan fill="{hap}" font-size="12.5" dy="-18">\u2122</tspan></text>\n')
     p += lines(34, 116.5, SH_OFFER, 9.6, 13, DEEP, weight="500")
-    p += lines(34, 173.5, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 8.4, 11.8, "#FFFFFF", weight="700")
+    p += lines(187.5 if center else 34, 178.6, ["We train high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 10.2, 14.2, "#FFFFFF", weight="700", anchor="middle" if center else "start")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
 front_white("bizcard2_front_white", "Business card front on white, 3.5 x 2 in")
+front_white("bizcard2_front_white_center", "Business card front on white, centered paragraph, 3.5 x 2 in", center=True)
