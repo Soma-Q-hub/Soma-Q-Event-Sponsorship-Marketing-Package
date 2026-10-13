@@ -33,7 +33,7 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     hc = LIGHT if dark else DEEP
     bold = lambda x, y, rows: "".join(f'<text x="{x}" y="{y+i*170}" font-family="DM Serif Display" font-size="150" fill="{hc}" stroke="{hc}" stroke-width="7" stroke-linejoin="round">{t}</text>' for i, t in enumerate(rows)) + "\n"
     p += bold(1750, 4050 if st else 3800, ["What do you", "do next?"])
-    p += lines(1750, 4580 if st else 4230, TURN, 104, 142, WHITE if dark else DEEP, weight="700")
+    p += lines(1750, 4580 if st else 4310, TURN, 104, 142, WHITE if dark else DEEP, weight="700")
     p += bold(1750, 5550 if st else 5110, ["Show up the way", "you want to."])
     if mode in ("base", "base_logoright"):
         # centered stack: one vertical axis from the call to action, down through the QR, to the web address
