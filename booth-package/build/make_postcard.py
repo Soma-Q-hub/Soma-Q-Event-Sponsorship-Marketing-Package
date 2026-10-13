@@ -129,12 +129,13 @@ def front_e(name, title, hl, sub, glow=False, up=0, down=0, core=False, sup=None
         # the core message: Pressure happens. Burnout doesn't have to. Then the website's three beats.
         size, lead = 26, 34
         sup = sup or ["Notice the signal. Locate it.", "Choose your next response."]
-        sl = 17 if len(sup) > 2 else 16
-        block = 0.7 * size + 3 * lead + 30 + (len(sup) - 1) * sl
+        sl = 18.5 if len(sup) > 2 else 16
+        gap = 52 if len(sup) > 2 else 30
+        block = 0.7 * size + 3 * lead + gap + (len(sup) - 1) * sl
         b0 = 186 - block / 2 + 0.7 * size
         p += lines(tx, b0, ["Pressure", "happens."], size, lead, WHITE, family="DM Serif Display")
         p += lines(tx, b0 + 2 * lead, ["Burnout doesn\u2019t", "have to."], size, lead, LIGHT, family="DM Serif Display")
-        p += lines(tx, b0 + 3 * lead + 30, sup, 12.5 if len(sup) > 2 else 11.5, sl, PALE, weight="500")
+        p += lines(tx, b0 + 3 * lead + gap, sup, 14 if len(sup) > 2 else 11.5, sl, PALE, weight="500")
     else:
         # text column centred on the image panel (y 50 to 322), clear of its top and bottom edges
         hl_lead = 27
