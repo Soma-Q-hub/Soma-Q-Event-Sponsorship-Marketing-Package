@@ -121,9 +121,14 @@ def front_e(name, title, hl, sub):
     p += lines(40, 62, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", ls="2.2")
     p += f'<rect x="40" y="80" width="160" height="272" rx="12" fill="#16494F"/>\n'
     p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 90, 0.14)
-    p += lines(222, 120, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 23.5, 30, WHITE, family="DM Serif Display")
-    p += lines(222, 268, hl, 17, 21, LIGHT, family="DM Serif Display")
-    p += lines(222, 268 + 21 * (len(hl) - 1) + 20, sub, 11.5, 15, PALE, weight="500")
+    # text column fitted to the image panel (y 80 to 352): headline cap-top on 80, last line of the offer on 352
+    sub_last = 349.3
+    sub_first = sub_last - 18 * (len(sub) - 1)
+    hl_last = sub_first - 48
+    hl_first = hl_last - 26 * (len(hl) - 1)
+    p += lines(222, 96.8, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 24, 36, WHITE, family="DM Serif Display")
+    p += lines(222, hl_first, hl, 18, 26, LIGHT, family="DM Serif Display")
+    p += lines(222, sub_first, sub, 13.5, 18, PALE, weight="500")
     # white strip, centred
     p += logo(CXS - 63, 40, 126, False)
     p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#5F9F97", weight="700", anchor="middle")
