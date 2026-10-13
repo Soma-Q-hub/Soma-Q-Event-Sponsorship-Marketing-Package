@@ -116,7 +116,7 @@ def front_e(name, title, hl, sub):
     p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n<rect x="{SX}" width="{W-SX}" height="{H}" fill="#FFFFFF"/>\n'
     # top and bottom margin banners on the teal side: the offer first, what we are last
     p += f'<rect x="0" y="0" width="{SX}" height="53" fill="#16494F"/>\n'
-    p += lines(SX / 2, 36, [" ".join(sub).upper()], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
+    p += lines(SX / 2, 36, [" ".join(sub).upper().rstrip(".")], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
     p += f'<rect x="0" y="372" width="{SX}" height="{H-372}" fill="#16494F"/>\n'
     p += lines(SX / 2, 397, ["NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
     # teal side
@@ -145,7 +145,7 @@ def front_e(name, title, hl, sub):
 
 
 front_e("postcard_front_f", "Postcard front F (core line A), 6 x 4 in", ["Pressure happens."], ["Education and training to", "change your response to it."])
-front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Pressure happens.", "Reacting doesn\u2019t", "have to."], ["Education and training to", "change your response."])
+front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Pressure happens.", "Reacting doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."])
 
 # ---------------- BACK ----------------
 p = head("Postcard back, 6 x 4 in", 6.25, 4.25, "Postcard back, 6 x 4 in trim, file 6.25 x 4.25 in. Address area intentionally not reserved (hand-out card, not mailed). If mailing is wanted, reserve the right half for postage and address.")
