@@ -29,8 +29,13 @@ def lines(x, y, rows, size, lh, fill, family="DM Sans", weight="400", anchor="st
 def tri(x, y, w, color, op=1):
     return f'<polygon points="{x},{y+w*0.866:.0f} {x+w/2:.0f},{y} {x+w},{y+w*0.866:.0f}" fill="{color}" fill-opacity="{op}"/>\n'
 
-def logo(x, y, w, dark):
+LOGO_INK_LEFT = 42.5 / 1378   # the logo PNG has transparent padding; its ink starts 3.1 percent in. Measured on the asset.
+
+def logo(x, y, w, dark, center=False):
+    """x is where the logo's visible left edge lands (so it lines up with the text margin). center=True skips the correction for logos centered by their box."""
     uri = "{{LOGO_DARK_URI}}" if dark else "{{LOGO_LIGHT_URI}}"
+    if not center:
+        x = round(x - w * LOGO_INK_LEFT, 2)
     return f'<image href="{uri}" x="{x}" y="{y}" width="{w}" height="{w*512/1378:.0f}" preserveAspectRatio="xMinYMid meet"/>\n'
 
 def qmark(x, y, w, dark):

@@ -3,7 +3,7 @@
 Units 0.01 in. Run: python3 build/make_postcard.py"""
 from svgkit import *
 W, H = 625, 425
-WHAT = ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment, and recover faster."]
+WHAT = ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."]
 
 # ---------------- FRONT ----------------
 p = head("Postcard front, 6 x 4 in", 6.25, 4.25, "Postcard 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed). Keep type 0.25 in inside trim. CONFIRM printer template and stock.")
@@ -95,7 +95,7 @@ p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 90, 0.14)
 p += lines(222, 120, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 23.5, 30, WHITE, family="DM Serif Display")
 p += lines(222, 268, ["Pressure decides whether", "you react or respond."], 16, 22, LIGHT, weight="700")
 # white strip, centred
-p += logo(CXS - 63, 40, 126, False)
+p += logo(CXS - 63, 40, 126, False, center=True)
 p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#5F9F97", weight="700", anchor="middle")
 for k, word in enumerate(["Health", "Wealth", "Relationships", "Career"]):
     y = 188 + k * 42
@@ -145,7 +145,7 @@ def front_e(name, title, hl, sub, glow=False, up=0, down=0, core=False, sup=None
         p += lines(tx, b0 - up, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 22, 31, WHITE, family="DM Serif Display")
         p += lines(tx, b0 + 3 * 31 + 42 + down, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
     # white strip, centred
-    p += logo(CXS - 63, 40, 126, False)
+    p += logo(CXS - 63, 40, 126, False, center=True)
     p += lines(CXS, 108, ["Create the outcomes", "you want in the four", "places pressure", "shows up:"], 11.5, 15, "#3E807A", weight="700", anchor="middle").replace("<text ", '<text stroke="#3E807A" stroke-width="0.4" ')
     for k, word in enumerate(["Health", "Wealth", "Relationships", "Career"]):
         y = 188 + k * 42
@@ -221,7 +221,7 @@ def front_noimg(name, title):
     p += f'<rect x="40" y="232" width="370" height="106" rx="14" fill="{LINEN}"/>\n'
     p += lines(58, 264, ["Understanding and shifting your", "nervous system\u2019s signals is critical", "to your well-being."], 15.5, 23, DEEP, weight="500")
     # white strip, centred
-    p += logo(CXS - 63, 40, 126, False)
+    p += logo(CXS - 63, 40, 126, False, center=True)
     p += lines(CXS, 108, ["Create the outcomes", "you want in the four", "places pressure", "shows up:"], 11.5, 15, "#3E807A", weight="700", anchor="middle").replace("<text ", '<text stroke="#3E807A" stroke-width="0.4" ')
     for k, word in enumerate(["Health", "Wealth", "Relationships", "Career"]):
         y = 188 + k * 42

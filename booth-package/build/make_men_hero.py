@@ -10,7 +10,7 @@ HEADLINE = ["Who feels it", "when you’re", "stressed?"]
 TURN = ["A workout. A meditation.", "A one-time workshop.", "Each may help temporarily."]
 SHIFTING = ["Shifting your automatic", "response to stress", "requires new tools."]
 DISCOVER = "Discover how to reclaim your energy, clarity, and joy."   # draft Oct 13, replaces "It isn’t a character flaw..."
-WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-performing", "leaders to notice stress sooner, shift", "in the moment, and recover faster."]
+WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-performing", "leaders to notice stress sooner, shift", "in the moment, and lead with powerful presence."]
 
 def hero(name, title, scheme, tag="burnout", mode=None):
     dark = scheme == "dark"
@@ -22,7 +22,7 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     p += f'<rect width="{W}" height="{top}" fill="{DEEP}"/>\n'
     if not dark:
         p += f'<rect y="{top}" width="{W}" height="{5500-top}" fill="{LIGHT}"/>\n'
-    p += logo(1900 if mode == "base_logoright" else 250, 200, 1150, True)   # logoright: right-aligned to the 250 margin
+    p += logo(1900 if mode == "base_logoright" else 250, 200, 1150, True, center=(mode == "base_logoright"))   # logoright: right-aligned to the 250 margin
     l1, l2 = ("Burnout ends", "here.") if tag == "burnout" else ("Shift", "Happens")
     tm = '<tspan font-size="170" dy="-170" dx="14">™</tspan>'
     p += (f'<text x="250" y="1290" font-family="DM Serif Display" font-size="430" fill="{WHITE}">{l1}</text>'

@@ -296,25 +296,35 @@ bizfront_fig("bizcard2_front_b", CORE_B, "Business card front B, with figure, 3.
 bizfront_plain("bizcard2_front_plain", CORE_A, "Business card front A, no image, 3.5 x 2 in")
 bizfront_plain("bizcard2_front_plain_b", CORE_B, "Business card front B, no image, 3.5 x 2 in")
 
-def back_body():
-    """White card back. Q mark top left; heading, then the four places directly under the colon; QR callout to the right whose top
-    matches the heading's cap top and whose bottom matches the last list line; caption and QR centered in the callout."""
-    o = qmark(34, 24, 20, False)
-    o += lines(34, 62, ["Shift outcomes in the", "four places pressure", "shows up:"], 12.5, 16, DEEP, family="DM Serif Display")
+def back_body(qr_kind="QUIZ"):
+    """White card back. Q mark top left; heading (bigger than the list), then the four places with triangle bullets (the logo's triangle);
+    QR callout to the right whose top matches the heading's cap top and whose bottom matches the last list line; caption and QR centered in the callout."""
+    o = qmark(34, 18, 25, False)
+    HS, HY, HL = 15, 70, 18.5                       # heading size, first baseline, line height
+    o += lines(34, HY, ["Shift outcomes in the", "four places pressure", "shows up:"], HS, HL, DEEP, family="DM Serif Display")
+    LY, LS, LH = 128, 12.5, 17                       # list: first baseline, size, step
     for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
-        y = 118 + i * 20
-        o += f'<circle cx="40" cy="{y-4.5}" r="3.6" fill="{LIGHT}"/>' + lines(52, y, [nm], 15.5, 0, DEEP, family="DM Serif Display")
-    o += f'<rect x="214" y="53" width="132" height="125" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>\n'
-    o += lines(280, 70, ["Take the free", "Burnout Signal Check"], 7.6, 10.5, DEEP, weight="700", anchor="middle")
-    o += qr(240, 88, 80, "QUIZ")
-    o += lines(34, 197, ["Megan McDonald, Founder  \u00b7  Megan@Soma-Q.com  \u00b7  soma-q.com"], 6.8, 0, DEEP, weight="700")
+        y = LY + i * LH
+        # triangle bullet, left edge on the 34 margin, base sitting on the text baseline
+        o += f'<polygon points="34,{y} 40.4,{y} 37.2,{y-5.5}" fill="{LIGHT}"/>' + lines(47, y, [nm], LS, 0, DEEP, family="DM Serif Display")
+    top = HY - HS * 0.72                              # heading cap top
+    bot = LY + 3 * LH + 2
+    o += f'<rect x="214" y="{top:.1f}" width="132" height="{bot-top:.1f}" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>\n'
+    cx, mid = 280, (top + bot) / 2
+    if qr_kind == "QUIZ":
+        cap = ["Take the free", "Burnout Signal Check"]
+    else:
+        cap = ["Scan to visit", "our website"]
+    o += lines(cx, mid - 44, cap, 7.6, 10.5, DEEP, weight="700", anchor="middle")
+    o += qr(cx - 40, mid - 29, 80, qr_kind)
+    o += lines(34, 198, ["Megan McDonald, Founder  \u00b7  Megan@Soma-Q.com  \u00b7  soma-q.com"], 6.2, 0, DEEP, weight="700")
     return o
 
 
 def r14_back(name, title):
     p = head_(title, 3.75, 2.25, "Business card back (the R14 back in white): four places, one QR for the free Burnout Signal Check so every scan is a captured lead, Q mark, small contact line.")
     p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
-    p += back_body()
+    p += back_body("SITE")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
@@ -777,9 +787,8 @@ def shift_front(name, fig, title):
         p += logo(34, 14, 100, True)
         p += (f'<text x="34" y="98" font-family="DM Serif Display" font-size="46"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="13" dy="-19">™</tspan></text>\n')
         p += lines(34, 120, SH_OFFER, 9.6, 13, PALE, weight="500")
-        p += lines(34, 164, ["Burnout doesn’t have to."], 9.6, 13, LIGHT, weight="700")
-        p += f'<rect x="34" y="173" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-        p += lines(34, 187, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment, and recover faster."], 7.2, 9.8, LIGHT, weight="500")
+        p += f'<rect x="34" y="160" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
+        p += lines(34, 178, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 8.4, 11.8, WHITE, weight="500")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
