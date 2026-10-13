@@ -244,9 +244,9 @@ p += TAIL
 # ========================================================= BUSINESS CARD, 3.5 x 2 =========================================================
 p = head_("Business card front, 3.5 x 2 in", 3.75, 2.25, "Business card 3.5 x 2 in trim, file 3.75 x 2.25 in (0.125 in bleed). Keep type 0.2 in inside trim. CONFIRM printer template.")
 p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
-p += logo(34, 30, 140, True)
-p += lines(34, 112, ["Shift", "Happens™"], 25, 27, WHITE, family="DM Serif Display")
-p += lines(34, 160, ["NERVOUS SYSTEM", "ALIGNMENT FOR", "HIGH-PERFORMING LEADERS"], 8.4, 12.5, PALE, weight="700", ls=".9")
+p += logo(34, 22, 132, True)
+p += lines(34, 100, ["Shift", "Happens™"], 24, 24, WHITE, family="DM Serif Display")
+p += lines(34, 154, ["NERVOUS SYSTEM", "ALIGNMENT FOR", "HIGH-PERFORMING LEADERS"], 8.4, 16, PALE, weight="700", ls="1.2")
 p += f'<rect x="224" y="22" width="130" height="182" rx="12" fill="#16494F"/>\n'
 p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
 p += TAIL
@@ -254,10 +254,10 @@ p += TAIL
 
 p = head_("Business card front, no image, 3.5 x 2 in", 3.75, 2.25, "Business card front, type only (no figure). Pairs with the same back.")
 p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
-p += logo(34, 28, 124, True)
-p += lines(34, 92, ["Pressure decides", "whether you react", "or respond."], 20, 24, WHITE, family="DM Serif Display")
-p += f'<rect x="34" y="150" width="300" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-p += lines(34, 170, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 9.2, 13.5, PALE, weight="700", ls="1")
+p += logo(34, 26, 124, True)
+p += lines(34, 98, ["Pressure decides whether", "you react or respond."], 18.5, 23, WHITE, family="DM Serif Display")
+p += f'<rect x="34" y="132" width="300" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
+p += lines(34, 160, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 9.2, 19, PALE, weight="700", ls="1.4")
 p += TAIL
 (SRC / "bizcard2_front_plain.html").write_text(p)
 
@@ -483,9 +483,9 @@ def cpage(bg, body):
 
 
 # card 0: the idea
-b = logo(34, 30, 104, True)
-b += lines(34, 96, ["Pressure decides", "whether you react", "or respond."], 21, 26, WHITE, family="DM Serif Display")
-b += lines(34, 176, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 8.6, 12.5, PALE, weight="700", ls=".9")
+b = logo(34, 24, 104, True)
+b += lines(34, 88, ["Pressure decides", "whether you react", "or respond."], 20, 24, WHITE, family="DM Serif Display")
+b += lines(34, 168, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 8.6, 17, PALE, weight="700", ls="1.3")
 cpage(DEEP, b)
 b = lines(34, 62, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 18, DEEP, family="DM Serif Display")
 b += qr(34, 128, 58, "CALL")
