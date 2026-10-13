@@ -7,7 +7,7 @@ from svgkit import head as head_
 
 W, H = 3300, 8100
 HEADLINE = ["Who feels it", "when you’re", "stressed?"]
-TURN = ["Gym, yoga and", "meditation help.", "They don’t train your", "response to stress.", "Discover how."]   # draft Oct 13, replaces "It isn’t a character flaw..."
+TURN = ["Gym, yoga and", "meditation help.", "They don’t train your", "response to stress."]   # draft Oct 13, replaces "It isn’t a character flaw..."
 WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-performing", "leaders to notice stress sooner, shift", "in the moment and recover faster."]
 
 def hero(name, title, scheme, tag="burnout", mode=None):
