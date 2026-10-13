@@ -883,7 +883,7 @@ shift_front("bizcard2_front_shift", False, "Business card front: Shift Happens, 
 shift_front("bizcard2_front_shift_fig", True, "Business card front: Shift Happens, with figure, 3.5 x 2 in")
 shift_front("bizcard2_front_shift_swap", False, "Business card front: Shift white, Happens light teal, 3.5 x 2 in", swap=True)
 
-def front_white(name, title, wm=True):
+def front_white(name, title, wm=False, hap=LIGHT):
     """Business card front on white: logo top left, Shift Happens in Deep Teal and mid teal, the offer line, and a Deep Teal bottom strip with the practice paragraph in white
     (ties to the back). Optional light teal Q watermark top right."""
     p = head_(title, 3.75, 2.25, "Business card front option on White: executive, clean. Deep Teal and mid teal type, Deep Teal bottom strip with the practice paragraph, light teal Q watermark.")
@@ -892,10 +892,11 @@ def front_white(name, title, wm=True):
         p += f'<g opacity=".5">' + qmark(222, -34, 170, True) + '</g>\n'
     p += f'<rect y="152" width="375" height="73" fill="{DEEP}"/>\n'
     p += logo(34, 25, 88, False)
-    p += (f'<text x="34" y="95" font-family="DM Serif Display" font-size="43"><tspan fill="{DEEP}">Shift </tspan><tspan fill="#3E807A">Happens</tspan><tspan fill="#3E807A" font-size="12.5" dy="-18">\u2122</tspan></text>\n')
+    p += (f'<text x="34" y="95" font-family="DM Serif Display" font-size="43"><tspan fill="{DEEP}">Shift </tspan><tspan fill="{hap}">Happens</tspan><tspan fill="{hap}" font-size="12.5" dy="-18">\u2122</tspan></text>\n')
     p += lines(34, 116.5, SH_OFFER, 9.6, 13, DEEP, weight="500")
     p += lines(34, 173.5, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 8.4, 11.8, "#FFFFFF", weight="700")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
 front_white("bizcard2_front_white", "Business card front on white, 3.5 x 2 in")
+front_white("bizcard2_front_white_mid", "Business card front on white, mid teal test, 3.5 x 2 in", hap="#4E8781")
