@@ -114,19 +114,17 @@ def front_e(name, title, hl, sub):
     SX = 450
     CXS = (SX + 612.5) / 2          # centre of the visible white strip (trim edge at 612.5)
     p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n<rect x="{SX}" width="{W-SX}" height="{H}" fill="#FFFFFF"/>\n'
-    # top and bottom margin banners on the teal side: the offer first, what we are last
-    p += f'<rect x="0" y="0" width="{SX}" height="53" fill="#16494F"/>\n'
-    p += lines(SX / 2, 36, [" ".join(sub).upper().rstrip(".")], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
+    # bottom margin banner on the teal side carries the offer (the postcard back explains the nervous system alignment)
     p += f'<rect x="0" y="372" width="{SX}" height="{H-372}" fill="#16494F"/>\n'
-    p += lines(SX / 2, 397, ["NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
+    p += lines(SX / 2, 397, [" ".join(sub).upper().rstrip(".")], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
     # teal side
-    p += lines(120, 360, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", anchor="middle", ls="2.2")
-    p += f'<rect x="40" y="66" width="160" height="272" rx="12" fill="#16494F"/>\n'
-    p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 76, 0.14)
-    # text column centred on the image panel (y 66 to 338), clear of its top and bottom edges
+    p += lines(120, 346, ["SHIFT HAPPENS™"], 8.5, 0, LIGHT, weight="700", anchor="middle", ls="1.4")
+    p += f'<rect x="40" y="50" width="160" height="272" rx="12" fill="#16494F"/>\n'
+    p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 60, 0.14)
+    # text column centred on the image panel (y 50 to 322), clear of its top and bottom edges
     hl_lead = 27
     block = 17.5 + 3 * 34 + 44 + hl_lead * (len(hl) - 1)       # cap-top of the headline to the last baseline
-    top = 202 - block / 2
+    top = 186 - block / 2
     b0 = top + 17.5
     p += lines(222, b0, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 25, 34, WHITE, family="DM Serif Display")
     p += lines(222, b0 + 3 * 34 + 44, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
@@ -145,7 +143,7 @@ def front_e(name, title, hl, sub):
 
 
 front_e("postcard_front_f", "Postcard front F (core line A), 6 x 4 in", ["Pressure happens."], ["Education and training to", "change your response to it."])
-front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Pressure happens.", "Reacting doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."])
+front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."])
 
 # ---------------- BACK ----------------
 p = head("Postcard back, 6 x 4 in", 6.25, 4.25, "Postcard back, 6 x 4 in trim, file 6.25 x 4.25 in. Address area intentionally not reserved (hand-out card, not mailed). If mailing is wanted, reserve the right half for postage and address.")
