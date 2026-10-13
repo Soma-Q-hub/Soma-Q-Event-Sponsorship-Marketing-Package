@@ -244,9 +244,9 @@ p += TAIL
 # ========================================================= BUSINESS CARD, 3.5 x 2 =========================================================
 p = head_("Business card front, 3.5 x 2 in", 3.75, 2.25, "Business card 3.5 x 2 in trim, file 3.75 x 2.25 in (0.125 in bleed). Keep type 0.2 in inside trim. CONFIRM printer template.")
 p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
-p += logo(34, 38, 150, True)
-p += lines(34, 118, ["Shift", "Happens™"], 27, 29, WHITE, family="DM Serif Display")
-p += lines(34, 176, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 6.4, 9.5, LIGHT, weight="700", ls=".9")
+p += logo(34, 30, 140, True)
+p += lines(34, 112, ["Shift", "Happens™"], 25, 27, WHITE, family="DM Serif Display")
+p += lines(34, 160, ["NERVOUS SYSTEM", "ALIGNMENT FOR", "HIGH-PERFORMING LEADERS"], 8.4, 12.5, PALE, weight="700", ls=".9")
 p += f'<rect x="224" y="22" width="130" height="182" rx="12" fill="#16494F"/>\n'
 p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
 p += TAIL
@@ -254,9 +254,10 @@ p += TAIL
 
 p = head_("Business card front, no image, 3.5 x 2 in", 3.75, 2.25, "Business card front, type only (no figure). Pairs with the same back.")
 p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
-p += logo(34, 34, 130, True)
-p += lines(34, 108, ["Pressure decides", "whether you react", "or respond."], 22.5, 27, WHITE, family="DM Serif Display")
-p += lines(34, 188, ["SHIFT HAPPENS™  ·  NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"], 5.6, 0, LIGHT, weight="700", ls=".8")
+p += logo(34, 28, 124, True)
+p += lines(34, 92, ["Pressure decides", "whether you react", "or respond."], 20, 24, WHITE, family="DM Serif Display")
+p += f'<rect x="34" y="150" width="300" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
+p += lines(34, 170, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 9.2, 13.5, PALE, weight="700", ls="1")
 p += TAIL
 (SRC / "bizcard2_front_plain.html").write_text(p)
 
@@ -484,7 +485,7 @@ def cpage(bg, body):
 # card 0: the idea
 b = logo(34, 30, 104, True)
 b += lines(34, 96, ["Pressure decides", "whether you react", "or respond."], 21, 26, WHITE, family="DM Serif Display")
-b += lines(34, 192, ["SHIFT HAPPENS™"], 8, 0, LIGHT, weight="700", ls="2.4")
+b += lines(34, 176, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 8.6, 12.5, PALE, weight="700", ls=".9")
 cpage(DEEP, b)
 b = lines(34, 62, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 18, DEEP, family="DM Serif Display")
 b += qr(34, 128, 58, "CALL")
@@ -499,7 +500,8 @@ PLACE_Q = {"Health": ["Where in your body", "does it land first?"],
            "Wealth": ["What decision are you", "making from pressure", "right now?"],
            "Relationships": ["Who is feeling it", "with you?"],
            "Career": ["Where are you leading", "well and running", "on empty?"]}
-for i, (nm, d) in enumerate(FOUR):
+PLACE_CARDS = False   # the four place cards were dropped from the review set (Oct 13); flip to True to rebuild them
+for i, (nm, d) in enumerate(FOUR if PLACE_CARDS else []):
     b = f'<circle cx="327" cy="48" r="13" fill="{LIGHT}"/><text x="327" y="53" text-anchor="middle" font-family="DM Serif Display" font-size="14" fill="{DEEP}">{i+1}</text>'
     b += lines(34, 56, ["PRESSURE SHOWS UP IN"], 7.2, 0, LIGHT, weight="700", ls="2.2")
     b += lines(34, 104, [nm], 33, 0, WHITE, family="DM Serif Display")

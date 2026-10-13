@@ -116,35 +116,11 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## business_card_men-2
 ![business_card_men-2](preview/business_card_men-2.png)
 
-## card_set-01
-![card_set-01](preview/card_set-01.png)
+## card_set-1
+![card_set-1](preview/card_set-1.png)
 
-## card_set-02
-![card_set-02](preview/card_set-02.png)
-
-## card_set-03
-![card_set-03](preview/card_set-03.png)
-
-## card_set-04
-![card_set-04](preview/card_set-04.png)
-
-## card_set-05
-![card_set-05](preview/card_set-05.png)
-
-## card_set-06
-![card_set-06](preview/card_set-06.png)
-
-## card_set-07
-![card_set-07](preview/card_set-07.png)
-
-## card_set-08
-![card_set-08](preview/card_set-08.png)
-
-## card_set-09
-![card_set-09](preview/card_set-09.png)
-
-## card_set-10
-![card_set-10](preview/card_set-10.png)
+## card_set-2
+![card_set-2](preview/card_set-2.png)
 
 ## counter_sign-1
 ![counter_sign-1](preview/counter_sign-1.png)
