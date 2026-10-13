@@ -297,17 +297,18 @@ bizfront_plain("bizcard2_front_plain", CORE_A, "Business card front A, no image,
 bizfront_plain("bizcard2_front_plain_b", CORE_B, "Business card front B, no image, 3.5 x 2 in")
 
 def back_body():
-    """White card back: heading, then the four places directly under the colon, QR panel to the right (QR centered in its panel)."""
-    b = qmark(324, 14, 22, False)
-    b += lines(34, 54, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 18, DEEP, family="DM Serif Display")
+    """White card back. Q mark top left; heading, then the four places directly under the colon; QR callout to the right whose top
+    matches the heading's cap top and whose bottom matches the last list line; caption and QR centered in the callout."""
+    o = qmark(34, 24, 20, False)
+    o += lines(34, 62, ["Shift outcomes in the", "four places pressure", "shows up:"], 12.5, 16, DEEP, family="DM Serif Display")
     for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
-        y = 118 + i * 24
-        b += f'<circle cx="40" cy="{y-5}" r="4" fill="{LIGHT}"/>' + lines(54, y, [nm], 17, 0, DEEP, family="DM Serif Display")
-    b += f'<rect x="212" y="40" width="134" height="142" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>\n'
-    b += lines(279, 62, ["Take the free", "Burnout Signal Check"], 7.6, 10.5, DEEP, weight="700", anchor="middle")
-    b += qr(237, 88, 84, "QUIZ")
-    b += lines(34, 210, ["Megan McDonald, Founder  \u00b7  Megan@Soma-Q.com  \u00b7  soma-q.com"], 6.8, 0, DEEP, weight="700")
-    return b
+        y = 118 + i * 20
+        o += f'<circle cx="40" cy="{y-4.5}" r="3.6" fill="{LIGHT}"/>' + lines(52, y, [nm], 15.5, 0, DEEP, family="DM Serif Display")
+    o += f'<rect x="214" y="53" width="132" height="125" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>\n'
+    o += lines(280, 70, ["Take the free", "Burnout Signal Check"], 7.6, 10.5, DEEP, weight="700", anchor="middle")
+    o += qr(240, 88, 80, "QUIZ")
+    o += lines(34, 197, ["Megan McDonald, Founder  \u00b7  Megan@Soma-Q.com  \u00b7  soma-q.com"], 6.8, 0, DEEP, weight="700")
+    return o
 
 
 def r14_back(name, title):
@@ -713,7 +714,7 @@ p += lines(34, 184, ["More than 100 practices, 64 built on techniques", "with pe
 p += f'<rect x="212" y="44" width="134" height="124" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>\n'
 p += qr(233, 52, 92, "QUIZ")
 p += lines(279, 153, ["Take the free", "Burnout Signal Check"], 7.4, 9.5, DEEP, weight="700", anchor="middle")
-p += lines(34, 210, ["Megan McDonald, Founder  ·  Megan@Soma-Q.com  ·  soma-q.com"], 6.8, 0, DEEP, weight="700")
+p += lines(34, 198, ["Megan McDonald, Founder  ·  Megan@Soma-Q.com  ·  soma-q.com"], 6.8, 0, DEEP, weight="700")
 p += TAIL
 (SRC / "bizcard2_back_proof.html").write_text(p)
 
