@@ -7,7 +7,7 @@ from svgkit import head as head_
 
 W, H = 3300, 8100
 HEADLINE = ["Who feels it", "when you’re", "stressed?"]
-TURN = ["It isn’t a character flaw.", "It’s a stress response,", "and you can learn to", "work with it."]
+TURN = ["Gym, yoga and", "meditation help.", "They don’t train your", "response to stress.", "Discover how."]   # draft Oct 13, replaces "It isn’t a character flaw..."
 WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-performing", "leaders to notice stress sooner, shift", "in the moment and recover faster."]
 
 def hero(name, title, scheme, tag="burnout", mode=None):
@@ -34,7 +34,7 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     bold = lambda x, y, rows: "".join(f'<text x="{x}" y="{y+i*170}" font-family="DM Serif Display" font-size="150" fill="{hc}" stroke="{hc}" stroke-width="7" stroke-linejoin="round">{t}</text>' for i, t in enumerate(rows)) + "\n"
     p += bold(1750, 4050 if st else 3800, ["What do you", "do next?"])
     p += lines(1750, 4580 if st else 4230, TURN, 104, 142, WHITE if dark else DEEP, weight="700")
-    p += bold(1750, 5420 if st else 4970, ["Show up the way", "you want to."])
+    p += bold(1750, 5550 if st else 5110, ["Show up the way", "you want to."])
     if mode in ("base", "base_logoright"):
         # centered stack: one vertical axis from the call to action, down through the QR, to the web address
         p += lines(W / 2, 5740, ["Take the free Burnout Signal Check."], 138, 0, DEEP, family="DM Serif Display", anchor="middle")
