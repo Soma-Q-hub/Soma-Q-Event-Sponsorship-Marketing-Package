@@ -30,7 +30,7 @@ write("poster_men_fixer", "Men's track poster: Stay steady when there is nothing
 # 2) the one who holds space for everyone ---------------------------------------------------------------------------
 b = f'<rect width="2425" height="3625" fill="{PALE}"/>\n' + eyebrow(175, 330, "NERVOUS SYSTEM LITERACY")
 b += lines(175, 560, ["Hold space for", "others without", "losing touch", "with yourself."], 176, 178, DEEP, family="DM Serif Display")
-b += lines(175, 1270, ["Partners, colleagues and family bring you their feelings, and you carry them", "well. Your own signals are often the quietest in the room, because many", "men were never taught to listen for them."], 54, 68, INK)
+b += lines(175, 1270, ["Partners, colleagues, and family bring you their feelings, and you carry them", "well. Your own signals are often the quietest in the room, because many", "men were never taught to listen for them."], 54, 68, INK)
 b += lines(175, 1560, ["WHAT YOU CARRY"], 50, 0, DEEP, weight="700").replace('<text', '<text letter-spacing="9"')
 b += lines(2250, 1560, ["WHAT GOES QUIET"], 50, 0, DEEP, weight="700", anchor="end").replace('<text', '<text letter-spacing="9"')
 for i, t in enumerate(["Her stress", "The team's worry", "The family's needs", "A friend's hard week"]):

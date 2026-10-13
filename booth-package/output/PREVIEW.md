@@ -77,17 +77,26 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## bizcard2_back-1
 ![bizcard2_back-1](preview/bizcard2_back-1.png)
 
+## bizcard2_back_proof-1
+![bizcard2_back_proof-1](preview/bizcard2_back_proof-1.png)
+
 ## bizcard2_front-1
 ![bizcard2_front-1](preview/bizcard2_front-1.png)
 
 ## bizcard2_front_b-1
 ![bizcard2_front_b-1](preview/bizcard2_front_b-1.png)
 
+## bizcard2_front_neck-1
+![bizcard2_front_neck-1](preview/bizcard2_front_neck-1.png)
+
 ## bizcard2_front_plain-1
 ![bizcard2_front_plain-1](preview/bizcard2_front_plain-1.png)
 
 ## bizcard2_front_plain_b-1
 ![bizcard2_front_plain_b-1](preview/bizcard2_front_plain_b-1.png)
+
+## bizcard2_front_plain_neck-1
+![bizcard2_front_plain_neck-1](preview/bizcard2_front_plain_neck-1.png)
 
 ## booklet-1
 ![booklet-1](preview/booklet-1.png)
@@ -145,6 +154,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## giveaway_tag_iqeqsq-1
 ![giveaway_tag_iqeqsq-1](preview/giveaway_tag_iqeqsq-1.png)
+
+## giveaway_tag_neck-1
+![giveaway_tag_neck-1](preview/giveaway_tag_neck-1.png)
 
 ## handout_measurement-1
 ![handout_measurement-1](preview/handout_measurement-1.png)

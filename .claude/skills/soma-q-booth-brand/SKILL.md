@@ -13,6 +13,7 @@ Source of truth for this repo. It extends the Soma-Q brand for print and event p
 - Pale `#E4F2F2`, Linen `#EEEADD`, White `#FEFCF8`, Ink `#24211D`.
 - Fonts: DM Serif Display for headlines, DM Sans for everything else.
 - No em dashes anywhere. Plain, direct sentences. Never say "coach".
+- **Oxford (serial) comma everywhere**, in every list of three or more, on every piece, including approved website lines (Megan's rule, Oct 13 2026): "energy, clarity, and joy", "notice stress sooner, shift in the moment, and recover faster", "diagnose, treat, or manage". Check every list before a piece goes to review.
 
 ## Pressure accent: copper (approved Oct 2026)
 - Copper `#C9763F`, used as a soft glow on Deep Teal and on light fields.
@@ -23,7 +24,7 @@ Source of truth for this repo. It extends the Soma-Q brand for print and event p
 ## Frame for every piece
 Keep people in the tension to name the pain, then show the outcome. Practices are the tools; steadiness is the product ("capacity" is a nervous-system term that does not translate to the public). The stress loop shows where to interrupt it.
 - Header: logo, descriptor "Nervous system alignment for high-performing leaders" (large, Light Teal), Light Teal ribbon with "BURNOUT ENDS HERE.™" or another ribbon line from the website.
-- "WHAT WE DO" appears on everything, with the same sentence (draft awaiting Megan's approval): "Soma-Q is a nervous system alignment practice. We train high-performing leaders to notice stress sooner, shift in the moment and recover faster."
+- "WHAT WE DO" appears on everything, with the same sentence (draft awaiting Megan's approval): "Soma-Q is a nervous system alignment practice. We train high-performing leaders to notice stress sooner, shift in the moment, and recover faster."
 - Problem cards (consumer wording): Depletion "Running on empty, and calling it normal." Decisions "Choices made from pressure, not clarity." Communication "Short with the people you love." Resources "You know what to do. You can't reach it." The organization version uses the website's For Organizations copy verbatim.
 - Metrics: show the report format (week 1 marker vs current bar, scored 0 to 10) and always label it "Example of the report format, not client data."
 - Seven areas of focus come from the website's The Work page; use its wording exactly.
@@ -31,7 +32,8 @@ Keep people in the tension to name the pain, then show the outcome. Practices ar
 ## Approved lines from the website (use verbatim)
 - "Leadership does not happen from the neck up." / "Steadiness doesn't happen from the neck up."
 - "Regulation is a skill. Recovery is a skill. Choice under pressure is a skill."
-- "Your people know what to do. Pressure decides whether they react or respond." (second sentence completed with Megan's ending, Oct 2026)
+- RETIRED Oct 13 2026: "Pressure decides whether you react or respond." It is not accurate. The core line is now **"Pressure happens. Burnout doesn't have to."**, with the support line "Noticing your nervous system's signals is critical to your well-being." The offer line is "Education and training to change your response to stress." The three beats come from the website: "Notice the signal. Locate what is happening. Choose your next response."
+- Contrast line for banners, from the Positioning Manifesto ("The market gap"): "An app. A meditation. A breathwork class. A resilience webinar. A one-time workshop." then "Each may help. None trains your response to stress." ("Coaching session" is left out because we never say "coach".)
 - Taglines: "Burnout ends here.™", "Shift happens™" (trademarked; written SHIFT HAPPENS™), "Become your own advisor."
 
 ## Nervous-system figure

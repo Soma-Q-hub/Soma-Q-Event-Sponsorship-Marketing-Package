@@ -7,8 +7,8 @@ from svgkit import head as head_
 
 W, H = 3300, 8100
 HEADLINE = ["Who feels it", "when you’re", "stressed?"]
-TURN = ["Gym, yoga and", "meditation help.", "They don’t train your", "response to stress."]   # draft Oct 13, replaces "It isn’t a character flaw..."
-WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-performing", "leaders to notice stress sooner, shift", "in the moment and recover faster."]
+TURN = ["An app. A meditation.", "A breathwork class.", "A resilience webinar.", "A one-time workshop.", "Each may help. None trains", "your response to stress."]   # draft Oct 13, replaces "It isn’t a character flaw..."
+WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-performing", "leaders to notice stress sooner, shift", "in the moment, and recover faster."]
 
 def hero(name, title, scheme, tag="burnout", mode=None):
     dark = scheme == "dark"
@@ -33,8 +33,8 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     hc = LIGHT if dark else DEEP
     bold = lambda x, y, rows, fs=150, step=170: "".join(f'<text x="{x}" y="{y+i*step}" font-family="DM Serif Display" font-size="{fs}" fill="{hc}" stroke="{hc}" stroke-width="7" stroke-linejoin="round">{t}</text>' for i, t in enumerate(rows)) + "\n"
     p += bold(1750, 4050 if st else 3800, ["What do you", "do next?"])
-    p += lines(1750, 4580 if st else 4270, TURN, 104, 142, WHITE if dark else DEEP, weight="700")
-    p += bold(1750, 5550 if st else 4990, ["Discover how to", "reclaim your energy,", "clarity and joy."], 124, 150)
+    p += lines(1750, 4580 if st else 4184, TURN, 80, 112, WHITE if dark else DEEP, weight="700")
+    p += bold(1750, 5550 if st else 4990, ["Discover how to", "reclaim your energy,", "clarity, and joy."], 124, 150)
     if mode in ("base", "base_logoright"):
         # centered stack: one vertical axis from the call to action, down through the QR, to the web address
         p += lines(W / 2, 5740, ["Take the free Burnout Signal Check."], 138, 0, DEEP, family="DM Serif Display", anchor="middle")

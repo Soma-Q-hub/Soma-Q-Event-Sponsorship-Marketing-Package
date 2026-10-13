@@ -120,7 +120,7 @@ p += f'<rect x="140" y="626" width="22" height="9" rx="4" fill="{DEEP}"/>' + lin
 p += lines(780, 637, [NOT_DATA], 11, 0, "#5C5A53", anchor="end")
 p += f'<rect x="40" y="670" width="770" height="260" rx="20" fill="{LINEN}"/>\n'
 cols = [("1", "Weekly Check-In", ["Before every session, a short", "set of questions, each", "scored from 0 to 10."]),
-        ("2", "Metrics Report", ["A week-by-week view of how", "clearly you think, how steady", "you stay and how quickly you", "recover from stress."]),
+        ("2", "Metrics Report", ["A week-by-week view of how", "clearly you think, how steady", "you stay, and how quickly you", "recover from stress."]),
         ("3", "What happens next", ["It shows what is shifting and", "what still needs attention, so", "practice goes where it counts."])]
 for i, (n, t, rows) in enumerate(cols):
     x = 68 + i * 252
@@ -215,7 +215,7 @@ p += TAIL
 
 # --- insert 5: the seven areas of focus (node work, themes only) ---
 AREAS = [("Foundation & Stability", "Feel grounded and secure enough to make decisions without bracing for the worst."),
-         ("Creativity & Connection", "Think flexibly, generate fresh ideas and stay connected to the people you lead."),
+         ("Creativity & Connection", "Think flexibly, generate fresh ideas, and stay connected to the people you lead."),
          ("Confidence & Drive", "Act with steady confidence and hold clear boundaries without pushing yourself into depletion."),
          ("Compassion & Relationships", "Stay open and steady in difficult conversations, so trust holds when the pressure is on."),
          ("Expression & Communication", "Say what needs to be said clearly and calmly, even when the stakes are high."),
@@ -225,7 +225,7 @@ AXIS = [("Awareness", "Notice the signal early."), ("Regulation", "Shift your st
 p = insert_head("Insert 5: Seven areas of focus (stand-up holder)")
 p += f'<rect x="40" y="40" width="770" height="226" rx="22" fill="{DEEP}"/>\n' + logo(68, 66, 190, True)
 p += lines(786, 94, ["THE METHOD"], 13, 0, LIGHT, weight="700", anchor="end", ls="3")
-p += lines(68, 168, ["Seven areas where body,", "emotion and thinking meet."], 44, 51, WHITE, family="DM Serif Display")
+p += lines(68, 168, ["Seven areas where body,", "emotion, and thinking meet."], 44, 51, WHITE, family="DM Serif Display")
 p += lines(68, 246, ["Each one tied to how you lead."], 17, 0, LIGHT, weight="700")
 for i, (nm, d) in enumerate(AXIS):
     x = 40 + i * 195
@@ -418,7 +418,7 @@ page(DEEP, b)
 # 2 neck up
 b = lines(46, 92, ["PRESSURE LANDS IN THE BODY FIRST"], 8.8, 0, DEEP, weight="700", ls="2.4")
 b += lines(46, 164, ["Leadership does", "not happen from", "the neck up."], 42, 48, DEEP, family="DM Serif Display")
-b += lines(46, 330, ["Strategy matters. Emotional intelligence matters. But", "pressure lands in the body before it becomes the", "thought, the tone, the decision or the reaction", "everyone else sees."], 12.5, 19.5, INK)
+b += lines(46, 330, ["Strategy matters. Emotional intelligence matters. But", "pressure lands in the body before it becomes the", "thought, the tone, the decision, or the reaction", "everyone else sees."], 12.5, 19.5, INK)
 b += lines(46, 430, ["When your body tightens and your mind speeds up,", "you can lose access to capabilities you already", "have. That is why more information rarely changes", "what happens in the hard moment. A trained", "response does."], 12.5, 19.5, INK)
 for i, s in enumerate(STEPS):
     y = 580 + i * 70
@@ -433,14 +433,14 @@ b = lines(46, 92, ["WHEN PRESSURE HITS"], 8.8, 0, DEEP, weight="700", ls="2.4")
 b += lines(46, 150, ["Pressure happens.", "Then what?"], 38, 44, DEEP, family="DM Serif Display")
 b += f'<g transform="translate(46,230) scale(0.172)">{decision_flow()}</g>\n'
 b += lines(46, 640, ["The moment you notice the signal is the moment you can choose.", "That is what we train."], 14, 21, INK, weight="500")
-b += lines(46, 720, ["Left alone, running depleted starts to feel normal.", "It draws down your energy, narrows your thinking and", "wears on your judgment."], 11.5, 17.5, "#5C5A53")
+b += lines(46, 720, ["Left alone, running depleted starts to feel normal.", "It draws down your energy, narrows your thinking, and", "wears on your judgment."], 11.5, 17.5, "#5C5A53")
 b += pnum(3)
 page("#FFFFFF", b)
 
 # 4 skills + four places
 b = lines(46, 92, ["THE METHOD"], 8.8, 0, LIGHT, weight="700", ls="2.4")
 b += lines(46, 150, ["Regulation is a skill.", "Recovery is a skill.", "Choice under pressure", "is a skill."], 34, 40, WHITE, family="DM Serif Display")
-b += lines(46, 330, ["And skills can be practiced, strengthened and measured."], 13, 0, LIGHT, weight="700")
+b += lines(46, 330, ["And skills can be practiced, strengthened, and measured."], 13, 0, LIGHT, weight="700")
 b += lines(46, 392, ["PRESSURE SHOWS UP IN FOUR PLACES"], 8.8, 0, LIGHT, weight="700", ls="2.4")
 for i, (nm, d) in enumerate(FOUR):
     x, y = 46 + (i % 2) * 246, 412 + (i // 2) * 188
@@ -492,7 +492,7 @@ b += lines(46, 580, ["The largest gain is in staying calm under pressure,", "up 
 b += lines(46, 630, ["One measure is still behind: focus late in the day.", "That is where the next phase of practice goes."], 12.5, 19, INK)
 b += f'<rect x="46" y="690" width="483" height="84" rx="14" fill="{LINEN}"/>'
 b += lines(66, 718, ["WHAT YOU KEEP"], 8.4, 0, DEEP, weight="700", ls="2.4")
-b += lines(66, 744, ["Your Metrics Report, your session notes and your", "practice reference guides."], 12, 17, INK, weight="700")
+b += lines(66, 744, ["Your Metrics Report, your session notes, and your", "practice reference guides."], 12, 17, INK, weight="700")
 b += lines(46, 810, [NOT_DATA], 9.5, 0, "#5C5A53")
 b += pnum(6)
 page("#FFFFFF", b)
@@ -522,7 +522,7 @@ b += lines(326, 492, ["Not ready? Take the", "free Burnout Signal Check."], 11.5
 b += qr(326, 526, 52, "QUIZ", 0.06)
 b += logo(46, 648, 180, False)
 b += lines(46, 750, ["Megan McDonald, Founder of Soma-Q", "Megan@Soma-Q.com  ·  soma-q.com"], 11, 16, DEEP, weight="700")
-b += lines(46, 806, ["Soma-Q is an education and training practice. It does not diagnose, treat or manage any", "condition and does not replace care from a qualified health provider."], 7.6, 11, "#5C5A53")
+b += lines(46, 806, ["Soma-Q is an education and training practice. It does not diagnose, treat, or manage any", "condition and does not replace care from a qualified health provider."], 7.6, 11, "#5C5A53")
 page(LINEN, b)
 (SRC / "booklet.html").write_text(HEAD + "".join(pages) + "</body></html>\n")
 print("ok round2")
@@ -649,7 +649,7 @@ b += f'<rect x="40" y="{y}" width="495" height="160" rx="16" fill="{DEEP}"/>'
 b += qr(60, y + 25, 110, "CALL")
 b += lines(190, y + 56, ["Book a free", "discovery call."], 24, 28, WHITE, family="DM Serif Display")
 b += lines(190, y + 112, ["Whatever your result, a conversation is the", "next step. We look at what pressure is costing", "you and match you to the right level of support."], 9.4, 13.5, PALE)
-b += lines(40, 846, ["Soma-Q is an education and training practice. It does not diagnose, treat or manage any condition. This check is not a medical or psychological measure."], 6.9, 0, "#5C5A53")
+b += lines(40, 846, ["Soma-Q is an education and training practice. It does not diagnose, treat, or manage any condition. This check is not a medical or psychological measure."], 6.9, 0, "#5C5A53")
 qpage(LINEN, b)
 (SRC / "quiz_card.html").write_text(QHEAD + "".join(qpages) + "</body></html>\n")
 print("ok cards+quiz")
@@ -682,3 +682,53 @@ p += lines(600, 578, ["FOR HIGH-PERFORMING LEADERS   ·   SOMA-Q.COM"], 17, 0, L
 p += TAIL
 (SRC / "stand_sign.html").write_text(p)
 print("ok stand sign")
+
+
+# ========================================================= ROUND 3 (Oct 13): "Leadership does not happen from the neck up." and proof =========================================================
+NECK = ["Leadership does not", "happen from the", "neck up."]
+OFFER = ["Education and training to", "change your response to stress."]
+
+p = head_("Business card front C (neck up), type only, 3.5 x 2 in", 3.75, 2.25, "Business card front with the website line 'Leadership does not happen from the neck up.' Type only.")
+p += f'<rect width="375" height="225" fill="{DEEP}"/>\n' + logo(34, 20, 84, True)
+p += lines(34, 78, NECK, 18.5, 21, WHITE, family="DM Serif Display")
+p += lines(34, 142, OFFER, 9, 13, PALE, weight="500")
+p += f'<rect x="34" y="165" width="300" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
+p += lines(34, 183, DESC, 8, 13, LIGHT, weight="700", ls="1.3")
+p += TAIL
+(SRC / "bizcard2_front_plain_neck.html").write_text(p)
+
+p = head_("Business card front C (neck up), with figure, 3.5 x 2 in", 3.75, 2.25, "Business card front with the website line 'Leadership does not happen from the neck up.' and the nervous system figure.")
+p += f'<rect width="375" height="225" fill="{DEEP}"/>\n' + logo(34, 20, 100, True)
+p += lines(34, 84, NECK, 17.5, 21, WHITE, family="DM Serif Display")
+p += lines(34, 84 + 21 * 2 + 20, OFFER, 8.2, 11.5, PALE, weight="500")
+p += lines(34, 190, DESC, 7.2, 11, LIGHT, weight="700", ls="1.1")
+p += f'<rect x="224" y="22" width="130" height="182" rx="12" fill="#16494F"/>\n'
+p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
+p += TAIL
+(SRC / "bizcard2_front_neck.html").write_text(p)
+
+# back with proof: the Metrics Report format (example, not client data) beside the quiz QR
+p = head_("Business card back with proof, 3.5 x 2 in", 3.75, 2.25, "Business card back: your progress in your own numbers (example report format, not client data) and the quiz QR. The practice-library claim comes from the Website v2 handoff: confirm against the Research Citations Master before print.")
+p += '<rect width="375" height="225" fill="#FFFFFF"/>\n' + qmark(324, 14, 22, False)
+p += lines(34, 46, ["Watch your progress", "in your own numbers."], 14, 17, DEEP, family="DM Serif Display")
+p += bars(34, 86, 150, CHART, 25, 7.6, show_tag=False)
+p += lines(34, 170, ["Example of the report format, not client data."], 5.6, 0, "#5C5A53")
+p += lines(34, 184, ["More than 100 practices, 64 built on techniques", "with peer-reviewed research behind them."], 6.4, 9, INK, weight="500")
+p += f'<rect x="212" y="44" width="134" height="124" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>\n'
+p += qr(233, 52, 92, "QUIZ")
+p += lines(279, 153, ["Take the free", "Burnout Signal Check"], 7.4, 9.5, DEEP, weight="700", anchor="middle")
+p += lines(34, 210, ["Megan McDonald, Founder  ·  Megan@Soma-Q.com  ·  soma-q.com"], 6.8, 0, DEEP, weight="700")
+p += TAIL
+(SRC / "bizcard2_back_proof.html").write_text(p)
+
+# luggage tag: the neck-up line
+p = head_("Bag tag front C: Leadership does not happen from the neck up, 2.5 x 4.25 in", 2.75, 4.5, "Bag tag option: the website line and the quiz QR. Same size and die-line placeholder as the other tags. Back is shared (giveaway_tag_back).")
+p += f'<rect width="275" height="450" fill="{DEEP}"/>\n'
+p += f'<circle cx="137.5" cy="52" r="15" fill="none" stroke="{LIGHT}" stroke-width="1.2" stroke-dasharray="3 3"/>'
+p += qmark(137.5 - 20, 76, 40, True)
+p += lines(137.5, 156, ["Leadership", "does not happen", "from the", "neck up."], 27, 31, WHITE, family="DM Serif Display", anchor="middle")
+p += f'<rect x="34" y="292" width="207" height="124" rx="16" fill="{LIGHT}"/>\n'
+p += qr(66, 302, 82, "QUIZ")
+p += lines(190, 340, ["TAKE", "THE", "QUIZ"], 13, 17, DEEP, weight="700", anchor="middle", ls="1.8")
+p += TAIL
+(SRC / "giveaway_tag_neck.html").write_text(p)

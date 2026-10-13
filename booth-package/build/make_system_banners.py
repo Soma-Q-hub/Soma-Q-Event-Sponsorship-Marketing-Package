@@ -7,7 +7,7 @@ from svgkit import *
 from svgkit import head as head_
 
 W, H = 3300, 8100
-WHAT_WE_DO = ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment and recover faster."]
+WHAT_WE_DO = ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment, and recover faster."]
 PROBLEMS = [("DEPLETION", "Running on empty, and calling it normal."),
             ("DECISIONS", "Choices made from pressure, not clarity."),
             ("COMMUNICATION", "Short with the people you love."),

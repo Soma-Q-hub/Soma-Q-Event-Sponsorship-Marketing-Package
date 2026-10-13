@@ -3,7 +3,7 @@
 Units 0.01 in. Run: python3 build/make_postcard.py"""
 from svgkit import *
 W, H = 625, 425
-WHAT = ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment and recover faster."]
+WHAT = ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment, and recover faster."]
 
 # ---------------- FRONT ----------------
 p = head("Postcard front, 6 x 4 in", 6.25, 4.25, "Postcard 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed). Keep type 0.25 in inside trim. CONFIRM printer template and stock.")
@@ -170,13 +170,13 @@ p = head("Postcard back, 6 x 4 in", 6.25, 4.25, "Postcard back, 6 x 4 in trim, f
 p += f'<rect width="{W}" height="{H}" fill="{LINEN}"/>\n'
 p += "<!--PHOTO-->" + photo_circle(112, 112, 56, cid="pcp") + "<!--/PHOTO-->"
 p += lines(40, 200, ["Megan McDonald"], 19, 0, DEEP, family="DM Serif Display") + lines(40, 215, ["Founder, Soma-Q"], 11, 0, DEEP, weight="700", ls="1")
-p += lines(40, 237, ["I led healthcare tech teams", "until burnout left me depleted,", "in pain and unable to sleep."], 10, 13, INK)
+p += lines(40, 237, ["I led healthcare tech teams", "until burnout left me depleted,", "in pain, and unable to sleep."], 10, 13, INK)
 p += lines(40, 280, ["I rebuilt how I lead and live.", "Now I help leaders do the same."], 10, 13.5, DEEP, weight="700")
 p += vhair(212, 36, 300)
 p += label(231, 56, "", "HOW I WORK", 12)
 items = [("Tools that fit your day", "Five to twenty minute practices that stack into your schedule."),
-         ("Structure you can measure", "Assessment, targeted practices and weekly measurement."),
-         ("Body and mind together", "Where physiology, emotion and thinking meet."),
+         ("Structure you can measure", "Assessment, targeted practices, and weekly measurement."),
+         ("Body and mind together", "Where physiology, emotion, and thinking meet."),
          ("A safe place for real work", "Supportive and free of judgment, at a pace your system can sustain."),
          ("Alongside your other support", "Never replaces medical or mental health care."),
          ("Direct and compassionate", "Clear about what the work asks, kind about how hard change is.")]

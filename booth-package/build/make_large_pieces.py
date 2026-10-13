@@ -27,7 +27,7 @@ p = head("Banner 2: the proof, 32 x 80 in", 33, 81, "Retractable banner 32 x 80 
 p += f'<rect width="{W}" height="{H}" fill="{LINEN}"/>\n'
 p += f'<rect width="{W}" height="900" fill="{DEEP}"/>\n' + logo(250, 235, 1200, True)
 p += lines(3050, 530, ["Nervous system alignment", "for high-performing leaders"], 76, 100, LIGHT, weight="700", anchor="end", ls="3")
-p += lines(250, 1290, ["Built to restore", "your energy,", "clarity and joy", "under pressure."], 300, 322, DEEP, family="DM Serif Display")
+p += lines(250, 1290, ["Built to restore", "your energy,", "clarity, and joy", "under pressure."], 300, 322, DEEP, family="DM Serif Display")
 p += placed("{{OUTCOMES:light}}", 500, 2380, 1.15)
 # who is behind it
 p += hair(250, 3050, 4640)
