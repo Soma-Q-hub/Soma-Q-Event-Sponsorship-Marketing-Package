@@ -116,9 +116,9 @@ def front_e(name, title, hl, sub):
     p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n<rect x="{SX}" width="{W-SX}" height="{H}" fill="#FFFFFF"/>\n'
     # bottom margin banner on the teal side carries the offer (the postcard back explains the nervous system alignment)
     p += f'<rect x="0" y="372" width="{SX}" height="{H-372}" fill="#16494F"/>\n'
-    p += lines(SX / 2, 397, [" ".join(sub).upper().rstrip(".")], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
+    p += lines(SX / 2, 400, [" ".join(sub).upper().rstrip(".")], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
     # teal side
-    p += lines(120, 346, ["BURNOUT ENDS HERE"], 8.5, 0, LIGHT, weight="700", anchor="middle", ls="1.4")
+    p += lines(120, 346, ["SHIFT HAPPENS<tspan font-size=\"4.2\" dy=\"-3.8\">™</tspan>"], 8.5, 0, LIGHT, weight="700", anchor="middle", ls="1.4")
     p += f'<rect x="40" y="50" width="160" height="272" rx="12" fill="#16494F"/>\n'
     p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 60, 0.14)
     # text column centred on the image panel (y 50 to 322), clear of its top and bottom edges
@@ -136,7 +136,7 @@ def front_e(name, title, hl, sub):
         if k:
             p += f'<line x1="{CXS-22}" y1="{y-26}" x2="{CXS+22}" y2="{y-26}" stroke="{LIGHT}" stroke-width="1.5"/>'
         p += lines(CXS, y, [word], 17 if len(word) < 9 else 15.5, 0, DEEP, family="DM Serif Display", anchor="middle")
-    p += lines(CXS, 397, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", anchor="middle", ls="1.6")
+    p += lines(CXS, 400, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", anchor="middle", ls="1.6")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
