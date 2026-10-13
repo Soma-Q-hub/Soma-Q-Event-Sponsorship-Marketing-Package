@@ -360,14 +360,14 @@ p = head_("Bag tag front C: IQ EQ SQ, 2.5 x 4.25 in", 2.75, 4.5, "Bag tag option
 p += f'<rect width="275" height="450" fill="{DEEP}"/>\n'
 p += f'<circle cx="137.5" cy="46" r="15" fill="none" stroke="{LIGHT}" stroke-width="1.2" stroke-dasharray="3 3"/>'
 for i, (big, small) in enumerate((("IQ", "COGNITIVE"), ("EQ", "EMOTIONAL"), ("SQ", "SOMATIC"))):
-    y = 118 + i * 52
+    y = 104 + i * 50
     col = LIGHT if big == "SQ" else WHITE
     p += lines(40, y, [big], 44, 0, col, family="DM Serif Display")
     p += lines(112, y - 6, [small], 11, 0, col, weight="700", ls="2.6")
-p += lines(137.5, 262, ["Which one runs the show", "under pressure?"], 14, 18, PALE, family="DM Serif Display", anchor="middle")
-p += f'<rect x="34" y="292" width="207" height="124" rx="16" fill="{LIGHT}"/>\n'
-p += qr(66, 302, 82, "QUIZ")
-p += lines(190, 340, ["TAKE", "THE", "QUIZ"], 13, 17, DEEP, weight="700", anchor="middle", ls="1.8")
+p += lines(137.5, 246, ["Which one runs the show", "under pressure?"], 14, 18, PALE, family="DM Serif Display", anchor="middle")
+p += f'<rect x="34" y="282" width="207" height="138" rx="16" fill="{LIGHT}"/>\n'
+p += lines(137.5, 306, ["TAKE THE QUIZ"], 14, 0, DEEP, weight="700", anchor="middle", ls="2.2")
+p += qr(95.5, 316, 84, "QUIZ")
 p += TAIL
 (SRC / "giveaway_tag_iqeqsq.html").write_text(p)
 
@@ -727,8 +727,8 @@ p += f'<rect width="275" height="450" fill="{DEEP}"/>\n'
 p += f'<circle cx="137.5" cy="52" r="15" fill="none" stroke="{LIGHT}" stroke-width="1.2" stroke-dasharray="3 3"/>'
 p += qmark(137.5 - 20, 76, 40, True)
 p += lines(137.5, 156, ["Leadership", "does not happen", "from the", "neck up."], 27, 31, WHITE, family="DM Serif Display", anchor="middle")
-p += f'<rect x="34" y="292" width="207" height="124" rx="16" fill="{LIGHT}"/>\n'
-p += qr(66, 302, 82, "QUIZ")
-p += lines(190, 340, ["TAKE", "THE", "QUIZ"], 13, 17, DEEP, weight="700", anchor="middle", ls="1.8")
+p += f'<rect x="34" y="266" width="207" height="152" rx="16" fill="{LIGHT}"/>\n'
+p += lines(137.5, 292, ["TAKE THE QUIZ"], 15, 0, DEEP, weight="700", anchor="middle", ls="2.2")
+p += qr(91.5, 304, 92, "QUIZ")
 p += TAIL
 (SRC / "giveaway_tag_neck.html").write_text(p)

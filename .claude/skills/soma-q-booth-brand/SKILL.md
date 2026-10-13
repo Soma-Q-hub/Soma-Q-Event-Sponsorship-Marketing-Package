@@ -12,6 +12,7 @@ Source of truth for this repo. It extends the Soma-Q brand for print and event p
 - Light Teal `#9BC4BD`: ribbon, accents on Deep Teal.
 - Pale `#E4F2F2`, Linen `#EEEADD`, White `#FEFCF8`, Ink `#24211D`.
 - Fonts: DM Serif Display for headlines, DM Sans for everything else.
+- QR codes are always centered in their callout box (Megan's rule, Oct 13 2026): center the code horizontally in the panel, with the label above or below it, never beside it off-center.
 - No em dashes anywhere. Plain, direct sentences. Never say "coach".
 - **Oxford (serial) comma everywhere**, in every list of three or more, on every piece, including approved website lines (Megan's rule, Oct 13 2026): "energy, clarity, and joy", "notice stress sooner, shift in the moment, and recover faster", "diagnose, treat, or manage". Check every list before a piece goes to review.
 
