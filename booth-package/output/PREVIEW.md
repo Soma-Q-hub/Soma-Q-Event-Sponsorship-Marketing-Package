@@ -383,5 +383,8 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## table_front-1
 ![table_front-1](preview/table_front-1.png)
 
+## table_sign_ebook-1
+![table_sign_ebook-1](preview/table_sign_ebook-1.png)
+
 ## table_sign_signs-1
 ![table_sign_signs-1](preview/table_sign_signs-1.png)
