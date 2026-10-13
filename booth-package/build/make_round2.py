@@ -758,3 +758,29 @@ tag_logo("giveaway_tag_logo_white", False)
 tag_logo("giveaway_tag_logo_black", True)
 tag_logo("giveaway_tag_logo_white_qr", False, True)
 tag_logo("giveaway_tag_logo_black_qr", True, True)
+
+
+# ========================================================= BUSINESS CARD FRONT with Shift Happens as the headline (Oct 13) =========================================================
+SH_OFFER = ["Education and training to", "change your response."]
+
+def shift_front(name, fig, title):
+    p = head_(title, 3.75, 2.25, "Business card front option: Shift Happens as the headline, with the education and training line and the descriptor." + (" With the nervous system figure." if fig else " Type only."))
+    p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
+    if fig:
+        p += logo(34, 20, 100, True)
+        p += (f'<text x="34" y="92" font-family="DM Serif Display" font-size="26"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="8" dy="-13">™</tspan></text>\n')
+        p += lines(34, 118, SH_OFFER, 9, 12.5, PALE, weight="500")
+        p += lines(34, 183, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 6.8, 11, LIGHT, weight="700", ls="1")
+        p += f'<rect x="224" y="22" width="130" height="182" rx="12" fill="#16494F"/>\n'
+        p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
+    else:
+        p += logo(34, 22, 100, True)
+        p += (f'<text x="34" y="104" font-family="DM Serif Display" font-size="40"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="10" dy="-16">™</tspan></text>\n')
+        p += lines(34, 132, SH_OFFER, 10.2, 14, PALE, weight="500")
+        p += f'<rect x="34" y="162" width="300" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
+        p += lines(34, 180, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 8.2, 13, LIGHT, weight="700", ls="1.3")
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
+
+shift_front("bizcard2_front_shift", False, "Business card front: Shift Happens, type only, 3.5 x 2 in")
+shift_front("bizcard2_front_shift_fig", True, "Business card front: Shift Happens, with figure, 3.5 x 2 in")
