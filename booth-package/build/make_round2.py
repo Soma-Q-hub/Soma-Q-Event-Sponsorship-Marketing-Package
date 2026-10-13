@@ -385,7 +385,7 @@ def back_d(name, title):
     from measure import widths
     p = head_(title, 3.75, 2.25, "Business card back: White field, large faint Q watermark, name and contact top left, QR to the website inside the teal Q watermark, Deep Teal bottom strip with the outcomes line and the four places, centered. CONFIRM the phone number (website Terms page).")
     p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
-    p += f'<g opacity=".3">' + qmark(283 - 172/2, 105 - 176.2/2, 172, False) + '</g>\n'
+    p += f'<g opacity=".5">' + qmark(283 - 172/2, 105 - 176.2/2, 172, True) + '</g>\n'
     p += f'<rect y="166" width="375" height="59" fill="{DEEP}"/>\n'
     # left: name and contact (phone, email and website all the same size)
     p += lines(34, 56, ["Megan McDonald"], 22, 0, DEEP, family="DM Serif Display")
