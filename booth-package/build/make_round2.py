@@ -275,19 +275,21 @@ p += lines(34, 160, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"],
 p += TAIL
 (SRC / "bizcard2_front_plain.html").write_text(p)
 
-p = head_("Business card back, 3.5 x 2 in", 3.75, 2.25, "Business card back. Two QR codes: book a call, and the free Burnout Signal Check. Phone left off on purpose (the website brief asks whether the phone stays public).")
-p += f'<rect width="375" height="225" fill="{LINEN}"/>\n'
-p += lines(34, 66, ["Megan", "McDonald"], 22, 24, DEEP, family="DM Serif Display")
-p += lines(34, 108, ["Founder of Soma-Q"], 9.2, 0, INK, weight="700")
-p += hair(34, 150, 120, op=.35, w=.8)
-p += lines(34, 138, ["A nervous system", "alignment practice."], 8, 11, INK)
-p += lines(34, 176, ["Megan@Soma-Q.com"], 9, 0, DEEP, weight="700")
-p += lines(34, 190, ["soma-q.com"], 9, 0, DEEP, weight="700")
-for x, kind, cap in ((172, "CALL", ["Book a free", "discovery call"]), (264, "QUIZ", ["Take the free", "Burnout Signal Check"])):
-    p += qr(x, 34, 82, kind)
-    p += lines(x + 41, 138, cap, 7.4, 10, DEEP, weight="700", anchor="middle")
-p += f'<rect x="172" y="162" width="174" height="30" rx="8" fill="{DEEP}"/>\n'
-p += lines(259, 181, ["Two ways to start. Both free."], 8.2, 0, WHITE, weight="700", anchor="middle")
+p = head_("Business card back, 3.5 x 2 in", 3.75, 2.25, "Business card back, white. Q mark, name and contact, two QR codes (book a call, free Burnout Signal Check) on Linen panels with different borders. Phone left off on purpose (the website brief asks whether the phone stays public).")
+p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
+p += qmark(34, 20, 27, False)
+p += lines(34, 80, ["Megan", "McDonald"], 22, 24, DEEP, family="DM Serif Display")
+p += lines(34, 118, ["Founder of Soma-Q"], 9.2, 0, INK, weight="700")
+p += hair(34, 154, 130, op=.35, w=.8)
+p += lines(34, 144, ["A nervous system", "alignment practice."], 8, 11, INK)
+p += lines(34, 180, ["Megan@Soma-Q.com"], 9, 0, DEEP, weight="700")
+p += lines(34, 194, ["soma-q.com"], 9, 0, DEEP, weight="700")
+for x, kind, cap, edge, ew in ((172, "CALL", ["Book a free", "discovery call"], DEEP, 1.8), (266, "QUIZ", ["Take the free", "Burnout Signal Check"], LIGHT, 4)):
+    p += f'<rect x="{x-5}" y="29" width="88" height="88" rx="14" fill="{LINEN}" stroke="{edge}" stroke-width="{ew}"/>\n'
+    p += qr(x, 34, 78, kind)
+    p += lines(x + 39, 136, cap, 7.4, 10, DEEP, weight="700", anchor="middle")
+p += f'<rect x="172" y="162" width="172" height="30" rx="8" fill="{DEEP}"/>\n'
+p += lines(258, 181, ["Two ways to start. Both free."], 8.2, 0, WHITE, weight="700", anchor="middle")
 p += TAIL
 (SRC / "bizcard2_back.html").write_text(p)
 
@@ -318,6 +320,34 @@ p += qr(88, 272, 100, "QUIZ")
 p += lines(137.5, 396, ["Five questions. Two minutes."], 8.8, 0, DEEP, weight="700", anchor="middle")
 p += TAIL
 (SRC / "giveaway_tag_front.html").write_text(p)
+
+p = head_("Bag tag front B: Got the Q?, 2.5 x 4.25 in", 2.75, 4.5, "Bag tag option: Got the Q? Front with the Q mark, IQ EQ SQ and the quiz QR. Same size and die-line placeholder as the other tag. Back is shared (giveaway_tag_back).")
+p += f'<rect width="275" height="450" fill="{DEEP}"/>\n'
+p += f'<circle cx="137.5" cy="52" r="15" fill="none" stroke="{LIGHT}" stroke-width="1.2" stroke-dasharray="3 3"/>'
+p += qmark(137.5 - 28, 78, 56, True)
+p += lines(137.5, 188, ["Got the Q?"], 44, 0, WHITE, family="DM Serif Display", anchor="middle")
+p += lines(137.5, 214, ["IQ  \u00b7  EQ  \u00b7  SQ"], 15, 0, LIGHT, weight="700", anchor="middle", ls="3")
+p += f'<rect x="34" y="240" width="207" height="164" rx="18" fill="{LIGHT}"/>\n'
+p += lines(137.5, 264, ["TAKE THE QUIZ"], 16, 0, DEEP, weight="700", anchor="middle", ls="2.4")
+p += qr(88, 274, 98, "QUIZ")
+p += lines(137.5, 394, ["Five questions. Two minutes."], 8.8, 0, DEEP, weight="700", anchor="middle")
+p += TAIL
+(SRC / "giveaway_tag_gotq.html").write_text(p)
+
+p = head_("Bag tag front C: IQ EQ SQ, 2.5 x 4.25 in", 2.75, 4.5, "Bag tag option: IQ, EQ, SQ stacked with Cognitive, Emotional, Somatic labels (the terms used on the Metrics Report) and the quiz QR. Back is shared (giveaway_tag_back).")
+p += f'<rect width="275" height="450" fill="{DEEP}"/>\n'
+p += f'<circle cx="137.5" cy="46" r="15" fill="none" stroke="{LIGHT}" stroke-width="1.2" stroke-dasharray="3 3"/>'
+for i, (big, small) in enumerate((("IQ", "COGNITIVE"), ("EQ", "EMOTIONAL"), ("SQ", "SOMATIC"))):
+    y = 118 + i * 52
+    col = LIGHT if big == "SQ" else WHITE
+    p += lines(40, y, [big], 44, 0, col, family="DM Serif Display")
+    p += lines(112, y - 6, [small], 11, 0, col, weight="700", ls="2.6")
+p += lines(137.5, 262, ["Which one runs the show", "under pressure?"], 14, 18, PALE, family="DM Serif Display", anchor="middle")
+p += f'<rect x="34" y="292" width="207" height="124" rx="16" fill="{LIGHT}"/>\n'
+p += qr(66, 302, 82, "QUIZ")
+p += lines(190, 340, ["TAKE", "THE", "QUIZ"], 13, 17, DEEP, weight="700", anchor="middle", ls="1.8")
+p += TAIL
+(SRC / "giveaway_tag_iqeqsq.html").write_text(p)
 
 p = head_("Bag tag back, 2.5 x 4.25 in", 2.75, 4.5, "Bag tag back: owner details panel (so it works as a real bag tag) and the lit nervous system figure. No QR code on the back. Keep art 0.2 in inside trim.")
 p += f'<rect width="275" height="450" fill="{DEEP}"/>\n'

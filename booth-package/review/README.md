@@ -8,6 +8,7 @@ Pieces still being reviewed. When one is approved, copy its PDF and preview into
 | insert_flow, insert_system, insert_metrics, insert_areas, insert_call | Stand-up holder inserts: the flow, what makes Soma-Q different (SQ-LPMS), the proof, seven areas of focus, book a call | 8.5 x 11 in |
 | bizcard2_front / _back | Business card | 3.5 x 2 in |
 | table_cover_v2 | Table cover front (placeholder size) | 72 x 30 in |
+| giveaway_tag_gotq, giveaway_tag_iqeqsq | Bag tag fronts with IQ / EQ / SQ: "Got the Q?" and a stacked IQ, EQ, SQ version. Back is shared | 2.5 x 4.25 in |
 | giveaway_tag_front / _back | Bag tag giveaway (placeholder size and die line) | 2.5 x 4.25 in |
 | booklet | Take-away booklet "What do you do next?", 8 pages, saddle stitch | 5.5 x 8.5 in |
 

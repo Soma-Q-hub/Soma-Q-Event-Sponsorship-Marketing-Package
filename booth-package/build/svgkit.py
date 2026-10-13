@@ -33,6 +33,10 @@ def logo(x, y, w, dark):
     uri = "{{LOGO_DARK_URI}}" if dark else "{{LOGO_LIGHT_URI}}"
     return f'<image href="{uri}" x="{x}" y="{y}" width="{w}" height="{w*512/1378:.0f}" preserveAspectRatio="xMinYMid meet"/>\n'
 
+def qmark(x, y, w, dark):
+    uri = "{{QMARK_DARK_URI}}" if dark else "{{QMARK_LIGHT_URI}}"
+    return f'<image href="{uri}" x="{x}" y="{y}" width="{w}" height="{w*376/367:.1f}" preserveAspectRatio="xMidYMid meet"/>\n'
+
 def placed(inner_token, x, y, scale):
     return f'<g transform="translate({x},{y}) scale({scale})">{inner_token}</g>\n'
 
