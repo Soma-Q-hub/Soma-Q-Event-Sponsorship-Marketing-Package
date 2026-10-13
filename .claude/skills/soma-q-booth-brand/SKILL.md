@@ -13,6 +13,7 @@ Source of truth for this repo. It extends the Soma-Q brand for print and event p
 - Pale `#E4F2F2`, Linen `#EEEADD`, White `#FEFCF8`, Ink `#24211D`.
 - Fonts: DM Serif Display for headlines, DM Sans for everything else.
 - QR codes are always centered in their callout box (Megan's rule, Oct 13 2026): center the code horizontally in the panel, with the label above or below it, never beside it off-center.
+- Align by measurement, not by eye (Oct 13 2026): when a QR sits beside text, the top and bottom of the text block line up with the top and bottom of the QR box (do not shrink the QR below about 0.8 in to make it fit). Measure ink rows on the rendered PNG and keep gaps above and below a block equal.
 - No em dashes anywhere. Plain, direct sentences. Never say "coach".
 - **Oxford (serial) comma everywhere**, in every list of three or more, on every piece, including approved website lines (Megan's rule, Oct 13 2026): "energy, clarity, and joy", "notice stress sooner, shift in the moment, and recover faster", "diagnose, treat, or manage". Check every list before a piece goes to review.
 
