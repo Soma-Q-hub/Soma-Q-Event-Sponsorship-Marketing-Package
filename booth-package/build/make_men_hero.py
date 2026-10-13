@@ -39,9 +39,9 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     p += bold(1750, 5550 if st else 4900, SHIFTING, 118, 152)
     if mode in ("base", "base_logoright"):
         # centered stack: one vertical axis from the call to action, down through the QR, to the web address
-        p += lines(W / 2, 5870, ["Take the free Burnout Signal Check."], 138, 0, DEEP, family="DM Serif Display", anchor="middle")
-        p += f'<rect x="{W/2-400}" y="5960" width="800" height="800" rx="44" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-400+62}" y="{5960+62}" width="676" height="676">{{{{QR_QUIZ}}}}</svg>'
-        p += lines(W / 2, 6950, ["SOMA-Q.COM"], 84, 0, DEEP, weight="700", anchor="middle", ls="12")
+        p += lines(W / 2, 5880, ["Take the free Burnout Signal Check."], 138, 0, DEEP, family="DM Serif Display", anchor="middle")
+        p += f'<rect x="{W/2-400}" y="6023" width="800" height="800" rx="44" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-400+62}" y="{6023+62}" width="676" height="676">{{{{QR_QUIZ}}}}</svg>'
+        p += lines(W / 2, 6998, ["SOMA-Q.COM"], 84, 0, DEEP, weight="700", anchor="middle", ls="12")
         p += f'<rect y="7140" width="{W}" height="{H-7140}" fill="{DEEP}"/>\n'
         p += lines(W / 2, 7450, ["Discover how to reclaim your energy,", "clarity, and joy in four places:"], 92, 112, LIGHT, family="DM Serif Display", anchor="middle")
         p += lines(W / 2, 7790, ["Health  ·  Wealth  ·  Relationships  ·  Career"], 108, 0, WHITE, family="DM Serif Display", anchor="middle")
