@@ -331,6 +331,29 @@ def r14_back(name, title):
 r14_back("bizcard2_back", "Business card back, 3.5 x 2 in")
 
 
+def back_b(name, title):
+    """R7 back, redesign: the name block leads (Q mark top left, name and Founder beside it), four places as a list with logo-triangle bullets,
+    QR on a plain Linen panel (no heavy outline), contact line under a hairline."""
+    p = head_(title, 3.75, 2.25, "Business card back, redesign: name and Founder up top beside the Q mark, four places, QR to the website on a Linen panel, contact line.")
+    p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
+    p += qmark(34, 24, 28, False)
+    p += lines(72, 41, ["Megan McDonald"], 17, 0, DEEP, family="DM Serif Display")
+    p += lines(72, 53, ["FOUNDER, SOMA-Q"], 6.6, 0, "#3E807A", weight="700", ls="1.3")
+    p += f'<rect x="34" y="70" width="307" height="1" fill="{DEEP}" fill-opacity=".22"/>\n'
+    p += lines(34, 93, ["Shift outcomes in the four", "places pressure shows up:"], 11.5, 14, DEEP, family="DM Serif Display")
+    for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
+        y = 130 + i * 17
+        p += f'<polygon points="34,{y} 40.8,{y} 37.4,{y-5.9}" fill="{LIGHT}"/>' + lines(48, y, [nm], 12.5, 0, DEEP, family="DM Serif Display")
+    p += f'<rect x="222" y="82" width="119" height="112" rx="10" fill="{LINEN}"/>\n'
+    p += qr(241.5, 89, 80, "SITE")
+    p += lines(281.5, 184, ["Scan to visit our website"], 6.6, 0, DEEP, weight="700", anchor="middle")
+    p += lines(34, 199, ["Megan@Soma-Q.com\u00a0\u00a0\u00a0\u00b7\u00a0\u00a0\u00a0soma-q.com"], 7.6, 0, DEEP, weight="700")
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
+
+back_b("bizcard2_back_b", "Business card back B, 3.5 x 2 in")
+
+
 
 # ========================================================= TABLE COVER, 72 x 30 =========================================================
 p = head_("Table cover front, 72 x 30 in", 73, 31, "PLACEHOLDER trim 72 x 30 in, file 73 x 31 in (0.5 in bleed). Viewed from far away and partly hidden by chairs and boxes: logo, two phrases, one QR. CONFIRM the vendor template (hems, folds, corners).")
