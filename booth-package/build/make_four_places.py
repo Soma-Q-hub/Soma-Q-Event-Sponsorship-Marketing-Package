@@ -18,7 +18,7 @@ ROWS_F = [("Health", ["Sleep that doesn’t", "restore you, and a body", "that h
 def banner(name, band, cta_bg, tag, scheme, dark=False, flip=False, ds=108):
     p = head_(f"Banner: Discover how to reclaim your energy, clarity, and joy in four places ({tag}), 32 x 80 in", 33, 81, f"OPTIONAL banner built around the outcomes line, {tag} band behind the four places, with the nervous system figure. 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). The four places use the website descriptors. CONFIRM the vendor template.")
     p += f'<rect width="{W}" height="{H}" fill="{"#FFFFFF" if dark else DEEP}"/>\n'
-    p += logo(250, 200, 1000, not dark)
+    p += logo(250, 170, 1200, not dark) if flip else logo(250, 200, 1000, not dark)
     hl = ["Discover how", "to reclaim your", "energy, clarity,", "and joy:"] if dark else ["Discover how", "to reclaim your", "energy, clarity,", "and joy in", "four places:"]
     p += lines(250, 1000 + (120 if dark and not flip else 0), hl, 330, 365, DEEP if dark else WHITE, family="DM Serif Display")
     y0 = 2330 if flip else 2700          # flipped version: shorter white top, taller dark places band
