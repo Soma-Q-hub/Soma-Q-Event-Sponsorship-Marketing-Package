@@ -195,11 +195,11 @@ for i, (t, d) in enumerate(items):
     rows.append(ln)
     p += lines(x + 10, y + 15, rows, 10.5, 13.5, INK)
 p += f'<rect y="318" width="{W}" height="107" fill="{DEEP}"/>\n'
-p += label(40, 335.5, "", "WHAT WE DO", 10).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
-WHAT_E = WHAT[:-1] + [WHAT[-1] + f' <tspan font-weight="700" fill="{LIGHT}">Burnout ends here<tspan font-size="5" dy="-4.6">™</tspan></tspan>']
-p += lines(40, 364, WHAT_E, 12, 22.5, WHITE)
+p += label(40, 335.5, "", "WHAT SOMA-Q DOES", 10).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
+p += lines(40, 359, ["Soma-Q is a nervous system alignment practice.", "Training high-performing leaders to notice stress", "sooner, shift in the moments of pressure, and lead with powerful presence."], 12, 18.5, WHITE)
+p += f'<text x="40" y="414.5" font-family="DM Sans" font-weight="700" font-size="12" fill="{LIGHT}">Burnout ends here<tspan font-size="5" dy="-4.6">™</tspan></text>\n'
 p += '<rect x="505" y="328" width="82" height="82" rx="8" fill="#FFFFFF"/><svg x="511" y="334" width="70" height="70">{{QR_QUIZ}}</svg>'
-p += lines(490, 357, ["Scan to take the", "free Burnout", "Signal Check"], 10.5, 13, PALE, weight="700", anchor="end")
+p += lines(490, 351, ["Scan to take the", "free Burnout", "Signal Check"], 10.5, 13, PALE, weight="700", anchor="end")
 p += TAIL
 (SRC / "postcard_back.html").write_text(p)
 (SRC / "postcard_back_w.html").write_text(p.replace(f'fill="{LINEN}"', 'fill="#FFFFFF"').replace("Postcard back, 6 x 4 in", "Postcard back B (white), 6 x 4 in"))
