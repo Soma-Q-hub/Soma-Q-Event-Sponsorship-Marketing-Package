@@ -159,6 +159,7 @@ front_e("postcard_front_f", "Postcard front F (core line A), 6 x 4 in", ["Pressu
 front_e("postcard_front_h", "Postcard front H (G with a soft white glow around the image), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True)
 front_e("postcard_front_i", "Postcard front I (H with the headline up a touch and more space above Burnout doesn\u2019t have to), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True, up=8, down=4)
 front_e("postcard_front_j", "Postcard front J: Pressure happens. Burnout doesn\u2019t have to., 6 x 4 in", [], ["Education and training to", "change your response to stress."], glow=True, core=True)
+front_e("postcard_front_k", "Postcard front K: Noticing your nervous system\u2019s signals, then Pressure happens. Burnout doesn\u2019t have to., 6 x 4 in", ["Pressure happens.", "Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True, up=8, down=4)
 front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."])
 
 # ---------------- BACK ----------------
