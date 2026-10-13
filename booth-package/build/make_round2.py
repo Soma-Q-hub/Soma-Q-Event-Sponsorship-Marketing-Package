@@ -378,6 +378,37 @@ C_PHONE = "303-717-9995"
 back_c("bizcard2_back_c", "Business card back C, 3.5 x 2 in")
 
 
+def back_d(name, title):
+    """R7d-modern back: Linen field with a large faint Q watermark behind everything, name and contact top left, 'Burnout ends here' top right in the
+    same two-tone serif treatment as the front's Shift Happens, and a Deep Teal strip along the bottom with the four places (ties to the dark front)."""
+    p = head_(title, 3.75, 2.25, "Business card back, modern: Linen field, large faint Q watermark, name and contact top left, Burnout ends here top right, Deep Teal bottom strip with the four places. CONFIRM the phone number (website Terms page).")
+    p += f'<rect width="375" height="225" fill="{LINEN}"/>\n'
+    p += f'<g opacity=".085">' + qmark(176, -4, 214, False) + '</g>\n'
+    p += f'<rect y="166" width="375" height="59" fill="{DEEP}"/>\n'
+    # left: name and contact
+    p += lines(34, 56, ["Megan McDonald"], 22, 0, DEEP, family="DM Serif Display")
+    p += lines(34, 69, ["FOUNDER, SOMA-Q"], 6.6, 0, "#3E807A", weight="700", ls="1.3")
+    for i, (txt, sz) in enumerate([(C_PHONE, 10.5), ("Megan@Soma-Q.com", 8.8), ("soma-q.com", 10.5)]):
+        y = 102 + i * 17
+        p += f'<polygon points="34,{y} 39.6,{y} 36.8,{y-4.9}" fill="{LIGHT}"/>' + lines(46, y, [txt], sz, 0, DEEP, weight="700")
+    # right: the back's headline, mirroring the front's two-tone serif
+    p += (f'<text x="341" y="56" text-anchor="end" font-family="DM Serif Display" font-size="23" fill="{DEEP}">Burnout</text>'
+          f'<text x="341" y="80" text-anchor="end" font-family="DM Serif Display" font-size="23" fill="#3E807A">ends here<tspan font-size="7" dy="-9">\u2122</tspan></text>\n')
+    # bottom strip: the four places
+    p += lines(34, 181, ["SHIFT OUTCOMES IN THE FOUR PLACES PRESSURE SHOWS UP:"], 6.4, 0, LIGHT, weight="700", ls="1")
+    x = 34
+    for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
+        if i:
+            p += f'<polygon points="{x+6},197 {x+11.4},197 {x+8.7},192.3" fill="{LIGHT}"/>'
+            x += 18
+        p += lines(x, 197, [nm], 12, 0, WHITE, family="DM Serif Display")
+        x += {"Health": 36, "Wealth": 38, "Relationships": 72, "Career": 35}[nm]
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
+
+back_d("bizcard2_back_d", "Business card back D, 3.5 x 2 in")
+
+
 
 # ========================================================= TABLE COVER, 72 x 30 =========================================================
 p = head_("Table cover front, 72 x 30 in", 73, 31, "PLACEHOLDER trim 72 x 30 in, file 73 x 31 in (0.5 in bleed). Viewed from far away and partly hidden by chairs and boxes: logo, two phrases, one QR. CONFIRM the vendor template (hems, folds, corners).")

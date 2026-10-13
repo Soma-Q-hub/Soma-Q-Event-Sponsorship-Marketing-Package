@@ -110,6 +110,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## bizcard2_back_c-1
 ![bizcard2_back_c-1](preview/bizcard2_back_c-1.png)
 
+## bizcard2_back_d-1
+![bizcard2_back_d-1](preview/bizcard2_back_d-1.png)
+
 ## bizcard2_back_proof-1
 ![bizcard2_back_proof-1](preview/bizcard2_back_proof-1.png)
 
@@ -136,9 +139,6 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## bizcard2_front_shift_fig-1
 ![bizcard2_front_shift_fig-1](preview/bizcard2_front_shift_fig-1.png)
-
-## bizcard2_front_shift_swap-1
-![bizcard2_front_shift_swap-1](preview/bizcard2_front_shift_swap-1.png)
 
 ## booklet-1
 ![booklet-1](preview/booklet-1.png)
