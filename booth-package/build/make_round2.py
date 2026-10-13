@@ -296,19 +296,24 @@ bizfront_fig("bizcard2_front_b", CORE_B, "Business card front B, with figure, 3.
 bizfront_plain("bizcard2_front_plain", CORE_A, "Business card front A, no image, 3.5 x 2 in")
 bizfront_plain("bizcard2_front_plain_b", CORE_B, "Business card front B, no image, 3.5 x 2 in")
 
+def back_body():
+    """White card back: heading, then the four places directly under the colon, QR panel to the right (QR centered in its panel)."""
+    b = qmark(324, 14, 22, False)
+    b += lines(34, 54, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 18, DEEP, family="DM Serif Display")
+    for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
+        y = 118 + i * 24
+        b += f'<circle cx="40" cy="{y-5}" r="4" fill="{LIGHT}"/>' + lines(54, y, [nm], 17, 0, DEEP, family="DM Serif Display")
+    b += f'<rect x="212" y="40" width="134" height="142" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>\n'
+    b += lines(279, 62, ["Take the free", "Burnout Signal Check"], 7.6, 10.5, DEEP, weight="700", anchor="middle")
+    b += qr(237, 88, 84, "QUIZ")
+    b += lines(34, 210, ["Megan McDonald, Founder  \u00b7  Megan@Soma-Q.com  \u00b7  soma-q.com"], 6.8, 0, DEEP, weight="700")
+    return b
+
+
 def r14_back(name, title):
     p = head_(title, 3.75, 2.25, "Business card back (the R14 back in white): four places, one QR for the free Burnout Signal Check so every scan is a captured lead, Q mark, small contact line.")
     p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
-    p += qmark(318, 20, 24, False)
-    p += lines(34, 54, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 18, DEEP, family="DM Serif Display")
-    p += f'<rect x="34" y="108" width="150" height="86" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>\n'
-    p += qr(44, 116, 70, "QUIZ")
-    p += lines(124, 140, ["Take the free", "Burnout", "Signal Check"], 8.2, 11, DEEP, weight="700")
-    p += lines(124, 176, ["5 questions."], 6.6, 0, INK)
-    for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
-        y = 118 + i * 21
-        p += f'<circle cx="222" cy="{y-5}" r="4" fill="{LIGHT}"/>' + lines(236, y, [nm], 16, 0, DEEP, family="DM Serif Display")
-    p += lines(34, 210, ["Megan McDonald, Founder  ·  Megan@Soma-Q.com  ·  soma-q.com"], 6.8, 0, DEEP, weight="700")
+    p += back_body()
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
@@ -554,16 +559,7 @@ b += lines(34, 92, ["Pressure happens."], 21, 24, WHITE, family="DM Serif Displa
 b += lines(34, 116, ["Education and training to", "change your response to it."], 9.6, 13, PALE, weight="500")
 b += lines(34, 178, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 8.6, 17, LIGHT, weight="700", ls="1.3")
 cpage(DEEP, b)
-b = qmark(318, 20, 24, False)
-b += lines(34, 54, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 18, DEEP, family="DM Serif Display")
-b += f'<rect x="34" y="108" width="150" height="86" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>'
-b += qr(44, 116, 70, "QUIZ")
-b += lines(124, 140, ["Take the free", "Burnout", "Signal Check"], 8.2, 11, DEEP, weight="700")
-b += lines(124, 176, ["5 questions."], 6.6, 0, INK)
-for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
-    y = 118 + i * 21
-    b += f'<circle cx="222" cy="{y-5}" r="4" fill="{LIGHT}"/>' + lines(236, y, [nm], 16, 0, DEEP, family="DM Serif Display")
-b += lines(34, 210, ["Megan McDonald, Founder  \u00b7  Megan@Soma-Q.com  \u00b7  soma-q.com"], 6.8, 0, DEEP, weight="700")
+b = back_body()
 cpage("#FFFFFF", b)
 
 # cards 1 to 4: the four places
