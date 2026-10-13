@@ -383,7 +383,7 @@ def back_d(name, title):
     same two-tone serif as the front, and a Deep Teal strip along the bottom with 'Discover how to reclaim your energy, clarity, and joy:' and the four places,
     both centered on the card (widths measured in Chromium, not estimated)."""
     from measure import widths
-    p = head_(title, 3.75, 2.25, "Business card back: Linen field, large faint Q watermark, name and contact top left, Burnout ends here centered on the right, Deep Teal bottom strip with the outcomes line and the four places, centered. CONFIRM the phone number (website Terms page).")
+    p = head_(title, 3.75, 2.25, "Business card back: Linen field, large faint Q watermark, name and contact top left, Deep Teal bottom strip with the outcomes line and the four places, centered. CONFIRM the phone number (website Terms page).")
     p += f'<rect width="375" height="225" fill="{LINEN}"/>\n'
     p += f'<g opacity=".085">' + qmark(176, -4, 214, False) + '</g>\n'
     p += f'<rect y="166" width="375" height="59" fill="{DEEP}"/>\n'
@@ -393,11 +393,6 @@ def back_d(name, title):
     for i, txt in enumerate([C_PHONE, "Megan@Soma-Q.com", "soma-q.com"]):
         y = 102 + i * 17
         p += f'<polygon points="34,{y} 39.6,{y} 36.8,{y-4.9}" fill="{LIGHT}"/>' + lines(46, y, [txt], 10.5, 0, DEEP, weight="700")
-    # right: centered in the right half, vertically on the contact block
-    RC = 281.25
-    # vertical center = midway between the name's cap top (40) and the website line's baseline (136)
-    p += (f'<text x="{RC}" y="84.5" text-anchor="middle" font-family="DM Serif Display" font-size="17" fill="{DEEP}">Burnout</text>'
-          f'<text x="{RC}" y="103.5" text-anchor="middle" font-family="DM Serif Display" font-size="17" fill="#3E807A">ends here<tspan font-size="5.5" dy="-6.5">\u2122</tspan></text>\n')
     # bottom strip, centered on the card (center x = 187.5)
     C = 187.5
     p += lines(C, 184, ["Discover how to reclaim your energy, clarity, and joy:"], 11.5, 0, WHITE, family="DM Serif Display", anchor="middle")
