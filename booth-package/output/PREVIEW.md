@@ -332,6 +332,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## quiz_card-2
 ![quiz_card-2](preview/quiz_card-2.png)
 
+## raffle_slip-1
+![raffle_slip-1](preview/raffle_slip-1.png)
+
 ## stand_sign-1
 ![stand_sign-1](preview/stand_sign-1.png)
 
@@ -388,6 +391,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## table_sign_ebook-1
 ![table_sign_ebook-1](preview/table_sign_ebook-1.png)
+
+## table_sign_raffle-1
+![table_sign_raffle-1](preview/table_sign_raffle-1.png)
 
 ## table_sign_signs-1
 ![table_sign_signs-1](preview/table_sign_signs-1.png)
