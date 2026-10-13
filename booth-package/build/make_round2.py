@@ -395,13 +395,14 @@ def back_d(name, title):
         p += f'<polygon points="34,{y} 39.6,{y} 36.8,{y-4.9}" fill="{LIGHT}"/>' + lines(46, y, [txt], 10.5, 0, DEEP, weight="700")
     # right: centered in the right half, vertically on the contact block
     RC = 281.25
-    p += (f'<text x="{RC}" y="66" text-anchor="middle" font-family="DM Serif Display" font-size="23" fill="{DEEP}">Burnout</text>'
-          f'<text x="{RC}" y="90" text-anchor="middle" font-family="DM Serif Display" font-size="23" fill="#3E807A">ends here<tspan font-size="7" dy="-9">\u2122</tspan></text>\n')
+    # vertical center = midway between the name's cap top (40) and the website line's baseline (136)
+    p += (f'<text x="{RC}" y="84.5" text-anchor="middle" font-family="DM Serif Display" font-size="17" fill="{DEEP}">Burnout</text>'
+          f'<text x="{RC}" y="103.5" text-anchor="middle" font-family="DM Serif Display" font-size="17" fill="#3E807A">ends here<tspan font-size="5.5" dy="-6.5">\u2122</tspan></text>\n')
     # bottom strip, centered on the card (center x = 187.5)
     C = 187.5
-    p += lines(C, 184, ["Discover how to reclaim your energy, clarity, and joy:"], 11.5, 0, LIGHT, family="DM Serif Display", anchor="middle")
+    p += lines(C, 184, ["Discover how to reclaim your energy, clarity, and joy:"], 11.5, 0, WHITE, family="DM Serif Display", anchor="middle")
     names = ["Health", "Wealth", "Relationships", "Career"]
-    ws = widths([(n, "DM Serif Display", 12, "400") for n in names])
+    ws = widths([(n, "DM Serif Display", 11.5, "400") for n in names])
     TW, GAP = 5.6, 7
     total = sum(ws) + 3 * (TW + 2 * GAP)
     x = C - total / 2
@@ -410,7 +411,7 @@ def back_d(name, title):
             x += GAP
             p += f'<polygon points="{x:.2f},199 {x+TW:.2f},199 {x+TW/2:.2f},{199-4.9}" fill="{LIGHT}"/>'
             x += TW + GAP
-        p += lines(round(x, 2), 199, [nm], 12, 0, WHITE, family="DM Serif Display")
+        p += lines(round(x, 2), 199, [nm], 11.5, 0, WHITE, family="DM Serif Display")
         x += w
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
