@@ -835,10 +835,10 @@ def shift_front(name, fig, title, swap=False):
         p += (f'<text x="34" y="98" font-family="DM Serif Display" font-size="46"><tspan fill="{"#FFFFFF" if swap else LIGHT}">Shift </tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}">Happens</tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}" font-size="13" dy="-19">™</tspan></text>\n')
         p += lines(34, 120, SH_OFFER, 9.6, 13, "#FFFFFF", weight="500")
         p += f'<rect x="34" y="160" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-        p += lines(34, 178, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 8.4, 11.8, "#FFFFFF", weight="500")
+        p += lines(34, 178, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 8.4, 11.8, "#FFFFFF", weight="700")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
-shift_front("bizcard2_front_shift", False, "Business card front: Shift Happens, type only, 3.5 x 2 in")
+shift_front("bizcard2_front_shift", False, "Business card front: Shift Happens, type only, 3.5 x 2 in", swap=True)
 shift_front("bizcard2_front_shift_fig", True, "Business card front: Shift Happens, with figure, 3.5 x 2 in")
 shift_front("bizcard2_front_shift_swap", False, "Business card front: Shift white, Happens light teal, 3.5 x 2 in", swap=True)
