@@ -389,7 +389,7 @@ def back_d(name, title):
     p += f'<rect y="166" width="375" height="59" fill="{DEEP}"/>\n'
     # left: name and contact (phone, email and website all the same size)
     p += lines(34, 56, ["Megan McDonald"], 22, 0, DEEP, family="DM Serif Display")
-    p += lines(34, 69, ["FOUNDER, SOMA-Q"], 6.6, 0, "#3E807A", weight="700", ls="1.3")
+    p += lines(34, 69, ["FOUNDER, SOMA-Q"], 6.6, 0, DEEP, weight="700", ls="1.3")
     for i, txt in enumerate([C_PHONE, "Megan@Soma-Q.com", "soma-q.com"]):
         y = 102 + i * 17
         p += f'<polygon points="34,{y} 39.6,{y} 36.8,{y-4.9}" fill="{LIGHT}"/>' + lines(46, y, [txt], 10.5, 0, DEEP, weight="700")
@@ -899,4 +899,3 @@ def front_white(name, title, wm=False, hap=LIGHT):
     (SRC / f"{name}.html").write_text(p)
 
 front_white("bizcard2_front_white", "Business card front on white, 3.5 x 2 in")
-front_white("bizcard2_front_white_mid", "Business card front on white, mid teal test, 3.5 x 2 in", hap="#4E8781")
