@@ -8,7 +8,7 @@ p = head_("Display copy card, The Missing Intelligence, 4 x 2.5 in", 4.25, 2.75,
 p += f'<rect width="{W}" height="{H}" fill="#FFFFFF"/>\n'
 # faint teal Q watermark in the center of the card, behind everything
 qw = 250; qh = qw * 376 / 367
-p += f'<g opacity=".13">' + qmark(W / 2 - qw / 2, H / 2 - qh / 2, qw, False) + '</g>\n'
+p += f'<g opacity=".5">' + qmark(W / 2 - qw / 2, H / 2 - qh / 2, qw, True) + '</g>\n'
 p += lines(36, 66, ["SOMA-Q EBOOK  \u00b7  DISPLAY COPY"], 8.5, 0, "#3E807A", weight="700", ls="2.4")
 p += lines(36, 98, ["The Missing", "Intelligence."], 28, 31, DEEP, family="DM Serif Display")
 p += lines(36, 172, ["Please leave this copy here."], 11, 0, INK, weight="500")
