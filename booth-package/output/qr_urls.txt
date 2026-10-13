@@ -1,3 +1,5 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-banner_hard_things [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=banner-hard-things
+postcard_back [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=postcard-back
+postcard_back/photo [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=postcard-back
+postcard_back_w/photo [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=postcard-back-w
