@@ -12,7 +12,7 @@ ROWS = [("Health", ["Sleep that doesn’t restore you,", "and a body that has be
 
 ROWS_F = [("Health", ["Sleep that doesn’t", "restore you, and a body", "that has been running", "on alarm for too long."]),
           ("Wealth", ["Money and business", "decisions made from", "pressure instead", "of clarity."]),
-          ("Relationships", ["Less patience for", "the people you love", "than you give", "everyone else."]),
+          ("Relationships", ["Less patience for the", "people you love, and", "less of you left for", "the moments that matter."]),
           ("Career", ["Leading well on", "the outside while", "running on empty", "on the inside."])]
 
 def banner(name, band, cta_bg, tag, scheme, dark=False, flip=False, ds=108):
