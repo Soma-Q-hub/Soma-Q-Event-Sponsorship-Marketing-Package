@@ -146,7 +146,7 @@ def front_e(name, title, hl, sub, glow=False, up=0, down=0, core=False, sup=None
         p += lines(tx, b0 + 3 * 31 + 42 + down, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
     # white strip, centred
     p += logo(CXS - 63, 40, 126, False)
-    p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#3E807A", weight="700", anchor="middle").replace("<text ", '<text stroke="#3E807A" stroke-width="0.4" ')
+    p += lines(CXS, 108, ["Create the outcomes", "you want in the four", "places pressure", "shows up:"], 11.5, 15, "#3E807A", weight="700", anchor="middle").replace("<text ", '<text stroke="#3E807A" stroke-width="0.4" ')
     for k, word in enumerate(["Health", "Wealth", "Relationships", "Career"]):
         y = 188 + k * 42
         if k:
@@ -163,7 +163,7 @@ front_e("postcard_front_h", "Postcard front H (G with a soft white glow around t
 front_e("postcard_front_i", "Postcard front I (H with the headline up a touch and more space above Burnout doesn\u2019t have to), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True, up=8, down=4)
 front_e("postcard_front_j", "Postcard front J: Pressure happens. Burnout doesn\u2019t have to., 6 x 4 in", [], ["Education and training to", "change your response to stress."], glow=True, core=True)
 front_e("postcard_front_k", "Postcard front K: Noticing your nervous system\u2019s signals, then Pressure happens. Burnout doesn\u2019t have to., 6 x 4 in", ["Pressure happens.", "Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True, up=8, down=4)
-front_e("postcard_front_l", "Postcard front L: Pressure happens. Burnout doesn\u2019t have to. as the header, Noticing as the support, 6 x 4 in", [], ["Education and training to", "change your response to stress."], glow=True, core=True, sup=["Noticing your nervous", "system\u2019s signals is critical", "to your well-being."])
+front_e("postcard_front_l", "Postcard front L: Pressure happens. Burnout doesn\u2019t have to. as the header, Noticing as the support, 6 x 4 in", [], ["Education and training to", "change your response to stress."], glow=True, core=True, sup=["Understanding and", "shifting your nervous", "system\u2019s signals is critical", "to your well-being."])
 front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."])
 
 # ---------------- BACK ----------------
@@ -218,11 +218,11 @@ def front_noimg(name, title):
     p += f'<rect x="40" y="112" width="44" height="3" fill="{LINEN}"/>\n'
     p += lines(40, 166, ["Pressure happens."], 35, 0, WHITE, family="DM Serif Display")
     p += lines(40, 208, ["Burnout doesn\u2019t have to."], 35, 0, LIGHT, family="DM Serif Display")
-    p += f'<rect x="40" y="236" width="370" height="84" rx="14" fill="{LINEN}"/>\n'
-    p += lines(58, 272, ["Noticing your nervous system\u2019s signals", "is critical to your well-being."], 15.5, 23, DEEP, weight="500")
+    p += f'<rect x="40" y="232" width="370" height="106" rx="14" fill="{LINEN}"/>\n'
+    p += lines(58, 264, ["Understanding and shifting your", "nervous system\u2019s signals is critical", "to your well-being."], 15.5, 23, DEEP, weight="500")
     # white strip, centred
     p += logo(CXS - 63, 40, 126, False)
-    p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#3E807A", weight="700", anchor="middle").replace("<text ", '<text stroke="#3E807A" stroke-width="0.4" ')
+    p += lines(CXS, 108, ["Create the outcomes", "you want in the four", "places pressure", "shows up:"], 11.5, 15, "#3E807A", weight="700", anchor="middle").replace("<text ", '<text stroke="#3E807A" stroke-width="0.4" ')
     for k, word in enumerate(["Health", "Wealth", "Relationships", "Career"]):
         y = 188 + k * 42
         if k:
