@@ -875,7 +875,7 @@ def shift_front(name, fig, title, swap=False):
         p += (f'<text x="34" y="98" font-family="DM Serif Display" font-size="46"><tspan fill="{"#FFFFFF" if swap else LIGHT}">Shift </tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}">Happens</tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}" font-size="13" dy="-19">™</tspan></text>\n')
         p += lines(34, 120, SH_OFFER, 9.6, 13, "#FFFFFF", weight="500")
         p += f'<rect x="34" y="153" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-        p += lines(34, 169, ["Training high-performing leaders to notice", "stress sooner, shift in the moments of pressure,", "and lead with powerful presence."], 10.2, 14.3, "#FFFFFF", weight="700")
+        p += justified(34, 170, ["Training high-performing leaders to notice stress sooner, shift", "in the moments of pressure, and lead with powerful presence."], 10.2, 15.5, "#FFFFFF", 307, weight="700")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
@@ -909,11 +909,11 @@ def front_allwhite(name, title, serif=False):
     p += (f'<text x="34" y="95" font-family="DM Serif Display" font-size="43"><tspan fill="{DEEP}">Shift </tspan><tspan fill="{LIGHT}">Happens</tspan><tspan fill="{LIGHT}" font-size="12.5" dy="-18">\u2122</tspan></text>\n')
     p += lines(34, 116.5, SH_OFFER, 9.6, 13, DEEP, weight="500")
     p += f'<rect x="34" y="150" width="307" height="1.5" fill="{LIGHT}"/>\n'
-    rows = ["Training high-performing leaders to notice", "stress sooner, shift in the moments of pressure,", "and lead with powerful presence."]
+    rows = ["Training high-performing leaders to notice stress sooner, shift", "in the moments of pressure, and lead with powerful presence."]
     if serif:
-        p += lines(34, 168, rows, 11.2, 15.5, DEEP, family="DM Serif Display")
+        p += justified(34, 169, rows, 11.2, 16, DEEP, 307, family="DM Serif Display")
     else:
-        p += lines(34, 167, rows, 10.2, 14.3, DEEP, weight="700")
+        p += justified(34, 168, rows, 10.2, 15.5, DEEP, 307, weight="700")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 

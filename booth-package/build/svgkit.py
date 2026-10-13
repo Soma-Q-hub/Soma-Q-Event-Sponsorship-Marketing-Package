@@ -26,6 +26,14 @@ def lines(x, y, rows, size, lh, fill, family="DM Sans", weight="400", anchor="st
               f'fill="{fill}"{(" font-style=" + chr(34) + style + chr(34)) if style else ""}{(" letter-spacing=" + chr(34) + str(ls) + chr(34)) if ls else ""}>{t}</text>')
     return o + "\n"
 
+def justified(x, y, rows, size, lh, fill, width, family="DM Sans", weight="400"):
+    """Full-justified block: every row is stretched (word spacing) to exactly `width`, so both edges are even."""
+    o = ""
+    for i, t in enumerate(rows):
+        o += (f'<text x="{x}" y="{y+i*lh}" textLength="{width}" lengthAdjust="spacing" font-family="{family}" font-weight="{weight}" '
+              f'font-size="{size}" fill="{fill}">{t}</text>')
+    return o + "\n"
+
 def tri(x, y, w, color, op=1):
     return f'<polygon points="{x},{y+w*0.866:.0f} {x+w/2:.0f},{y} {x+w},{y+w*0.866:.0f}" fill="{color}" fill-opacity="{op}"/>\n'
 

@@ -22,3 +22,4 @@ R7d business card front retired from final (Oct 13); files kept in `business_car
 Banner D1 (hero banner, v15) was moved out of final on Oct 13 at Megan's request. It is kept, not deleted, in `../banners/banner_D1/` (older versions in its `Archive/`). Canvas: the board is on the "NEW All banners (A, B, C)" page.
 
 Oct 13: dark teal business card front R7h moved out of final to `../alternates/business_card_front_R7h_dark/` (kept). Practice paragraph reworded without "we" ("Training high-performing leaders to notice stress sooner, shift in the moments of pressure, and lead with powerful presence.") on the banner (v3), postcard back (v4), and the two all-white card fronts. Front choice (BoldText vs SerifText) still open.
+Oct 13: the practice paragraph on the business card fronts is full justified (two even lines, both edges flush).
