@@ -120,14 +120,16 @@ def front_e(name, title, hl, sub):
     p += f'<rect x="0" y="372" width="{SX}" height="{H-372}" fill="#16494F"/>\n'
     p += lines(SX / 2, 397, ["NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
     # teal side
-    p += lines(120, 69, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", anchor="middle", ls="2.2")
-    p += f'<rect x="40" y="80" width="160" height="272" rx="12" fill="#16494F"/>\n'
-    p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 90, 0.14)
-    # text column fitted to the image panel (y 80 to 352): headline cap-top on 80, last line on 352
-    hl_last = 352
-    hl_first = hl_last - 30 * (len(hl) - 1)
-    p += lines(222, 97.5, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 25, 40, WHITE, family="DM Serif Display")
-    p += lines(222, hl_first, hl, 22, 30, LIGHT, family="DM Serif Display")
+    p += lines(120, 360, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", anchor="middle", ls="2.2")
+    p += f'<rect x="40" y="66" width="160" height="272" rx="12" fill="#16494F"/>\n'
+    p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 76, 0.14)
+    # text column centred on the image panel (y 66 to 338), clear of its top and bottom edges
+    hl_lead = 27
+    block = 17.5 + 3 * 34 + 44 + hl_lead * (len(hl) - 1)       # cap-top of the headline to the last baseline
+    top = 202 - block / 2
+    b0 = top + 17.5
+    p += lines(222, b0, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 25, 34, WHITE, family="DM Serif Display")
+    p += lines(222, b0 + 3 * 34 + 44, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
     # white strip, centred
     p += logo(CXS - 63, 40, 126, False)
     p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#5F9F97", weight="700", anchor="middle")
