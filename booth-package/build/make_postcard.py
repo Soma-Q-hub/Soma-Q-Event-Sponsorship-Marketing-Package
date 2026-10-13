@@ -120,8 +120,8 @@ def front_e(name, title, hl, sub, glow=False):
     # teal side
     p += lines(120, 346, ["SHIFT HAPPENS<tspan font-size=\"4.2\" dy=\"-3.8\">™</tspan>"], 8.5, 0, LIGHT, weight="700", anchor="middle", ls="1.4")
     if glow:
-        p += '<defs><filter id="pglow" x="-30%" y="-20%" width="160%" height="140%"><feGaussianBlur stdDeviation="7"/></filter></defs>'
-        p += '<rect x="36" y="46" width="168" height="280" rx="16" fill="#FFFFFF" fill-opacity=".55" filter="url(#pglow)"/>\n'
+        p += '<defs><filter id="pglow" x="-30%" y="-20%" width="160%" height="140%"><feGaussianBlur stdDeviation="4.5"/></filter></defs>'
+        p += '<rect x="37.5" y="47.5" width="165" height="277" rx="14" fill="#FFFFFF" fill-opacity=".55" filter="url(#pglow)"/>\n'
     p += f'<rect x="40" y="50" width="160" height="272" rx="12" fill="#16494F"/>\n'
     p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 60, 0.14)
     # text column centred on the image panel (y 50 to 322), clear of its top and bottom edges
@@ -129,11 +129,12 @@ def front_e(name, title, hl, sub, glow=False):
     block = 15.4 + 3 * 31 + 42 + hl_lead * (len(hl) - 1)       # cap-top of the headline to the last baseline
     top = 186 - block / 2
     b0 = top + 15.4
-    p += lines(222, b0, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 22, 31, WHITE, family="DM Serif Display")
-    p += lines(222, b0 + 3 * 31 + 42, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
+    tx = 234 if glow else 222      # clear of the glow
+    p += lines(tx, b0, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 22, 31, WHITE, family="DM Serif Display")
+    p += lines(tx, b0 + 3 * 31 + 42, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
     # white strip, centred
     p += logo(CXS - 63, 40, 126, False)
-    p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#5F9F97", weight="700", anchor="middle")
+    p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#3E807A", weight="700", anchor="middle").replace("<text ", '<text stroke="#3E807A" stroke-width="0.4" ')
     for k, word in enumerate(["Health", "Wealth", "Relationships", "Career"]):
         y = 188 + k * 42
         if k:
