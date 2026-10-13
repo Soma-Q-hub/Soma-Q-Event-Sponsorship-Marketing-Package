@@ -114,21 +114,20 @@ def front_e(name, title, hl, sub):
     SX = 450
     CXS = (SX + 612.5) / 2          # centre of the visible white strip (trim edge at 612.5)
     p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n<rect x="{SX}" width="{W-SX}" height="{H}" fill="#FFFFFF"/>\n'
-    # bottom margin banner on the teal side
+    # top and bottom margin banners on the teal side: the offer first, what we are last
+    p += f'<rect x="0" y="0" width="{SX}" height="53" fill="#16494F"/>\n'
+    p += lines(SX / 2, 36, [" ".join(sub).upper()], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
     p += f'<rect x="0" y="372" width="{SX}" height="{H-372}" fill="#16494F"/>\n'
     p += lines(SX / 2, 397, ["NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS"], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
     # teal side
-    p += lines(40, 62, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", ls="2.2")
+    p += lines(120, 69, ["SHIFT HAPPENS™"], 11, 0, LIGHT, weight="700", anchor="middle", ls="2.2")
     p += f'<rect x="40" y="80" width="160" height="272" rx="12" fill="#16494F"/>\n'
     p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 90, 0.14)
-    # text column fitted to the image panel (y 80 to 352): headline cap-top on 80, last line of the offer on 352
-    sub_last = 349.3
-    sub_first = sub_last - 18 * (len(sub) - 1)
-    hl_last = sub_first - 48
-    hl_first = hl_last - 26 * (len(hl) - 1)
-    p += lines(222, 96.8, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 24, 36, WHITE, family="DM Serif Display")
-    p += lines(222, hl_first, hl, 18, 26, LIGHT, family="DM Serif Display")
-    p += lines(222, sub_first, sub, 13.5, 18, PALE, weight="500")
+    # text column fitted to the image panel (y 80 to 352): headline cap-top on 80, last line on 352
+    hl_last = 352
+    hl_first = hl_last - 30 * (len(hl) - 1)
+    p += lines(222, 97.5, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 25, 40, WHITE, family="DM Serif Display")
+    p += lines(222, hl_first, hl, 22, 30, LIGHT, family="DM Serif Display")
     # white strip, centred
     p += logo(CXS - 63, 40, 126, False)
     p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#5F9F97", weight="700", anchor="middle")
@@ -144,7 +143,7 @@ def front_e(name, title, hl, sub):
 
 
 front_e("postcard_front_f", "Postcard front F (core line A), 6 x 4 in", ["Pressure happens."], ["Education and training to", "change your response to it."])
-front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Pressure happens.", "Reacting doesn\u2019t have to."], ["Education and training to", "change your response."])
+front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Pressure happens.", "Reacting doesn\u2019t", "have to."], ["Education and training to", "change your response."])
 
 # ---------------- BACK ----------------
 p = head("Postcard back, 6 x 4 in", 6.25, 4.25, "Postcard back, 6 x 4 in trim, file 6.25 x 4.25 in. Address area intentionally not reserved (hand-out card, not mailed). If mailing is wanted, reserve the right half for postage and address.")
