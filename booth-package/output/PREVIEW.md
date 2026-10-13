@@ -158,6 +158,12 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## giveaway_tag_iqeqsq-1
 ![giveaway_tag_iqeqsq-1](preview/giveaway_tag_iqeqsq-1.png)
 
+## giveaway_tag_logo_black-1
+![giveaway_tag_logo_black-1](preview/giveaway_tag_logo_black-1.png)
+
+## giveaway_tag_logo_white-1
+![giveaway_tag_logo_white-1](preview/giveaway_tag_logo_white-1.png)
+
 ## giveaway_tag_neck-1
 ![giveaway_tag_neck-1](preview/giveaway_tag_neck-1.png)
 

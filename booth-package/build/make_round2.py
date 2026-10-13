@@ -728,3 +728,23 @@ p += lines(137.5, 292, ["TAKE THE QUIZ"], 15, 0, DEEP, weight="700", anchor="mid
 p += qr(91.5, 304, 92, "QUIZ")
 p += TAIL
 (SRC / "giveaway_tag_neck.html").write_text(p)
+
+
+# ========================================================= LUGGAGE TAG, front only, vertical logo (Oct 13) =========================================================
+def tag_logo(name, dark):
+    bg = "#111111" if dark else "#FFFFFF"
+    c1, c2, ink, accent, guide = (LIGHT, WHITE, WHITE, LIGHT, LIGHT) if dark else ("#3E807A", DEEP, DEEP, "#3E807A", "#9BC4BD")
+    title = "Luggage tag front, " + ("black tag" if dark else "white tag") + ", vertical logo, 2.5 x 3.75 in"
+    p = head_(title, 2.75, 4.0, "Luggage tag front only (the back is a mesh window for a paper insert). Trim 2.5 x 3.75 in, file 2.75 x 4.0 in (0.125 in bleed). PLACEHOLDER size: match the vendor's die line, corner radius and hole. " + ("Black tag: print white and Light Teal inks." if dark else "White tag."))
+    p += f'<rect width="275" height="400" fill="{bg}"/>\n'
+    p += f'<circle cx="137.5" cy="46" r="14" fill="none" stroke="{guide}" stroke-width="1.2" stroke-dasharray="3 3"/>'
+    p += qmark(137.5 - 66, 70, 132, dark)
+    p += f'<image href="{{{{WORDMARK_{"DARK" if dark else "LIGHT"}_URI}}}}" x="{137.5-86}" y="214" width="172" height="{172*167/905:.1f}" preserveAspectRatio="xMidYMid meet"/>\n'
+    p += (f'<text x="137.5" y="292" text-anchor="middle" font-family="DM Serif Display" font-size="28"><tspan fill="{c1}">Shift </tspan><tspan fill="{c2}">Happens</tspan>'
+          f'<tspan fill="{c2}" font-size="8" dy="-12">™</tspan></text>\n')
+    p += (f'<text x="137.5" y="344" text-anchor="middle" font-family="DM Serif Display" font-size="17" fill="{ink}">Soma-<tspan fill="{accent}">Q</tspan>.com</text>\n')
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
+
+tag_logo("giveaway_tag_logo_white", False)
+tag_logo("giveaway_tag_logo_black", True)
