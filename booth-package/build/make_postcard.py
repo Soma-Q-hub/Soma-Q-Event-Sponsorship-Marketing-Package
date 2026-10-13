@@ -108,7 +108,7 @@ p += TAIL
 
 
 # ---------------- FRONT E variants with the new core line (Oct 13) ----------------
-def front_e(name, title, hl, sub, glow=False, up=0, down=0):
+def front_e(name, title, hl, sub, glow=False, up=0, down=0, core=False):
     # ---------------- FRONT E: three-quarters dark teal, one-quarter white strip ----------------
     p = head(title, 6.25, 4.25, "Postcard front, option 1 redesign: 3/4 Deep Teal, 1/4 white strip. 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed).")
     SX = 450
@@ -124,14 +124,23 @@ def front_e(name, title, hl, sub, glow=False, up=0, down=0):
         p += '<rect x="37.5" y="47.5" width="165" height="277" rx="14" fill="#FFFFFF" fill-opacity=".55" filter="url(#pglow)"/>\n'
     p += f'<rect x="40" y="50" width="160" height="272" rx="12" fill="#16494F"/>\n'
     p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 60, 0.14)
-    # text column centred on the image panel (y 50 to 322), clear of its top and bottom edges
-    hl_lead = 27
-    block = 15.4 + 3 * 31 + 42 + hl_lead * (len(hl) - 1)       # cap-top of the headline to the last baseline
-    top = 186 - block / 2
-    b0 = top + 15.4
     tx = 234 if glow else 222      # clear of the glow
-    p += lines(tx, b0 - up, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 22, 31, WHITE, family="DM Serif Display")
-    p += lines(tx, b0 + 3 * 31 + 42 + down, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
+    if core:
+        # the core message: Pressure happens. Burnout doesn't have to. Then the website's three beats.
+        size, lead = 26, 34
+        block = 0.7 * size + 3 * lead + 30 + 2 * 16
+        b0 = 186 - block / 2 + 0.7 * size
+        p += lines(tx, b0, ["Pressure", "happens."], size, lead, WHITE, family="DM Serif Display")
+        p += lines(tx, b0 + 2 * lead, ["Burnout doesn\u2019t", "have to."], size, lead, LIGHT, family="DM Serif Display")
+        p += lines(tx, b0 + 3 * lead + 30, ["Notice the signal. Locate it.", "Choose your next response."], 11.5, 16, PALE, weight="500")
+    else:
+        # text column centred on the image panel (y 50 to 322), clear of its top and bottom edges
+        hl_lead = 27
+        block = 15.4 + 3 * 31 + 42 + hl_lead * (len(hl) - 1)       # cap-top of the headline to the last baseline
+        top = 186 - block / 2
+        b0 = top + 15.4
+        p += lines(tx, b0 - up, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 22, 31, WHITE, family="DM Serif Display")
+        p += lines(tx, b0 + 3 * 31 + 42 + down, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
     # white strip, centred
     p += logo(CXS - 63, 40, 126, False)
     p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#3E807A", weight="700", anchor="middle").replace("<text ", '<text stroke="#3E807A" stroke-width="0.4" ')
@@ -149,6 +158,7 @@ def front_e(name, title, hl, sub, glow=False, up=0, down=0):
 front_e("postcard_front_f", "Postcard front F (core line A), 6 x 4 in", ["Pressure happens."], ["Education and training to", "change your response to it."])
 front_e("postcard_front_h", "Postcard front H (G with a soft white glow around the image), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True)
 front_e("postcard_front_i", "Postcard front I (H with the headline up a touch and more space above Burnout doesn\u2019t have to), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True, up=8, down=4)
+front_e("postcard_front_j", "Postcard front J: Pressure happens. Burnout doesn\u2019t have to., 6 x 4 in", [], ["Education and training to", "change your response to stress."], glow=True, core=True)
 front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."])
 
 # ---------------- BACK ----------------
