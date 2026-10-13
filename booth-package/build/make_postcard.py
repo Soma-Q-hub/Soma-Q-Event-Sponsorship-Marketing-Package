@@ -108,7 +108,7 @@ p += TAIL
 
 
 # ---------------- FRONT E variants with the new core line (Oct 13) ----------------
-def front_e(name, title, hl, sub, glow=False):
+def front_e(name, title, hl, sub, glow=False, up=0, down=0):
     # ---------------- FRONT E: three-quarters dark teal, one-quarter white strip ----------------
     p = head(title, 6.25, 4.25, "Postcard front, option 1 redesign: 3/4 Deep Teal, 1/4 white strip. 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed).")
     SX = 450
@@ -130,8 +130,8 @@ def front_e(name, title, hl, sub, glow=False):
     top = 186 - block / 2
     b0 = top + 15.4
     tx = 234 if glow else 222      # clear of the glow
-    p += lines(tx, b0, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 22, 31, WHITE, family="DM Serif Display")
-    p += lines(tx, b0 + 3 * 31 + 42, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
+    p += lines(tx, b0 - up, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 22, 31, WHITE, family="DM Serif Display")
+    p += lines(tx, b0 + 3 * 31 + 42 + down, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
     # white strip, centred
     p += logo(CXS - 63, 40, 126, False)
     p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#3E807A", weight="700", anchor="middle").replace("<text ", '<text stroke="#3E807A" stroke-width="0.4" ')
@@ -148,6 +148,7 @@ def front_e(name, title, hl, sub, glow=False):
 
 front_e("postcard_front_f", "Postcard front F (core line A), 6 x 4 in", ["Pressure happens."], ["Education and training to", "change your response to it."])
 front_e("postcard_front_h", "Postcard front H (G with a soft white glow around the image), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True)
+front_e("postcard_front_i", "Postcard front I (H with the headline up a touch and more space above Burnout doesn\u2019t have to), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True, up=8, down=4)
 front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."])
 
 # ---------------- BACK ----------------
