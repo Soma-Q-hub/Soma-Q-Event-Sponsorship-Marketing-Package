@@ -118,16 +118,16 @@ def front_e(name, title, hl, sub):
     p += f'<rect x="0" y="372" width="{SX}" height="{H-372}" fill="#16494F"/>\n'
     p += lines(SX / 2, 397, [" ".join(sub).upper().rstrip(".")], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
     # teal side
-    p += lines(120, 346, ["SHIFT HAPPENS™"], 8.5, 0, LIGHT, weight="700", anchor="middle", ls="1.4")
+    p += lines(120, 346, ["BURNOUT ENDS HERE"], 8.5, 0, LIGHT, weight="700", anchor="middle", ls="1.4")
     p += f'<rect x="40" y="50" width="160" height="272" rx="12" fill="#16494F"/>\n'
     p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 60, 0.14)
     # text column centred on the image panel (y 50 to 322), clear of its top and bottom edges
     hl_lead = 27
-    block = 17.5 + 3 * 34 + 44 + hl_lead * (len(hl) - 1)       # cap-top of the headline to the last baseline
+    block = 15.4 + 3 * 31 + 42 + hl_lead * (len(hl) - 1)       # cap-top of the headline to the last baseline
     top = 186 - block / 2
-    b0 = top + 17.5
-    p += lines(222, b0, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 25, 34, WHITE, family="DM Serif Display")
-    p += lines(222, b0 + 3 * 34 + 44, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
+    b0 = top + 15.4
+    p += lines(222, b0, ["Noticing your", "nervous system’s", "signals is critical", "to your well-being."], 22, 31, WHITE, family="DM Serif Display")
+    p += lines(222, b0 + 3 * 31 + 42, hl, 20, hl_lead, LIGHT, family="DM Serif Display")
     # white strip, centred
     p += logo(CXS - 63, 40, 126, False)
     p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#5F9F97", weight="700", anchor="middle")
@@ -175,7 +175,8 @@ for i, (t, d) in enumerate(items):
     p += lines(x + 10, y + 15, rows, 10.5, 13.5, INK)
 p += f'<rect y="318" width="{W}" height="107" fill="{DEEP}"/>\n'
 p += label(40, 342, "", "WHAT WE DO", 10).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
-p += lines(40, 362, WHAT, 12, 16, WHITE)
+WHAT_E = WHAT[:-1] + [WHAT[-1] + f' <tspan font-weight="700" fill="{LIGHT}">Burnout ends here<tspan font-size="5" dy="-4.6">™</tspan></tspan>']
+p += lines(40, 362, WHAT_E, 12, 16, WHITE)
 p += '<rect x="505" y="328" width="82" height="82" rx="8" fill="#FFFFFF"/><svg x="511" y="334" width="70" height="70">{{QR_CALL}}</svg>'
 p += lines(490, 352, ["Scan to book a", "free discovery", "call"], 10.5, 13, PALE, weight="700", anchor="end")
 p += TAIL
