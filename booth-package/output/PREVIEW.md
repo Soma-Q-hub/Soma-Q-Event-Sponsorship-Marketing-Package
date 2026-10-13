@@ -335,6 +335,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## poster_shift-1
 ![poster_shift-1](preview/poster_shift-1.png)
 
+## poster_signal_map-1
+![poster_signal_map-1](preview/poster_signal_map-1.png)
+
 ## poster_where-1
 ![poster_where-1](preview/poster_where-1.png)
 
