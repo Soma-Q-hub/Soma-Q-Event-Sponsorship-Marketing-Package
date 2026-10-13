@@ -761,7 +761,7 @@ tag_logo("giveaway_tag_logo_black_qr", True, True)
 
 
 # ========================================================= BUSINESS CARD FRONT with Shift Happens as the headline (Oct 13) =========================================================
-SH_OFFER = ["Education and training to", "change your response to stress."]
+SH_OFFER = ["Nervous system alignment", "education and training to change", "your response to stress."]
 
 def shift_front(name, fig, title):
     p = head_(title, 3.75, 2.25, "Business card front option: Shift Happens as the headline, with the education and training line and the descriptor." + (" With the nervous system figure." if fig else " Type only."))
@@ -774,12 +774,12 @@ def shift_front(name, fig, title):
         p += f'<rect x="224" y="22" width="130" height="182" rx="12" fill="#16494F"/>\n'
         p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
     else:
-        p += logo(34, 20, 100, True)
-        p += (f'<text x="34" y="106" font-family="DM Serif Display" font-size="46"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="13" dy="-19">™</tspan></text>\n')
-        p += lines(34, 130, SH_OFFER, 9.6, 13, PALE, weight="500")
-        p += lines(34, 160, ["Burnout doesn’t have to."], 9.6, 13, LIGHT, weight="700")
-        p += f'<rect x="34" y="169" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-        p += lines(34, 184, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment, and recover faster."], 7.4, 10.5, LIGHT, weight="500")
+        p += logo(34, 14, 100, True)
+        p += (f'<text x="34" y="98" font-family="DM Serif Display" font-size="46"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="13" dy="-19">™</tspan></text>\n')
+        p += lines(34, 120, SH_OFFER, 9.6, 13, PALE, weight="500")
+        p += lines(34, 164, ["Burnout doesn’t have to."], 9.6, 13, LIGHT, weight="700")
+        p += f'<rect x="34" y="173" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
+        p += lines(34, 187, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment, and recover faster."], 7.2, 9.8, LIGHT, weight="500")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 

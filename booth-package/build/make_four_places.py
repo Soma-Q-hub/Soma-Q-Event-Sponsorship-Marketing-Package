@@ -36,7 +36,7 @@ def banner(name, band, cta_bg, tag, scheme, dark=False):
     # base: what this is
     p += f'<rect y="7120" width="{W}" height="{H-7120}" fill="{DEEP}"/>\n'
     p += (f'<text x="{W/2}" y="7550" text-anchor="middle" font-family="DM Serif Display" font-size="130"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="36" dy="-54">™</tspan></text>\n')
-    p += lines(W / 2, 7770, ["EDUCATION AND TRAINING TO CHANGE YOUR RESPONSE TO STRESS"], 56, 0, LIGHT, weight="700", anchor="middle", ls="6")
+    p += lines(W / 2, 7770, ["NERVOUS SYSTEM ALIGNMENT EDUCATION AND TRAINING", "TO CHANGE YOUR RESPONSE TO STRESS"], 54, 78, LIGHT, weight="700", anchor="middle", ls="5")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
@@ -48,9 +48,9 @@ def cta(pl, cta_bg):
     p += lines(W / 2, 6665, ["Take the free Burnout Signal Check."], 100, 0, "#3E807A", family="DM Serif Display", anchor="middle")
     p += f'<rect y="6740" width="{W}" height="{H-6740}" fill="{DEEP}"/>\n'
     p += (f'<text x="{W/2}" y="7090" text-anchor="middle" font-family="DM Serif Display" font-size="130"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="36" dy="-54">™</tspan></text>\n')
-    p += lines(W / 2, 7255, ["EDUCATION AND TRAINING TO CHANGE YOUR RESPONSE TO STRESS"], 56, 0, LIGHT, weight="700", anchor="middle", ls="6")
-    p += lines(W / 2, 7430, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment, and recover faster."], 72, 104, PALE, weight="500", anchor="middle")
-    p += lines(W / 2, 7850, ["SOMA-Q.COM"], 84, 0, WHITE, weight="700", anchor="middle", ls="12")
+    p += lines(W / 2, 7255, ["NERVOUS SYSTEM ALIGNMENT EDUCATION AND TRAINING", "TO CHANGE YOUR RESPONSE TO STRESS"], 54, 78, LIGHT, weight="700", anchor="middle", ls="5")
+    p += lines(W / 2, 7480, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment, and recover faster."], 72, 104, PALE, weight="500", anchor="middle")
+    p += lines(W / 2, 7880, ["SOMA-Q.COM"], 84, 0, WHITE, weight="700", anchor="middle", ls="12")
     p += TAIL
     (SRC / "banner_four_places_dark.html").write_text(p)
 
