@@ -589,23 +589,26 @@ print("ok cards+quiz")
 # For the 12 in wide x 6 in tall slanted acrylic holder (3.2 in deep base). Three free ways to start, one QR each.
 # Keep everything 0.5 in from the corners: the holder has hole/hardware points near the four corners.
 p = head_("Tabletop stand sign, 12 x 6 in", 12, 6, "Insert for the 12 x 6 in slanted acrylic holder. No bleed. Keep type 0.5 in from every corner (hardware holes). CONFIRM the holder's actual insert size and whether it takes a thin sheet or card stock.")
-p += f'<rect width="1200" height="600" fill="#FFFFFF"/><rect width="1200" height="168" fill="{DEEP}"/>\n'
-p += logo(60, 30, 270, True)
-p += lines(1140, 92, ["Three free ways to start."], 44, 0, WHITE, family="DM Serif Display", anchor="end")
-p += lines(1140, 128, ["Scan one with your phone camera."], 17, 0, LIGHT, weight="700", anchor="end")
+p += f'<rect width="1200" height="600" fill="#FFFFFF"/><rect width="1200" height="140" fill="{DEEP}"/>\n'
+p += logo(60, 24, 250, True)
+p += lines(1140, 78, ["Three free ways to start."], 42, 0, WHITE, family="DM Serif Display", anchor="end")
+p += lines(1140, 110, ["Scan one with your phone camera."], 17, 0, LIGHT, weight="700", anchor="end")
 CARDS = [("1", "Check your signals", "QUIZ", ["Take the free", "Burnout Signal Check"], "Five questions. Two minutes.", LINEN),
          ("2", "Talk it through", "CALL", ["Book a free", "discovery call"], "An honest conversation. No obligation.", WHITE),
          ("3", "Practice with us", "RESET", ["Join the free", "Shift Happens™ reset"], "Wednesdays, 12:00 PM Mountain. 30 minutes.", LINEN)]
 for i, (n, tag, kind, title, sub, fill) in enumerate(CARDS):
     x = 60 + i * 388
     stroke = f' stroke="{DEEP}" stroke-width="2"' if fill == WHITE else ""
-    p += f'<rect x="{x}" y="190" width="352" height="330" rx="20" fill="{fill}"{stroke}/>\n'
-    p += f'<circle cx="{x+36}" cy="228" r="18" fill="{DEEP}"/><text x="{x+36}" y="235" text-anchor="middle" font-family="DM Serif Display" font-size="20" fill="{WHITE}">{n}</text>'
-    p += lines(x + 64, 234, [tag.upper()], 13, 0, DEEP, weight="700", ls="2.4")
-    p += lines(x + 176, 275, title, 24, 27, DEEP, family="DM Serif Display", anchor="middle")
-    p += qr(x + 91, 316, 170, kind)
-    p += lines(x + 176, 508, [sub], 14.5, 0, INK, weight="500", anchor="middle")
-p += lines(600, 560, ["NERVOUS SYSTEM ALIGNMENT FOR HIGH-PERFORMING LEADERS   ·   SOMA-Q.COM"], 12, 0, DEEP, weight="700", anchor="middle", ls="2")
+    p += f'<rect x="{x}" y="158" width="352" height="330" rx="20" fill="{fill}"{stroke}/>\n'
+    p += f'<circle cx="{x+36}" cy="196" r="18" fill="{DEEP}"/><text x="{x+36}" y="203" text-anchor="middle" font-family="DM Serif Display" font-size="20" fill="{WHITE}">{n}</text>'
+    p += lines(x + 64, 202, [tag.upper()], 13, 0, DEEP, weight="700", ls="2.4")
+    p += lines(x + 176, 243, title, 24, 27, DEEP, family="DM Serif Display", anchor="middle")
+    p += qr(x + 91, 284, 170, kind)
+    p += lines(x + 176, 476, [sub], 14.5, 0, INK, weight="500", anchor="middle")
+# bottom banner: what Soma-Q is, large enough to read from across the table
+p += f'<rect y="508" width="1200" height="92" fill="{DEEP}"/>\n'
+p += lines(600, 548, ["NERVOUS SYSTEM ALIGNMENT"], 25, 0, WHITE, weight="700", anchor="middle", ls="4")
+p += lines(600, 578, ["FOR HIGH-PERFORMING LEADERS   ·   SOMA-Q.COM"], 17, 0, LIGHT, weight="700", anchor="middle", ls="3")
 p += TAIL
 (SRC / "stand_sign.html").write_text(p)
 print("ok stand sign")
