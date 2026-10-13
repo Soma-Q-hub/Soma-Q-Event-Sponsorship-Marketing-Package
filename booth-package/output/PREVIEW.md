@@ -119,6 +119,12 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## bizcard2_front-1
 ![bizcard2_front-1](preview/bizcard2_front-1.png)
 
+## bizcard2_front_allwhite-1
+![bizcard2_front_allwhite-1](preview/bizcard2_front_allwhite-1.png)
+
+## bizcard2_front_allwhite_serif-1
+![bizcard2_front_allwhite_serif-1](preview/bizcard2_front_allwhite_serif-1.png)
+
 ## bizcard2_front_b-1
 ![bizcard2_front_b-1](preview/bizcard2_front_b-1.png)
 

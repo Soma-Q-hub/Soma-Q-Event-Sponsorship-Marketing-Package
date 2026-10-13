@@ -900,3 +900,22 @@ def front_white(name, title, wm=False, hap=LIGHT, center=False):
 
 front_white("bizcard2_front_white", "Business card front on white, 3.5 x 2 in")
 front_white("bizcard2_front_white_center", "Business card front on white, centered paragraph, 3.5 x 2 in", center=True)
+
+def front_allwhite(name, title, serif=False):
+    """Business card front, all white: logo, Shift (Deep Teal) Happens (Light Teal), the offer line and the practice paragraph in Deep Teal, a Light Teal hairline between them."""
+    p = head_(title, 3.75, 2.25, "Business card front, all white: Deep Teal type, Light Teal Happens and hairline. Brand palette only.")
+    p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
+    p += logo(34, 25, 88, False)
+    p += (f'<text x="34" y="95" font-family="DM Serif Display" font-size="43"><tspan fill="{DEEP}">Shift </tspan><tspan fill="{LIGHT}">Happens</tspan><tspan fill="{LIGHT}" font-size="12.5" dy="-18">\u2122</tspan></text>\n')
+    p += lines(34, 116.5, SH_OFFER, 9.6, 13, DEEP, weight="500")
+    p += f'<rect x="34" y="154" width="307" height="1.5" fill="{LIGHT}"/>\n'
+    rows = ["We train high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."]
+    if serif:
+        p += lines(34, 176, rows, 11.5, 16, DEEP, family="DM Serif Display")
+    else:
+        p += lines(34, 175, rows, 10.2, 14.5, DEEP, weight="700")
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
+
+front_allwhite("bizcard2_front_allwhite", "Business card front, all white, bold paragraph, 3.5 x 2 in")
+front_allwhite("bizcard2_front_allwhite_serif", "Business card front, all white, serif paragraph, 3.5 x 2 in", serif=True)
