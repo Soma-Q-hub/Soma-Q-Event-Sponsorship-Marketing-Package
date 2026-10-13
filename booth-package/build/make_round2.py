@@ -379,12 +379,12 @@ back_c("bizcard2_back_c", "Business card back C, 3.5 x 2 in")
 
 
 def back_d(name, title):
-    """Business card back (final): Linen field, large faint Q watermark, name and contact top left, 'Burnout ends here' centered in the right half in the
+    """Business card back (final): White field, large faint Q watermark, name and contact top left, 'Burnout ends here' centered in the right half in the
     same two-tone serif as the front, and a Deep Teal strip along the bottom with 'Discover how to reclaim your energy, clarity, and joy:' and the four places,
     both centered on the card (widths measured in Chromium, not estimated)."""
     from measure import widths
-    p = head_(title, 3.75, 2.25, "Business card back: Linen field, large faint Q watermark, name and contact top left, Deep Teal bottom strip with the outcomes line and the four places, centered. CONFIRM the phone number (website Terms page).")
-    p += f'<rect width="375" height="225" fill="{LINEN}"/>\n'
+    p = head_(title, 3.75, 2.25, "Business card back: White field, large faint Q watermark, name and contact top left, Deep Teal bottom strip with the outcomes line and the four places, centered. CONFIRM the phone number (website Terms page).")
+    p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
     p += f'<g opacity=".085">' + qmark(176, -4, 214, False) + '</g>\n'
     p += f'<rect y="166" width="375" height="59" fill="{DEEP}"/>\n'
     # left: name and contact (phone, email and website all the same size)
