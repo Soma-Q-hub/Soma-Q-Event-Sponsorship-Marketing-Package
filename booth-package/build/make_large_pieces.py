@@ -12,7 +12,7 @@ p += lines(3050, 530, ["Nervous system alignment", "for high-performing leaders"
 p += lines(250, 1290, ["What if you", "could train", "your response", "to stress?"], 350, 332, DEEP, family="DM Serif Display")
 p += f'<rect x="250" y="2480" width="2800" height="720" rx="50" fill="{WHITE}" stroke="{DEEP}" stroke-width="10"/>\n'
 p += lines(340, 2640, ["WHAT WE DO"], 60, 0, DEEP, weight="700", ls="8")
-p += lines(340, 2790, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders and their teams to restore energy,", "focused clarity, and joy under pressure."], 98, 124, INK)
+p += lines(340, 2790, ["Soma-Q is a nervous system alignment practice.", "Training high-performing leaders and their teams to restore energy,", "focused clarity, and joy under pressure."], 98, 124, INK)
 p += label(250, 3470, "1", "PRESSURE RUNS IN A LOOP", 66)
 p += hair(250, 3050, 3540)
 p += placed("{{LOOP:light:nogloss}}", 280, 3700, 1.32)
@@ -57,7 +57,7 @@ p += lines(11500, 340, ["Nervous system alignment for high-performing leaders"],
 p += lines(600, 1660, ["What if you", "could train", "your response", "to stress?"], 640, 600, DEEP, family="DM Serif Display")
 p += hair(600, 4700, 4000)
 p += lines(600, 4260, ["WHAT WE DO"], 90, 0, DEEP, weight="700", ls="10")
-p += lines(600, 4520, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders and their teams to restore", "energy, focused clarity, and joy under pressure."], 150, 200, INK)
+p += lines(600, 4520, ["Soma-Q is a nervous system alignment practice.", "Training high-performing leaders and their teams to restore", "energy, focused clarity, and joy under pressure."], 150, 200, INK)
 p += "<!--PHOTO-->" + photo_circle(1080, 5640, 440, cid="phb") + lines(1800, 5560, ["Megan McDonald, Founder"], 200, 0, DEEP, family="DM Serif Display") + lines(1800, 5760, ["13 years as a healthcare technology", "executive. RYT-500."], 120, 160, INK) + "<!--/PHOTO-->"
 p += "<!--NOPHOTO-->" + lines(600, 5560, ["Megan McDonald, Founder"], 200, 0, DEEP, family="DM Serif Display") + lines(600, 5760, ["13 years as a healthcare technology executive. RYT-500."], 120, 0, INK) + "<!--/NOPHOTO-->"
 # right: the loop, large, with the outcomes beneath it

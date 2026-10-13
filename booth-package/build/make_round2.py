@@ -535,7 +535,7 @@ page(LINEN, b)
 b = lines(46, 92, ["WHEN PRESSURE HITS"], 8.8, 0, DEEP, weight="700", ls="2.4")
 b += lines(46, 150, ["Pressure happens.", "Then what?"], 38, 44, DEEP, family="DM Serif Display")
 b += f'<g transform="translate(46,230) scale(0.172)">{decision_flow()}</g>\n'
-b += lines(46, 640, ["The moment you notice the signal is the moment you can choose.", "That is what we train."], 14, 21, INK, weight="500")
+b += lines(46, 640, ["The moment you notice the signal is the moment you can choose.", "That is what Soma-Q trains."], 14, 21, INK, weight="500")
 b += lines(46, 720, ["Left alone, running depleted starts to feel normal.", "It draws down your energy, narrows your thinking, and", "wears on your judgment."], 11.5, 17.5, "#5C5A53")
 b += pnum(3)
 page("#FFFFFF", b)
@@ -874,8 +874,8 @@ def shift_front(name, fig, title, swap=False):
         p += logo(34, 14, 100, True)
         p += (f'<text x="34" y="98" font-family="DM Serif Display" font-size="46"><tspan fill="{"#FFFFFF" if swap else LIGHT}">Shift </tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}">Happens</tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}" font-size="13" dy="-19">™</tspan></text>\n')
         p += lines(34, 120, SH_OFFER, 9.6, 13, "#FFFFFF", weight="500")
-        p += f'<rect x="34" y="160" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-        p += lines(34, 182, ["We train high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 10.2, 14.5, "#FFFFFF", weight="700")
+        p += f'<rect x="34" y="153" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
+        p += lines(34, 169, ["Training high-performing leaders to notice", "stress sooner, shift in the moments of pressure,", "and lead with powerful presence."], 10.2, 14.3, "#FFFFFF", weight="700")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
@@ -894,7 +894,7 @@ def front_white(name, title, wm=False, hap=LIGHT, center=False):
     p += logo(34, 25, 88, False)
     p += (f'<text x="34" y="95" font-family="DM Serif Display" font-size="43"><tspan fill="{DEEP}">Shift </tspan><tspan fill="{hap}">Happens</tspan><tspan fill="{hap}" font-size="12.5" dy="-18">\u2122</tspan></text>\n')
     p += lines(34, 116.5, SH_OFFER, 9.6, 13, DEEP, weight="500")
-    p += lines(187.5 if center else 34, 178.6, ["We train high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 10.2, 14.2, "#FFFFFF", weight="700", anchor="middle" if center else "start")
+    p += lines(187.5 if center else 34, 178.6, ["Training high-performing leaders to notice stress sooner,", "shift in the moments of pressure, and lead with powerful presence."], 10.2, 14.2, "#FFFFFF", weight="700", anchor="middle" if center else "start")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
@@ -908,12 +908,12 @@ def front_allwhite(name, title, serif=False):
     p += logo(34, 25, 88, False)
     p += (f'<text x="34" y="95" font-family="DM Serif Display" font-size="43"><tspan fill="{DEEP}">Shift </tspan><tspan fill="{LIGHT}">Happens</tspan><tspan fill="{LIGHT}" font-size="12.5" dy="-18">\u2122</tspan></text>\n')
     p += lines(34, 116.5, SH_OFFER, 9.6, 13, DEEP, weight="500")
-    p += f'<rect x="34" y="154" width="307" height="1.5" fill="{LIGHT}"/>\n'
-    rows = ["We train high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."]
+    p += f'<rect x="34" y="150" width="307" height="1.5" fill="{LIGHT}"/>\n'
+    rows = ["Training high-performing leaders to notice", "stress sooner, shift in the moments of pressure,", "and lead with powerful presence."]
     if serif:
-        p += lines(34, 176, rows, 11.5, 16, DEEP, family="DM Serif Display")
+        p += lines(34, 168, rows, 11.2, 15.5, DEEP, family="DM Serif Display")
     else:
-        p += lines(34, 175, rows, 10.2, 14.5, DEEP, weight="700")
+        p += lines(34, 167, rows, 10.2, 14.3, DEEP, weight="700")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 

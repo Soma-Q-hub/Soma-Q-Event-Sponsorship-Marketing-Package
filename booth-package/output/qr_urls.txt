@@ -1,11 +1,4 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-stand_sign [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=stand-sign
-stand_sign [reset]: https://www.soma-q.com/go/reset?c=oct24&p=stand-sign
-stand_sign [call]: https://www.soma-q.com/go/call?c=oct24&p=stand-sign
-bizcard2_back_d [site]: https://www.soma-q.com/go/site?c=oct24&p=bizcard2-back-d
-table_sign_signs [overview]: https://www.soma-q.com/go/overview?c=oct24&p=table-sign-signs
-table_sign_signs_linen [overview]: https://www.soma-q.com/go/overview?c=oct24&p=table-sign-signs-linen
-table_sign_ebook [ebook]: https://www.soma-q.com/go/ebook?c=oct24&p=table-sign-ebook
-ebook_display_card [ebook]: https://www.soma-q.com/go/ebook?c=oct24&p=ebook-display-card
-postcard_back_w/photo [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=postcard-back-w
+postcard_back [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=postcard-back
+postcard_back/photo [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=postcard-back

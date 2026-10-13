@@ -7,7 +7,7 @@ from svgkit import head as head_
 
 W, H = 3300, 8100
 SUB = ["Stay steady under pressure, think clearly when it counts,", "and be fully present with the people who matter."]
-CARD = ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to stay steady, think clearly,", "and be fully present at work and at home."]
+CARD = ["Soma-Q is a nervous system alignment practice.", "Training high-performing leaders to stay steady, think clearly,", "and be fully present at work and at home."]
 LOOP_LABEL = "THE LOOP PROBLEM-SOLVERS GET CAUGHT IN"
 FIX = "You still solve the problem. You solve it from steady, not from alarm."
 

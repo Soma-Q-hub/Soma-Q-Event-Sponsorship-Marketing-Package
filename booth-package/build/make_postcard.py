@@ -3,7 +3,7 @@
 Units 0.01 in. Run: python3 build/make_postcard.py"""
 from svgkit import *
 W, H = 625, 425
-WHAT = ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."]
+WHAT = ["Soma-Q is a nervous system alignment practice.", "Training high-performing leaders to notice stress sooner,", "shift in the moments of pressure, and lead with powerful presence."]
 
 # ---------------- FRONT ----------------
 p = head("Postcard front, 6 x 4 in", 6.25, 4.25, "Postcard 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed). Keep type 0.25 in inside trim. CONFIRM printer template and stock.")

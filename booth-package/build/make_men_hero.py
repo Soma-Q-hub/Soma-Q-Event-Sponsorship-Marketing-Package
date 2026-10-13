@@ -10,7 +10,7 @@ HEADLINE = ["Who feels it", "when you’re", "stressed?"]
 TURN = ["A workout. A meditation.", "A one-time workshop.", "Each may help temporarily."]
 SHIFTING = ["Shifting your automatic", "response to stress", "requires new tools."]
 DISCOVER = "Discover how to reclaim your energy, clarity, and joy."   # draft Oct 13, replaces "It isn’t a character flaw..."
-WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-performing", "leaders to notice stress sooner, shift", "in the moment, and lead with powerful presence."]
+WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. Training high-performing", "leaders to notice stress sooner, shift", "in the moments of pressure, and lead with powerful presence."]
 
 def hero(name, title, scheme, tag="burnout", mode=None):
     dark = scheme == "dark"
