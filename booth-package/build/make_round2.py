@@ -319,15 +319,14 @@ p += lines(137.5, 396, ["Five questions. Two minutes."], 8.8, 0, DEEP, weight="7
 p += TAIL
 (SRC / "giveaway_tag_front.html").write_text(p)
 
-p = head_("Bag tag back, 2.5 x 4.25 in", 2.75, 4.5, "Bag tag back: owner details lines (so it works as a real bag tag), then the call to action.")
-p += f'<rect width="275" height="450" fill="{LINEN}"/>\n'
-p += lines(137.5, 92, ["THIS BAG BELONGS TO"], 9.5, 0, DEEP, weight="700", anchor="middle", ls="2.5")
-for y, t in ((136, "Name"), (178, "Phone")):
-    p += hair(40, 235, y, op=.5, w=1) + lines(40, y + 13, [t], 8.5, 0, "#5C5A53")
-p += lines(137.5, 236, ["Pressure happens.", "What do you do next?"], 19, 23, DEEP, family="DM Serif Display", anchor="middle")
-p += qr(86, 278, 100)
-p += lines(137.5, 396, ["Scan to book a free discovery call"], 9.5, 0, DEEP, weight="700", anchor="middle")
-p += lines(137.5, 412, ["SOMA-Q.COM"], 9.5, 0, DEEP, weight="700", anchor="middle", ls="2.5")
+p = head_("Bag tag back, 2.5 x 4.25 in", 2.75, 4.5, "Bag tag back: owner details panel (so it works as a real bag tag) and the lit nervous system figure. No QR code on the back. Keep art 0.2 in inside trim.")
+p += f'<rect width="275" height="450" fill="{DEEP}"/>\n'
+p += f'<rect x="34" y="82" width="207" height="124" rx="16" fill="{LINEN}"/>\n'
+p += lines(137.5, 106, ["THIS BAG BELONGS TO"], 9, 0, DEEP, weight="700", anchor="middle", ls="2.4")
+for y, t in ((146, "Name"), (186, "Phone")):
+    p += hair(52, 223, y, op=.5, w=1) + lines(52, y + 13, [t], 8.5, 0, "#5C5A53")
+p += placed("{{FIGURE:dark}}", 137.5 - 880 * 0.1 / 2, 222, 0.1)
+p += lines(137.5, 414, ["WHERE DO YOU FEEL IT FIRST?"], 8, 0, LIGHT, weight="700", anchor="middle", ls="1.8")
 p += TAIL
 (SRC / "giveaway_tag_back.html").write_text(p)
 
