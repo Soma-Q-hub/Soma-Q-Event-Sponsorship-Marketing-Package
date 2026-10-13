@@ -293,14 +293,15 @@ p += TAIL
 
 
 # ========================================================= BAG TAG (giveaway), 2.5 x 4.25 =========================================================
-p = head_("Bag tag front, 2.5 x 4.25 in", 2.75, 4.5, "Bag tag 2.5 x 4.25 in trim, file 2.75 x 4.5 in (0.125 in bleed). PLACEHOLDER: match the vendor's die line, hole position and strap slot. Keep art 0.2 in inside trim.")
+p = head_("Bag tag front, 2.5 x 4.25 in", 2.75, 4.5, "Bag tag 2.5 x 4.25 in trim, file 2.75 x 4.5 in (0.125 in bleed). PLACEHOLDER: match the vendor's die line, hole position and strap slot. Keep art 0.2 in inside trim. Front: Shift Happens, take the quiz.")
 p += f'<rect width="275" height="450" fill="{DEEP}"/>\n'
-p += f'<circle cx="137.5" cy="58" r="15" fill="none" stroke="{LIGHT}" stroke-width="1.2" stroke-dasharray="3 3"/>'
-p += f'<rect x="34" y="112" width="207" height="150" rx="20" fill="{LIGHT}"/>\n'
-p += lines(137.5, 168, ["INTERRUPT"], 29, 0, DEEP, weight="700", anchor="middle", ls="3")
-p += lines(137.5, 218, ["HERE."], 48, 0, DEEP, family="DM Serif Display", anchor="middle")
-p += lines(137.5, 298, ["Notice the signal.", "Locate it.", "Choose your next response."], 13, 20, WHITE, weight="700", anchor="middle")
-p += logo(56, 360, 163, True)
+p += f'<circle cx="137.5" cy="52" r="15" fill="none" stroke="{LIGHT}" stroke-width="1.2" stroke-dasharray="3 3"/>'
+p += logo(78, 84, 119, True)
+p += lines(137.5, 176, ["Shift", "Happens™"], 36, 38, WHITE, family="DM Serif Display", anchor="middle")
+p += f'<rect x="34" y="236" width="207" height="168" rx="18" fill="{LIGHT}"/>\n'
+p += lines(137.5, 262, ["TAKE THE QUIZ"], 17, 0, DEEP, weight="700", anchor="middle", ls="2.4")
+p += qr(88, 272, 100, "QUIZ")
+p += lines(137.5, 396, ["Five questions. Two minutes."], 8.8, 0, DEEP, weight="700", anchor="middle")
 p += TAIL
 (SRC / "giveaway_tag_front.html").write_text(p)
 
