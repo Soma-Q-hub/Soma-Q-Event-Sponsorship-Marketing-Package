@@ -774,12 +774,12 @@ def shift_front(name, fig, title):
         p += f'<rect x="224" y="22" width="130" height="182" rx="12" fill="#16494F"/>\n'
         p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
     else:
-        p += logo(34, 22, 100, True)
-        p += (f'<text x="34" y="104" font-family="DM Serif Display" font-size="40"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="10" dy="-16">™</tspan></text>\n')
-        p += lines(34, 130, SH_OFFER, 10.2, 14, PALE, weight="500")
-        p += lines(34, 162, ["Burnout doesn’t have to."], 10.2, 14, LIGHT, weight="700")
-        p += f'<rect x="34" y="171" width="300" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-        p += lines(34, 188, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 8.2, 13, LIGHT, weight="700", ls="1.3")
+        p += logo(34, 20, 100, True)
+        p += (f'<text x="34" y="106" font-family="DM Serif Display" font-size="46"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="13" dy="-19">™</tspan></text>\n')
+        p += lines(34, 130, SH_OFFER, 9.6, 13, PALE, weight="500")
+        p += lines(34, 160, ["Burnout doesn’t have to."], 9.6, 13, LIGHT, weight="700")
+        p += f'<rect x="34" y="169" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
+        p += lines(34, 184, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner, shift", "in the moment, and recover faster."], 7.4, 10.5, LIGHT, weight="500")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
