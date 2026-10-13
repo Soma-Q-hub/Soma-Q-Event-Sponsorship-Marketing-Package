@@ -102,7 +102,7 @@ def render(name, variant=None):
         "{{CARD_NAME}}": C.CARD_NAME, "{{CARD_TITLE}}": C.CARD_TITLE, "{{CARD_EMAIL}}": C.CARD_EMAIL,
         "{{CARD_WEB}}": C.CARD_WEB, "{{CARD_PHONE}}": C.CARD_PHONE,
     }
-    for kind in ("quiz", "ebook", "reset", "call", "org", "overview"):
+    for kind in ("quiz", "ebook", "reset", "call", "org", "overview", "site"):
         key = "{{QR_%s}}" % kind.upper()
         if key in src:
             u = target(kind, tag)

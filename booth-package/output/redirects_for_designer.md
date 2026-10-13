@@ -11,6 +11,7 @@ Each request arrives as /go/<name>?c=<campaign>&p=<piece>. Please:
 
 | Address | Destination |
 | --- | --- |
+| /go/site | https://www.soma-q.com/ |
 | /go/quiz | https://www.soma-q.com/assessment |
 | /go/ebook | https://www.soma-q.com/free-resources |
 | /go/reset | https://us06web.zoom.us/j/87654266823 |

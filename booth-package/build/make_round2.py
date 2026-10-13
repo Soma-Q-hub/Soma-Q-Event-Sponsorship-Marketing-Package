@@ -735,16 +735,15 @@ p += TAIL
 def tag_logo(name, dark, with_qr=False):
     bg = "#111111" if dark else "#FFFFFF"
     c1, c2, ink, accent, guide = (LIGHT, WHITE, WHITE, LIGHT, LIGHT) if dark else ("#3E807A", DEEP, DEEP, "#3E807A", "#9BC4BD")
-    title = "Luggage tag front, " + ("black tag" if dark else "white tag") + ", vertical logo" + (" with quiz QR" if with_qr else "") + ", 2.5 x 3.75 in"
-    p = head_(title, 2.75, 4.0, "Luggage tag front only (the back is a mesh window for a paper insert). Trim 2.5 x 3.75 in, file 2.75 x 4.0 in (0.125 in bleed). PLACEHOLDER size: match the vendor's die line, corner radius and hole. " + ("Black tag: print white and Light Teal inks. " if dark else "White tag. ") + ("The QR is about 0.78 in: test-scan a printed proof." if with_qr else ""))
+    title = "Luggage tag front, " + ("black tag" if dark else "white tag") + ", vertical logo" + (" with website QR" if with_qr else "") + ", 2.5 x 3.75 in"
+    p = head_(title, 2.75, 4.0, "Luggage tag front only (the back is a mesh window for a paper insert). Trim 2.5 x 3.75 in, file 2.75 x 4.0 in (0.125 in bleed). PLACEHOLDER size: match the vendor's die line, corner radius and hole. " + ("Black tag: print white and Light Teal inks. " if dark else "White tag. ") + ("The QR links to soma-q.com and is about 0.78 in: test-scan a printed proof." if with_qr else ""))
     p += f'<rect width="275" height="400" fill="{bg}"/>\n'
     p += f'<circle cx="137.5" cy="46" r="14" fill="none" stroke="{guide}" stroke-width="1.2" stroke-dasharray="3 3"/>'
     if with_qr:
-        p += qmark(137.5 - 48, 66, 96, dark)
-        p += f'<image href="{{{{WORDMARK_{"DARK" if dark else "LIGHT"}_URI}}}}" x="{137.5-68}" y="172" width="136" height="{136*167/905:.1f}" preserveAspectRatio="xMidYMid meet"/>\n'
-        p += qr(137.5 - 39, 210, 78, "QUIZ")
-        p += lines(137.5, 301, ["TAKE THE FREE QUIZ"], 6.6, 0, ink, weight="700", anchor="middle", ls="1.6")
-        sy, cy_, ss, cs = 337, 363, 22, 13.5
+        p += qmark(137.5 - 48, 68, 96, dark)
+        p += f'<image href="{{{{WORDMARK_{"DARK" if dark else "LIGHT"}_URI}}}}" x="{137.5-68}" y="178" width="136" height="{136*167/905:.1f}" preserveAspectRatio="xMidYMid meet"/>\n'
+        p += qr(137.5 - 39, 222, 78, "SITE")      # links to the website home page; no caption (Oct 13)
+        sy, cy_, ss, cs = 338, 364, 24, 14
     else:
         p += qmark(137.5 - 66, 70, 132, dark)
         p += f'<image href="{{{{WORDMARK_{"DARK" if dark else "LIGHT"}_URI}}}}" x="{137.5-86}" y="214" width="172" height="{172*167/905:.1f}" preserveAspectRatio="xMidYMid meet"/>\n'

@@ -21,6 +21,7 @@ SITE = "https://www.soma-q.com"
 QR_MODE = "go"
 
 DIRECT = {
+    "site": f"{SITE}/",                     # the website home page (luggage tags)
     "quiz": f"{SITE}/assessment",
     "ebook": f"{SITE}/free-resources",          # the ebook signup lives on the Free Resources page
     "reset": "https://us06web.zoom.us/j/87654266823",   # Shift Happens weekly reset, Wednesdays 12:00 PM Mountain, 30 minutes
@@ -31,6 +32,7 @@ DIRECT = {
 
 # Final destinations for the /go/ redirects (what the designer should redirect to).
 GO_TARGETS = {
+    "site": f"{SITE}/",
     "quiz": f"{SITE}/assessment",
     "ebook": f"{SITE}/free-resources",
     "reset": "https://us06web.zoom.us/j/87654266823",
