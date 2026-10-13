@@ -42,3 +42,32 @@ p += lines(TX, 1062, ["Scan for the free measurement overview"], 13, 0, WHITE, w
 p += TAIL
 (SRC / "table_sign_signs.html").write_text(p)
 print("ok table sign")
+
+# ---------------------------------------------------------------- LINEN OPTION (Oct 13): same content, plays the whole palette
+W, H = 875, 1125
+p = head_("Table sign OPTION, Linen: Five signs your nervous system is changing, 8.5 x 11 in", 8.75, 11.25, "OPTION on Linen: Deep Teal header band and bottom band, Linen field, Deep Teal discs, mid-teal accents, light teal triangle, QR to the measurement overview (/go/overview, destination to confirm). 8.5 x 11 in trim, 0.125 in bleed.")
+p += f'<rect width="{W}" height="{H}" fill="{LINEN}"/>\n'
+p += f'<polygon points="650,790 1010,1330 290,1330" fill="none" stroke="#3E807A" stroke-opacity=".38" stroke-width="4"/>\n'
+p += f'<rect width="{W}" height="340" fill="{DEEP}"/>\n'
+p += logo(70, 58, 170, True)
+p += lines(70, 150, ["MEASURED EVERY WEEK"], 14, 0, LIGHT, weight="700", ls="3.5")
+p += lines(70, 228, ["Five signs your nervous", "system is changing."], 56, 66, WHITE, family="DM Serif Display")
+y0 = 380
+RH = 74
+for i in range(6):
+    p += f'<rect x="70" y="{y0 + i*RH}" width="{W-140}" height="1.4" fill="{DEEP}" fill-opacity=".28"/>\n'
+for i, (b, rest) in enumerate(SIGNS):
+    cy = y0 + i * RH + RH / 2
+    p += f'<circle cx="{70+22}" cy="{cy}" r="22" fill="{DEEP}"/>\n'
+    p += f'<text x="{70+22}" y="{cy+8}" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="22" fill="{LINEN}">{i+1}</text>\n'
+    p += f'<text x="{70+64}" y="{cy+8}" font-family="DM Sans" font-size="23" fill="{DEEP}"><tspan font-weight="700" fill="#3E807A">{b}</tspan>{rest}</text>\n'
+p += lines(70, 925, ["Not whether you showed up."], 20, 0, INK, weight="500")
+p += lines(70, 978, ["Whether you changed", "under pressure."], 40, 48, DEEP, family="DM Serif Display")
+TX = 650; qs = 112; qx, qy = TX - qs / 2, 922
+p += f'<rect x="{qx-9}" y="{qy-9}" width="{qs+18}" height="{qs+18}" rx="12" fill="{DEEP}"/>\n'
+p += f'<rect x="{qx}" y="{qy}" width="{qs}" height="{qs}" rx="7" fill="#FFFFFF"/><svg x="{qx+7}" y="{qy+7}" width="{qs-14}" height="{qs-14}">{{{{QR_OVERVIEW}}}}</svg>'
+p += lines(TX, 1062, ["Scan for the free measurement overview"], 13, 0, DEEP, weight="700", anchor="middle")
+p += f'<rect y="1074" width="{W}" height="{H-1074}" fill="{DEEP}"/>\n'
+p += lines(70, 1098, ["SOMA-Q.COM"], 13, 0, LIGHT, weight="700", ls="3")
+p += TAIL
+(SRC / "table_sign_signs_linen.html").write_text(p)
