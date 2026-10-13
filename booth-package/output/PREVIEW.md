@@ -107,6 +107,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## bizcard2_back_b-1
 ![bizcard2_back_b-1](preview/bizcard2_back_b-1.png)
 
+## bizcard2_back_c-1
+![bizcard2_back_c-1](preview/bizcard2_back_c-1.png)
+
 ## bizcard2_back_proof-1
 ![bizcard2_back_proof-1](preview/bizcard2_back_proof-1.png)
 

@@ -354,6 +354,30 @@ def back_b(name, title):
 back_b("bizcard2_back_b", "Business card back B, 3.5 x 2 in")
 
 
+def back_c(name, title):
+    """R7c back, traditional contact card: name, Founder, phone, email and website prominent on a Linen panel on the right, Q mark top left,
+    the four places on the left. No QR (the front carries no QR either)."""
+    p = head_(title, 3.75, 2.25, "Business card back C: contact details prominent (name, Founder, phone, email, website) on a Linen panel; Q mark top left; four places on the left. Phone number comes from the website Terms page; CONFIRM it is the number to print.")
+    p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
+    p += qmark(34, 24, 26, False)
+    p += lines(34, 80, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 17, DEEP, family="DM Serif Display")
+    for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
+        y = 140 + i * 16.5
+        p += f'<polygon points="34,{y} 40.4,{y} 37.2,{y-5.5}" fill="{LIGHT}"/>' + lines(47, y, [nm], 12.5, 0, DEEP, family="DM Serif Display")
+    p += f'<rect x="212" y="24" width="129" height="166" rx="12" fill="{LINEN}"/>\n'
+    p += lines(226, 58, ["Megan", "McDonald"], 20, 21, DEEP, family="DM Serif Display")
+    p += lines(226, 94, ["FOUNDER, SOMA-Q"], 6.6, 0, "#3E807A", weight="700", ls="1.2")
+    p += f'<rect x="226" y="104" width="101" height="1" fill="{DEEP}" fill-opacity=".3"/>\n'
+    p += lines(226, 128, [C_PHONE], 11.5, 0, DEEP, weight="700")
+    p += lines(226, 148, ["Megan@Soma-Q.com"], 8.6, 0, DEEP, weight="700")
+    p += lines(226, 168, ["soma-q.com"], 11.5, 0, DEEP, weight="700")
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
+
+C_PHONE = "303-717-9995"
+back_c("bizcard2_back_c", "Business card back C, 3.5 x 2 in")
+
+
 
 # ========================================================= TABLE COVER, 72 x 30 =========================================================
 p = head_("Table cover front, 72 x 30 in", 73, 31, "PLACEHOLDER trim 72 x 30 in, file 73 x 31 in (0.5 in bleed). Viewed from far away and partly hidden by chairs and boxes: logo, two phrases, one QR. CONFIRM the vendor template (hems, folds, corners).")
