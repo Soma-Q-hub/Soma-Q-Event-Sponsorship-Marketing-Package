@@ -108,7 +108,7 @@ p += TAIL
 
 
 # ---------------- FRONT E variants with the new core line (Oct 13) ----------------
-def front_e(name, title, hl, sub):
+def front_e(name, title, hl, sub, glow=False):
     # ---------------- FRONT E: three-quarters dark teal, one-quarter white strip ----------------
     p = head(title, 6.25, 4.25, "Postcard front, option 1 redesign: 3/4 Deep Teal, 1/4 white strip. 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed).")
     SX = 450
@@ -119,6 +119,9 @@ def front_e(name, title, hl, sub):
     p += lines(SX / 2, 400, [" ".join(sub).upper().rstrip(".")], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
     # teal side
     p += lines(120, 346, ["SHIFT HAPPENS<tspan font-size=\"4.2\" dy=\"-3.8\">™</tspan>"], 8.5, 0, LIGHT, weight="700", anchor="middle", ls="1.4")
+    if glow:
+        p += '<defs><filter id="pglow" x="-30%" y="-20%" width="160%" height="140%"><feGaussianBlur stdDeviation="7"/></filter></defs>'
+        p += '<rect x="36" y="46" width="168" height="280" rx="16" fill="#FFFFFF" fill-opacity=".55" filter="url(#pglow)"/>\n'
     p += f'<rect x="40" y="50" width="160" height="272" rx="12" fill="#16494F"/>\n'
     p += placed("{{FIGURE:dark}}", 120 - 880*0.14/2, 60, 0.14)
     # text column centred on the image panel (y 50 to 322), clear of its top and bottom edges
@@ -143,6 +146,7 @@ def front_e(name, title, hl, sub):
 
 
 front_e("postcard_front_f", "Postcard front F (core line A), 6 x 4 in", ["Pressure happens."], ["Education and training to", "change your response to it."])
+front_e("postcard_front_h", "Postcard front H (G with a soft white glow around the image), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True)
 front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."])
 
 # ---------------- BACK ----------------
