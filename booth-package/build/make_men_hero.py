@@ -18,7 +18,7 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     dy = 700 if st else 0
     p = head_(f"{title}, 32 x 80 in", 33, 81, "Retractable banner 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). Men's hero banner built for distance: logo, Burnout ends here, the figure and the headline all sit above the 54 in line; the lower Linen area is close-range only. CONFIRM the vendor template.")
     p += f'<rect width="{W}" height="{H}" fill="{'#FFFFFF' if dark and tag == 'shift' else LINEN}"/>\n'
-    top = (5500 + dy) if dark else 2720
+    top = ((5640 if mode in ("base", "base_logoright") else 5500 + dy) if dark else 2720)
     p += f'<rect width="{W}" height="{top}" fill="{DEEP}"/>\n'
     if not dark:
         p += f'<rect y="{top}" width="{W}" height="{5500-top}" fill="{LIGHT}"/>\n'
@@ -39,12 +39,12 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     p += bold(1750, 5550 if st else 4900, SHIFTING, 118, 152)
     if mode in ("base", "base_logoright"):
         # centered stack: one vertical axis from the call to action, down through the QR, to the web address
-        p += lines(W / 2, 5790, ["Take the free Burnout Signal Check."], 138, 0, DEEP, family="DM Serif Display", anchor="middle")
-        p += f'<rect x="{W/2-400}" y="5880" width="800" height="800" rx="44" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-400+62}" y="{5880+62}" width="676" height="676">{{{{QR_QUIZ}}}}</svg>'
-        p += lines(W / 2, 6870, ["SOMA-Q.COM"], 84, 0, DEEP, weight="700", anchor="middle", ls="12")
-        p += f'<rect y="7060" width="{W}" height="{H-7060}" fill="{DEEP}"/>\n'
-        p += lines(W / 2, 7400, ["Discover how to reclaim your energy,", "clarity, and joy in four places:"], 92, 112, LIGHT, family="DM Serif Display", anchor="middle")
-        p += lines(W / 2, 7740, ["Health  ·  Wealth  ·  Relationships  ·  Career"], 108, 0, WHITE, family="DM Serif Display", anchor="middle")
+        p += lines(W / 2, 5870, ["Take the free Burnout Signal Check."], 138, 0, DEEP, family="DM Serif Display", anchor="middle")
+        p += f'<rect x="{W/2-400}" y="5960" width="800" height="800" rx="44" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-400+62}" y="{5960+62}" width="676" height="676">{{{{QR_QUIZ}}}}</svg>'
+        p += lines(W / 2, 6950, ["SOMA-Q.COM"], 84, 0, DEEP, weight="700", anchor="middle", ls="12")
+        p += f'<rect y="7140" width="{W}" height="{H-7140}" fill="{DEEP}"/>\n'
+        p += lines(W / 2, 7450, ["Discover how to reclaim your energy,", "clarity, and joy in four places:"], 92, 112, LIGHT, family="DM Serif Display", anchor="middle")
+        p += lines(W / 2, 7790, ["Health  ·  Wealth  ·  Relationships  ·  Career"], 108, 0, WHITE, family="DM Serif Display", anchor="middle")
     else:
         p += lines(250, 5800 + dy, ["Book a free", "discovery call."], 150, 170, DEEP, family="DM Serif Display")
         p += lines(250, 6200 + dy, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
