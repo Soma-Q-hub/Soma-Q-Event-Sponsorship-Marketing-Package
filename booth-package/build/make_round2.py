@@ -761,7 +761,7 @@ tag_logo("giveaway_tag_logo_black_qr", True, True)
 
 
 # ========================================================= BUSINESS CARD FRONT with Shift Happens as the headline (Oct 13) =========================================================
-SH_OFFER = ["Education and training to", "change your response."]
+SH_OFFER = ["Education and training to", "change your response to stress."]
 
 def shift_front(name, fig, title):
     p = head_(title, 3.75, 2.25, "Business card front option: Shift Happens as the headline, with the education and training line and the descriptor." + (" With the nervous system figure." if fig else " Type only."))
@@ -776,9 +776,10 @@ def shift_front(name, fig, title):
     else:
         p += logo(34, 22, 100, True)
         p += (f'<text x="34" y="104" font-family="DM Serif Display" font-size="40"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="10" dy="-16">™</tspan></text>\n')
-        p += lines(34, 132, SH_OFFER, 10.2, 14, PALE, weight="500")
-        p += f'<rect x="34" y="162" width="300" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-        p += lines(34, 180, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 8.2, 13, LIGHT, weight="700", ls="1.3")
+        p += lines(34, 130, SH_OFFER, 10.2, 14, PALE, weight="500")
+        p += lines(34, 162, ["Burnout doesn’t have to."], 10.2, 14, LIGHT, weight="700")
+        p += f'<rect x="34" y="171" width="300" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
+        p += lines(34, 188, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 8.2, 13, LIGHT, weight="700", ls="1.3")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
