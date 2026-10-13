@@ -108,7 +108,7 @@ p += TAIL
 
 
 # ---------------- FRONT E variants with the new core line (Oct 13) ----------------
-def front_e(name, title, hl, sub, glow=False, up=0, down=0, core=False):
+def front_e(name, title, hl, sub, glow=False, up=0, down=0, core=False, sup=None):
     # ---------------- FRONT E: three-quarters dark teal, one-quarter white strip ----------------
     p = head(title, 6.25, 4.25, "Postcard front, option 1 redesign: 3/4 Deep Teal, 1/4 white strip. 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed).")
     SX = 450
@@ -128,11 +128,13 @@ def front_e(name, title, hl, sub, glow=False, up=0, down=0, core=False):
     if core:
         # the core message: Pressure happens. Burnout doesn't have to. Then the website's three beats.
         size, lead = 26, 34
-        block = 0.7 * size + 3 * lead + 30 + 2 * 16
+        sup = sup or ["Notice the signal. Locate it.", "Choose your next response."]
+        sl = 17 if len(sup) > 2 else 16
+        block = 0.7 * size + 3 * lead + 30 + (len(sup) - 1) * sl
         b0 = 186 - block / 2 + 0.7 * size
         p += lines(tx, b0, ["Pressure", "happens."], size, lead, WHITE, family="DM Serif Display")
         p += lines(tx, b0 + 2 * lead, ["Burnout doesn\u2019t", "have to."], size, lead, LIGHT, family="DM Serif Display")
-        p += lines(tx, b0 + 3 * lead + 30, ["Notice the signal. Locate it.", "Choose your next response."], 11.5, 16, PALE, weight="500")
+        p += lines(tx, b0 + 3 * lead + 30, sup, 12.5 if len(sup) > 2 else 11.5, sl, PALE, weight="500")
     else:
         # text column centred on the image panel (y 50 to 322), clear of its top and bottom edges
         hl_lead = 27
@@ -160,6 +162,7 @@ front_e("postcard_front_h", "Postcard front H (G with a soft white glow around t
 front_e("postcard_front_i", "Postcard front I (H with the headline up a touch and more space above Burnout doesn\u2019t have to), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True, up=8, down=4)
 front_e("postcard_front_j", "Postcard front J: Pressure happens. Burnout doesn\u2019t have to., 6 x 4 in", [], ["Education and training to", "change your response to stress."], glow=True, core=True)
 front_e("postcard_front_k", "Postcard front K: Noticing your nervous system\u2019s signals, then Pressure happens. Burnout doesn\u2019t have to., 6 x 4 in", ["Pressure happens.", "Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."], glow=True, up=8, down=4)
+front_e("postcard_front_l", "Postcard front L: Pressure happens. Burnout doesn\u2019t have to. as the header, Noticing as the support, 6 x 4 in", [], ["Education and training to", "change your response to stress."], glow=True, core=True, sup=["Noticing your nervous", "system\u2019s signals is critical", "to your well-being."])
 front_e("postcard_front_g", "Postcard front G (core line B), 6 x 4 in", ["Burnout doesn\u2019t", "have to."], ["Education and training to", "change your response to stress."])
 
 # ---------------- BACK ----------------
