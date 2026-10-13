@@ -10,6 +10,20 @@ pressure). Wording is from the website v2 pages (Home, The Work, Programs).
 Units 0.01 in. Run: python3 build/make_round2.py"""
 from svgkit import *
 from svgkit import head as head_
+from svgkit import lines as _lines
+
+
+def _tm(row):
+    """Trademark symbol as a small superscript (about half size, raised), so Shift Happens reads first."""
+    if "™" not in row:
+        return row
+    head, tail = row.split("™", 1)
+    out = head + '<tspan font-size="46%" dy="-0.7em">™</tspan>'
+    return out + (f'<tspan dy="0.322em">{tail}</tspan>' if tail else "")
+
+
+def lines(x, y, rows, *a, **k):
+    return _lines(x, y, [_tm(r) for r in rows], *a, **k)
 
 NOT_DATA = "Example of the report format only; not client data."
 FOUR = [("Health", "Sleep that doesn’t restore you, and a body that has been running on alarm for too long."),
