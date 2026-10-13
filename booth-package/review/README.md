@@ -20,3 +20,4 @@ Sources: `../build/make_round2.py`.
 | card_set | Card 1 of the set: "Pressure decides whether you react or respond." front, "Shift outcomes in the four places pressure shows up:" back (approved to keep). The four place cards were dropped and archived in `../archive/card-set-places/` | 3.5 x 2 in |
 | quiz_card | Paper Burnout Signal Check: questions on one side, result steps on the other. The result steps use the scoring rules, checked against all 13 examples in the Scoring Map sheet | 5.5 x 8.5 in |
 | hat/ (folder) | Shift Happens hat artwork: flat, outlined SVG and PNG in two colorways, plus cap illustrations. Source: build/make_hat.py | front art 4.0 x 1.8 in |
+| banner_D1_working/ | Banner D1 (v2, call QR) kept here while it is still being revised. Newer working versions: quiz QR with logo left or right (`banner_men_hero_dark_shift`, `banner_men_hero_dark_shift_logoright`) | 32 x 80 in |

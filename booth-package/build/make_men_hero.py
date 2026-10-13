@@ -20,7 +20,7 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     p += f'<rect width="{W}" height="{top}" fill="{DEEP}"/>\n'
     if not dark:
         p += f'<rect y="{top}" width="{W}" height="{5500-top}" fill="{LIGHT}"/>\n'
-    p += logo(250, 200, 1150, True)
+    p += logo(1900 if mode == "base_logoright" else 250, 200, 1150, True)   # logoright: right-aligned to the 250 margin
     l1, l2 = ("Burnout ends", "here.") if tag == "burnout" else ("Shift", "Happens")
     tm = '<tspan font-size="170" dy="-170" dx="14">™</tspan>'
     p += (f'<text x="250" y="1290" font-family="DM Serif Display" font-size="430" fill="{WHITE}">{l1}</text>'
@@ -35,11 +35,11 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     p += bold(1750, 4050 if st else 3800, ["What do you", "do next?"])
     p += lines(1750, 4580 if st else 4230, TURN, 104, 142, WHITE if dark else DEEP, weight="700")
     p += bold(1750, 5420 if st else 4970, ["Show up the way", "you want to."])
-    if mode == "base":
+    if mode in ("base", "base_logoright"):
         # centered stack: one vertical axis from the call to action, down through the QR, to the web address
-        p += lines(W / 2, 5740, ["Book a free discovery call."], 150, 0, DEEP, family="DM Serif Display", anchor="middle")
-        p += f'<rect x="{W/2-400}" y="5830" width="800" height="800" rx="44" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-400+62}" y="{5830+62}" width="676" height="676">{{{{QR_CALL}}}}</svg>'
-        p += lines(W / 2, 6790, ["An honest conversation about what pressure is costing you. No obligation."], 58, 0, INK, weight="500", anchor="middle")
+        p += lines(W / 2, 5740, ["Take the free Burnout Signal Check."], 138, 0, DEEP, family="DM Serif Display", anchor="middle")
+        p += f'<rect x="{W/2-400}" y="5830" width="800" height="800" rx="44" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-400+62}" y="{5830+62}" width="676" height="676">{{{{QR_QUIZ}}}}</svg>'
+        p += lines(W / 2, 6790, ["Five questions. Two minutes. Then book a free discovery call."], 60, 0, INK, weight="500", anchor="middle")
         p += lines(W / 2, 6920, ["SOMA-Q.COM"], 84, 0, DEEP, weight="700", anchor="middle", ls="12")
         p += f'<rect y="7060" width="{W}" height="{H-7060}" fill="{DEEP}"/>\n'
         p += lines(W / 2, 7390, ["PRESSURE SHOWS UP IN FOUR PLACES"], 56, 0, LIGHT, weight="700", anchor="middle", ls="9")
@@ -58,4 +58,5 @@ hero("banner_men_hero_dark_shift", "Hero banner, dark, Shift happens", "dark", "
 hero("banner_men_hero_light_shift", "Hero banner, light band, Shift happens", "light", "shift")
 hero("banner_men_hero_dark_shift_stretch", "Hero banner D1 experiment: teal pulled down", "dark", "shift", "stretch")
 hero("banner_men_hero_dark_shift_base", "Hero banner D1 experiment: deep teal base", "dark", "shift", "base")
+hero("banner_men_hero_dark_shift_logoright", "Hero banner D1 experiment: logo at right", "dark", "shift", "base_logoright")
 print("ok hero")
