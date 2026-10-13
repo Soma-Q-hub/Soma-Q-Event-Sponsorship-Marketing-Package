@@ -255,43 +255,65 @@ p += TAIL
 (SRC / "insert_areas.html").write_text(p)
 
 
-# ========================================================= BUSINESS CARD, 3.5 x 2 =========================================================
-p = head_("Business card front, 3.5 x 2 in", 3.75, 2.25, "Business card 3.5 x 2 in trim, file 3.75 x 2.25 in (0.125 in bleed). Keep type 0.2 in inside trim. CONFIRM printer template.")
-p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
-p += logo(34, 22, 132, True)
-p += lines(34, 100, ["Shift", "Happens™"], 24, 24, WHITE, family="DM Serif Display")
-p += lines(34, 154, ["NERVOUS SYSTEM", "ALIGNMENT FOR", "HIGH-PERFORMING LEADERS"], 8.4, 16, PALE, weight="700", ls="1.2")
-p += f'<rect x="224" y="22" width="130" height="182" rx="12" fill="#16494F"/>\n'
-p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
-p += TAIL
-(SRC / "bizcard2_front.html").write_text(p)
+# ========================================================= BUSINESS CARD, 3.5 x 2 in =========================================================
+# Core line (Oct 13): "Pressure happens." + the offer. A = education and training line; B = "Reacting doesn't have to."
+CORE_A = (["Pressure happens."], ["Education and training to change", "your response to it."])
+CORE_B = (["Pressure happens.", "Reacting doesn’t have to."], ["Education and training to", "change your response."])
+DESC = ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"]
 
-p = head_("Business card front, no image, 3.5 x 2 in", 3.75, 2.25, "Business card front, type only (no figure). Pairs with the same back.")
-p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
-p += logo(34, 26, 124, True)
-p += lines(34, 98, ["Pressure decides whether", "you react or respond."], 18.5, 23, WHITE, family="DM Serif Display")
-p += f'<rect x="34" y="132" width="300" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-p += lines(34, 160, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 9.2, 19, PALE, weight="700", ls="1.4")
-p += TAIL
-(SRC / "bizcard2_front_plain.html").write_text(p)
+def bizfront_plain(name, core, title):
+    hl, sub = core
+    p = head_(title, 3.75, 2.25, "Business card front, type only (no figure). Pressure happens + education and training. Pairs with the same back.")
+    p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
+    p += logo(34, 22, 100, True)
+    y = 88 if len(hl) == 1 else 86
+    p += lines(34, y, hl, 21 if len(hl) == 1 else 19, 24, WHITE, family="DM Serif Display")
+    y2 = y + 24 * (len(hl) - 1) + 24
+    p += lines(34, y2, sub, 10.2, 14, PALE, weight="500")
+    yh = y2 + 14 * (len(sub) - 1) + 16
+    p += f'<rect x="34" y="{yh}" width="300" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
+    p += lines(34, yh + 22, DESC, 9.2, 17, LIGHT, weight="700", ls="1.4")
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
 
-p = head_("Business card back, 3.5 x 2 in", 3.75, 2.25, "Business card back, white. Q mark, name and contact, two QR codes (book a call, free Burnout Signal Check) on Linen panels with different borders. Phone left off on purpose (the website brief asks whether the phone stays public).")
-p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
-p += qmark(34, 20, 27, False)
-p += lines(34, 80, ["Megan", "McDonald"], 22, 24, DEEP, family="DM Serif Display")
-p += lines(34, 118, ["Founder of Soma-Q"], 9.2, 0, INK, weight="700")
-p += hair(34, 154, 130, op=.35, w=.8)
-p += lines(34, 144, ["A nervous system", "alignment practice."], 8, 11, INK)
-p += lines(34, 180, ["Megan@Soma-Q.com"], 9, 0, DEEP, weight="700")
-p += lines(34, 194, ["soma-q.com"], 9, 0, DEEP, weight="700")
-for x, kind, cap, edge, ew in ((172, "CALL", ["Book a free", "discovery call"], DEEP, 1.8), (266, "QUIZ", ["Take the free", "Burnout Signal Check"], LIGHT, 4)):
-    p += f'<rect x="{x-5}" y="29" width="88" height="88" rx="14" fill="{LINEN}" stroke="{edge}" stroke-width="{ew}"/>\n'
-    p += qr(x, 34, 78, kind)
-    p += lines(x + 39, 136, cap, 7.4, 10, DEEP, weight="700", anchor="middle")
-p += f'<rect x="172" y="162" width="172" height="30" rx="8" fill="{DEEP}"/>\n'
-p += lines(258, 181, ["Two ways to start. Both free."], 8.2, 0, WHITE, weight="700", anchor="middle")
-p += TAIL
-(SRC / "bizcard2_back.html").write_text(p)
+def bizfront_fig(name, core, title):
+    hl, sub = core
+    p = head_(title, 3.75, 2.25, "Business card front with the nervous system figure. Pressure happens + education and training.")
+    p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
+    p += logo(34, 20, 100, True)
+    hl2 = hl if len(hl) == 1 else ["Pressure happens.", "Reacting doesn’t", "have to."]
+    p += lines(34, 84, hl2, 17, 20, WHITE, family="DM Serif Display")
+    y2 = 84 + 20 * (len(hl2) - 1) + 17
+    p += lines(34, y2, ["Education and training to", "change your response to it."] if len(hl) == 1 else ["Education and training to", "change your response."], 8.4, 11.5, PALE, weight="500")
+    p += lines(34, 190, DESC, 7.2, 11, LIGHT, weight="700", ls="1.1")
+    p += f'<rect x="224" y="22" width="130" height="182" rx="12" fill="#16494F"/>\n'
+    p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
+
+bizfront_fig("bizcard2_front", CORE_A, "Business card front A, with figure, 3.5 x 2 in")
+bizfront_fig("bizcard2_front_b", CORE_B, "Business card front B, with figure, 3.5 x 2 in")
+bizfront_plain("bizcard2_front_plain", CORE_A, "Business card front A, no image, 3.5 x 2 in")
+bizfront_plain("bizcard2_front_plain_b", CORE_B, "Business card front B, no image, 3.5 x 2 in")
+
+def r14_back(name, title):
+    p = head_(title, 3.75, 2.25, "Business card back (the R14 back in white): four places, one QR for the free Burnout Signal Check so every scan is a captured lead, Q mark, small contact line.")
+    p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
+    p += qmark(318, 20, 24, False)
+    p += lines(34, 54, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 18, DEEP, family="DM Serif Display")
+    p += f'<rect x="34" y="108" width="150" height="86" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>\n'
+    p += qr(44, 116, 70, "QUIZ")
+    p += lines(124, 140, ["Take the free", "Burnout", "Signal Check"], 8.2, 11, DEEP, weight="700")
+    p += lines(124, 176, ["5 questions."], 6.6, 0, INK)
+    for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
+        y = 118 + i * 21
+        p += f'<circle cx="222" cy="{y-5}" r="4" fill="{LIGHT}"/>' + lines(236, y, [nm], 16, 0, DEEP, family="DM Serif Display")
+    p += lines(34, 210, ["Megan McDonald, Founder  ·  Megan@Soma-Q.com  ·  soma-q.com"], 6.8, 0, DEEP, weight="700")
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
+
+r14_back("bizcard2_back", "Business card back, 3.5 x 2 in")
+
 
 
 # ========================================================= TABLE COVER, 72 x 30 =========================================================
@@ -526,18 +548,23 @@ def cpage(bg, body):
     cpages.append(f'<div class="pg"><svg class="cd" viewBox="0 0 {CW} {CH}" xmlns="http://www.w3.org/2000/svg"><rect width="{CW}" height="{CH}" fill="{bg}"/>{body}</svg></div>\n')
 
 
-# card 0: the idea
+# card 0: the idea (R14). Front: Pressure happens + the offer. Back: white, four places, quiz QR (matches the business card back).
 b = logo(34, 24, 104, True)
-b += lines(34, 88, ["Pressure decides", "whether you react", "or respond."], 20, 24, WHITE, family="DM Serif Display")
-b += lines(34, 168, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 8.6, 17, PALE, weight="700", ls="1.3")
+b += lines(34, 92, ["Pressure happens."], 21, 24, WHITE, family="DM Serif Display")
+b += lines(34, 116, ["Education and training to", "change your response to it."], 9.6, 13, PALE, weight="500")
+b += lines(34, 178, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 8.6, 17, LIGHT, weight="700", ls="1.3")
 cpage(DEEP, b)
-b = lines(34, 62, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 18, DEEP, family="DM Serif Display")
-b += qr(34, 128, 58, "CALL")
-b += lines(100, 150, ["Book a free", "discovery call"], 8.4, 11.5, DEEP, weight="700")
+b = qmark(318, 20, 24, False)
+b += lines(34, 54, ["Shift outcomes in the", "four places pressure", "shows up:"], 13.5, 18, DEEP, family="DM Serif Display")
+b += f'<rect x="34" y="108" width="150" height="86" rx="14" fill="{LINEN}" stroke="{DEEP}" stroke-width="1.8"/>'
+b += qr(44, 116, 70, "QUIZ")
+b += lines(124, 140, ["Take the free", "Burnout", "Signal Check"], 8.2, 11, DEEP, weight="700")
+b += lines(124, 176, ["5 questions."], 6.6, 0, INK)
 for i, nm in enumerate(["Health", "Wealth", "Relationships", "Career"]):
-    y = 70 + i * 30
-    b += f'<circle cx="212" cy="{y-5}" r="4" fill="{LIGHT}"/>' + lines(226, y, [nm], 17, 0, DEEP, family="DM Serif Display")
-cpage(LINEN, b)
+    y = 118 + i * 21
+    b += f'<circle cx="222" cy="{y-5}" r="4" fill="{LIGHT}"/>' + lines(236, y, [nm], 16, 0, DEEP, family="DM Serif Display")
+b += lines(34, 210, ["Megan McDonald, Founder  \u00b7  Megan@Soma-Q.com  \u00b7  soma-q.com"], 6.8, 0, DEEP, weight="700")
+cpage("#FFFFFF", b)
 
 # cards 1 to 4: the four places
 PLACE_Q = {"Health": ["Where in your body", "does it land first?"],

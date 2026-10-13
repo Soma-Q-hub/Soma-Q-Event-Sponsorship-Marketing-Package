@@ -80,8 +80,14 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## bizcard2_front-1
 ![bizcard2_front-1](preview/bizcard2_front-1.png)
 
+## bizcard2_front_b-1
+![bizcard2_front_b-1](preview/bizcard2_front_b-1.png)
+
 ## bizcard2_front_plain-1
 ![bizcard2_front_plain-1](preview/bizcard2_front_plain-1.png)
+
+## bizcard2_front_plain_b-1
+![bizcard2_front_plain_b-1](preview/bizcard2_front_plain_b-1.png)
 
 ## booklet-1
 ![booklet-1](preview/booklet-1.png)
@@ -199,6 +205,12 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## postcard_front_e-1
 ![postcard_front_e-1](preview/postcard_front_e-1.png)
+
+## postcard_front_f-1
+![postcard_front_f-1](preview/postcard_front_f-1.png)
+
+## postcard_front_g-1
+![postcard_front_g-1](preview/postcard_front_g-1.png)
 
 ## poster_capacity-1
 ![poster_capacity-1](preview/poster_capacity-1.png)
