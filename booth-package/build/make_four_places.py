@@ -14,7 +14,8 @@ def banner(name, band, cta_bg, tag, scheme, dark=False):
     p = head_(f"Banner: Discover how to reclaim your energy, clarity, and joy in four places ({tag}), 32 x 80 in", 33, 81, f"OPTIONAL banner built around the outcomes line, {tag} band behind the four places, with the nervous system figure. 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). The four places use the website descriptors. CONFIRM the vendor template.")
     p += f'<rect width="{W}" height="{H}" fill="{"#FFFFFF" if dark else DEEP}"/>\n'
     p += logo(250, 200, 1000, not dark)
-    p += lines(250, 1000, ["Discover how", "to reclaim your", "energy, clarity,", "and joy in", "four places:"], 330, 365, DEEP if dark else WHITE, family="DM Serif Display")
+    hl = ["Discover how", "to reclaim your", "energy, clarity,", "and joy:"] if dark else ["Discover how", "to reclaim your", "energy, clarity,", "and joy in", "four places:"]
+    p += lines(250, 1000 + (120 if dark else 0), hl, 330, 365, DEEP if dark else WHITE, family="DM Serif Display")
     y0 = 2700
     p += f'<rect y="{y0}" width="{W}" height="2640" fill="{band}"/>\n'
     for i, (nm, d) in enumerate(ROWS):
