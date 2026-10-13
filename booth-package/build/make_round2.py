@@ -809,9 +809,9 @@ def shift_front(name, fig, title):
     else:
         p += logo(34, 14, 100, True)
         p += (f'<text x="34" y="98" font-family="DM Serif Display" font-size="46"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="13" dy="-19">™</tspan></text>\n')
-        p += lines(34, 120, SH_OFFER, 9.6, 13, PALE, weight="500")
+        p += lines(34, 120, SH_OFFER, 9.6, 13, "#FFFFFF", weight="500")
         p += f'<rect x="34" y="160" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
-        p += lines(34, 178, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 8.4, 11.8, WHITE, weight="500")
+        p += lines(34, 178, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 8.4, 11.8, "#FFFFFF", weight="500")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
