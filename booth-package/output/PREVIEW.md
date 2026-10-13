@@ -185,6 +185,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## counter_sign-1
 ![counter_sign-1](preview/counter_sign-1.png)
 
+## ebook_display_card-1
+![ebook_display_card-1](preview/ebook_display_card-1.png)
+
 ## giveaway_tag_back-1
 ![giveaway_tag_back-1](preview/giveaway_tag_back-1.png)
 
