@@ -44,33 +44,36 @@ def banner(name, band, cta_bg, tag, scheme, dark=False, flip=False):
 def cta(pl, cta_bg, flip=False):
     p = pl[0]
     G = 150  # equal gap above and below the paragraph, measured cap-top to baseline
-    def dark_block(S, p):
+    def about_block(S, p, lt=False):
         B1 = S + 30 + G + 59
         B3 = B1 + 240
         C = B3 + G + 59
-        p += (f'<text x="{W/2}" y="{S}" text-anchor="middle" font-family="DM Serif Display" font-size="130"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="36" dy="-54">™</tspan></text>\n')
-        p += lines(W / 2, B1, ["SOMA-Q IS A NERVOUS SYSTEM ALIGNMENT PRACTICE.", "WE TRAIN HIGH-PERFORMING LEADERS TO NOTICE STRESS", "SOONER, SHIFT IN THE MOMENT, AND RECOVER FASTER."], 84, 120, WHITE, weight="500", anchor="middle", ls="3")
-        p += lines(W / 2, C, ["SOMA-Q.COM"], 84, 0, WHITE, weight="700", anchor="middle", ls="12")
+        sh, hp, tx = ("#3E807A", DEEP, DEEP) if lt else (LIGHT, WHITE, WHITE)
+        p += (f'<text x="{W/2}" y="{S}" text-anchor="middle" font-family="DM Serif Display" font-size="130"><tspan fill="{sh}">Shift </tspan><tspan fill="{hp}">Happens</tspan><tspan fill="{hp}" font-size="36" dy="-54">™</tspan></text>\n')
+        p += lines(W / 2, B1, ["SOMA-Q IS A NERVOUS SYSTEM ALIGNMENT PRACTICE.", "WE TRAIN HIGH-PERFORMING LEADERS TO NOTICE STRESS", "SOONER, SHIFT IN THE MOMENT, AND RECOVER FASTER."], 84, 120, tx, weight="500", anchor="middle", ls="3")
+        p += lines(W / 2, C, ["SOMA-Q.COM"], 84, 0, tx, weight="700", anchor="middle", ls="12")
         return p, C
-    def linen_block(y, p):
-        p += f'<rect y="{y}" width="{W}" height="{H-y}" fill="{cta_bg}"/>\n'
-        p += lines(W / 2, y + 260, ["Pressure happens.", "Burnout doesn’t have to."], 150, 175, DEEP, family="DM Serif Display", anchor="middle")
+    def qr_block(y, p, bg, dark_bg):
+        fg, cap, edge = (WHITE, PALE, LIGHT) if dark_bg else (DEEP, "#3E807A", DEEP)
+        p += f'<rect y="{y}" width="{W}" height="{H-y}" fill="{bg}"/>\n'
+        p += lines(W / 2, y + 260, ["Pressure happens.", "Burnout doesn’t have to."], 150, 175, fg, family="DM Serif Display", anchor="middle")
         qy = y + 560
-        p += f'<rect x="{W/2-320}" y="{qy}" width="640" height="640" rx="36" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-320+50}" y="{qy+50}" width="540" height="540">{{{{QR_QUIZ}}}}</svg>'
-        p += lines(W / 2, qy + 785, ["Take the free Burnout Signal Check."], 100, 0, "#3E807A", family="DM Serif Display", anchor="middle")
+        p += f'<rect x="{W/2-320}" y="{qy}" width="640" height="640" rx="36" fill="#FFFFFF" stroke="{edge}" stroke-width="10"/><svg x="{W/2-320+50}" y="{qy+50}" width="540" height="540">{{{{QR_QUIZ}}}}</svg>'
+        p += lines(W / 2, qy + 785, ["Take the free Burnout Signal Check."], 100, 0, cap, family="DM Serif Display", anchor="middle")
         return p
     if not flip:
-        y = 5340
-        p = linen_block(y, p)
+        p = qr_block(5340, p, cta_bg, False)
         p += f'<rect y="6780" width="{W}" height="{H-6780}" fill="{DEEP}"/>\n'
-        p, C = dark_block(7130, p)
+        p, C = about_block(7130, p)
         name = "banner_four_places_dark"
     else:
-        p += f'<rect y="5340" width="{W}" height="{H-5340}" fill="{DEEP}"/>\n'
-        p += f'<rect x="250" y="5340" width="{W-500}" height="6" fill="{LIGHT}" fill-opacity=".4"/>\n'
-        p, C = dark_block(5660, p)
-        p = linen_block(6560, p)
-        name = "banner_four_places_dark_flip"
+        # flipped: Shift Happens on Linen right after the four places, QR section last (teal or white)
+        p += f'<rect y="5340" width="{W}" height="1220" fill="{LINEN}"/>\n'
+        p, C = about_block(5660, p, True)
+        if flip == "white":
+            p = qr_block(6560, p, "#FFFFFF", False); name = "banner_four_places_dark_flip_white"
+        else:
+            p = qr_block(6560, p, DEEP, True); name = "banner_four_places_dark_flip"
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
@@ -79,4 +82,5 @@ banner("banner_four_places_light", LIGHT, "#FFFFFF", "Light Teal", "light")
 banner("banner_four_places_white", "#FFFFFF", LINEN, "White", "light")
 banner("banner_four_places_dark", DEEP, LINEN, "Dark Teal", "dark", True)
 banner("banner_four_places_dark_flip", DEEP, LINEN, "Dark Teal, flipped", "dark", True, True)
+banner("banner_four_places_dark_flip_white", DEEP, LINEN, "Dark Teal, flipped, white QR", "dark", True, "white")
 print("ok four places")

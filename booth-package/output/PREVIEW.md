@@ -23,6 +23,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## banner_four_places_dark_flip-1
 ![banner_four_places_dark_flip-1](preview/banner_four_places_dark_flip-1.png)
 
+## banner_four_places_dark_flip_white-1
+![banner_four_places_dark_flip_white-1](preview/banner_four_places_dark_flip_white-1.png)
+
 ## banner_four_places_light-1
 ![banner_four_places_light-1](preview/banner_four_places_light-1.png)
 
@@ -364,3 +367,6 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## table_front-1
 ![table_front-1](preview/table_front-1.png)
+
+## table_sign_signs-1
+![table_sign_signs-1](preview/table_sign_signs-1.png)
