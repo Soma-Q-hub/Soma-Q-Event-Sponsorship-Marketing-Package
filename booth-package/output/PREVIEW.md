@@ -224,6 +224,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## quiz_card-2
 ![quiz_card-2](preview/quiz_card-2.png)
 
+## stand_sign-1
+![stand_sign-1](preview/stand_sign-1.png)
+
 ## strategy_packet-01
 ![strategy_packet-01](preview/strategy_packet-01.png)
 

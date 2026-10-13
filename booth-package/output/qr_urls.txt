@@ -1,3 +1,5 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-card_set [call]: https://www.soma-q.com/go/call?c=oct24&p=card-set
+stand_sign [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=stand-sign
+stand_sign [reset]: https://www.soma-q.com/go/reset?c=oct24&p=stand-sign
+stand_sign [call]: https://www.soma-q.com/go/call?c=oct24&p=stand-sign
