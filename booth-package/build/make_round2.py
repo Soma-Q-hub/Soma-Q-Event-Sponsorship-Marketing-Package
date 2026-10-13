@@ -796,19 +796,19 @@ tag_logo("giveaway_tag_logo_black_qr", True, True)
 # ========================================================= BUSINESS CARD FRONT with Shift Happens as the headline (Oct 13) =========================================================
 SH_OFFER = ["Nervous system alignment", "education and training to change", "your response to stress."]
 
-def shift_front(name, fig, title):
+def shift_front(name, fig, title, swap=False):
     p = head_(title, 3.75, 2.25, "Business card front option: Shift Happens as the headline, with the education and training line and the descriptor." + (" With the nervous system figure." if fig else " Type only."))
     p += f'<rect width="375" height="225" fill="{DEEP}"/>\n'
     if fig:
         p += logo(34, 20, 100, True)
-        p += (f'<text x="34" y="92" font-family="DM Serif Display" font-size="26"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="#FFFFFF">Happens</tspan><tspan fill="#FFFFFF" font-size="8" dy="-13">™</tspan></text>\n')
+        p += (f'<text x="34" y="92" font-family="DM Serif Display" font-size="26"><tspan fill="{"#FFFFFF" if swap else LIGHT}">Shift </tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}">Happens</tspan><tspan fill="#FFFFFF" font-size="8" dy="-13">™</tspan></text>\n')
         p += lines(34, 118, SH_OFFER, 9, 12.5, PALE, weight="500")
         p += lines(34, 183, ["NERVOUS SYSTEM ALIGNMENT", "FOR HIGH-PERFORMING LEADERS"], 6.8, 11, LIGHT, weight="700", ls="1")
         p += f'<rect x="224" y="22" width="130" height="182" rx="12" fill="#16494F"/>\n'
         p += placed("{{FIGURE:dark}}", 289 - 880 * 0.093 / 2, 30, 0.093)
     else:
         p += logo(34, 14, 100, True)
-        p += (f'<text x="34" y="98" font-family="DM Serif Display" font-size="46"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="#FFFFFF">Happens</tspan><tspan fill="#FFFFFF" font-size="13" dy="-19">™</tspan></text>\n')
+        p += (f'<text x="34" y="98" font-family="DM Serif Display" font-size="46"><tspan fill="{"#FFFFFF" if swap else LIGHT}">Shift </tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}">Happens</tspan><tspan fill="{LIGHT if swap else "#FFFFFF"}" font-size="13" dy="-19">™</tspan></text>\n')
         p += lines(34, 120, SH_OFFER, 9.6, 13, "#FFFFFF", weight="500")
         p += f'<rect x="34" y="160" width="307" height="1" fill="{LIGHT}" fill-opacity=".5"/>\n'
         p += lines(34, 178, ["Soma-Q is a nervous system alignment practice. We train", "high-performing leaders to notice stress sooner,", "shift in the moment, and lead with powerful presence."], 8.4, 11.8, "#FFFFFF", weight="500")
@@ -817,3 +817,4 @@ def shift_front(name, fig, title):
 
 shift_front("bizcard2_front_shift", False, "Business card front: Shift Happens, type only, 3.5 x 2 in")
 shift_front("bizcard2_front_shift_fig", True, "Business card front: Shift Happens, with figure, 3.5 x 2 in")
+shift_front("bizcard2_front_shift_swap", False, "Business card front: Shift white, Happens light teal, 3.5 x 2 in", swap=True)
