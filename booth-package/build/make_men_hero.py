@@ -7,7 +7,9 @@ from svgkit import head as head_
 
 W, H = 3300, 8100
 HEADLINE = ["Who feels it", "when you’re", "stressed?"]
-TURN = ["A workout.", "A meditation.", "A one-time workshop.", "Each may help.", "None trains you to change", "your response to stress."]   # draft Oct 13, replaces "It isn’t a character flaw..."
+TURN = ["A workout. A meditation.", "A one-time workshop.", "Each may help."]
+SHIFTING = ["Shifting your automatic", "response to stress", "requires new tools."]
+DISCOVER = "Discover how to reclaim your energy, clarity, and joy."   # draft Oct 13, replaces "It isn’t a character flaw..."
 WHAT_WE_DO = ["Soma-Q is a nervous system alignment", "practice. We train high-performing", "leaders to notice stress sooner, shift", "in the moment, and recover faster."]
 
 def hero(name, title, scheme, tag="burnout", mode=None):
@@ -33,17 +35,18 @@ def hero(name, title, scheme, tag="burnout", mode=None):
     hc = LIGHT if dark else DEEP
     bold = lambda x, y, rows, fs=150, step=170: "".join(f'<text x="{x}" y="{y+i*step}" font-family="DM Serif Display" font-size="{fs}" fill="{hc}" stroke="{hc}" stroke-width="7" stroke-linejoin="round">{t}</text>' for i, t in enumerate(rows)) + "\n"
     p += bold(1750, 4050 if st else 3800, ["What do you", "do next?"])
-    p += lines(1750, 4580 if st else 4178, TURN, 88, 118, WHITE if dark else DEEP, weight="700")
-    p += bold(1750, 5550 if st else 4990, ["Discover how to", "reclaim your energy,", "clarity, and joy."], 124, 150)
+    p += lines(1750, 4580 if st else 4300, TURN, 104, 140, WHITE if dark else DEEP, weight="700")
+    p += bold(1750, 5550 if st else 4900, SHIFTING, 118, 152)
     if mode in ("base", "base_logoright"):
         # centered stack: one vertical axis from the call to action, down through the QR, to the web address
-        p += lines(W / 2, 5740, ["Take the free Burnout Signal Check."], 138, 0, DEEP, family="DM Serif Display", anchor="middle")
-        p += f'<rect x="{W/2-400}" y="5830" width="800" height="800" rx="44" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-400+62}" y="{5830+62}" width="676" height="676">{{{{QR_QUIZ}}}}</svg>'
-        p += lines(W / 2, 6790, ["Five questions. Two minutes. Then book a free discovery call."], 60, 0, INK, weight="500", anchor="middle")
-        p += lines(W / 2, 6920, ["SOMA-Q.COM"], 84, 0, DEEP, weight="700", anchor="middle", ls="12")
-        p += f'<rect y="7060" width="{W}" height="{H-7060}" fill="{DEEP}"/>\n'
-        p += lines(W / 2, 7390, ["PRESSURE SHOWS UP IN FOUR PLACES"], 56, 0, LIGHT, weight="700", anchor="middle", ls="9")
-        p += lines(W / 2, 7600, ["Health  ·  Wealth  ·  Relationships  ·  Career"], 108, 0, WHITE, family="DM Serif Display", anchor="middle")
+        p += lines(W / 2, 5680, [DISCOVER], 96, 0, "#3E807A", family="DM Serif Display", anchor="middle")
+        p += lines(W / 2, 5890, ["Take the free Burnout Signal Check."], 138, 0, DEEP, family="DM Serif Display", anchor="middle")
+        p += f'<rect x="{W/2-400}" y="5985" width="800" height="800" rx="44" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-400+62}" y="{5985+62}" width="676" height="676">{{{{QR_QUIZ}}}}</svg>'
+        p += lines(W / 2, 6945, ["Five questions. Two minutes. Then book a free discovery call."], 60, 0, INK, weight="500", anchor="middle")
+        p += lines(W / 2, 7075, ["SOMA-Q.COM"], 84, 0, DEEP, weight="700", anchor="middle", ls="12")
+        p += f'<rect y="7235" width="{W}" height="{H-7235}" fill="{DEEP}"/>\n'
+        p += lines(W / 2, 7575, ["PRESSURE SHOWS UP IN FOUR PLACES"], 56, 0, LIGHT, weight="700", anchor="middle", ls="9")
+        p += lines(W / 2, 7785, ["Health  ·  Wealth  ·  Relationships  ·  Career"], 108, 0, WHITE, family="DM Serif Display", anchor="middle")
     else:
         p += lines(250, 5800 + dy, ["Book a free", "discovery call."], 150, 170, DEEP, family="DM Serif Display")
         p += lines(250, 6200 + dy, ["An honest conversation about what pressure", "is costing you. No obligation."], 66, 90, INK, weight="500")
