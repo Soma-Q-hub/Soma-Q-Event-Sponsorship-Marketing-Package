@@ -1,3 +1,4 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
 banner_four_places_dark [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=banner-four-places-dark
+banner_four_places_dark_flip [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=banner-four-places-dark-flip

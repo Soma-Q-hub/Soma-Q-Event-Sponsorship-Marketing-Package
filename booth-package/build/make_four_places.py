@@ -10,7 +10,7 @@ ROWS = [("Health", ["Sleep that doesn’t restore you,", "and a body that has be
         ("Relationships", ["Less patience for the people", "you love than you give", "everyone else."]),
         ("Career", ["Leading well on the outside", "while running on empty", "on the inside."])]
 
-def banner(name, band, cta_bg, tag, scheme, dark=False):
+def banner(name, band, cta_bg, tag, scheme, dark=False, flip=False):
     p = head_(f"Banner: Discover how to reclaim your energy, clarity, and joy in four places ({tag}), 32 x 80 in", 33, 81, f"OPTIONAL banner built around the outcomes line, {tag} band behind the four places, with the nervous system figure. 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). The four places use the website descriptors. CONFIRM the vendor template.")
     p += f'<rect width="{W}" height="{H}" fill="{"#FFFFFF" if dark else DEEP}"/>\n'
     p += logo(250, 200, 1000, not dark)
@@ -26,7 +26,7 @@ def banner(name, band, cta_bg, tag, scheme, dark=False):
         p += lines(250, t + 430, d, 82 if dark else 74, 98 if dark else 92, PALE if dark else INK, weight="500")
     p += placed("{{FIGURE:%s}}" % scheme, 2180, 3130, 1.0)
     if dark:
-        cta(p_list := [p], cta_bg)
+        cta([p], cta_bg, flip)
         return
     # white (or linen) section: the call to action, with the core line above it
     p += f'<rect y="5340" width="{W}" height="1780" fill="{cta_bg}"/>\n'
@@ -41,21 +41,42 @@ def banner(name, band, cta_bg, tag, scheme, dark=False):
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
-def cta(pl, cta_bg):
+def cta(pl, cta_bg, flip=False):
     p = pl[0]
-    p += f'<rect y="5340" width="{W}" height="1400" fill="{cta_bg}"/>\n'
-    p += lines(W / 2, 5540, ["Pressure happens.", "Burnout doesn’t have to."], 150, 175, DEEP, family="DM Serif Display", anchor="middle")
-    p += f'<rect x="{W/2-320}" y="5830" width="640" height="640" rx="36" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-320+50}" y="{5830+50}" width="540" height="540">{{{{QR_QUIZ}}}}</svg>'
-    p += lines(W / 2, 6665, ["Take the free Burnout Signal Check."], 100, 0, "#3E807A", family="DM Serif Display", anchor="middle")
-    p += f'<rect y="6740" width="{W}" height="{H-6740}" fill="{DEEP}"/>\n'
-    p += (f'<text x="{W/2}" y="7090" text-anchor="middle" font-family="DM Serif Display" font-size="130"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="36" dy="-54">™</tspan></text>\n')
-    p += lines(W / 2, 7330, ["SOMA-Q IS A NERVOUS SYSTEM ALIGNMENT PRACTICE.", "WE TRAIN HIGH-PERFORMING LEADERS TO NOTICE STRESS", "SOONER, SHIFT IN THE MOMENT, AND RECOVER FASTER."], 68, 100, WHITE, weight="500", anchor="middle", ls="3")
-    p += lines(W / 2, 7900, ["SOMA-Q.COM"], 84, 0, WHITE, weight="700", anchor="middle", ls="12")
+    G = 150  # equal gap above and below the paragraph, measured cap-top to baseline
+    def dark_block(S, p):
+        B1 = S + 30 + G + 59
+        B3 = B1 + 240
+        C = B3 + G + 59
+        p += (f'<text x="{W/2}" y="{S}" text-anchor="middle" font-family="DM Serif Display" font-size="130"><tspan fill="{LIGHT}">Shift </tspan><tspan fill="{WHITE}">Happens</tspan><tspan fill="{WHITE}" font-size="36" dy="-54">™</tspan></text>\n')
+        p += lines(W / 2, B1, ["SOMA-Q IS A NERVOUS SYSTEM ALIGNMENT PRACTICE.", "WE TRAIN HIGH-PERFORMING LEADERS TO NOTICE STRESS", "SOONER, SHIFT IN THE MOMENT, AND RECOVER FASTER."], 84, 120, WHITE, weight="500", anchor="middle", ls="3")
+        p += lines(W / 2, C, ["SOMA-Q.COM"], 84, 0, WHITE, weight="700", anchor="middle", ls="12")
+        return p, C
+    def linen_block(y, p):
+        p += f'<rect y="{y}" width="{W}" height="{H-y}" fill="{cta_bg}"/>\n'
+        p += lines(W / 2, y + 260, ["Pressure happens.", "Burnout doesn’t have to."], 150, 175, DEEP, family="DM Serif Display", anchor="middle")
+        qy = y + 560
+        p += f'<rect x="{W/2-320}" y="{qy}" width="640" height="640" rx="36" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-320+50}" y="{qy+50}" width="540" height="540">{{{{QR_QUIZ}}}}</svg>'
+        p += lines(W / 2, qy + 785, ["Take the free Burnout Signal Check."], 100, 0, "#3E807A", family="DM Serif Display", anchor="middle")
+        return p
+    if not flip:
+        y = 5340
+        p = linen_block(y, p)
+        p += f'<rect y="6780" width="{W}" height="{H-6780}" fill="{DEEP}"/>\n'
+        p, C = dark_block(7130, p)
+        name = "banner_four_places_dark"
+    else:
+        p += f'<rect y="5340" width="{W}" height="{H-5340}" fill="{DEEP}"/>\n'
+        p += f'<rect x="250" y="5340" width="{W-500}" height="6" fill="{LIGHT}" fill-opacity=".4"/>\n'
+        p, C = dark_block(5660, p)
+        p = linen_block(6560, p)
+        name = "banner_four_places_dark_flip"
     p += TAIL
-    (SRC / "banner_four_places_dark.html").write_text(p)
+    (SRC / f"{name}.html").write_text(p)
 
 banner("banner_four_places", LINEN, "#FFFFFF", "Linen", "light")
 banner("banner_four_places_light", LIGHT, "#FFFFFF", "Light Teal", "light")
 banner("banner_four_places_white", "#FFFFFF", LINEN, "White", "light")
 banner("banner_four_places_dark", DEEP, LINEN, "Dark Teal", "dark", True)
+banner("banner_four_places_dark_flip", DEEP, LINEN, "Dark Teal, flipped", "dark", True, True)
 print("ok four places")
