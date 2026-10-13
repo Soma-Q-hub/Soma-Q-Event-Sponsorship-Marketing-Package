@@ -383,9 +383,9 @@ def back_d(name, title):
     same two-tone serif as the front, and a Deep Teal strip along the bottom with 'Discover how to reclaim your energy, clarity, and joy:' and the four places,
     both centered on the card (widths measured in Chromium, not estimated)."""
     from measure import widths
-    p = head_(title, 3.75, 2.25, "Business card back: White field, large faint Q watermark, name and contact top left, Deep Teal bottom strip with the outcomes line and the four places, centered. CONFIRM the phone number (website Terms page).")
+    p = head_(title, 3.75, 2.25, "Business card back: White field, large faint Q watermark, name and contact top left, QR to the website inside the teal Q watermark, Deep Teal bottom strip with the outcomes line and the four places, centered. CONFIRM the phone number (website Terms page).")
     p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
-    p += f'<g opacity=".085">' + qmark(176, -4, 214, False) + '</g>\n'
+    p += f'<g opacity=".3">' + qmark(176, -4, 214, False) + '</g>\n'
     p += f'<rect y="166" width="375" height="59" fill="{DEEP}"/>\n'
     # left: name and contact (phone, email and website all the same size)
     p += lines(34, 56, ["Megan McDonald"], 22, 0, DEEP, family="DM Serif Display")
@@ -393,6 +393,9 @@ def back_d(name, title):
     for i, txt in enumerate([C_PHONE, "Megan@Soma-Q.com", "soma-q.com"]):
         y = 102 + i * 17
         p += f'<polygon points="34,{y} 39.6,{y} 36.8,{y-4.9}" fill="{LIGHT}"/>' + lines(46, y, [txt], 10.5, 0, DEEP, weight="700")
+    # QR to the website, centered inside the Q watermark (the Q's center is about x 283, y 105)
+    p += qr(243, 62, 80, "SITE")
+    p += lines(283, 154, ["Scan to visit our website"], 6.4, 0, DEEP, weight="700", anchor="middle")
     # bottom strip, centered on the card (center x = 187.5)
     C = 187.5
     p += lines(C, 184, ["Discover how to reclaim your energy, clarity, and joy:"], 11.5, 0, WHITE, family="DM Serif Display", anchor="middle")
