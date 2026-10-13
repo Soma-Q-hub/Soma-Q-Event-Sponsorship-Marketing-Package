@@ -732,20 +732,30 @@ p += TAIL
 
 
 # ========================================================= LUGGAGE TAG, front only, vertical logo (Oct 13) =========================================================
-def tag_logo(name, dark):
+def tag_logo(name, dark, with_qr=False):
     bg = "#111111" if dark else "#FFFFFF"
     c1, c2, ink, accent, guide = (LIGHT, WHITE, WHITE, LIGHT, LIGHT) if dark else ("#3E807A", DEEP, DEEP, "#3E807A", "#9BC4BD")
-    title = "Luggage tag front, " + ("black tag" if dark else "white tag") + ", vertical logo, 2.5 x 3.75 in"
-    p = head_(title, 2.75, 4.0, "Luggage tag front only (the back is a mesh window for a paper insert). Trim 2.5 x 3.75 in, file 2.75 x 4.0 in (0.125 in bleed). PLACEHOLDER size: match the vendor's die line, corner radius and hole. " + ("Black tag: print white and Light Teal inks." if dark else "White tag."))
+    title = "Luggage tag front, " + ("black tag" if dark else "white tag") + ", vertical logo" + (" with quiz QR" if with_qr else "") + ", 2.5 x 3.75 in"
+    p = head_(title, 2.75, 4.0, "Luggage tag front only (the back is a mesh window for a paper insert). Trim 2.5 x 3.75 in, file 2.75 x 4.0 in (0.125 in bleed). PLACEHOLDER size: match the vendor's die line, corner radius and hole. " + ("Black tag: print white and Light Teal inks. " if dark else "White tag. ") + ("The QR is about 0.78 in: test-scan a printed proof." if with_qr else ""))
     p += f'<rect width="275" height="400" fill="{bg}"/>\n'
     p += f'<circle cx="137.5" cy="46" r="14" fill="none" stroke="{guide}" stroke-width="1.2" stroke-dasharray="3 3"/>'
-    p += qmark(137.5 - 66, 70, 132, dark)
-    p += f'<image href="{{{{WORDMARK_{"DARK" if dark else "LIGHT"}_URI}}}}" x="{137.5-86}" y="214" width="172" height="{172*167/905:.1f}" preserveAspectRatio="xMidYMid meet"/>\n'
-    p += (f'<text x="137.5" y="292" text-anchor="middle" font-family="DM Serif Display" font-size="28"><tspan fill="{c1}">Shift </tspan><tspan fill="{c2}">Happens</tspan>'
-          f'<tspan fill="{c2}" font-size="8" dy="-12">™</tspan></text>\n')
-    p += (f'<text x="137.5" y="344" text-anchor="middle" font-family="DM Serif Display" font-size="17" fill="{ink}">Soma-<tspan fill="{accent}">Q</tspan>.com</text>\n')
+    if with_qr:
+        p += qmark(137.5 - 48, 66, 96, dark)
+        p += f'<image href="{{{{WORDMARK_{"DARK" if dark else "LIGHT"}_URI}}}}" x="{137.5-68}" y="172" width="136" height="{136*167/905:.1f}" preserveAspectRatio="xMidYMid meet"/>\n'
+        p += qr(137.5 - 39, 210, 78, "QUIZ")
+        p += lines(137.5, 301, ["TAKE THE FREE QUIZ"], 6.6, 0, ink, weight="700", anchor="middle", ls="1.6")
+        sy, cy_, ss, cs = 337, 363, 22, 13.5
+    else:
+        p += qmark(137.5 - 66, 70, 132, dark)
+        p += f'<image href="{{{{WORDMARK_{"DARK" if dark else "LIGHT"}_URI}}}}" x="{137.5-86}" y="214" width="172" height="{172*167/905:.1f}" preserveAspectRatio="xMidYMid meet"/>\n'
+        sy, cy_, ss, cs = 292, 344, 28, 17
+    p += (f'<text x="137.5" y="{sy}" text-anchor="middle" font-family="DM Serif Display" font-size="{ss}"><tspan fill="{c1}">Shift </tspan><tspan fill="{c2}">Happens</tspan>'
+          f'<tspan fill="{c2}" font-size="8" dy="-{ss*0.43:.0f}">\u2122</tspan></text>\n')
+    p += (f'<text x="137.5" y="{cy_}" text-anchor="middle" font-family="DM Serif Display" font-size="{cs}" fill="{ink}">Soma-<tspan fill="{accent}">Q</tspan>.com</text>\n')
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
 tag_logo("giveaway_tag_logo_white", False)
 tag_logo("giveaway_tag_logo_black", True)
+tag_logo("giveaway_tag_logo_white_qr", False, True)
+tag_logo("giveaway_tag_logo_black_qr", True, True)

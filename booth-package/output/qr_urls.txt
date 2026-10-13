@@ -1,5 +1,5 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-card_set [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=card-set
-bizcard2_back [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=bizcard2-back
-bizcard2_back_proof [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=bizcard2-back-proof
+giveaway_tag_logo_black_qr [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=giveaway-tag-logo-black-qr
+giveaway_tag_logo_white_qr [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=giveaway-tag-logo-white-qr
+banner_hard_things [quiz]: https://www.soma-q.com/go/quiz?c=oct24&p=banner-hard-things
