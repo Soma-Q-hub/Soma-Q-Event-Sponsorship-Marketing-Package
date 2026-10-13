@@ -10,28 +10,33 @@ ROWS = [("Health", ["Sleep that doesn’t restore you,", "and a body that has be
         ("Relationships", ["Less patience for the people", "you love than you give", "everyone else."]),
         ("Career", ["Leading well on the outside", "while running on empty", "on the inside."])]
 
-def banner(name, band, cta_bg, tag, scheme, dark=False, flip=False):
+ROWS_F = [("Health", ["Sleep that doesn’t", "restore you, and a body", "that has been running", "on alarm for too long."]),
+          ("Wealth", ["Money and business", "decisions made from", "pressure instead", "of clarity."]),
+          ("Relationships", ["Less patience for", "the people you love", "than you give", "everyone else."]),
+          ("Career", ["Leading well on", "the outside while", "running on empty", "on the inside."])]
+
+def banner(name, band, cta_bg, tag, scheme, dark=False, flip=False, ds=108):
     p = head_(f"Banner: Discover how to reclaim your energy, clarity, and joy in four places ({tag}), 32 x 80 in", 33, 81, f"OPTIONAL banner built around the outcomes line, {tag} band behind the four places, with the nervous system figure. 32 x 80 in trim, file 33 x 81 in (0.5 in bleed). The four places use the website descriptors. CONFIRM the vendor template.")
     p += f'<rect width="{W}" height="{H}" fill="{"#FFFFFF" if dark else DEEP}"/>\n'
     p += logo(250, 200, 1000, not dark)
     hl = ["Discover how", "to reclaim your", "energy, clarity,", "and joy:"] if dark else ["Discover how", "to reclaim your", "energy, clarity,", "and joy in", "four places:"]
     p += lines(250, 1000 + (120 if dark and not flip else 0), hl, 330, 365, DEEP if dark else WHITE, family="DM Serif Display")
     y0 = 2330 if flip else 2700          # flipped version: shorter white top, taller dark places band
-    RH = 740 if flip else 660
+    RH = 1040 if flip else 660
     p += f'<rect y="{y0}" width="{W}" height="{4*RH if flip else 2640}" fill="{band}"/>\n'
-    for i, (nm, d) in enumerate(ROWS):
+    for i, (nm, d) in enumerate(ROWS_F if flip else ROWS):
         t = y0 - 38 + i * RH
         if i:
-            p += f'<rect x="250" y="{t}" width="1800" height="6" fill="{LIGHT if dark else DEEP}" fill-opacity="{.5 if dark else .25}"/>\n'
-        hs, ds = (250, 88) if flip else (230, 82 if dark else 74)
-        p += lines(250, t + (320 if flip else 290), [nm], hs, 0, WHITE if dark else DEEP, family="DM Serif Display")
-        p += lines(250, t + (470 if flip else 430), d, ds, ds * 1.2 if dark else 92, PALE if dark else INK, weight="500")
+            p += f'<rect x="250" y="{t}" width="{1650 if flip else 1800}" height="6" fill="{LIGHT if dark else DEEP}" fill-opacity="{.5 if dark else .25}"/>\n'
+        hs, ds_ = (260, ds) if flip else (230, 82 if dark else 74)
+        p += lines(250, t + (340 if flip else 290), [nm], hs, 0, WHITE if dark else DEEP, family="DM Serif Display")
+        p += lines(250, t + (520 if flip else 430), d, ds_, ds_ * 1.22 if dark else 92, PALE if dark else INK, weight="500")
     if flip:
-        p += placed("{{FIGURE:%s}}" % scheme, 2074, 2802, 1.12)
+        p += placed("{{FIGURE:%s}}" % scheme, 2000, 3330, 1.2)
     else:
         p += placed("{{FIGURE:%s}}" % scheme, 2180, 3130, 1.0)
     if dark:
-        cta([p], cta_bg, flip)
+        cta([p], cta_bg, flip, name)
         return
     # white (or linen) section: the call to action, with the core line above it
     p += f'<rect y="5340" width="{W}" height="1780" fill="{cta_bg}"/>\n'
@@ -46,9 +51,9 @@ def banner(name, band, cta_bg, tag, scheme, dark=False, flip=False):
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
-def cta(pl, cta_bg, flip=False):
+def cta(pl, cta_bg, flip=False, fname=None):
     p = pl[0]
-    G = 150  # equal gap above and below the paragraph, measured cap-top to baseline
+    G = 200 if flip else 150  # equal gap above and below the paragraph, measured cap-top to baseline
     def about_block(S, p, lt=False):
         B1 = S + 30 + G + 59
         B3 = B1 + 240
@@ -72,21 +77,17 @@ def cta(pl, cta_bg, flip=False):
         p, C = about_block(7130, p)
         name = "banner_four_places_dark"
     else:
-        # flipped: one continuous Linen section after the taller dark places band
-        BAND_END = 2330 + 4 * 740
+        # flipped: places band, then one Linen section with only the practice description (no QR)
+        BAND_END = 2330 + 4 * 1040
         p += f'<rect y="{BAND_END}" width="{W}" height="{H-BAND_END}" fill="{LINEN}"/>\n'
-        S = BAND_END + 260
+        S = BAND_END + 300
         B1 = S + 30 + G + 59
         B3 = B1 + 240
         C = B3 + G + 59
         p += (f'<text x="{W/2}" y="{S}" text-anchor="middle" font-family="DM Serif Display" font-size="150"><tspan fill="#3E807A">Shift </tspan><tspan fill="{DEEP}">Happens</tspan><tspan fill="{DEEP}" font-size="42" dy="-62">™</tspan></text>\n')
         p += lines(W / 2, B1, ["SOMA-Q IS A NERVOUS SYSTEM ALIGNMENT PRACTICE.", "WE TRAIN HIGH-PERFORMING LEADERS TO NOTICE STRESS", "SOONER, SHIFT IN THE MOMENT, AND RECOVER FASTER."], 84, 120, DEEP, weight="500", anchor="middle", ls="3")
         p += lines(W / 2, C, ["SOMA-Q.COM"], 84, 0, DEEP, weight="700", anchor="middle", ls="12")
-        qs = 760; qy = C + 260
-        p += f'<rect x="{W/2-qs/2}" y="{qy}" width="{qs}" height="{qs}" rx="42" fill="#FFFFFF" stroke="{DEEP}" stroke-width="10"/><svg x="{W/2-qs/2+60}" y="{qy+60}" width="{qs-120}" height="{qs-120}">{{{{QR_QUIZ}}}}</svg>'
-        p += lines(W / 2, qy + qs + 270, ["Pressure happens."], 150, 0, DEEP, family="DM Serif Display", anchor="middle")
-        p += lines(W / 2, qy + qs + 440, ["Take the free Burnout Signal Check."], 100, 0, "#3E807A", family="DM Serif Display", anchor="middle")
-        name = "banner_four_places_dark_flip"
+        name = fname
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
@@ -94,5 +95,6 @@ banner("banner_four_places", LINEN, "#FFFFFF", "Linen", "light")
 banner("banner_four_places_light", LIGHT, "#FFFFFF", "Light Teal", "light")
 banner("banner_four_places_white", "#FFFFFF", LINEN, "White", "light")
 banner("banner_four_places_dark", DEEP, LINEN, "Dark Teal", "dark", True)
-banner("banner_four_places_dark_flip", DEEP, LINEN, "Dark Teal, flipped", "dark", True, True)
+banner("banner_four_places_dark_flip", DEEP, LINEN, "Dark Teal, flipped, no QR", "dark", True, True, 108)
+banner("banner_four_places_dark_flip_big", DEEP, LINEN, "Dark Teal, flipped, no QR, larger text", "dark", True, True, 124)
 print("ok four places")
