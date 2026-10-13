@@ -204,3 +204,32 @@ p += TAIL
 (SRC / "postcard_back.html").write_text(p)
 (SRC / "postcard_back_w.html").write_text(p.replace(f'fill="{LINEN}"', 'fill="#FFFFFF"').replace("Postcard back, 6 x 4 in", "Postcard back B (white), 6 x 4 in"))
 print("ok postcard")
+
+
+def front_noimg(name, title):
+    """Optional front without the figure: same words, Shift Happens as a small label above the headline."""
+    p = head(title, 6.25, 4.25, "Optional postcard front without the image. 6 x 4 in trim, file 6.25 x 4.25 in (0.125 in bleed).")
+    SX = 450
+    CXS = (SX + 612.5) / 2
+    p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n<rect x="{SX}" width="{W-SX}" height="{H}" fill="#FFFFFF"/>\n'
+    p += f'<rect x="0" y="372" width="{SX}" height="{H-372}" fill="#16494F"/>\n'
+    p += lines(SX / 2, 400, ["EDUCATION AND TRAINING TO CHANGE YOUR RESPONSE TO STRESS"], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
+    p += lines(40, 98, ["SHIFT HAPPENS<tspan font-size=\"4.2\" dy=\"-3.8\">™</tspan>"], 9.5, 0, LIGHT, weight="700", ls="1.8")
+    p += f'<rect x="40" y="112" width="44" height="3" fill="{LINEN}"/>\n'
+    p += lines(40, 166, ["Pressure happens."], 35, 0, WHITE, family="DM Serif Display")
+    p += lines(40, 208, ["Burnout doesn\u2019t have to."], 35, 0, LIGHT, family="DM Serif Display")
+    p += f'<rect x="40" y="236" width="370" height="84" rx="14" fill="{LINEN}"/>\n'
+    p += lines(58, 272, ["Noticing your nervous system\u2019s signals", "is critical to your well-being."], 15.5, 23, DEEP, weight="500")
+    # white strip, centred
+    p += logo(CXS - 63, 40, 126, False)
+    p += lines(CXS, 116, ["Shift outcomes in", "the four places", "pressure shows up:"], 12.5, 17, "#3E807A", weight="700", anchor="middle").replace("<text ", '<text stroke="#3E807A" stroke-width="0.4" ')
+    for k, word in enumerate(["Health", "Wealth", "Relationships", "Career"]):
+        y = 188 + k * 42
+        if k:
+            p += f'<line x1="{CXS-22}" y1="{y-26}" x2="{CXS+22}" y2="{y-26}" stroke="{LIGHT}" stroke-width="1.5"/>'
+        p += lines(CXS, y, [word], 17 if len(word) < 9 else 15.5, 0, DEEP, family="DM Serif Display", anchor="middle")
+    p += lines(CXS, 400, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", anchor="middle", ls="1.6")
+    p += TAIL
+    (SRC / f"{name}.html").write_text(p)
+
+front_noimg("postcard_front_n", "Postcard front N: no image, 6 x 4 in")
