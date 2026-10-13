@@ -79,7 +79,7 @@ def cta(pl, cta_bg, flip=False, fname=None):
     else:
         # flipped: places band, then one Linen section with only the practice description (no QR)
         BAND_END = 2330 + 4 * 1040
-        p += f'<rect y="{BAND_END}" width="{W}" height="{H-BAND_END}" fill="{LINEN}"/>\n'
+        p += f'<rect y="{BAND_END}" width="{W}" height="{H-BAND_END}" fill="{cta_bg}"/>\n'
         S = BAND_END + 300
         B1 = S + 30 + G + 59
         B3 = B1 + 360
@@ -97,4 +97,5 @@ banner("banner_four_places_white", "#FFFFFF", LINEN, "White", "light")
 banner("banner_four_places_dark", DEEP, LINEN, "Dark Teal", "dark", True)
 banner("banner_four_places_dark_flip", DEEP, LINEN, "Dark Teal, flipped, no QR", "dark", True, True, 108)
 banner("banner_four_places_dark_flip_big", DEEP, LINEN, "Dark Teal, flipped, no QR, larger text", "dark", True, True, 124)
+banner("banner_four_places_dark_flip_big_white", DEEP, "#FFFFFF", "Dark Teal, flipped, no QR, larger text, white bottom", "dark", True, True, 124)
 print("ok four places")
