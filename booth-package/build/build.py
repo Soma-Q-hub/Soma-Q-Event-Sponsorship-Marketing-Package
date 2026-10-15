@@ -56,6 +56,9 @@ def chrome():
             return p
     sys.exit("No Chromium found.")
 
+# Pieces whose site QR points straight at the home page (no /go/ redirect, no tracking parameters), at Megan's request.
+DIRECT_URL = {"bizcard2_back_d": "https://www.soma-q.com", "bizcard2_back_d_b25": "https://www.soma-q.com"}
+
 def target(kind, tag):
     if C.QR_MODE == "go":
         return f"{C.SITE}/go/{kind}?c={C.CAMPAIGN}&p={tag}"
@@ -105,7 +108,7 @@ def render(name, variant=None):
     for kind in ("quiz", "ebook", "reset", "call", "org", "overview", "site"):
         key = "{{QR_%s}}" % kind.upper()
         if key in src:
-            u = target(kind, tag)
+            u = DIRECT_URL.get(name) if kind == "site" and name in DIRECT_URL else target(kind, tag)
             subs[key] = qr_svg(u)
             URL_LOG.append(f"{name}{'/' + variant if variant else ''} [{kind}]: {u}")
     subs["{{LOGO_DARK_URI}}"] = b64img(C.LOGO_ON_DARK) or ""
