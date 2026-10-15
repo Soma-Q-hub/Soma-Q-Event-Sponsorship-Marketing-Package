@@ -386,7 +386,7 @@ def back_d(name, title):
     p = head_(title, 3.75, 2.25, "Business card back: White field, large faint Q watermark, name and contact top left, QR to the website inside the teal Q watermark, Deep Teal bottom strip with the outcomes line and the four places, centered. CONFIRM the phone number (website Terms page).")
     p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
     p += f'<g opacity=".5">' + qmark(283 - 172/2, 105 - 176.2/2, 172, True) + '</g>\n'
-    p += f'<rect y="166" width="375" height="59" fill="{DEEP}"/>\n'
+    p += f'<rect y="163" width="375" height="62" fill="{DEEP}"/>\n'
     # left: name and contact (phone, email and website all the same size)
     p += lines(34, 56, ["Megan McDonald"], 22, 0, DEEP, family="DM Serif Display")
     p += lines(34, 69, ["FOUNDER, SOMA-Q"], 6.6, 0, DEEP, weight="700", ls="1.3")
@@ -399,7 +399,7 @@ def back_d(name, title):
     p += lines(283, 158, ["Scan to visit our website"], 6.4, 0, DEEP, weight="700", anchor="middle")
     # bottom strip, centered on the card (center x = 187.5)
     C = 187.5
-    p += lines(C, 184, ["Discover how to reclaim your energy, clarity, and joy:"], 11.5, 0, WHITE, family="DM Serif Display", anchor="middle")
+    p += lines(C, 179, ["Discover how to reclaim your energy, clarity, and joy:"], 11.5, 0, WHITE, family="DM Serif Display", anchor="middle")
     names = ["Health", "Wealth", "Relationships", "Career"]
     ws = widths([(n, "DM Serif Display", 11.5, "400") for n in names])
     TW, GAP = 5.6, 7
@@ -408,9 +408,9 @@ def back_d(name, title):
     for i, (nm, w) in enumerate(zip(names, ws)):
         if i:
             x += GAP
-            p += f'<polygon points="{x:.2f},199 {x+TW:.2f},199 {x+TW/2:.2f},{199-4.9}" fill="{LIGHT}"/>'
+            p += f'<polygon points="{x:.2f},194 {x+TW:.2f},194 {x+TW/2:.2f},{194-4.9}" fill="{LIGHT}"/>'
             x += TW + GAP
-        p += lines(round(x, 2), 199, [nm], 11.5, 0, WHITE, family="DM Serif Display")
+        p += lines(round(x, 2), 194, [nm], 11.5, 0, WHITE, family="DM Serif Display")
         x += w
     p += TAIL
     (SRC / f"{name}.html").write_text(p)

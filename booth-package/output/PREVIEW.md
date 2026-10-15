@@ -113,6 +113,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## bizcard2_back_d-1
 ![bizcard2_back_d-1](preview/bizcard2_back_d-1.png)
 
+## bizcard2_back_d_b25-1
+![bizcard2_back_d_b25-1](preview/bizcard2_back_d_b25-1.png)
+
 ## bizcard2_back_proof-1
 ![bizcard2_back_proof-1](preview/bizcard2_back_proof-1.png)
 
@@ -124,6 +127,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## bizcard2_front_allwhite_serif-1
 ![bizcard2_front_allwhite_serif-1](preview/bizcard2_front_allwhite_serif-1.png)
+
+## bizcard2_front_allwhite_serif_b25-1
+![bizcard2_front_allwhite_serif_b25-1](preview/bizcard2_front_allwhite_serif_b25-1.png)
 
 ## bizcard2_front_b-1
 ![bizcard2_front_b-1](preview/bizcard2_front_b-1.png)
@@ -196,6 +202,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## counter_sign-1
 ![counter_sign-1](preview/counter_sign-1.png)
+
+## ebook_card_fit-1
+![ebook_card_fit-1](preview/ebook_card_fit-1.png)
 
 ## ebook_display_card-1
 ![ebook_display_card-1](preview/ebook_display_card-1.png)
@@ -361,6 +370,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## stand_sign-1
 ![stand_sign-1](preview/stand_sign-1.png)
+
+## stand_sign_fit-1
+![stand_sign_fit-1](preview/stand_sign_fit-1.png)
 
 ## strategy_packet-01
 ![strategy_packet-01](preview/strategy_packet-01.png)
