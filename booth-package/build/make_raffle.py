@@ -26,6 +26,28 @@ p += lines(70, 1062, ["SOMA-Q.COM"], 15, 0, LIGHT, weight="700", ls="3")
 p += TAIL
 (SRC / "table_sign_raffle.html").write_text(p)
 
+# ---------------------------------------------------------------- TABLE SIGN
+W, H = 875, 1125
+p = head_("Table sign: Win a free 60-minute session, fade version, 8.5 x 11 in", 8.75, 11.25, "Table sign 8.5 x 11 in trim, file 8.75 x 11.25 in (0.125 in bleed). Free drawing: fill out an entry slip and drop it in the box. No QR. Fine print is a DRAFT: confirm drawing rules and any event rules.")
+p += f'<defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{DEEP}"/><stop offset=".70" stop-color="{DEEP}"/><stop offset=".92" stop-color="{LINEN}"/><stop offset="1" stop-color="{LINEN}"/></linearGradient></defs><rect width="{W}" height="{H}" fill="url(#fade)"/>\n'
+p += f'<rect x="35" y="35" width="{W-70}" height="{H-70}" rx="18" fill="none" stroke="{LINEN}" stroke-opacity=".85" stroke-width="2.5"/>\n'
+p += f'<clipPath id="inframe"><rect x="35" y="35" width="{W-70}" height="{H-70}" rx="18"/></clipPath><polygon clip-path="url(#inframe)" points="745,110 1000,560 490,560" fill="none" stroke="{LINEN}" stroke-opacity=".5" stroke-width="5"/>\n'
+p += logo(70, 62, 170, True)
+p += lines(70, 165, ["FREE DRAWING"], 14, 0, LIGHT, weight="700", ls="3.5")
+p += lines(70, 255, ["Win a free", "60-minute session", "with Megan."], 66, 76, WHITE, family="DM Serif Display")
+steps = [("1", "Fill out an entry slip."), ("2", "Drop it in the box. Add your business card if you like."), ("3", "A winner is drawn and emailed.")]
+y0 = 530
+for i, (n, t) in enumerate(steps):
+    y = y0 + i * 92
+    p += f'<circle cx="{70+26}" cy="{y}" r="26" fill="{LINEN}"/><text x="{70+26}" y="{y+9}" text-anchor="middle" font-family="DM Sans" font-weight="700" font-size="26" fill="{DEEP}">{n}</text>'
+    p += lines(70 + 74, y + 8, [t], 25, 0, WHITE, weight="700")
+p += lines(70, 840, ["Entry slips are right here."], 34, 0, LINEN, family="DM Serif Display")
+p += lines(70, 1000, ["No purchase necessary. One entry per person."], 14, 18, DEEP, weight="500")
+p += lines(70, 1020, ["Winner is drawn at random and contacted by email."], 14, 18, DEEP, weight="500")
+p += lines(70, 1062, ["SOMA-Q.COM"], 15, 0, DEEP, weight="700", ls="3")
+p += TAIL
+(SRC / "table_sign_raffle_fade.html").write_text(p)
+
 # ---------------------------------------------------------------- ENTRY SLIP 4.25 x 5.5
 W, H = 450, 575
 p = head_("Raffle entry slip, 4.25 x 5.5 in", 4.5, 5.75, "Entry slip 4.25 x 5.5 in trim, file 4.5 x 5.75 in (0.125 in bleed); four fit on a letter sheet. Fine print is a DRAFT: confirm drawing rules; the contact opt-in is optional and separate from the entry.")
