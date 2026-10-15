@@ -116,7 +116,7 @@ def front_e(name, title, hl, sub, glow=False, up=0, down=0, core=False, sup=None
     p += f'<rect width="{W}" height="{H}" fill="{DEEP}"/>\n<rect x="{SX}" width="{W-SX}" height="{H}" fill="#FFFFFF"/>\n'
     # bottom margin banner on the teal side carries the offer (the postcard back explains the nervous system alignment)
     p += f'<rect x="0" y="372" width="{SX}" height="{H-372}" fill="#16494F"/>\n'
-    p += lines(SX / 2, 400, [" ".join(sub).upper().rstrip(".")], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
+    p += lines(SX / 2, 394, [" ".join(sub).upper().rstrip(".")], 9.2, 0, WHITE, weight="700", anchor="middle", ls="1")
     # teal side
     p += lines(120, 346, ["SHIFT HAPPENS<tspan font-size=\"4.2\" dy=\"-3.8\">™</tspan>"], 8.5, 0, LIGHT, weight="700", anchor="middle", ls="1.4")
     if glow:
@@ -152,7 +152,7 @@ def front_e(name, title, hl, sub, glow=False, up=0, down=0, core=False, sup=None
         if k:
             p += f'<line x1="{CXS-22}" y1="{y-26}" x2="{CXS+22}" y2="{y-26}" stroke="{LIGHT}" stroke-width="1.5"/>'
         p += lines(CXS, y, [word], 17 if len(word) < 9 else 15.5, 0, DEEP, family="DM Serif Display", anchor="middle")
-    p += lines(CXS, 400, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", anchor="middle", ls="1.6")
+    p += lines(CXS, 394, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", anchor="middle", ls="1.6")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
@@ -194,12 +194,12 @@ for i, (t, d) in enumerate(items):
             ln = (ln + " " + w_).strip()
     rows.append(ln)
     p += lines(x + 10, y + 15, rows, 10.5, 13.5, INK)
-p += f'<rect y="318" width="{W}" height="107" fill="{DEEP}"/>\n'
-p += label(40, 335.5, "", "WHAT SOMA-Q DOES", 10).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
-p += lines(40, 359, ["Soma-Q is a nervous system alignment practice.", "Training high-performing leaders to notice stress", "sooner, shift in the moments of pressure, and lead with powerful presence."], 12, 18.5, WHITE)
-p += f'<text x="40" y="414.5" font-family="DM Sans" font-weight="700" font-size="12" fill="{LIGHT}">Burnout ends here<tspan font-size="5" dy="-4.6">™</tspan></text>\n'
-p += '<rect x="505" y="328" width="82" height="82" rx="8" fill="#FFFFFF"/><svg x="511" y="334" width="70" height="70">{{QR_QUIZ}}</svg>'
-p += lines(490, 351, ["Scan to take the", "free Burnout", "Signal Check"], 10.5, 13, PALE, weight="700", anchor="end")
+p += f'<rect y="310" width="{W}" height="115" fill="{DEEP}"/>\n'
+p += label(40, 326.5, "", "WHAT SOMA-Q DOES", 10).replace(f'fill="{DEEP}"', f'fill="{LIGHT}"')
+p += lines(40, 346.5, ["Soma-Q is a nervous system alignment practice.", "Training high-performing leaders to notice stress", "sooner, shift in the moments of pressure, and lead with powerful presence."], 11.5, 16, WHITE)
+p += f'<text x="40" y="394.5" font-family="DM Sans" font-weight="700" font-size="11.5" fill="{LIGHT}">Burnout ends here<tspan font-size="5" dy="-4.6">™</tspan></text>\n'
+p += '<rect x="507" y="314" width="80" height="80" rx="8" fill="#FFFFFF"/><svg x="513" y="320" width="68" height="68">{{QR_QUIZ}}</svg>'
+p += lines(494, 337, ["Scan to take the", "free Burnout", "Signal Check"], 10.5, 13, PALE, weight="700", anchor="end")
 p += TAIL
 (SRC / "postcard_back.html").write_text(p)
 (SRC / "postcard_back_w.html").write_text(p.replace(f'fill="{LINEN}"', 'fill="#FFFFFF"').replace("Postcard back, 6 x 4 in", "Postcard back B (white), 6 x 4 in"))
@@ -228,7 +228,7 @@ def front_noimg(name, title):
         if k:
             p += f'<line x1="{CXS-22}" y1="{y-26}" x2="{CXS+22}" y2="{y-26}" stroke="{LIGHT}" stroke-width="1.5"/>'
         p += lines(CXS, y, [word], 17 if len(word) < 9 else 15.5, 0, DEEP, family="DM Serif Display", anchor="middle")
-    p += lines(CXS, 400, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", anchor="middle", ls="1.6")
+    p += lines(CXS, 394, ["SOMA-Q.COM"], 10.5, 0, DEEP, weight="700", anchor="middle", ls="1.6")
     p += TAIL
     (SRC / f"{name}.html").write_text(p)
 
