@@ -385,7 +385,7 @@ def back_d(name, title):
     from measure import widths
     p = head_(title, 3.75, 2.25, "Business card back: White field, large faint Q watermark, name and contact top left, QR to the website inside the teal Q watermark, Deep Teal bottom strip with the outcomes line and the four places, centered. CONFIRM the phone number (website Terms page).")
     p += '<rect width="375" height="225" fill="#FFFFFF"/>\n'
-    p += f'<g opacity=".5">' + qmark(283 - 172/2, 105 - 176.2/2, 172, True) + '</g>\n'
+    p += f'<g opacity=".5">' + qmark(283 - 136/2, 92.5 - 139.3/2, 136, True) + '</g>\n'
     p += f'<rect y="163" width="375" height="62" fill="{DEEP}"/>\n'
     # left: name and contact (phone, email and website all the same size)
     p += lines(34, 56, ["Megan McDonald"], 22, 0, DEEP, family="DM Serif Display")
@@ -394,9 +394,9 @@ def back_d(name, title):
         y = 102 + i * 17
         p += f'<polygon points="34,{y} 39.6,{y} 36.8,{y-4.9}" fill="{LIGHT}"/>' + lines(46, y, [txt], 10.5, 0, DEEP, weight="700")
     # QR to the website, centered inside the Q watermark (the Q's center is x 283, y 105)
-    p += f'<rect x="237" y="56" width="92" height="92" rx="12" fill="{LINEN}"/>\n'   # Linen plate, same treatment as the ebook display card
-    p += qr(243, 62, 80, "SITE")
-    p += lines(283, 158, ["Scan to visit our website"], 6.4, 0, DEEP, weight="700", anchor="middle")
+    p += f'<rect x="237" y="46.5" width="92" height="92" rx="12" fill="{LINEN}"/>\n'   # Linen plate, same treatment as the ebook display card
+    p += qr(243, 52.5, 80, "SITE")
+    p += lines(283, 150.5, ["Scan to visit our website"], 6.4, 0, DEEP, weight="700", anchor="middle")
     # bottom strip, centered on the card (center x = 187.5)
     C = 187.5
     p += lines(C, 179, ["Discover how to reclaim your energy, clarity, and joy:"], 11.5, 0, WHITE, family="DM Serif Display", anchor="middle")
