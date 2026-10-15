@@ -71,6 +71,9 @@ OVERVIEW_URL = "https://www.soma-q.com/contact?topic=measurement-overview"
 # Every discovery call (call) QR goes straight to the booking page, at Megan's request.
 CALL_URL = "https://www.soma-q.com/book"
 
+# Every weekly reset (Shift Happens reset) QR goes straight to the weekly sessions page, at Megan's request.
+RESET_URL = "https://www.soma-q.com/weekly-sessions"
+
 def target(kind, tag):
     if C.QR_MODE == "go":
         return f"{C.SITE}/go/{kind}?c={C.CAMPAIGN}&p={tag}"
@@ -120,7 +123,7 @@ def render(name, variant=None):
     for kind in ("quiz", "ebook", "reset", "call", "org", "overview", "site"):
         key = "{{QR_%s}}" % kind.upper()
         if key in src:
-            u = DIRECT_URL.get(name) if kind == "site" and name in DIRECT_URL else (EBOOK_URL if kind == "ebook" else (QUIZ_URL if kind == "quiz" else (OVERVIEW_URL if kind == "overview" else (CALL_URL if kind == "call" else target(kind, tag)))))
+            u = DIRECT_URL.get(name) if kind == "site" and name in DIRECT_URL else (EBOOK_URL if kind == "ebook" else (QUIZ_URL if kind == "quiz" else (OVERVIEW_URL if kind == "overview" else (CALL_URL if kind == "call" else (RESET_URL if kind == "reset" else target(kind, tag))))))
             subs[key] = qr_svg(u)
             URL_LOG.append(f"{name}{'/' + variant if variant else ''} [{kind}]: {u}")
     subs["{{LOGO_DARK_URI}}"] = b64img(C.LOGO_ON_DARK) or ""

@@ -1,5 +1,5 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
 stand_sign_fit [quiz]: https://www.soma-q.com/assessment
-stand_sign_fit [reset]: https://www.soma-q.com/go/reset?c=oct24&p=stand_sign_fit
+stand_sign_fit [reset]: https://www.soma-q.com/weekly-sessions
 stand_sign_fit [call]: https://www.soma-q.com/book
