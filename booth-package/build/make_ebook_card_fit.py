@@ -10,7 +10,8 @@ p += f'<rect width="{W}" height="{H}" fill="#FFFFFF"/>\n'
 qw = 270; qh = qw * 376 / 367
 p += f'<g opacity=".5">' + qmark(W / 2 - qw / 2, H / 2 - qh / 2, qw, True) + '</g>\n'
 p += lines(58, 112, ["The Missing", "Intelligence", "E-Book"], 37, 41, DEEP, family="DM Serif Display")
-p += lines(58, 240, ["Scan for your free copy."], 16.5, 0, DEEP, weight="700")
+p += lines(58, 224, ["Please leave this copy here."], 14.5, 0, INK, weight="500")
+p += lines(58, 247, ["Scan for your free copy."], 16.5, 0, DEEP, weight="700")
 qs = 116; qx, qy = 272, 107
 p += f'<rect x="{qx-6}" y="{qy-6}" width="{qs+12}" height="{qs+12}" rx="9" fill="{LINEN}"/><rect x="{qx}" y="{qy}" width="{qs}" height="{qs}" rx="6" fill="#FFFFFF" stroke="{DEEP}" stroke-width="1"/><svg x="{qx+6}" y="{qy+6}" width="{qs-12}" height="{qs-12}">{{{{QR_EBOOK}}}}</svg>'
 p += TAIL
