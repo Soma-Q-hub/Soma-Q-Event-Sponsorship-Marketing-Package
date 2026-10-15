@@ -65,6 +65,9 @@ EBOOK_URL = "https://www.soma-q.com/free-e-book"
 # Every Burnout Signal Check (quiz) QR goes straight to the assessment page, at Megan's request.
 QUIZ_URL = "https://www.soma-q.com/assessment"
 
+# Every Measurement Overview QR goes straight to the contact page with the topic filled in, at Megan's request (she typed a double slash after .com; one slash is used here).
+OVERVIEW_URL = "https://www.soma-q.com/contact?topic=measurement-overview"
+
 def target(kind, tag):
     if C.QR_MODE == "go":
         return f"{C.SITE}/go/{kind}?c={C.CAMPAIGN}&p={tag}"
@@ -114,7 +117,7 @@ def render(name, variant=None):
     for kind in ("quiz", "ebook", "reset", "call", "org", "overview", "site"):
         key = "{{QR_%s}}" % kind.upper()
         if key in src:
-            u = DIRECT_URL.get(name) if kind == "site" and name in DIRECT_URL else (EBOOK_URL if kind == "ebook" else (QUIZ_URL if kind == "quiz" else target(kind, tag)))
+            u = DIRECT_URL.get(name) if kind == "site" and name in DIRECT_URL else (EBOOK_URL if kind == "ebook" else (QUIZ_URL if kind == "quiz" else (OVERVIEW_URL if kind == "overview" else target(kind, tag))))
             subs[key] = qr_svg(u)
             URL_LOG.append(f"{name}{'/' + variant if variant else ''} [{kind}]: {u}")
     subs["{{LOGO_DARK_URI}}"] = b64img(C.LOGO_ON_DARK) or ""
