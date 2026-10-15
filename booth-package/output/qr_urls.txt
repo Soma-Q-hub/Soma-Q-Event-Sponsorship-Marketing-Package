@@ -1,3 +1,5 @@
 Scan-test every URL on a phone, on cell data, from the printed proof.
 
-bizcard2_back_d_b25 [site]: https://www.soma-q.com
+table_sign_ebook [ebook]: https://www.soma-q.com/free-e-book
+ebook_display_card [ebook]: https://www.soma-q.com/free-e-book
+ebook_card_fit [ebook]: https://www.soma-q.com/free-e-book

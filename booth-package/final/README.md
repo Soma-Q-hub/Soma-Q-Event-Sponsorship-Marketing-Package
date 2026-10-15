@@ -35,3 +35,4 @@ Oct 15: the Linen fade free drawing table sign is now the final (v2). The old da
 Oct 15: free drawing table sign v3: the triangle outline fades from Linen (top) to Light Teal (bottom). v2 is in free_drawing/Archive.
 Oct 15: free drawing table sign v4: the triangle lines now have a Linen glow (soft blur behind a Linen-to-Light-Teal line). v3 is in free_drawing/Archive.
 Oct 15: business card back v15: the QR now goes straight to https://www.soma-q.com (decoded from the render and confirmed). No /go/site redirect or tracking parameters on the card, so that redirect is no longer needed for the card.
+Oct 15: all ebook QR codes now go straight to https://www.soma-q.com/free-e-book (decoded from the renders and confirmed): ebook card v7 and free ebook table sign v2. The page must be live before printing.
