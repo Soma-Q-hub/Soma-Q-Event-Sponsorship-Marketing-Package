@@ -353,6 +353,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 ## poster_signal_map-1
 ![poster_signal_map-1](preview/poster_signal_map-1.png)
 
+## poster_signal_map_c-1
+![poster_signal_map_c-1](preview/poster_signal_map_c-1.png)
+
 ## poster_signal_wheel-1
 ![poster_signal_wheel-1](preview/poster_signal_wheel-1.png)
 
@@ -367,6 +370,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## raffle_slip-1
 ![raffle_slip-1](preview/raffle_slip-1.png)
+
+## signal_map_bw_letter-1
+![signal_map_bw_letter-1](preview/signal_map_bw_letter-1.png)
 
 ## stand_sign-1
 ![stand_sign-1](preview/stand_sign-1.png)
