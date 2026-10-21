@@ -445,3 +445,9 @@ Every page of every piece as an image. Rebuild with `python3 build/build.py`.
 
 ## table_sign_signs_linen-1
 ![table_sign_signs_linen-1](preview/table_sign_signs_linen-1.png)
+
+## tshirt_back-1
+![tshirt_back-1](preview/tshirt_back-1.png)
+
+## tshirt_front-1
+![tshirt_front-1](preview/tshirt_front-1.png)
