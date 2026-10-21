@@ -58,3 +58,4 @@ A second front door for a men-skewing room. Headlines are pain-led instead of th
 
 ## Build
 Run generators first (`python3 build/make_*.py`), then `python3 build/build.py <piece>`; previews land in `booth-package/output/preview/`.
+- Sub tagline for "Shift Happens" (chosen by Megan Oct 21, 2026, still being finalized): "Shift happens. Choice under pressure is a skill." (from the Positioning Manifesto). Messaging Architecture v2 says "Burnout ends here." is primary and "Shift happens." is the secondary campaign line; do not stack the two directly. No outcome numbers or promises (SQ-LPMS is self-report, not validated).
